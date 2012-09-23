@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - JDC II</title>
+  <title>Migration from Drupal to Octopress - JDC II</title>
   <meta name="author" content="Jesse Cravens">
 
   
-  <meta name="description" content="Blog Archive 2012 Migration from Drupal to Octopress
-Sep 23 2012 Purchase O'Reilly Media's HTML5 Hacks Recent Posts Migration from Drupal to &hellip;">
+  <meta name="description" content="Why? For the last 6 years, I have hosted my personal blog using Drupal at bluehost.com, and I finally have made the decision to migrate. With other &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Sep 23 2012 Purchase O'Reilly Media's HTML5 Hacks Recent Posts Migration from Dr
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jessecravens.com/blog/archives/">
+  <link rel="canonical" href="http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -88,32 +87,91 @@ Sep 23 2012 Purchase O'Reilly Media's HTML5 Hacks Recent Posts Migration from Dr
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Migration From Drupal to Octopress</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-23T13:39:00-05:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><h2>Why?</h2>
 
-  
-  <h2>2012</h2>
+<p>For the last 6 years, I have hosted my personal blog using Drupal at bluehost.com, and I finally have made the decision to migrate.</p>
 
-<article>
-  
-<h1><a href="/blog/2012/09/23/migration-from-drupal-to-octopress/">Migration from Drupal to Octopress</a></h1>
-<time datetime="2012-09-23T13:39:00-05:00" pubdate><span class='month'>Sep</span> <span class='day'>23</span> <span class='year'>2012</span></time>
+<p>With other content, I have been using Ruby on Rails, Sinatra, and Node.js for prototypes, demos, web-based presentations, and production apps. I have deployed to Heroku for the past couple of years.</p>
 
+<p>The productivity gains and integration with github and social media, have brought me to the point that I&#8217;d prefer for my workflow for blogging, updating to my microformats resume and protfolios to be similar to how I create and manage my other content.</p>
 
-</article>
-
+<p>So here, it is. Once I have written a proper migration script, and taken care of all the custom urls, I&#8217;ll post my solution here.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Jesse Cravens</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-23T13:39:00-05:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress/" data-via="jdcravens" data-counturl="http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -218,7 +276,10 @@ Sep 23 2012 Purchase O'Reilly Media's HTML5 Hacks Recent Posts Migration from Dr
       var disqus_shortname = 'jessecravens';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress/';
+        var disqus_url = 'http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
