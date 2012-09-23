@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[JDC II]]></title>
+  <link href="http://jessecravens.com/atom.xml" rel="self"/>
+  <link href="http://jessecravens.com/"/>
+  <updated>2012-09-23T11:04:11-05:00</updated>
+  <id>http://jessecravens.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
