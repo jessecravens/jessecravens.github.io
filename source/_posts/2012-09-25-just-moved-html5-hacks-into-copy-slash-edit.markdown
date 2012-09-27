@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Just moved HTML5 Hacks into copy/edit"
+title: "Just moved HTML5 Hacks into Copy/Edit"
 date: 2012-09-24 21:57
 comments: true
 categories: [Books, NodeJS, HTML5 Hacks, HTML5, OReilly, Prototypes]
 ---
 
-After a marathon of hackery starting in starting in April, [Jeff Burtoft](http://www.oreillynet.com/pub/au/5370) and I pushed out 90 hacks and 435 pages of [HTML5 Hacks](http://shop.oreilly.com/product/0636920026273.do) this week. We also had a few guest hackers that created some really great content as well. 
+After a marathon of hackery starting in April, [Jeff Burtoft](http://www.oreillynet.com/pub/au/5370) and I pushed out 90 hacks and 435 pages of [HTML5 Hacks](http://shop.oreilly.com/product/0636920026273.do) this week. We also had a few guest hackers that created some really great content as well. 
 
 - Raymond Camden of Adobe
 - Phil Legetter of Pusher.com
