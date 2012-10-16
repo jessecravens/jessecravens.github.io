@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Business Computer Programming | Jesse Cravens]]></title>
+  <link href="http://jessecravens.com/blog/categories/business-computer-programming/atom.xml" rel="self"/>
+  <link href="http://jessecravens.com/"/>
+  <updated>2012-10-15T20:59:53-05:00</updated>
+  <id>http://jessecravens.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[RVM (Ruby Version Manager) and Ruby On Rails]]></title>
+    <link href="http://jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails/"/>
+    <updated>2011-09-26T23:35:58-05:00</updated>
+    <id>http://jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails</id>
+    <content type="html"><![CDATA[<p>Here is a brief overview of <a href="http://beginrescueend.com/">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn't live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
+
+
+
+
+<p>This allows me to essentially sandbox each of these applications' dependencies.</p>
+
+
+
+
+<p>One helpful hint I might offer is to get in the habit of declaring your gemset when you launch a new terminal. I tend to have multiple terminals open at once and it took me awhile to remember that each time I launched a terminal, RVM would fall back to my default gemset. So if I clone a Rails 3.1 project, I need to remember to switch to my rails3.1 gemset prior to runninig bundle install. </p>
+
+
+
+
+<p>Simply put, RVM helps:</p>
+
+
+<ol>
+  <li>manage versions of Ruby</li>
+  <li>manage packages of Gemsets</li>
+</ol>
+
+
+
+
+<h3>RUBY</h3>
+
+
+<p>{syntaxhighlighter brush: ps}</p>
+
+<p>$ rvm list
+$ rvm install 1.9.2-head</p>
+
+<p>{/syntaxhighlighter}</p>
+
+<p>And, you can set a version as default</p>
+
+
+<p>{syntaxhighlighter brush: ps}</p>
+
+<p>$ rvm use 1.9.2-head --default</p>
+
+<p>{/syntaxhighlighter}</p>
+
+<h3>GEMSETS</h3>
+
+
+<p>{syntaxhighlighter brush: ps}</p>
+
+<h1>Start by creating our gemset(s):</h1>
+
+<p>$  rvm gemset create rails309</p>
+
+<h1>Or create multiple at a time:</h1>
+
+<p>$  rvm gemset create rails307 rails31</p>
+
+<h1>The result can be verified by listing the available gemsets:</h1>
+
+<p>$  rvm gemset list</p>
+
+<h1>See everything with list_all, this has been very useful:</h1>
+
+<p>$ rvm gemset list_all</p>
+
+<h1>If a gem’s name still leaves room for confusion, simply delete it and create a more meaningful one (e.g., rails31rc):</h1>
+
+<p>$  rvm gemset delete rails31</p>
+
+<p>{/syntaxhighlighter}</p>
+
+<p>Now that we have multiple gemsets installed, we must first select the one we want to use, and we can also set it as the default gemset by passing it the —default flag:</p>
+
+
+<p>  
+{syntaxhighlighter brush: ps}</p>
+
+<p>$ rvm use 1.9.2-head@rails309 --default</p>
+
+<p>{/syntaxhighlighter}</p>
+
+<h3>Installing Rails</h3>
+
+
+<p>Installing rails is as easy as installing any other gem: we only need to specify it’s name, but we can always choose a specific version, or to speed up the installation process by skipping the documentation: </p>
+
+
+<p>{syntaxhighlighter brush: ps}
+$ gem install rails --no-rdoc --no-ri</p>
+
+<h1>Or</h1>
+
+<p>$ gem install rails [-v 3.0.7] [--no-rdoc --no-ri]</p>
+
+<h1>Or</h1>
+
+<p>$ gem install rails -v ">=3.1.0rc"
+{/syntaxhighlighter}</p>
+
+<h3>In Summary and Why Am I doing this?</h3>
+
+
+
+
+<p>Rails is distributed as a gem, and there are conflicts between Rails 2 and Rails 3, so if you want to run multiple versions of Rails on the same system you need to create a separate gemset for each:</p>
+
+
+<p>{syntaxhighlighter brush: ps}
+$ rvm --create 1.8.7-p302@rails2app
+$ rvm --create use 1.9.2@rails3app
+{/syntaxhighlighter}</p>
+
+<p>In other words, for application specific gemsets it is convenient to select the version of Ruby and the collection of gems by doing the following:</p>
+
+
+<p>{syntaxhighlighter brush: ps}
+$ rvm --create use 1.9.2@mongoid-app</p>
+
+<h1>Also, which gemset am I using?</h1>
+
+<p>$ rvm gemset name</p>
+
+<p>$ rvm gemdir
+{/syntaxhighlighter}</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Cheatsheet]]></title>
+    <link href="http://jessecravens.com/blog/2011/09/26/git-cheatsheet/"/>
+    <updated>2011-09-26T23:10:56-05:00</updated>
+    <id>http://jessecravens.com/blog/2011/09/26/git-cheatsheet</id>
+    <content type="html"><![CDATA[<div class="">
+
+<p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I'd share.</p> 
+
+<h3>Git First-Time System Setup</h3>
+
+<p>After installing Git, you should perform a set of one-time setup steps. These are system setups, meaning you only have to do them once per computer:</p>
+
+{syntaxhighlighter brush: ps}
+$ sudo apt-get install git-core
+$ git config --global user.email youremail[at symbol]example.com
+$ git config --global user.name "John Doe"
+$ git config --global user.name "Your Name"
+$ git config --global alias.co checkout
+{/syntaxhighlighter}
+
+<p>As a final setup step, you can optionally set the editor Git will use for commit messages.</p>
+
+{syntaxhighlighter brush: ps}
+$ git config --global core.editor "mate -w"
+
+# Replace “mate -w” with “gvim -f” for gVim or “mvim -f” for MacVim.
+{/syntaxhighlighter}
+
+<h3>Quick Reference – Most Often Used Commands</h3>
+
+{syntaxhighlighter brush: ps}
+$ cd /path/to/repository
+$ git init
+$ git add .
+$ git add -u
+$ git log
+$ git status
+$ git commit -m "initial commit"
+
+# made a mistake on the git commit
+$ git commit -amend -m "initial commit"
+
+# Add the remote repository
+
+# ex 1
+$ git remote add unfuddle git@subdomain.unfuddle.com:subdomain/abbreviation.git
+
+# ex 2
+$ git remote add origin git@subdomain.unfuddle.com:subdomain/abbreviation.git
+
+# Configure the repository
+$ git config remote.unfuddle.push refs/heads/master:refs/heads/master
+
+# Push master branch to remote repository named unfuddle
+$ git push unfuddle master
+
+# Other commands:
+
+# Clone an existing remote repo 
+$ git clone git@subdomain.unfuddle.com:subdomain/abbreviation.git
+
+# List all branches within your repo
+$ git branch -a
+
+#Create and switch to a new branch "whatever"
+$ git checkout -b whatever 
+
+{/syntaxhighlighter}
+
+<p>Those are the basics, should be enough to make you dangerous. </p>
+
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[EduPunk]]></title>
+    <link href="http://jessecravens.com/blog/2009/03/15/edupunk/"/>
+    <updated>2009-03-15T12:22:26-05:00</updated>
+    <id>http://jessecravens.com/blog/2009/03/15/edupunk</id>
+    <content type="html"><![CDATA[<object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Top 5 Free Computer and Technology Books Lists for High School and College Computer Classes]]></title>
+    <link href="http://jessecravens.com/blog/2007/06/15/top-5-free-computer-and-technology-books-lists-for-high-school-and-college-computer-classes/"/>
+    <updated>2007-06-15T13:49:14-05:00</updated>
+    <id>http://jessecravens.com/blog/2007/06/15/top-5-free-computer-and-technology-books-lists-for-high-school-and-college-computer-classes</id>
+    <content type="html"><![CDATA[<p>Is it really necessary to purchase text books for those computer classes anymore? Take a look at your content area on each of these sites. You be the judge. </p>
+
+
+<p></p>
+
+<ul>
+<li>1. <a href="http://freecomputerbooks.com/">freecomputerbooks.com</a></li>  
+
+<li>2. <a href="http://www.freetechbooks.com/">freetechbooks.com</a> </li>  
+
+<li>3. <a href="http://www.techtoolblog.com/archives/195-free-online-programming-books">techtoolblog.com</a></li>  
+
+<li>4. <a href="http://www.computer-books.us/">computer-books.us</a> </li>  
+
+<li>5. <a href="http://www.onlinecomputerbooks.com/">onlinecomputerbooks.com</a> </li>
+<ul>  
+
+<p>...as this list expands keep track here: <a href="http://del.icio.us/cravens/freebook">del.icio.us/cravens/freebook</a>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[In Search of A Balance: Integrating the Sudbury and other democratic models with Moodle]]></title>
+    <link href="http://jessecravens.com/blog/2006/11/17/in-search-of-a-balance-integrating-the-sudbury-and-other-democratic-models-with-moodle/"/>
+    <updated>2006-11-17T06:57:33-06:00</updated>
+    <id>http://jessecravens.com/blog/2006/11/17/in-search-of-a-balance-integrating-the-sudbury-and-other-democratic-models-with-moodle</id>
+    <content type="html"><![CDATA[<p>I'm definitely into the hybrid thing lately. Hybrid instruction not only in the sense of implementation: online and face to face learning through moodle (http://moodle.org) and short class lectures/discussions, but also philosophically in a sense of allowing students to have some type of control over the curriculum, and direction of their own study. Every moodle assignment I offer, is open to interpretation and creativity. This is why I believe that rubrics can potentially take the fun out of learning. They limit learners to the parameters made by the teacher. Especially when we are teaching technoloies that are more native to the learner than the educator. <br /><br />This article takes a neutral approach to - what I will call the Sudbury model, but really applies to many other free, democratic school models. I agree with both sides of the argument, and I have settled on balance and moderation of both freedom and standardization. This combined with a balance between face to face and elearning and I think we might make some real progress in my classroom. <br /><a href="http://www.edutopia.org/magazine/ed1article.php?id=Art_1615&amp;issue=oct_06">Free Radicals</a> <br /> <blockquote>In the country's most alternative classrooms, there's no such thing as a report card.</p>
+
+<br /><br />Sudbury schools are only one variety of so-called free, or democratic, schools, which eschew most conventions of traditional education in favor of a much more radical program. At most free schools, literally every decision, from those about staff hiring and firing to determinations concerning rules, facilities, and budget issues, is made by the entire school community in a one-person, one-vote process. There are no tests, no report cards, no requirements, and no classes -- and no curriculum, other than what students set for themselves.
+
+
+
+
+<br /><br />It is a philosophy that may strike the uninitiated as far-fetched, if not irresponsible, but it seems to be working.......
+
+]]></content>
+  </entry>
+  
+</feed>

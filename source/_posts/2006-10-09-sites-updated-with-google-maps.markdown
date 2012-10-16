@@ -1,0 +1,8 @@
+---
+layout: post
+title: "Sites updated with Google Maps"
+date: 2006-10-09 09:38:20 -0500
+comments: true
+categories: ["Design", "Drupal", "Marketing", "google"]
+---
+<a href="http://sessionswest.com/location"><img src="http://jessecravens.com/images/sitethumbs/sessions_150.jpg" style="float:right; margin: 10px"></a>Both <a href="http://sessionswest.com">sessionswest.com</a> and <a href="http://bajioranch.com">bajioranch.com</a> received embedded google maps this weekend courtesy of the great <a href="http://drupal.org/node/33591drupal">drupal gmap module</a>. I'm looking forward to taking this module and getting really creative - the possibilities are endless. <br> <br><a href="http://bajioranch.com/location"><img src="http://jessecravens.com/images/sitethumbs/bajio_150.jpg" style="float:left; margin: 10px"></a>For community websites this module gets really exciting by allowing users that have lat,long information entered to be displayed on a single map so that you can see where in the world all of your users are coming from. The gmap.module also includes functionality to allow users to set their latitude and longitude on a gmap in an interactive fashion.<br> <br>I am speaking with some of my other clients about incorporating more complex maps such as a historical map of the Tuscarawas River Band's 'Full Circle' tour. For other band's this may be expressed in a 'Places we have played" Interactive Map. For non-profits, such as the findingmyvoice.org project - this could be beneficial in providing individuals with disabilites an interactive map of local colleges and universities Disability Services departments.  

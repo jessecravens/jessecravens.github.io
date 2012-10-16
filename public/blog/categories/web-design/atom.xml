@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Web Design | Jesse Cravens]]></title>
+  <link href="http://jessecravens.com/blog/categories/web-design/atom.xml" rel="self"/>
+  <link href="http://jessecravens.com/"/>
+  <updated>2012-10-15T20:59:53-05:00</updated>
+  <id>http://jessecravens.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Robodeck]]></title>
+    <link href="http://jessecravens.com/blog/2012/05/22/robodeck/"/>
+    <updated>2012-05-22T10:01:42-05:00</updated>
+    <id>http://jessecravens.com/blog/2012/05/22/robodeck</id>
+    <content type="html"><![CDATA[<p>Awhile back, I built a websocket powered interactive presentation framework called <a href="https://github.com/jessecravens/robodeck">Robodeck</a>.</p>
+
+
+<p>The solution uses the following technologies:</p>
+
+
+
+
+<ul>
+<li>Node.js</li>
+<li>Socket.io</li>
+<li>WebSockets</li>
+<li>GeoLocatin APIs</li>
+<li>Deck.js</li>
+</ul>
+
+
+
+
+<p>To name a few.</p>
+
+
+<p>To learn more, check it out here: <a href="http://jessecravens.github.com/robodeck">http://jessecravens.github.com/robodeck</a></p>
+
+
+<p><a href="http://jessecravens.github.com/robodeck"><img class="imgL" width="500px" src="http://jessecravens.com/images/blogposts/robodeck.png"></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hack #82 Web Wokers: Basics of the Web Browser's UI Thread]]></title>
+    <link href="http://jessecravens.com/blog/2011/12/11/hack-82-web-wokers-basics-of-the-web-browsers-ui-thread/"/>
+    <updated>2011-12-11T11:08:01-06:00</updated>
+    <id>http://jessecravens.com/blog/2011/12/11/hack-82-web-wokers-basics-of-the-web-browsers-ui-thread</id>
+    <content type="html"><![CDATA[<div class="">
+
+<p>This post is mirrored at: <a href="http://html5hacks.com/hack/web-workers/hack-82-web-wokers-basics-web-browsers-ui-thread">html5hacks.com</a></p>
+
+
+<h2>Single Threadin'</h2>
+<p>
+As we set out to build a highly responsive UI for our demo web application, we must fully understand how browsers manage processes. Perhaps the biggest challenge we will face has to do with browsers using a single thread for both JavaScript execution and user interface updates. While the browser's JavaScript interpreter is executing code, the UI is unable to respond to the user's input. If a script is taking a long time to complete, after a specified amount of time the browser will provide the user an option to terminate the script. To accommodate for the 'freeze' associated with scripts that exceed the browser execution time limit, web developers have traditionally created smaller units of work and used JavaScript timers to return execution to the next event in the queue. As you will see, web workers solve the locking of the UI thread by opening an additional thread, or even multiple threads, for execution of these long running, processor intensive tasks.</p>
+
+<p>When designing your application, especially if you come from more of a 'server-side' or Java background, it is important to understand that non-blocking execution is not the same as concurrent threading. While not extremely complex, JavaScript's event driven style does take some getting used to for developers coming from other languages such as Java and C. Later, we will touch on a few examples where we pass a callback continuation function to take full advantage of JavaScript's non blocking design.</p>
+
+
+<h2>Thread Safety</h2>
+<p>
+Mozilla, in particular, provides a Worker interface which web workers implement. While the Worker interface spawns OS-level threads, web workers use the postMessage mechanism to send messages (with serializable objects) between the two execution contexts. To ensure thread safety the worker is only given access to thread safe components to include the following:</p>
+<ul>
+<li>timers: setTimeout() and setInterval() methods</li>
+<li>XMLHttpRequest</li>
+<li>importScripts() method</li>
+</ul>
+<p>The worker script can also make use of:</p>
+<ul>
+<li>navigator and location objects</li>
+<li>native JavaScript objects such as Object, String, Date</li>
+</ul>
+<p>At the same time, the worker restricts access to DOM APIs, global variables, and the parent page. In Hack #84 Building the DOM with web workers and Handlebars.js, we will explore the restricted access to DOM APIs, and introduce JavaScript templating, importScripts, and the use of timers to poll for postMessage. </p>
+
+
+<h2>HTML5 Web Workers</h2>
+<p>As mentioned earlier, the Web worker spec defines an API for executing scripts in the background by spawning an independent execution context.</p>
+
+<p>
+It is important to note that web workers are costly, having an impact on startup and overall memory consumption. So, they are intended to be used lightly and in conjunction with the some of the asynchronous techniques mentioned earlier. A well built client-side application would typically make use of one or two cases where tasks are expensive. Here are a few common uses cases:
+</p>
+
+<ul>
+   <li>Single Page Application bootstrapping large amounts of data during initial load</li>
+   <li>Performing long running mathematical calculations in the browser</li>
+   <li>Processing large JSON datasets</li>
+   <li>Text formatting, spell checking, and syntax highlighting</li>
+   <li>Processing multimedia data (Audio/Video)</li>
+   <li>Long polling webservices</li>
+   <li>Filtering images in canvas</li>
+   <li>Calculating points for a 3D image</li>
+   <li>Reading/Writing of local storage database</li>
+</ul>
+
+<h2>Long Running Scripts</h2>
+<p>
+Our first web worker hack will be a long running script with heavy computation. It will execute 2 loops that output a two-dimensional array. First, we will use this computation to lock up the browser's UI thread, and later we will move the task to a worker. To further demonstrate the performance strain, we will also animate a box horizontally across the screen. You will notice the animated box stop while the UI thread is executing the long running script.</p>
+
+<pre class="brush: js; ruler: true; first-line: 1; highlight: [0]">
+    var box;
+
+    function goRight() {
+        box.style.left = parseInt(box.style.left)+1+'px';
+        setTimeout(goRight,2); // call goRight in 200msec
+    }
+
+    function init() {
+        var r = 1000;
+        var c = 1000;
+        var a = new Array(r);
+
+        for (var i = 0; i < r; i++) {
+            a[i] = new Array(c);
+
+            for (var j = 0; j < c; j++) {
+                a[i][j] = "[" + i + "," + j + "]";
+            }
+        }
+        document.getElementById('result').textContent = a;
+        
+        box = document.getElementById('box'); // get the "box" object
+        box.style.left = '0px'; // set its initial position to 0px
+        
+        goRight(); // start animating to the right
+    }
+    
+    window.onload = init;
+</pre>
+
+
+<h2>Spawning a Worker</h2>
+
+<p>Now let's move our heavy computational task to a dedicated web worker, so that the user doesn't have to wait for the script to complete execution in order to interact with user interface. First, lets spawn a new worker:</p>
+<pre class="brush: js; ruler: true; first-line: 1; highlight: [0]">
+  
+  var worker = new Worker('highComp.js');
+
+  worker.postMessage(JSON.stringify(message));
+
+  worker.addEventListener('message', function(event){}, false);
+
+</pre>
+
+<p>Here, we define an external file that will contain the logic of our heavy computational task. The file, highComp.js will listen for a message that will receive the serialized JSON payload, and then we will set up an additional listener to receive a message back from highComp.js.</p>
+
+<p>Now, we can move this cpu-intensive task to a separate file: highComp.js</p>
+
+<pre class="brush: js; ruler: true; first-line: 1; highlight: [0]">
+var r = 1000;
+var c = 1000;
+
+var a = new Array(r);
+
+for (var i = 0; i < r; i++) {
+  a[i] = new Array(c);
+
+    for (var j = 0; j < c; j++) {
+     a[i][j] = "[" + i + "," + j + "]";
+    }
+};
+postMessage(a);
+</pre>
+
+<p>In highComp.js, our two dimensional array is built and set to variable a. It is then passed back to our main script via the postMessage call. </p>
+
+<p>In the next hack, we will mix our use of timers with the power of a dedicated worker. As we send messages (passing serializable objects as a parameter to postMessage) back and forth to code running in the shared UI thread, our timer will periodically check for new messages and use their contents to modify the DOM.</p>
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rails 2.0 on Windows: Making Sense of Old Tutorials]]></title>
+    <link href="http://jessecravens.com/blog/2008/02/11/rails-2-0-on-windows-making-sense-of-old-tutorials/"/>
+    <updated>2008-02-11T09:08:36-06:00</updated>
+    <id>http://jessecravens.com/blog/2008/02/11/rails-2-0-on-windows-making-sense-of-old-tutorials</id>
+    <content type="html"><![CDATA[<p><img src="http://jessecravens.com/sites/jessecravens.com/files/images/rails.png" style="float: right; margin: 10px"/></p>
+
+<p>I know it is fairly well documented around the web that some of the old 'ROR up and running' tutorials are a bit difficult to digest with the new features in in Rails 2.0. So, I wanted to document my findings. And provide links to the resources that have helped me.</p>
+
+
+
+
+<p>Here's a couple of resources to get started:</p>
+
+
+<p></p>
+
+<p><a href="http://www.akitaonrails.com/2007/12/12/rolling-with-rails-2-0-the-first-full-tutorial">akitaonrails.com</a>
+<a href="http://weblog.infoworld.com/stratdev/archives/2007/12/installing_rail.html">weblog.infoworld.com</a></p>
+
+<p>Stay posted for more of my findings.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Learning JQuery]]></title>
+    <link href="http://jessecravens.com/blog/2007/10/19/learning-jquery/"/>
+    <updated>2007-10-19T07:38:06-05:00</updated>
+    <id>http://jessecravens.com/blog/2007/10/19/learning-jquery</id>
+    <content type="html"><![CDATA[<p>I&#39;d like to promote a <a href="http://www.packtpub.com/jQuery/book/mid/100407j4kh3d">great resource</a> for getting up to speed on JQuery syntax.</p>
+
+
+<p> <a href="http://www.learningjquery.com"><img class="imgR" src="http://www.learningjquery.com/images/book-cover.jpg" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Interesting Snippets - a photoset on Flickr]]></title>
+    <link href="http://jessecravens.com/blog/2007/08/12/interesting-snippets-a-photoset-on-flickr/"/>
+    <updated>2007-08-12T13:46:34-05:00</updated>
+    <id>http://jessecravens.com/blog/2007/08/12/interesting-snippets-a-photoset-on-flickr</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/lynetter/sets/72057594139269787/detail/">Interesting Snippets - a photoset on Flickr</a>  This is a fantastic set of images related to the state of the web, communications, and new media. Each image is accompanied by a thought provoking quote.  I thought this would be perfect for an anticipatory set for a new media presentation, or an introductory visual for a shared discussion on topics related to new media or web 2.0. Enjoy!</p>
+]]></content>
+  </entry>
+  
+</feed>

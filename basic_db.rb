@@ -56,7 +56,8 @@ EOF
 	                     where node.nid = #{node_id} order by node.nid"
 	        tags = []
 	        DB[tag_query].each do |tag|
-	          tags.push tag[:name]
+	          stripped_tag = tag[:name].gsub /"/, '|'
+	          tags.push stripped_tag
 	        end
 	        tag_list = tags.length == 0 ? nil : tags
 	        
@@ -66,7 +67,7 @@ EOF
 	        File.open("#{posts_dir}/#{name}", "w") do |f|
 	          f.puts "---"
 	          f.puts "layout: post"
-	          f.puts "title: #{title}" 
+	          f.puts "title: \"#{title}\"" 
 	          f.puts "date: #{time}" 
 	          f.puts "comments: true"
 	          f.puts "categories: #{tag_list}"

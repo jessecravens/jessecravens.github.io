@@ -1,0 +1,18 @@
+---
+layout: post
+title: "usaa.com"
+date: 2007-10-21 17:58:53 -0500
+comments: true
+categories: 
+---
+<a href="http://www.usaa.com"><img class="imgR" src="http://jessecravens.com/images/portfolio/usaa.jpg" alt="USAA"/></a>
+<ul>
+<li>Research user experience</li>
+<li>Consistently refine various internal and external web applications using UI design</li>
+<li>Collaborate with teams of software developers to promote user-centered design.</li>
+<li>Create new solutions to overcome user ability issues</li>
+<li>Design prototypes and content models for new features</li>
+<li>Rebuild legacy application interfaces to meet web standards (XHTML/CSS)</li>
+<li>Rescript JavaScript libraries to reflect best practices (progressive enhancement, object detection)
+<li>Create banners, thumbnails, and mockups using Photoshop CS3-(imagery and typography that meet to redesign style guidelines</li>  
+</ul>

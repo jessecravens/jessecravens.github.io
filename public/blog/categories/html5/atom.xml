@@ -4,7 +4,7 @@
   <title><![CDATA[Category: HTML5 | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/html5/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2012-10-15T15:42:57-05:00</updated>
+  <updated>2012-10-15T20:59:53-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -54,6 +54,89 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
 <p>I felt as though I improved over time, looking back is always interesting. I like to keep fine tuning and revising, but at some point you have to ship the product. I'm really proud of the work, it has been hard, but I learned a ton in the process.</p>
 
 <p>Most of my hacks I tried to make relevant to real world software development challenges, and mix in a number of HTML5 specifications. Hopefully, that turns out to benefit the reader ... I'm all ears on the feedback. So don't hesitate to drop us a line.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript Modules]]></title>
+    <link href="http://jessecravens.com/blog/2012/06/17/javascript-modules/"/>
+    <updated>2012-06-17T16:23:21-05:00</updated>
+    <id>http://jessecravens.com/blog/2012/06/17/javascript-modules</id>
+    <content type="html"><![CDATA[<p>For a talk last March at USAA's internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
+
+
+<p><a href="http://jessecravens.github.com/js-modules-demo/"><img class="imgL" width="500px" src="http://jessecravens.com/images/blogposts/js-modules.png"></a></p>
+
+<p>This demonstrates the following Module Definitions:</p>
+
+
+
+
+<ul>
+<li>AMD</li>
+<li>CommonJS</li>
+<li>YUI3</li>
+<li>JS Harmony</li>
+</ul>
+
+
+
+
+<p>And a few script loaders:</p>
+
+
+
+
+<ul>
+<li>RequireJS</li>
+<li>yepnope</li>
+<li>YUI3 - YUI Loader</li>
+</ul>
+
+
+
+
+<p>If you want to know more about the state of modules, dependency loading and management in the JavaScript world, there is always room for more contributors, just fork or clone the project ... and you will have a playground to begin playing with some of the most popular implementations.</p>
+
+
+<p>To learn more, check it out here: <a href="http://jessecravens.github.com/js-modules-demo/">jessecravens.github.com/js-modules-demo</a></p>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Robodeck]]></title>
+    <link href="http://jessecravens.com/blog/2012/05/22/robodeck/"/>
+    <updated>2012-05-22T10:01:42-05:00</updated>
+    <id>http://jessecravens.com/blog/2012/05/22/robodeck</id>
+    <content type="html"><![CDATA[<p>Awhile back, I built a websocket powered interactive presentation framework called <a href="https://github.com/jessecravens/robodeck">Robodeck</a>.</p>
+
+
+<p>The solution uses the following technologies:</p>
+
+
+
+
+<ul>
+<li>Node.js</li>
+<li>Socket.io</li>
+<li>WebSockets</li>
+<li>GeoLocatin APIs</li>
+<li>Deck.js</li>
+</ul>
+
+
+
+
+<p>To name a few.</p>
+
+
+<p>To learn more, check it out here: <a href="http://jessecravens.github.com/robodeck">http://jessecravens.github.com/robodeck</a></p>
+
+
+<p><a href="http://jessecravens.github.com/robodeck"><img class="imgL" width="500px" src="http://jessecravens.com/images/blogposts/robodeck.png"></a></p>
 ]]></content>
   </entry>
   

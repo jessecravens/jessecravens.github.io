@@ -1,0 +1,8 @@
+---
+layout: post
+title: "EduPunk"
+date: 2009-03-15 12:22:26 -0500
+comments: true
+categories: ["rant", "Open Source", "Technology Integration", "Technology Education", "Special Education", "School Leadership", "K-12", "Education Technology", "Education Philosophy", "Education", "curriculum", "course management systems", "CMS", "Business Computer Programming", "BCP", "21st Century Skills"]
+---
+<object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>

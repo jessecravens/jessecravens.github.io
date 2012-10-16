@@ -1,0 +1,21 @@
+---
+layout: post
+title: "American Modern Vintage: Peacefield.info gets Redesigned"
+date: 2008-01-20 00:33:18 -0600
+comments: true
+categories: ["Web Application Launch", "Photoshop", "Open Source", "Music", "Design", "CMS"]
+---
+<img style="float: right; display: inline; margin: 10px" src="/images/pf2008.jpg" />
+<p>So I am calling it Generic American with a splash of Modern Vintage...I guess. I'm having one of those moments as a designer when the 'correct' images are present in my mind's eye, but for various reasons they haven't formulated on the canvas. Yet...but what the heck - I'm in no real hurry. I want to savor the taste of this one.</p>
+<p>I absolutely love working on <a href="http://peacefield.info">peacefield.info</a>. It is a designer's dream, absolute creative freedom. An opportunity to shine, explore, create and innovate.</p>
+<p>So what do I have to work with? Not much yet, and that is ok in some respects, because I don't want to ever steer away from my built in 'open source' aesthetic: championing the best of free fonts and hacked, and neo-Dadaist imagery. This new concoction hopes to blend cinematic urban cityscapes, with an adaptation of the ever trendy rustic earth tone color palette.(see my post on the the <a href="http://jessecravens.com/05122006/design/neo-green-aesthetic-tipping-point">Neo-Green Aesthetic</a>)</p>
+
+<p>Actually, keyboardist R. Bruce Phillips says it best:</p>
+<blockquote>
+<p>Peacefield isn't so "Pleasantville."  It's grittier, even darker maybe -- or at least it has that side.  Kind of like in the face of the ubiquitous B&W photo of the old man who lives on the street.  He is generic, he is vintage.  His face tells who knows what variety of stories?  Some lovely, and some horrific, to be sure.</p>
+
+<p>But there is peace still.  His old weather face still attracts us.</p>
+
+<p>Some may not see readily the quality of peace about this town.  They might think it a contradiction, or irony, that the gritty, mysterious town has such a "nice" name as "Peacefield."  Of course, America is full of contradiction and ironies, and people who don't get it when others do. </p>
+</blockquote>
+<a href="http://technorati.com/claim/mnint5zwu5" rel="me">Technorati Profile</a>

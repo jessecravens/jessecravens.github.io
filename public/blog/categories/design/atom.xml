@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Design | Jesse Cravens]]></title>
+  <link href="http://jessecravens.com/blog/categories/design/atom.xml" rel="self"/>
+  <link href="http://jessecravens.com/"/>
+  <updated>2012-10-15T20:59:53-05:00</updated>
+  <id>http://jessecravens.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[American Modern Vintage: Peacefield.info gets Redesigned]]></title>
+    <link href="http://jessecravens.com/blog/2008/01/20/american-modern-vintage-peacefield-info-gets-redesigned/"/>
+    <updated>2008-01-20T00:33:18-06:00</updated>
+    <id>http://jessecravens.com/blog/2008/01/20/american-modern-vintage-peacefield-info-gets-redesigned</id>
+    <content type="html"><![CDATA[<p><img style="float: right; display: inline; margin: 10px" src="http://jessecravens.com/images/pf2008.jpg" /></p>
+
+<p>So I am calling it Generic American with a splash of Modern Vintage...I guess. I'm having one of those moments as a designer when the 'correct' images are present in my mind's eye, but for various reasons they haven't formulated on the canvas. Yet...but what the heck - I'm in no real hurry. I want to savor the taste of this one.</p>
+
+
+<p>I absolutely love working on <a href="http://peacefield.info">peacefield.info</a>. It is a designer's dream, absolute creative freedom. An opportunity to shine, explore, create and innovate.</p>
+
+
+<p>So what do I have to work with? Not much yet, and that is ok in some respects, because I don't want to ever steer away from my built in 'open source' aesthetic: championing the best of free fonts and hacked, and neo-Dadaist imagery. This new concoction hopes to blend cinematic urban cityscapes, with an adaptation of the ever trendy rustic earth tone color palette.(see my post on the the <a href="http://jessecravens.com/05122006/design/neo-green-aesthetic-tipping-point">Neo-Green Aesthetic</a>)</p>
+
+
+
+
+<p>Actually, keyboardist R. Bruce Phillips says it best:</p>
+
+
+<blockquote>
+<p>Peacefield isn't so "Pleasantville."  It's grittier, even darker maybe -- or at least it has that side.  Kind of like in the face of the ubiquitous B&W photo of the old man who lives on the street.  He is generic, he is vintage.  His face tells who knows what variety of stories?  Some lovely, and some horrific, to be sure.</p>
+
+<p>But there is peace still.  His old weather face still attracts us.</p>
+
+<p>Some may not see readily the quality of peace about this town.  They might think it a contradiction, or irony, that the gritty, mysterious town has such a "nice" name as "Peacefield."  Of course, America is full of contradiction and ironies, and people who don't get it when others do. </p>
+</blockquote>
+
+
+<p><a href="http://technorati.com/claim/mnint5zwu5" rel="me">Technorati Profile</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sites updated with Google Maps]]></title>
+    <link href="http://jessecravens.com/blog/2006/10/09/sites-updated-with-google-maps/"/>
+    <updated>2006-10-09T09:38:20-05:00</updated>
+    <id>http://jessecravens.com/blog/2006/10/09/sites-updated-with-google-maps</id>
+    <content type="html"><![CDATA[<p><a href="http://sessionswest.com/location"><img src="http://jessecravens.com/images/sitethumbs/sessions_150.jpg" style="float:right; margin: 10px"></a>Both <a href="http://sessionswest.com">sessionswest.com</a> and <a href="http://bajioranch.com">bajioranch.com</a> received embedded google maps this weekend courtesy of the great <a href="http://drupal.org/node/33591drupal">drupal gmap module</a>. I'm looking forward to taking this module and getting really creative - the possibilities are endless. <br> <br><a href="http://bajioranch.com/location"><img src="http://jessecravens.com/images/sitethumbs/bajio_150.jpg" style="float:left; margin: 10px"></a>For community websites this module gets really exciting by allowing users that have lat,long information entered to be displayed on a single map so that you can see where in the world all of your users are coming from. The gmap.module also includes functionality to allow users to set their latitude and longitude on a gmap in an interactive fashion.<br> <br>I am speaking with some of my other clients about incorporating more complex maps such as a historical map of the Tuscarawas River Band's 'Full Circle' tour. For other band's this may be expressed in a 'Places we have played" Interactive Map. For non-profits, such as the findingmyvoice.org project - this could be beneficial in providing individuals with disabilites an interactive map of local colleges and universities Disability Services departments.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[One great CSS resource]]></title>
+    <link href="http://jessecravens.com/blog/2006/09/26/one-great-css-resource/"/>
+    <updated>2006-09-26T16:34:31-05:00</updated>
+    <id>http://jessecravens.com/blog/2006/09/26/one-great-css-resource</id>
+    <content type="html"><![CDATA[<p><a href="http://www.alistapart.com/articles/12lessonsCSSandstandards">A List Apart: Articles: 12 Lessons for Those Afraid of CSS and Standards</a><br /><br />A great resource for anyone interested in CSS. I tell you what, it makes me feel alot better about all of my struggles with what Ben refers to as whack-a-mole rendering bugs and stylesheet hacks.<br /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Business Computer Programming]]></title>
+    <link href="http://jessecravens.com/blog/2006/08/24/business-computer-programming/"/>
+    <updated>2006-08-24T22:13:30-05:00</updated>
+    <id>http://jessecravens.com/blog/2006/08/24/business-computer-programming</id>
+    <content type="html"><![CDATA[<p>My 9th grade Business Computer Programming class will be creating their own web page, as their first major project. Unlike most curriculums I have seen - the page will grow with them as they learn - and evolve into a fully functional html page w/ external css and javascript, and an embedded .swf that uses an xml playlist to play .mp3s.</p>
+
+
+<p> I&#39;m beginning with basic html so that they can learn from the ground up the ins and outs of an IDE, basic html structure, elements, tags, tag attributes, commenting, viewing source code. </p>
+
+
+<p>We will reamin simple with our code, but I feel it important to dig deep into the &#39;bigger picture&#39; aspects of writing html.  <br /> </p>
+
+
+<p>We will also use firefox developer tools to examine our products. </p>
+
+
+<p>  REMINDER TO CLASS<br /> <p>&#39;If you want to prepare yourself for the next generations of HTML, you should start using lowercase tags. The World Wide Web Consortium (W3C) recommends lowercase tags in their HTML 4 recommendation, and XHTML (the next generation HTML) demands lowercase tags.&#39;</p> We will touch on CSS and javascript. I&#39;ll use javascript to introduce methods, functions, properties, and parameters.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Web Development Cheat Sheets]]></title>
+    <link href="http://jessecravens.com/blog/2006/05/23/web-development-cheat-sheets/"/>
+    <updated>2006-05-23T15:00:22-05:00</updated>
+    <id>http://jessecravens.com/blog/2006/05/23/web-development-cheat-sheets</id>
+    <content type="html"><![CDATA[<p>Dave Child has posted a number of Web development related <a href="http://www.ilovejackdaniels.com/cheat-sheets/">cheat sheets</a> in .pdf and .png format on his blog. These include CSS, xHTML, JavaScript, Ruby on Rails, PHP, and MySQL.</p>
+
+<p>Thanks Dave!</p>
+]]></content>
+  </entry>
+  
+</feed>

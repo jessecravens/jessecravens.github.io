@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Hacks | Jesse Cravens]]></title>
+  <link href="http://jessecravens.com/blog/categories/hacks/atom.xml" rel="self"/>
+  <link href="http://jessecravens.com/"/>
+  <updated>2012-10-15T20:59:53-05:00</updated>
+  <id>http://jessecravens.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript Modules]]></title>
+    <link href="http://jessecravens.com/blog/2012/06/17/javascript-modules/"/>
+    <updated>2012-06-17T16:23:21-05:00</updated>
+    <id>http://jessecravens.com/blog/2012/06/17/javascript-modules</id>
+    <content type="html"><![CDATA[<p>For a talk last March at USAA's internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
+
+
+<p><a href="http://jessecravens.github.com/js-modules-demo/"><img class="imgL" width="500px" src="http://jessecravens.com/images/blogposts/js-modules.png"></a></p>
+
+<p>This demonstrates the following Module Definitions:</p>
+
+
+
+
+<ul>
+<li>AMD</li>
+<li>CommonJS</li>
+<li>YUI3</li>
+<li>JS Harmony</li>
+</ul>
+
+
+
+
+<p>And a few script loaders:</p>
+
+
+
+
+<ul>
+<li>RequireJS</li>
+<li>yepnope</li>
+<li>YUI3 - YUI Loader</li>
+</ul>
+
+
+
+
+<p>If you want to know more about the state of modules, dependency loading and management in the JavaScript world, there is always room for more contributors, just fork or clone the project ... and you will have a playground to begin playing with some of the most popular implementations.</p>
+
+
+<p>To learn more, check it out here: <a href="http://jessecravens.github.com/js-modules-demo/">jessecravens.github.com/js-modules-demo</a></p>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[YUI3 Rails Application Template]]></title>
+    <link href="http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template/"/>
+    <updated>2011-01-30T01:02:15-06:00</updated>
+    <id>http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template</id>
+    <content type="html"><![CDATA[<div class="">
+<p>I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.</p> 
+
+<p>The template takes care of removing the Prototype library, including yui-debug.js and the CSS framework including reset, and the new <a href="http://developer.yahoo.com/yui/3/cssgrids/">Grids</a> - currently in beta. I also wanted to deliver my basic markup quickly so I've added <a href="http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#html_elements">Haml</a></p>
+
+<p>Since I have been disciplining myself to follow Test Driven Development on the server, I included all of my Rails testing dependencies in the app template as well (RSpec, Cucumber, WebRat, Factory Girl) and I plan to continue to leverage <a href="http://developer.yahoo.com/yui/3/test/">YUI Test</a> on the client as I run through browser validations of the <a href="http://developer.yahoo.com/yui/3/examples/datasource/datasource_polling.html">datasource-polling sub-module</a>. Clone the rails app template <a href="https://github.com/jessecravens/yui3-rails-template">here</a>.</p>
+
+{syntaxhighlighter brush: ruby}
+# YUI3 Application Generator Template
+# Generates a Rails app; includes YUI3, Haml, RSpec, Cucumber, WebRat, Factory Girl ...
+
+puts "Generating a new YUI3 Rails app"
+
+#----------------------------------------------------------------------------
+# Create the database
+#----------------------------------------------------------------------------
+puts "creating the database..."
+run 'rake db:create:all'
+
+#----------------------------------------------------------------------------
+# GIT
+#----------------------------------------------------------------------------
+puts "setting up 'git'"
+
+append_file '.gitignore' do <<-FILE
+'.DS_Store'
+'.rvmrc'
+FILE
+end
+git :init
+git :add => '.'
+git :commit => "-m 'Initial Commit of YUI3 Rails App'"
+
+#----------------------------------------------------------------------------
+# Remove files
+#----------------------------------------------------------------------------
+puts "removing files..."
+run 'rm public/index.html'
+run 'rm public/favicon.ico'
+run 'rm public/images/rails.png'
+run 'rm README'
+run 'touch README'
+
+puts "banning spiders from your site by changing robots.txt..."
+gsub_file 'public/robots.txt', /# User-Agent/, 'User-Agent'
+gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
+
+#----------------------------------------------------------------------------
+# Haml 
+#----------------------------------------------------------------------------
+  puts "setting up Gemfile for Haml..."
+  append_file 'Gemfile', "\n# Bundle gems needed for Haml\n"
+  gem 'haml', '3.0.18'
+  gem 'haml-rails', '0.2', :group => :development
+
+#----------------------------------------------------------------------------
+# Set up YUI3
+#----------------------------------------------------------------------------
+
+puts "replacing Prototype with YUI3"
+run 'rm public/javascripts/controls.js'
+run 'rm public/javascripts/dragdrop.js'
+run 'rm public/javascripts/effects.js'
+run 'rm public/javascripts/prototype.js'
+run 'rm public/javascripts/rails.js'
+
+get "http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-debug.js",  "public/javascripts/yui-debug.js"
+get "http://yui.yahooapis.com/3.3.0/build/cssreset/reset.css",  "public/stylesheets/reset.css"
+get "http://yui.yahooapis.com/3.3.0/build/cssbase/base.css",  "public/stylesheets/base.css"
+get "http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts.css",  "public/stylesheets/fonts.css"
+get "http://yui.yahooapis.com/3.3.0/build/cssgrids/grids.css",  "public/stylesheets/grids.css"
+
+#----------------------------------------------------------------------------
+# Create an index page
+#----------------------------------------------------------------------------
+puts "create a home controller and view"
+generate(:controller, "home index")
+gsub_file 'config/routes.rb', /get \"home\/index\"/, 'root :to => "home#index"'
+append_file 'app/views/home/index.html.haml'do <<-FILE
+!!!
+%h2{:class => "subtitle"} Get Started
+%p{:class => "content"} Update application.js with your logic
+%div{:class => "container", :id => "container"}
+%div{:id => "testLogger"}
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Generate Application Layout
+#----------------------------------------------------------------------------
+
+run 'rm app/views/layouts/application.html.erb'
+  create_file 'app/views/layouts/application.html.haml' do <<-FILE
+!!!
+%html
+  %head
+    %title YUI3 App
+    = stylesheet_link_tag "reset"
+    = stylesheet_link_tag "base"
+    = stylesheet_link_tag "fonts"
+    = stylesheet_link_tag "grids"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag :all
+    = csrf_meta_tag
+  %body{:class =>"yui3-skin-sam  yui-skin-sam"}
+    = yield
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Add Stylesheets
+#----------------------------------------------------------------------------
+create_file 'public/stylesheets/application.css' do <<-FILE
+div.container {
+  width: 100%;
+  height: 100px; 
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid red;
+}
+
+#testLogger {
+    margin-bottom: 1em;
+}
+
+#testLogger .yui3-console .yui3-console-title {
+    border: 0 none;
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: none;
+}
+#testLogger .yui3-console .yui3-console-entry-meta {
+    margin: 0;
+}
+
+.yui3-skin-sam .yui3-console-entry-pass .yui3-console-entry-cat {
+    background: #070;
+    color: #fff;
+}
+
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Initialize YUI and add YUI Test
+#----------------------------------------------------------------------------
+append_file 'public/javascripts/application.js' do <<-FILE
+  
+  YUI({ filter: 'raw' }).use("node", "console", "test",function (Y) {
+
+      Y.namespace("example.test");
+
+      Y.example.test.DataTestCase = new Y.Test.Case({
+
+          //name of the test case - if not provided, one is auto-generated
+          name : "Data Tests",
+
+          //---------------------------------------------------------------------
+          // setUp and tearDown methods - optional
+          //---------------------------------------------------------------------
+
+          /*
+           * Sets up data that is needed by each test.
+           */
+          setUp : function () {
+              this.data = {
+                  name: "test",
+                  year: 2007,
+                  beta: true
+              };
+          },
+
+          /*
+           * Cleans up everything that was created by setUp().
+           */
+          tearDown : function () {
+              delete this.data;
+          },
+
+          //---------------------------------------------------------------------
+          // Test methods - names must begin with "test"
+          //---------------------------------------------------------------------
+
+          testName : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isString(this.data.name);
+              Assert.areEqual("test", this.data.name);            
+          },
+
+          testYear : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isNumber(this.data.year);
+              Assert.areEqual(2007, this.data.year);            
+          },
+
+          testBeta : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isBoolean(this.data.beta);
+              Assert.isTrue(this.data.beta);
+          }
+
+      });
+
+      Y.example.test.ArrayTestCase = new Y.Test.Case({
+
+          //name of the test case - if not provided, one is auto-generated
+          name : "Array Tests",
+
+          //---------------------------------------------------------------------
+          // setUp and tearDown methods - optional
+          //---------------------------------------------------------------------
+
+          /*
+           * Sets up data that is needed by each test.
+           */
+          setUp : function () {
+              this.data = [0,1,2,3,4]
+          },
+
+          /*
+           * Cleans up everything that was created by setUp().
+           */
+          tearDown : function () {
+              delete this.data;
+          },
+
+          //---------------------------------------------------------------------
+          // Test methods - names must begin with "test"
+          //---------------------------------------------------------------------
+
+          testPop : function () {
+              var Assert = Y.Assert;
+
+              var value = this.data.pop();
+
+              Assert.areEqual(4, this.data.length);
+              Assert.areEqual(4, value);            
+          },        
+
+          testPush : function () {
+              var Assert = Y.Assert;
+
+              this.data.push(5);
+
+              Assert.areEqual(6, this.data.length);
+              Assert.areEqual(5, this.data[5]);            
+          },
+
+          testSplice : function () {
+              var Assert = Y.Assert;
+
+              this.data.splice(2, 1, 6, 7);
+
+              Assert.areEqual(6, this.data.length);
+              Assert.areEqual(6, this.data[2]);           
+              Assert.areEqual(7, this.data[3]);           
+          }
+
+      });    
+
+      Y.example.test.ExampleSuite = new Y.Test.Suite("Example Suite");
+      Y.example.test.ExampleSuite.add(Y.example.test.DataTestCase);
+      Y.example.test.ExampleSuite.add(Y.example.test.ArrayTestCase);
+
+      //create the console
+      var r = new Y.Console({
+          newestOnTop : false,
+          style: 'block' // to anchor in the example content
+      });
+
+      r.render('#testLogger');
+
+      Y.Test.Runner.add(Y.example.test.ExampleSuite);
+
+      //run the tests
+      Y.Test.Runner.run();
+
+  });
+
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Setup RSpec & Cucumber
+#----------------------------------------------------------------------------
+puts 'Setting up RSpec, Cucumber, webrat, factory_girl, faker'
+append_file 'Gemfile' do <<-FILE
+group :development, :test do
+  gem "rspec-rails", ">= 2.0.1"
+  gem "cucumber-rails", ">= 0.3.2"
+  gem "webrat", ">= 0.7.2.beta.2"
+  gem "factory_girl_rails"
+  gem "faker"
+end
+FILE
+end
+
+run 'bundle install'
+run 'script/rails generate rspec:install'
+run 'script/rails generate cucumber:install'
+run 'rake db:migrate'
+run 'rake db:test:prepare'
+
+run 'touch spec/factories.rb'
+#----------------------------------------------------------------------------
+# Finish up
+#----------------------------------------------------------------------------
+puts "Commiting to Git repository..."
+git :add => '.'
+git :commit => "-am 'Setup Complete'"
+
+puts "DONE - setting up your YUI3 Rails App."
+
+
+{/syntaxhighlighter}
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Researching the Latest in HTPC (Home Theater PC)]]></title>
+    <link href="http://jessecravens.com/blog/2010/01/30/researching-the-latest-in-htpc-home-theater-pc/"/>
+    <updated>2010-01-30T19:30:56-06:00</updated>
+    <id>http://jessecravens.com/blog/2010/01/30/researching-the-latest-in-htpc-home-theater-pc</id>
+    <content type="html"><![CDATA[<p>Fed up with paying for lame content, we recently turned off our cable and turned in our DVR.<br />Since then, I have been doing my research and preparing to build or purchase a system that leverages our broadband connection and Local HD Channels for content.<br /><br />Here is my growing list of resources: <br /><b><br />General Information</b><br /><ul><li><a href="http://en.wikipedia.org/wiki/Home_theater_PC">Home theater PC - Wikipedia, the free encyclopedia</a></li></ul><br /><b>Articles</b><br /><ul><li><a href="http://gizmodo.com/5366161/life-without-cable-or-satellite-tv-is-easier-than-you-think">Life Without Cable or Satellite TV Is Easier Than You Think - Htpc - Gizmodo</a></li><li><a href="http://gizmodo.com/5420853/why-its-finally-time-to-get-a-home-theater-pc">Why It's Finally Time To Get a Home Theater PC - Htpc - Gizmodo</a></li><li><a href="http://www.extremetech.com/article2/0,2845,2349560,00.asp">Mini-Roundup: The Best New HTPC Cases - Chieftec HM-02 - CPUs, Boards &amp; Components by ExtremeTech</a></li><li><a href="http://www.engadget.com/2009/11/12/dells-inspiron-zino-hd-on-sale-now-in-america-starts-at-229/">Dell's Inspiron Zino HD on sale now in America: starts at $229, doubles as an HTPC -- Engadget</a></li><li><a href="http://www.engadget.com/2009/07/21/how-to-build-a-blu-ray-tv-tuner-equipped-htpc-for-under-1-00/">How-to: Build a Blu-ray / TV tuner-equipped HTPC for under $1,000 -- Engadget</a></li><li><a href="http://sewelldirect.com/articles/vga-to-hdmi.aspx">Convert VGA to HDMI with Audio (HDMI to VGA)</a></li></ul>      <br /><b>Videos</b><br /><ul><li><a href="http://www.howcast.com/videos/185705-How-To-Connect-Your-Laptop-To-Your-Television">How To Connect Your Laptop To Your Television Video | Laptop Computers Videos | Howcast.com</a></li><li><a href="http://www.youtube.com/watch?v=5c9-LLY33Gw">YouTube - CES 2010 - Core i5 is the new HTPC powerhouse</a></li></ul><br /><b>Channels</b><br /><ul><li><a href="http://www.hulu.com/">Hulu - Watch your favorites. Anytime. For free.</a></li><li><a href="http://www.fancast.com/">Fancast | Watch Full TV Shows and Movies | Free Online Streaming</a></li><li><a href="http://www.joost.com/epg/us/shows/">Shows - Featured - United States - Joost</a></li><li><a href="http://www.clicker.com/">Clicker - What's On Online</a></li></ul>   <br /><b>On Demand Content</b><br /><ul><li><a href="http://www.amazon.com/Video-On-Demand/b/ref=topnav_storetab_atv?ie=UTF8&amp;node=16261631">Amazon.com Video On Demand: TV shows, movies, international videos and more, ready to download</a></li></ul> <br /><b>Players </b><br /><ul><li><a href="http://www.roku.com/">Roku Digital Video Player | Watch Netflix, Amazon Video On Demand and MLB.TV on Roku Player</a></li><li><a href="http://www.vudu.com/noscript.html">VUDU - Turn Javscript On Please</a></li></ul> <b><br />Hardware - All In One</b><br /><ul><li><a href="http://usa.asus.com/product.aspx?P_ID=wH1q2VTqyLXaCw1f">ASUSTeK Computer Inc. EeeBox PC EB1012</a></li><li><a href="http://www.dell.com/us/en/corp/desktops/inspiron-zino-hd/pd.aspx?refid=inspiron-zino-hd&amp;s=corp">Inspiron Zino HD Desktop | Dell</a></li><li><a href="http://mvixusa.com/product/ultiopro">Mvix UltioPro (MX-880HD) HD Media Center with PVR</a></li><li><a href="http://www.bodhiboxes.com/index.php?option=com_content&amp;view=article&amp;id=10&amp;Itemid=17">BodhiBoxes - Home Theater Personal Computer - Configure</a></li></ul>    <br /><b>Hardware - Parts</b><br /><ul><li><a href="http://www.google.com/products?q=nmediapc+htpc+2000b&amp;hl=en&amp;output=nojs">nmediapc htpc 2000b - Google Product Search</a></li><li><a href="http://www.google.com/products?q=intel+core+2+quad+q8400&amp;hl=en&amp;output=nojs">intel core 2 quad q8400 - Google Product Search</a></li><li><a href="http://www.google.com/products?q=lg+CH08LS10&amp;hl=en&amp;output=nojs">lg CH08LS10 - Google Product Search</a></li></ul>  <br /><b>Software and OS</b><br /><ul><li><a href="http://www.boxee.tv/">Boxee</a></li><li><a href="http://www.elementmypc.com/main/">Element OS: Linux on your HTPC</a></li><li><a href="http://www.mythbuntu.org/about">About Mythbuntu | Mythbuntu</a></li><li><a href="http://www.linuxmce.org/">Welcome to LinuxMCE</a></li><li><a href="http://knoppmyth.net/knoppmyth.html">KnoppMyth</a></li><li><a href="http://geexbox.org/en/index.html">GeeXboX HomePage</a></li></ul>     <br /><b>Network Storage</b><br /><ul><li><a href="http://www.shopping.hp.com/product/computer/categories/home_servers/1/accessories/FL702AA%2523ABA;HHOJSID=dVn4LdMJq4ls00VSvQvFH4bRJR9T82wLy4nVJLn25KB81KF1Pvpz%21181851530">HP® Official Store — Buy the HP MediaSmart Server LX195 direct from HP</a></li></ul> <br /><b>Recorders</b><br /><ul><li><a href="http://www.hauppauge.com/index.htm">Hauppauge Computer Works</a></li><li><a href="http://mvixusa.com/product/ultiopro">Mvix UltioPro (MX-880HD) HD Media Center with PVR</a></li></ul>  <br /><b>Antennas</b><br /><ul><li><a target="HDTV Indoor / Outdoor Antenna" title="HDTV Indoor / Outdoor Antenna" href="http://www.monoprice.com/products/product.asp?c_id=109&amp;cp_id=10901&amp;cs_id=1090102&amp;p_id=4730&amp;seq=1&amp;format=4#feedback">HDMI Cable, Home Theater Accessories, HDMI Products, Cables, Adapters, Video/Audio Switch, Networking, USB, Firewire, Printer Toner, and more!</a></li></ul> <br /><b>Remotes</b><br /><ul><li><a href="http://gizmodo.com/5435219/lenovos-multimedia-remote-with-keyboard">Lenovo's Multimedia Remote with Keyboard - trackpad - Gizmodo</a></li><li><a href="http://www.gmote.org/">Gmote &gt; Android Remote</a></li><li><a href="http://www.logitech.com/index.cfm/keyboards/keyboard/devices/3848&amp;cl=us,en">diNovo Mini™</a></li><li><a href="http://www.google.com/products?q=HTPCKB&amp;hl=en">HTPCKB - Google Product Search</a></li></ul>   <br /><b>Cables/Converters</b><br /><ul><li><a href="http://www.monoprice.com/products/search.asp?keyword=vga+to+hdmi&amp;x=24&amp;y=15">HDMI Cable, Home Theater Accessories, HDMI Products, Cables, Adapters, Video/Audio Switch, Networking, USB, Firewire, Printer Toner, and more!</a></li><li><a href="http://sewelldirect.com/ATLONA-VGA-TO-HDMI-CONVERTERSCALER.asp">ATLONA VGA TO HDMI CONVERTER/SCALER - AT-HD500, $197.10</a></li></ul>  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />  <br /><br /><div class="zemanta-pixie"><img class="zemanta-pixie-img" alt="" src="http://img.zemanta.com/pixy.gif?x-id=37492be8-1a37-87f8-8f30-353c32d3f0b9" /></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wooden Computing]]></title>
+    <link href="http://jessecravens.com/blog/2006/05/04/wooden-computing/"/>
+    <updated>2006-05-04T19:28:11-05:00</updated>
+    <id>http://jessecravens.com/blog/2006/05/04/wooden-computing</id>
+    <content type="html"><![CDATA[<p>As I was saying...we need more natural representations in our modern designs. Ok, as usual, I may have taken it too far. Nevertheless, I thought this post at ecoGeek was pretty cool: <a href="http://www.ecogeek.org/content/view/62/1/">http://www.ecogeek.org/content/view/62/1/</a><br/>
+<img src="http://www.ecogeek.org/images/stories/woodcomp1.jpg" alt="wooden computing" style="float: right; margin: 10px"/></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Google | Jesse Cravens]]></title>
+  <link href="http://jessecravens.com/blog/categories/google/atom.xml" rel="self"/>
+  <link href="http://jessecravens.com/"/>
+  <updated>2012-10-15T20:59:53-05:00</updated>
+  <id>http://jessecravens.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Great Educator's Resource]]></title>
+    <link href="http://jessecravens.com/blog/2006/11/01/great-educators-resource/"/>
+    <updated>2006-11-01T19:20:49-06:00</updated>
+    <id>http://jessecravens.com/blog/2006/11/01/great-educators-resource</id>
+    <content type="html"><![CDATA[<p>I've been promoting 'using google the right way' - This is a great resource to add to it. <br />Beyond Google - Great research resources for education.<br /><a href="http://oedb.org/library/college-basics/research-beyond-google#art">Research Beyond Google: 119 Authoritative, Invisible, and Comprehensive Resources | OEDb</a></p>
+]]></content>
+  </entry>
+  
+</feed>

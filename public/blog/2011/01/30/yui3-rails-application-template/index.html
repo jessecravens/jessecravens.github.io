@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>YUI3 Rails Application Template - Jesse Cravens</title>
+  <meta name="author" content="Jesse Cravens">
+
+  
+  <meta name="description" content="I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out YUI3 functionality quickly. Rails 3 makes it &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Jesse Cravens" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic
+" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allerta+Stencil' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Griffy' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-803126-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jesse Cravens</a></h1>
+  
+    <h2>u·biq·ui·tous javascript and html5</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jessecravens.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/resume">Resume</a></li>
+<!--   <li><a href="/portfolio">Portfolio</a></li>
+  <li><a href="/music">Music</a></li> -->
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">YUI3 Rails Application Template</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-30T01:02:15-06:00" pubdate data-updated="true">Jan 30<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class="">
+<p>I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.</p> 
+
+<p>The template takes care of removing the Prototype library, including yui-debug.js and the CSS framework including reset, and the new <a href="http://developer.yahoo.com/yui/3/cssgrids/">Grids</a> - currently in beta. I also wanted to deliver my basic markup quickly so I&#8217;ve added <a href="http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#html_elements">Haml</a></p>
+
+<p>Since I have been disciplining myself to follow Test Driven Development on the server, I included all of my Rails testing dependencies in the app template as well (RSpec, Cucumber, WebRat, Factory Girl) and I plan to continue to leverage <a href="http://developer.yahoo.com/yui/3/test/">YUI Test</a> on the client as I run through browser validations of the <a href="http://developer.yahoo.com/yui/3/examples/datasource/datasource_polling.html">datasource-polling sub-module</a>. Clone the rails app template <a href="https://github.com/jessecravens/yui3-rails-template">here</a>.</p>
+
+{syntaxhighlighter brush: ruby}
+# YUI3 Application Generator Template
+# Generates a Rails app; includes YUI3, Haml, RSpec, Cucumber, WebRat, Factory Girl &#8230;
+
+puts &#8220;Generating a new YUI3 Rails app&#8221;
+
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Create the database
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+puts &#8220;creating the database&#8230;&#8221;
+run &#8216;rake db:create:all&#8217;
+
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# GIT
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+puts &#8220;setting up &#8216;git&#8217;&#8221;
+
+append_file &#8216;.gitignore&#8217; do <<-FILE
+'.DS_Store'
+'.rvmrc'
+FILE
+end
+git :init
+git :add => &#8216;.&#8217;
+git :commit => &#8220;-m &#8216;Initial Commit of YUI3 Rails App&#8217;&#8221;
+
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Remove files
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+puts &#8220;removing files&#8230;&#8221;
+run &#8216;rm public/index.html&#8217;
+run &#8216;rm public/favicon.ico&#8217;
+run &#8216;rm public/images/rails.png&#8217;
+run &#8216;rm README&#8217;
+run &#8216;touch README&#8217;
+
+puts &#8220;banning spiders from your site by changing robots.txt&#8230;&#8221;
+gsub_file &#8216;public/robots.txt&#8217;, /# User-Agent/, &#8216;User-Agent&#8217;
+gsub_file &#8216;public/robots.txt&#8217;, /# Disallow/, &#8216;Disallow&#8217;
+
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Haml 
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+  puts &#8220;setting up Gemfile for Haml&#8230;&#8221;
+  append_file &#8216;Gemfile&#8217;, &#8220;\n# Bundle gems needed for Haml\n&#8221;
+  gem &#8216;haml&#8217;, &#8216;3.0.18&#8217;
+  gem &#8216;haml-rails&#8217;, &#8216;0.2&#8217;, :group => :development
+
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Set up YUI3
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+
+puts &#8220;replacing Prototype with YUI3&#8221;
+run &#8216;rm public/javascripts/controls.js&#8217;
+run &#8216;rm public/javascripts/dragdrop.js&#8217;
+run &#8216;rm public/javascripts/effects.js&#8217;
+run &#8216;rm public/javascripts/prototype.js&#8217;
+run &#8216;rm public/javascripts/rails.js&#8217;
+
+get &#8220;http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-debug.js&#8221;,  &#8220;public/javascripts/yui-debug.js&#8221;
+get &#8220;http://yui.yahooapis.com/3.3.0/build/cssreset/reset.css&#8221;,  &#8220;public/stylesheets/reset.css&#8221;
+get &#8220;http://yui.yahooapis.com/3.3.0/build/cssbase/base.css&#8221;,  &#8220;public/stylesheets/base.css&#8221;
+get &#8220;http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts.css&#8221;,  &#8220;public/stylesheets/fonts.css&#8221;
+get &#8220;http://yui.yahooapis.com/3.3.0/build/cssgrids/grids.css&#8221;,  &#8220;public/stylesheets/grids.css&#8221;
+
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Create an index page
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+puts &#8220;create a home controller and view&#8221;
+generate(:controller, &#8220;home index&#8221;)
+gsub_file &#8216;config/routes.rb&#8217;, /get &#34;home\/index&#34;/, &#8216;root :to => &#8220;home#index&#8221;&#8217;
+append_file &#8216;app/views/home/index.html.haml&#8217;do <<-FILE
+!!!
+%h2{:class => &#8220;subtitle&#8221;} Get Started
+%p{:class => &#8220;content&#8221;} Update application.js with your logic
+%div{:class => &#8220;container&#8221;, :id => &#8220;container&#8221;}
+%div{:id => &#8220;testLogger&#8221;}
+FILE
+end
+
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Generate Application Layout
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+
+run &#8216;rm app/views/layouts/application.html.erb&#8217;
+  create_file &#8216;app/views/layouts/application.html.haml&#8217; do <<-FILE
+!!!
+%html
+  %head
+    %title YUI3 App
+    = stylesheet_link_tag "reset"
+    = stylesheet_link_tag "base"
+    = stylesheet_link_tag "fonts"
+    = stylesheet_link_tag "grids"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag :all
+    = csrf_meta_tag
+  %body{:class =>&#8220;yui3-skin-sam  yui-skin-sam&#8221;}
+    = yield
+FILE
+end
+
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Add Stylesheets
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+create_file &#8216;public/stylesheets/application.css&#8217; do <<-FILE
+div.container {
+  width: 100%;
+  height: 100px; 
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid red;
+}
+
+#testLogger {
+    margin-bottom: 1em;
+}
+
+#testLogger .yui3-console .yui3-console-title {
+    border: 0 none;
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: none;
+}
+#testLogger .yui3-console .yui3-console-entry-meta {
+    margin: 0;
+}
+
+.yui3-skin-sam .yui3-console-entry-pass .yui3-console-entry-cat {
+    background: #070;
+    color: #fff;
+}
+
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Initialize YUI and add YUI Test
+#----------------------------------------------------------------------------
+append_file 'public/javascripts/application.js' do <<-FILE
+  
+  YUI({ filter: 'raw' }).use("node", "console", "test",function (Y) {
+
+      Y.namespace("example.test");
+
+      Y.example.test.DataTestCase = new Y.Test.Case({
+
+          //name of the test case - if not provided, one is auto-generated
+          name : "Data Tests",
+
+          //---------------------------------------------------------------------
+          // setUp and tearDown methods - optional
+          //---------------------------------------------------------------------
+
+          /*
+           * Sets up data that is needed by each test.
+           */
+          setUp : function () {
+              this.data = {
+                  name: "test",
+                  year: 2007,
+                  beta: true
+              };
+          },
+
+          /*
+           * Cleans up everything that was created by setUp().
+           */
+          tearDown : function () {
+              delete this.data;
+          },
+
+          //---------------------------------------------------------------------
+          // Test methods - names must begin with "test"
+          //---------------------------------------------------------------------
+
+          testName : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isString(this.data.name);
+              Assert.areEqual("test", this.data.name);            
+          },
+
+          testYear : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isNumber(this.data.year);
+              Assert.areEqual(2007, this.data.year);            
+          },
+
+          testBeta : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isBoolean(this.data.beta);
+              Assert.isTrue(this.data.beta);
+          }
+
+      });
+
+      Y.example.test.ArrayTestCase = new Y.Test.Case({
+
+          //name of the test case - if not provided, one is auto-generated
+          name : "Array Tests",
+
+          //---------------------------------------------------------------------
+          // setUp and tearDown methods - optional
+          //---------------------------------------------------------------------
+
+          /*
+           * Sets up data that is needed by each test.
+           */
+          setUp : function () {
+              this.data = [0,1,2,3,4]
+          },
+
+          /*
+           * Cleans up everything that was created by setUp().
+           */
+          tearDown : function () {
+              delete this.data;
+          },
+
+          //---------------------------------------------------------------------
+          // Test methods - names must begin with "test"
+          //---------------------------------------------------------------------
+
+          testPop : function () {
+              var Assert = Y.Assert;
+
+              var value = this.data.pop();
+
+              Assert.areEqual(4, this.data.length);
+              Assert.areEqual(4, value);            
+          },        
+
+          testPush : function () {
+              var Assert = Y.Assert;
+
+              this.data.push(5);
+
+              Assert.areEqual(6, this.data.length);
+              Assert.areEqual(5, this.data[5]);            
+          },
+
+          testSplice : function () {
+              var Assert = Y.Assert;
+
+              this.data.splice(2, 1, 6, 7);
+
+              Assert.areEqual(6, this.data.length);
+              Assert.areEqual(6, this.data[2]);           
+              Assert.areEqual(7, this.data[3]);           
+          }
+
+      });    
+
+      Y.example.test.ExampleSuite = new Y.Test.Suite("Example Suite");
+      Y.example.test.ExampleSuite.add(Y.example.test.DataTestCase);
+      Y.example.test.ExampleSuite.add(Y.example.test.ArrayTestCase);
+
+      //create the console
+      var r = new Y.Console({
+          newestOnTop : false,
+          style: 'block' // to anchor in the example content
+      });
+
+      r.render('#testLogger');
+
+      Y.Test.Runner.add(Y.example.test.ExampleSuite);
+
+      //run the tests
+      Y.Test.Runner.run();
+
+  });
+
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Setup RSpec & Cucumber
+#----------------------------------------------------------------------------
+puts 'Setting up RSpec, Cucumber, webrat, factory_girl, faker'
+append_file 'Gemfile' do <<-FILE
+group :development, :test do
+  gem "rspec-rails", ">= 2.0.1&#8221;
+  gem &#8220;cucumber-rails&#8221;, &#8220;>= 0.3.2&#8221;
+  gem &#8220;webrat&#8221;, &#8220;>= 0.7.2.beta.2&#8221;
+  gem &#8220;factory_girl_rails&#8221;
+  gem &#8220;faker&#8221;
+end
+FILE
+end
+
+run &#8216;bundle install&#8217;
+run &#8216;script/rails generate rspec:install&#8217;
+run &#8216;script/rails generate cucumber:install&#8217;
+run &#8216;rake db:migrate&#8217;
+run &#8216;rake db:test:prepare&#8217;
+
+run &#8216;touch spec/factories.rb&#8217;
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Finish up
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+puts &#8220;Commiting to Git repository&#8230;&#8221;
+git :add => &#8216;.&#8217;
+git :commit => &#8220;-am &#8216;Setup Complete&#8217;&#8221;
+
+puts &#8220;DONE - setting up your YUI3 Rails App.&#8221;
+
+
+{/syntaxhighlighter}
+</div>
+
+
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jesse Cravens</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-30T01:02:15-06:00" pubdate data-updated="true">Jan 30<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/hacks/'>Hacks</a>, <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/programming/'>Programming</a>, <a class='category' href='/blog/categories/ruby-on-rails/'>Ruby on Rails</a>, <a class='category' href='/blog/categories/semantic-html/'>Semantic HTML</a>, <a class='category' href='/blog/categories/yui/'>YUI</a>, <a class='category' href='/blog/categories/code/'>code</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template/" data-via="jdcravens" data-counturl="http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/10/18/el-nino-french-fries-chippendale-with-swayze-but-do-you-remember-this-one-chris-farley-as-christian-laettner/" title="Previous Post: El Nino, French Fries, Chippendale with Swayze, but do you remember this one? Chris Farley as Christian Laettner">&laquo; El Nino, French Fries, Chippendale with Swayze, but do you remember this one? Chris Farley as Christian Laettner</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/06/08/creation-of-iboerne-com/" title="Next Post: Creation of iBoerne.com">Creation of iBoerne.com &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/104030737657254860138?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section>
+<a href="http://shop.oreilly.com/product/0636920026273.do?sortby=bestSellers"><img src="/images/book.jpeg" /></a>
+  <b>Purchase O'Reilly Media's HTML5 Hacks</b>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs/">Upcoming Talk at Devcon5-Austin: Rapid Prototyping HTML5 Applications with NodeJS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit/">Just moved HTML5 Hacks into Copy/Edit</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/23/migration-from-drupal-to-octopress/">Migration from Drupal to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/17/javascript-modules/">JavaScript Modules</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/22/robodeck/">Robodeck</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jessecravens">@jessecravens</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jessecravens',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jdcravens", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jdcravens" class="twitter-follow-button" data-show-count="false">Follow @jdcravens</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/cravens?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/cravens">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Jesse Cravens -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jessecravens';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template/';
+        var disqus_url = 'http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

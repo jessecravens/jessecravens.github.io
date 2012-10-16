@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: JavaScript | Jesse Cravens]]></title>
+  <link href="http://jessecravens.com/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://jessecravens.com/"/>
+  <updated>2012-10-15T20:59:53-05:00</updated>
+  <id>http://jessecravens.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript Modules]]></title>
+    <link href="http://jessecravens.com/blog/2012/06/17/javascript-modules/"/>
+    <updated>2012-06-17T16:23:21-05:00</updated>
+    <id>http://jessecravens.com/blog/2012/06/17/javascript-modules</id>
+    <content type="html"><![CDATA[<p>For a talk last March at USAA's internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
+
+
+<p><a href="http://jessecravens.github.com/js-modules-demo/"><img class="imgL" width="500px" src="http://jessecravens.com/images/blogposts/js-modules.png"></a></p>
+
+<p>This demonstrates the following Module Definitions:</p>
+
+
+
+
+<ul>
+<li>AMD</li>
+<li>CommonJS</li>
+<li>YUI3</li>
+<li>JS Harmony</li>
+</ul>
+
+
+
+
+<p>And a few script loaders:</p>
+
+
+
+
+<ul>
+<li>RequireJS</li>
+<li>yepnope</li>
+<li>YUI3 - YUI Loader</li>
+</ul>
+
+
+
+
+<p>If you want to know more about the state of modules, dependency loading and management in the JavaScript world, there is always room for more contributors, just fork or clone the project ... and you will have a playground to begin playing with some of the most popular implementations.</p>
+
+
+<p>To learn more, check it out here: <a href="http://jessecravens.github.com/js-modules-demo/">jessecravens.github.com/js-modules-demo</a></p>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Robodeck]]></title>
+    <link href="http://jessecravens.com/blog/2012/05/22/robodeck/"/>
+    <updated>2012-05-22T10:01:42-05:00</updated>
+    <id>http://jessecravens.com/blog/2012/05/22/robodeck</id>
+    <content type="html"><![CDATA[<p>Awhile back, I built a websocket powered interactive presentation framework called <a href="https://github.com/jessecravens/robodeck">Robodeck</a>.</p>
+
+
+<p>The solution uses the following technologies:</p>
+
+
+
+
+<ul>
+<li>Node.js</li>
+<li>Socket.io</li>
+<li>WebSockets</li>
+<li>GeoLocatin APIs</li>
+<li>Deck.js</li>
+</ul>
+
+
+
+
+<p>To name a few.</p>
+
+
+<p>To learn more, check it out here: <a href="http://jessecravens.github.com/robodeck">http://jessecravens.github.com/robodeck</a></p>
+
+
+<p><a href="http://jessecravens.github.com/robodeck"><img class="imgL" width="500px" src="http://jessecravens.com/images/blogposts/robodeck.png"></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hack #82 Web Wokers: Basics of the Web Browser's UI Thread]]></title>
+    <link href="http://jessecravens.com/blog/2011/12/11/hack-82-web-wokers-basics-of-the-web-browsers-ui-thread/"/>
+    <updated>2011-12-11T11:08:01-06:00</updated>
+    <id>http://jessecravens.com/blog/2011/12/11/hack-82-web-wokers-basics-of-the-web-browsers-ui-thread</id>
+    <content type="html"><![CDATA[<div class="">
+
+<p>This post is mirrored at: <a href="http://html5hacks.com/hack/web-workers/hack-82-web-wokers-basics-web-browsers-ui-thread">html5hacks.com</a></p>
+
+
+<h2>Single Threadin'</h2>
+<p>
+As we set out to build a highly responsive UI for our demo web application, we must fully understand how browsers manage processes. Perhaps the biggest challenge we will face has to do with browsers using a single thread for both JavaScript execution and user interface updates. While the browser's JavaScript interpreter is executing code, the UI is unable to respond to the user's input. If a script is taking a long time to complete, after a specified amount of time the browser will provide the user an option to terminate the script. To accommodate for the 'freeze' associated with scripts that exceed the browser execution time limit, web developers have traditionally created smaller units of work and used JavaScript timers to return execution to the next event in the queue. As you will see, web workers solve the locking of the UI thread by opening an additional thread, or even multiple threads, for execution of these long running, processor intensive tasks.</p>
+
+<p>When designing your application, especially if you come from more of a 'server-side' or Java background, it is important to understand that non-blocking execution is not the same as concurrent threading. While not extremely complex, JavaScript's event driven style does take some getting used to for developers coming from other languages such as Java and C. Later, we will touch on a few examples where we pass a callback continuation function to take full advantage of JavaScript's non blocking design.</p>
+
+
+<h2>Thread Safety</h2>
+<p>
+Mozilla, in particular, provides a Worker interface which web workers implement. While the Worker interface spawns OS-level threads, web workers use the postMessage mechanism to send messages (with serializable objects) between the two execution contexts. To ensure thread safety the worker is only given access to thread safe components to include the following:</p>
+<ul>
+<li>timers: setTimeout() and setInterval() methods</li>
+<li>XMLHttpRequest</li>
+<li>importScripts() method</li>
+</ul>
+<p>The worker script can also make use of:</p>
+<ul>
+<li>navigator and location objects</li>
+<li>native JavaScript objects such as Object, String, Date</li>
+</ul>
+<p>At the same time, the worker restricts access to DOM APIs, global variables, and the parent page. In Hack #84 Building the DOM with web workers and Handlebars.js, we will explore the restricted access to DOM APIs, and introduce JavaScript templating, importScripts, and the use of timers to poll for postMessage. </p>
+
+
+<h2>HTML5 Web Workers</h2>
+<p>As mentioned earlier, the Web worker spec defines an API for executing scripts in the background by spawning an independent execution context.</p>
+
+<p>
+It is important to note that web workers are costly, having an impact on startup and overall memory consumption. So, they are intended to be used lightly and in conjunction with the some of the asynchronous techniques mentioned earlier. A well built client-side application would typically make use of one or two cases where tasks are expensive. Here are a few common uses cases:
+</p>
+
+<ul>
+   <li>Single Page Application bootstrapping large amounts of data during initial load</li>
+   <li>Performing long running mathematical calculations in the browser</li>
+   <li>Processing large JSON datasets</li>
+   <li>Text formatting, spell checking, and syntax highlighting</li>
+   <li>Processing multimedia data (Audio/Video)</li>
+   <li>Long polling webservices</li>
+   <li>Filtering images in canvas</li>
+   <li>Calculating points for a 3D image</li>
+   <li>Reading/Writing of local storage database</li>
+</ul>
+
+<h2>Long Running Scripts</h2>
+<p>
+Our first web worker hack will be a long running script with heavy computation. It will execute 2 loops that output a two-dimensional array. First, we will use this computation to lock up the browser's UI thread, and later we will move the task to a worker. To further demonstrate the performance strain, we will also animate a box horizontally across the screen. You will notice the animated box stop while the UI thread is executing the long running script.</p>
+
+<pre class="brush: js; ruler: true; first-line: 1; highlight: [0]">
+    var box;
+
+    function goRight() {
+        box.style.left = parseInt(box.style.left)+1+'px';
+        setTimeout(goRight,2); // call goRight in 200msec
+    }
+
+    function init() {
+        var r = 1000;
+        var c = 1000;
+        var a = new Array(r);
+
+        for (var i = 0; i < r; i++) {
+            a[i] = new Array(c);
+
+            for (var j = 0; j < c; j++) {
+                a[i][j] = "[" + i + "," + j + "]";
+            }
+        }
+        document.getElementById('result').textContent = a;
+        
+        box = document.getElementById('box'); // get the "box" object
+        box.style.left = '0px'; // set its initial position to 0px
+        
+        goRight(); // start animating to the right
+    }
+    
+    window.onload = init;
+</pre>
+
+
+<h2>Spawning a Worker</h2>
+
+<p>Now let's move our heavy computational task to a dedicated web worker, so that the user doesn't have to wait for the script to complete execution in order to interact with user interface. First, lets spawn a new worker:</p>
+<pre class="brush: js; ruler: true; first-line: 1; highlight: [0]">
+  
+  var worker = new Worker('highComp.js');
+
+  worker.postMessage(JSON.stringify(message));
+
+  worker.addEventListener('message', function(event){}, false);
+
+</pre>
+
+<p>Here, we define an external file that will contain the logic of our heavy computational task. The file, highComp.js will listen for a message that will receive the serialized JSON payload, and then we will set up an additional listener to receive a message back from highComp.js.</p>
+
+<p>Now, we can move this cpu-intensive task to a separate file: highComp.js</p>
+
+<pre class="brush: js; ruler: true; first-line: 1; highlight: [0]">
+var r = 1000;
+var c = 1000;
+
+var a = new Array(r);
+
+for (var i = 0; i < r; i++) {
+  a[i] = new Array(c);
+
+    for (var j = 0; j < c; j++) {
+     a[i][j] = "[" + i + "," + j + "]";
+    }
+};
+postMessage(a);
+</pre>
+
+<p>In highComp.js, our two dimensional array is built and set to variable a. It is then passed back to our main script via the postMessage call. </p>
+
+<p>In the next hack, we will mix our use of timers with the power of a dedicated worker. As we send messages (passing serializable objects as a parameter to postMessage) back and forth to code running in the shared UI thread, our timer will periodically check for new messages and use their contents to modify the DOM.</p>
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[YUI3 Rails Application Template]]></title>
+    <link href="http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template/"/>
+    <updated>2011-01-30T01:02:15-06:00</updated>
+    <id>http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template</id>
+    <content type="html"><![CDATA[<div class="">
+<p>I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.</p> 
+
+<p>The template takes care of removing the Prototype library, including yui-debug.js and the CSS framework including reset, and the new <a href="http://developer.yahoo.com/yui/3/cssgrids/">Grids</a> - currently in beta. I also wanted to deliver my basic markup quickly so I've added <a href="http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#html_elements">Haml</a></p>
+
+<p>Since I have been disciplining myself to follow Test Driven Development on the server, I included all of my Rails testing dependencies in the app template as well (RSpec, Cucumber, WebRat, Factory Girl) and I plan to continue to leverage <a href="http://developer.yahoo.com/yui/3/test/">YUI Test</a> on the client as I run through browser validations of the <a href="http://developer.yahoo.com/yui/3/examples/datasource/datasource_polling.html">datasource-polling sub-module</a>. Clone the rails app template <a href="https://github.com/jessecravens/yui3-rails-template">here</a>.</p>
+
+{syntaxhighlighter brush: ruby}
+# YUI3 Application Generator Template
+# Generates a Rails app; includes YUI3, Haml, RSpec, Cucumber, WebRat, Factory Girl ...
+
+puts "Generating a new YUI3 Rails app"
+
+#----------------------------------------------------------------------------
+# Create the database
+#----------------------------------------------------------------------------
+puts "creating the database..."
+run 'rake db:create:all'
+
+#----------------------------------------------------------------------------
+# GIT
+#----------------------------------------------------------------------------
+puts "setting up 'git'"
+
+append_file '.gitignore' do <<-FILE
+'.DS_Store'
+'.rvmrc'
+FILE
+end
+git :init
+git :add => '.'
+git :commit => "-m 'Initial Commit of YUI3 Rails App'"
+
+#----------------------------------------------------------------------------
+# Remove files
+#----------------------------------------------------------------------------
+puts "removing files..."
+run 'rm public/index.html'
+run 'rm public/favicon.ico'
+run 'rm public/images/rails.png'
+run 'rm README'
+run 'touch README'
+
+puts "banning spiders from your site by changing robots.txt..."
+gsub_file 'public/robots.txt', /# User-Agent/, 'User-Agent'
+gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
+
+#----------------------------------------------------------------------------
+# Haml 
+#----------------------------------------------------------------------------
+  puts "setting up Gemfile for Haml..."
+  append_file 'Gemfile', "\n# Bundle gems needed for Haml\n"
+  gem 'haml', '3.0.18'
+  gem 'haml-rails', '0.2', :group => :development
+
+#----------------------------------------------------------------------------
+# Set up YUI3
+#----------------------------------------------------------------------------
+
+puts "replacing Prototype with YUI3"
+run 'rm public/javascripts/controls.js'
+run 'rm public/javascripts/dragdrop.js'
+run 'rm public/javascripts/effects.js'
+run 'rm public/javascripts/prototype.js'
+run 'rm public/javascripts/rails.js'
+
+get "http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-debug.js",  "public/javascripts/yui-debug.js"
+get "http://yui.yahooapis.com/3.3.0/build/cssreset/reset.css",  "public/stylesheets/reset.css"
+get "http://yui.yahooapis.com/3.3.0/build/cssbase/base.css",  "public/stylesheets/base.css"
+get "http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts.css",  "public/stylesheets/fonts.css"
+get "http://yui.yahooapis.com/3.3.0/build/cssgrids/grids.css",  "public/stylesheets/grids.css"
+
+#----------------------------------------------------------------------------
+# Create an index page
+#----------------------------------------------------------------------------
+puts "create a home controller and view"
+generate(:controller, "home index")
+gsub_file 'config/routes.rb', /get \"home\/index\"/, 'root :to => "home#index"'
+append_file 'app/views/home/index.html.haml'do <<-FILE
+!!!
+%h2{:class => "subtitle"} Get Started
+%p{:class => "content"} Update application.js with your logic
+%div{:class => "container", :id => "container"}
+%div{:id => "testLogger"}
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Generate Application Layout
+#----------------------------------------------------------------------------
+
+run 'rm app/views/layouts/application.html.erb'
+  create_file 'app/views/layouts/application.html.haml' do <<-FILE
+!!!
+%html
+  %head
+    %title YUI3 App
+    = stylesheet_link_tag "reset"
+    = stylesheet_link_tag "base"
+    = stylesheet_link_tag "fonts"
+    = stylesheet_link_tag "grids"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag :all
+    = csrf_meta_tag
+  %body{:class =>"yui3-skin-sam  yui-skin-sam"}
+    = yield
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Add Stylesheets
+#----------------------------------------------------------------------------
+create_file 'public/stylesheets/application.css' do <<-FILE
+div.container {
+  width: 100%;
+  height: 100px; 
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid red;
+}
+
+#testLogger {
+    margin-bottom: 1em;
+}
+
+#testLogger .yui3-console .yui3-console-title {
+    border: 0 none;
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: none;
+}
+#testLogger .yui3-console .yui3-console-entry-meta {
+    margin: 0;
+}
+
+.yui3-skin-sam .yui3-console-entry-pass .yui3-console-entry-cat {
+    background: #070;
+    color: #fff;
+}
+
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Initialize YUI and add YUI Test
+#----------------------------------------------------------------------------
+append_file 'public/javascripts/application.js' do <<-FILE
+  
+  YUI({ filter: 'raw' }).use("node", "console", "test",function (Y) {
+
+      Y.namespace("example.test");
+
+      Y.example.test.DataTestCase = new Y.Test.Case({
+
+          //name of the test case - if not provided, one is auto-generated
+          name : "Data Tests",
+
+          //---------------------------------------------------------------------
+          // setUp and tearDown methods - optional
+          //---------------------------------------------------------------------
+
+          /*
+           * Sets up data that is needed by each test.
+           */
+          setUp : function () {
+              this.data = {
+                  name: "test",
+                  year: 2007,
+                  beta: true
+              };
+          },
+
+          /*
+           * Cleans up everything that was created by setUp().
+           */
+          tearDown : function () {
+              delete this.data;
+          },
+
+          //---------------------------------------------------------------------
+          // Test methods - names must begin with "test"
+          //---------------------------------------------------------------------
+
+          testName : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isString(this.data.name);
+              Assert.areEqual("test", this.data.name);            
+          },
+
+          testYear : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isNumber(this.data.year);
+              Assert.areEqual(2007, this.data.year);            
+          },
+
+          testBeta : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isBoolean(this.data.beta);
+              Assert.isTrue(this.data.beta);
+          }
+
+      });
+
+      Y.example.test.ArrayTestCase = new Y.Test.Case({
+
+          //name of the test case - if not provided, one is auto-generated
+          name : "Array Tests",
+
+          //---------------------------------------------------------------------
+          // setUp and tearDown methods - optional
+          //---------------------------------------------------------------------
+
+          /*
+           * Sets up data that is needed by each test.
+           */
+          setUp : function () {
+              this.data = [0,1,2,3,4]
+          },
+
+          /*
+           * Cleans up everything that was created by setUp().
+           */
+          tearDown : function () {
+              delete this.data;
+          },
+
+          //---------------------------------------------------------------------
+          // Test methods - names must begin with "test"
+          //---------------------------------------------------------------------
+
+          testPop : function () {
+              var Assert = Y.Assert;
+
+              var value = this.data.pop();
+
+              Assert.areEqual(4, this.data.length);
+              Assert.areEqual(4, value);            
+          },        
+
+          testPush : function () {
+              var Assert = Y.Assert;
+
+              this.data.push(5);
+
+              Assert.areEqual(6, this.data.length);
+              Assert.areEqual(5, this.data[5]);            
+          },
+
+          testSplice : function () {
+              var Assert = Y.Assert;
+
+              this.data.splice(2, 1, 6, 7);
+
+              Assert.areEqual(6, this.data.length);
+              Assert.areEqual(6, this.data[2]);           
+              Assert.areEqual(7, this.data[3]);           
+          }
+
+      });    
+
+      Y.example.test.ExampleSuite = new Y.Test.Suite("Example Suite");
+      Y.example.test.ExampleSuite.add(Y.example.test.DataTestCase);
+      Y.example.test.ExampleSuite.add(Y.example.test.ArrayTestCase);
+
+      //create the console
+      var r = new Y.Console({
+          newestOnTop : false,
+          style: 'block' // to anchor in the example content
+      });
+
+      r.render('#testLogger');
+
+      Y.Test.Runner.add(Y.example.test.ExampleSuite);
+
+      //run the tests
+      Y.Test.Runner.run();
+
+  });
+
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Setup RSpec & Cucumber
+#----------------------------------------------------------------------------
+puts 'Setting up RSpec, Cucumber, webrat, factory_girl, faker'
+append_file 'Gemfile' do <<-FILE
+group :development, :test do
+  gem "rspec-rails", ">= 2.0.1"
+  gem "cucumber-rails", ">= 0.3.2"
+  gem "webrat", ">= 0.7.2.beta.2"
+  gem "factory_girl_rails"
+  gem "faker"
+end
+FILE
+end
+
+run 'bundle install'
+run 'script/rails generate rspec:install'
+run 'script/rails generate cucumber:install'
+run 'rake db:migrate'
+run 'rake db:test:prepare'
+
+run 'touch spec/factories.rb'
+#----------------------------------------------------------------------------
+# Finish up
+#----------------------------------------------------------------------------
+puts "Commiting to Git repository..."
+git :add => '.'
+git :commit => "-am 'Setup Complete'"
+
+puts "DONE - setting up your YUI3 Rails App."
+
+
+{/syntaxhighlighter}
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Understanding JavaScript Closures]]></title>
+    <link href="http://jessecravens.com/blog/2008/04/09/understanding-javascript-closures/"/>
+    <updated>2008-04-09T22:37:05-05:00</updated>
+    <id>http://jessecravens.com/blog/2008/04/09/understanding-javascript-closures</id>
+    <content type="html"><![CDATA[<p>So it took me awhile to truly understand JavaScript closures. There is limited documentation of the subject on the web, but here is a list of the resources I used to finally grasp not only what specifically creates a closure, but also why we would want to use them.</p>
+
+
+
+
+<ul>
+<li><a href="http://books.google.com/books?id=VOS6IlCsuU4C&dq=javascript">JavaScript: the Definitive Guide</a></li>
+<li><a href="http://www.crockford.com/javascript/private.html">Douglas Crockford: Private Members in JavaScript</a></li>
+<li><a href="http://blog.morrisjohns.com/javascript_closures_for_dummies">JavaScript Closures for Dummies</a></li>
+<li><a href="http://www.jibbering.com/faq/faq_notes/closures.html">jibbering.com/faq/faq_notes/closures.html</a></li>
+</ul>
+
+
+
+
+<p>First, let's define closures:</p>
+
+
+<ul>
+<li>A "closure" is an expression (typically a function) that can have free variables together with an environment that binds those variables (that "closes" the expression). - Jim Ley </li>
+<li>...JavaScript has closures. What this means is that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned. This is an extremely powerful property of the language. - Douglas Crockford</li>
+<li>Things are different if you save a reference to the nested function in the global scope. You do so by using the nested function as the return value of the outer function or by storing the nested function as a property of some other object. - JavaScript: the Definitive Guide</li>
+<li>Simply put, a closure is a variable, created inside a function, which continues to exist after the function has finished executing. - Patrick Hunlock</li>
+</ul>
+
+
+
+
+<p>I should preface the more detailed explanation below with a few prerequisite concepts. If you don't truly grasp these concepts, then you may get hung up when trying to understand JavaScript closures. Fortunately, your quest to understand closures should force you to understand these concepts on a deeper level first.</p>
+
+
+
+
+<ul>
+<li>global object and global scope</li>
+<li>reference types and primitive types</li>
+<li>lexical scope and the scope chain</li>
+<li>the call object or the ECMA activation object</li>
+<li>idea of persistent data</li>
+<li>private variables</li>
+<li>using return</li>
+</ul>
+
+
+
+
+<p>To begin, we want to create a reusable function containing data that persists across invocations.</p>
+
+
+<p>We don't want to hard code variables into the reusable function, and a local variable will not persist.</p>
+
+
+<p>From what we have learned by our <a href="#">'Responsible JavaScript for the Enterprise'</a> guidelines and through our understanding of the call object, lexical scope, and namespacing: we also know that we want to greatly limit global variables in our global scope.</p>
+
+
+
+
+<p>So instead, we want the developer to make two calls: One, to set up or 'configure' the function, and two, to invoke this 'pre-configured' function.</p>
+
+
+<p>The power is in the first call. I like to refer to it as the configuration call. </p>
+
+
+<p>During the configuration call, we 'freeze' the inner function by setting a reference to it in the global scope.</p>
+
+
+<p>So this data persists. Why?</p>
+
+
+<p>We have an external reference to this inner function.</p>
+
+
+<p>The inner nested function retains its reference to the call object of the outer function.</p>
+
+
+<p>The outer function's local scope resolves and the reference to its inner function remains.</p>
+
+
+<p></p>
+
+
+<p></p>
+
+
+
+
+<p>This is an example from a <a href="http://www.synthesispraxis.com/">friend</a> that helped me finally wrap my head around the power of the technique.</p>
+
+
+<p>{syntaxhighlighter brush: js; ruler: true; first-line: 1}
+function configEquation(A,B,C){
+  //The equation: Ax<sup>ex1</sup> + Bx<sup>ex2</sup> + Cx<sup>ex3</sup>
+  //The exponents are ex1, ex2, and ex3
+  //The coefficients are A, B, and C and are set</p>
+
+<p>  var ex1 = 2;
+  var ex2 = 1;
+  var ex3 = 0;</p>
+
+<p>//The exponents constitute a quadratic equation.
+function theEquation(x){</p>
+
+<pre><code>var result = A * Math.pow(x,ex1) + B * Math.pow(x,ex2) + C * Math.pow(x,ex3);
+return result; 
+</code></pre>
+
+<p>  }</p>
+
+<pre><code>return theEquation; //notice we return the reference not the invocation of the function(no params)
+</code></pre>
+
+<p>  }</p>
+
+<p>var myEquation = configEquation(2,3,0); //the configuration call
+  console.log('myEquation, x = 2: ' + myEquation(2));
+  console.log('myEquation, x = 5: ' + myEquation(5));</p>
+
+<p>var myEquation2 = configEquation(1,1,1); //a 2nd configuration call
+  console.log('myEquation2, x = 2: ' + myEquation2(2));
+  console.log('myEquation2, x = 5: ' + myEquation2(5));
+{/syntaxhighlighter}</p>
+]]></content>
+  </entry>
+  
+</feed>

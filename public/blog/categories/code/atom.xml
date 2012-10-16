@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: code | Jesse Cravens]]></title>
+  <link href="http://jessecravens.com/blog/categories/code/atom.xml" rel="self"/>
+  <link href="http://jessecravens.com/"/>
+  <updated>2012-10-15T20:59:53-05:00</updated>
+  <id>http://jessecravens.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript Modules]]></title>
+    <link href="http://jessecravens.com/blog/2012/06/17/javascript-modules/"/>
+    <updated>2012-06-17T16:23:21-05:00</updated>
+    <id>http://jessecravens.com/blog/2012/06/17/javascript-modules</id>
+    <content type="html"><![CDATA[<p>For a talk last March at USAA's internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
+
+
+<p><a href="http://jessecravens.github.com/js-modules-demo/"><img class="imgL" width="500px" src="http://jessecravens.com/images/blogposts/js-modules.png"></a></p>
+
+<p>This demonstrates the following Module Definitions:</p>
+
+
+
+
+<ul>
+<li>AMD</li>
+<li>CommonJS</li>
+<li>YUI3</li>
+<li>JS Harmony</li>
+</ul>
+
+
+
+
+<p>And a few script loaders:</p>
+
+
+
+
+<ul>
+<li>RequireJS</li>
+<li>yepnope</li>
+<li>YUI3 - YUI Loader</li>
+</ul>
+
+
+
+
+<p>If you want to know more about the state of modules, dependency loading and management in the JavaScript world, there is always room for more contributors, just fork or clone the project ... and you will have a playground to begin playing with some of the most popular implementations.</p>
+
+
+<p>To learn more, check it out here: <a href="http://jessecravens.github.com/js-modules-demo/">jessecravens.github.com/js-modules-demo</a></p>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[RVM (Ruby Version Manager) and Ruby On Rails]]></title>
+    <link href="http://jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails/"/>
+    <updated>2011-09-26T23:35:58-05:00</updated>
+    <id>http://jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails</id>
+    <content type="html"><![CDATA[<p>Here is a brief overview of <a href="http://beginrescueend.com/">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn't live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
+
+
+
+
+<p>This allows me to essentially sandbox each of these applications' dependencies.</p>
+
+
+
+
+<p>One helpful hint I might offer is to get in the habit of declaring your gemset when you launch a new terminal. I tend to have multiple terminals open at once and it took me awhile to remember that each time I launched a terminal, RVM would fall back to my default gemset. So if I clone a Rails 3.1 project, I need to remember to switch to my rails3.1 gemset prior to runninig bundle install. </p>
+
+
+
+
+<p>Simply put, RVM helps:</p>
+
+
+<ol>
+  <li>manage versions of Ruby</li>
+  <li>manage packages of Gemsets</li>
+</ol>
+
+
+
+
+<h3>RUBY</h3>
+
+
+<p>{syntaxhighlighter brush: ps}</p>
+
+<p>$ rvm list
+$ rvm install 1.9.2-head</p>
+
+<p>{/syntaxhighlighter}</p>
+
+<p>And, you can set a version as default</p>
+
+
+<p>{syntaxhighlighter brush: ps}</p>
+
+<p>$ rvm use 1.9.2-head --default</p>
+
+<p>{/syntaxhighlighter}</p>
+
+<h3>GEMSETS</h3>
+
+
+<p>{syntaxhighlighter brush: ps}</p>
+
+<h1>Start by creating our gemset(s):</h1>
+
+<p>$  rvm gemset create rails309</p>
+
+<h1>Or create multiple at a time:</h1>
+
+<p>$  rvm gemset create rails307 rails31</p>
+
+<h1>The result can be verified by listing the available gemsets:</h1>
+
+<p>$  rvm gemset list</p>
+
+<h1>See everything with list_all, this has been very useful:</h1>
+
+<p>$ rvm gemset list_all</p>
+
+<h1>If a gem’s name still leaves room for confusion, simply delete it and create a more meaningful one (e.g., rails31rc):</h1>
+
+<p>$  rvm gemset delete rails31</p>
+
+<p>{/syntaxhighlighter}</p>
+
+<p>Now that we have multiple gemsets installed, we must first select the one we want to use, and we can also set it as the default gemset by passing it the —default flag:</p>
+
+
+<p>  
+{syntaxhighlighter brush: ps}</p>
+
+<p>$ rvm use 1.9.2-head@rails309 --default</p>
+
+<p>{/syntaxhighlighter}</p>
+
+<h3>Installing Rails</h3>
+
+
+<p>Installing rails is as easy as installing any other gem: we only need to specify it’s name, but we can always choose a specific version, or to speed up the installation process by skipping the documentation: </p>
+
+
+<p>{syntaxhighlighter brush: ps}
+$ gem install rails --no-rdoc --no-ri</p>
+
+<h1>Or</h1>
+
+<p>$ gem install rails [-v 3.0.7] [--no-rdoc --no-ri]</p>
+
+<h1>Or</h1>
+
+<p>$ gem install rails -v ">=3.1.0rc"
+{/syntaxhighlighter}</p>
+
+<h3>In Summary and Why Am I doing this?</h3>
+
+
+
+
+<p>Rails is distributed as a gem, and there are conflicts between Rails 2 and Rails 3, so if you want to run multiple versions of Rails on the same system you need to create a separate gemset for each:</p>
+
+
+<p>{syntaxhighlighter brush: ps}
+$ rvm --create 1.8.7-p302@rails2app
+$ rvm --create use 1.9.2@rails3app
+{/syntaxhighlighter}</p>
+
+<p>In other words, for application specific gemsets it is convenient to select the version of Ruby and the collection of gems by doing the following:</p>
+
+
+<p>{syntaxhighlighter brush: ps}
+$ rvm --create use 1.9.2@mongoid-app</p>
+
+<h1>Also, which gemset am I using?</h1>
+
+<p>$ rvm gemset name</p>
+
+<p>$ rvm gemdir
+{/syntaxhighlighter}</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Cheatsheet]]></title>
+    <link href="http://jessecravens.com/blog/2011/09/26/git-cheatsheet/"/>
+    <updated>2011-09-26T23:10:56-05:00</updated>
+    <id>http://jessecravens.com/blog/2011/09/26/git-cheatsheet</id>
+    <content type="html"><![CDATA[<div class="">
+
+<p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I'd share.</p> 
+
+<h3>Git First-Time System Setup</h3>
+
+<p>After installing Git, you should perform a set of one-time setup steps. These are system setups, meaning you only have to do them once per computer:</p>
+
+{syntaxhighlighter brush: ps}
+$ sudo apt-get install git-core
+$ git config --global user.email youremail[at symbol]example.com
+$ git config --global user.name "John Doe"
+$ git config --global user.name "Your Name"
+$ git config --global alias.co checkout
+{/syntaxhighlighter}
+
+<p>As a final setup step, you can optionally set the editor Git will use for commit messages.</p>
+
+{syntaxhighlighter brush: ps}
+$ git config --global core.editor "mate -w"
+
+# Replace “mate -w” with “gvim -f” for gVim or “mvim -f” for MacVim.
+{/syntaxhighlighter}
+
+<h3>Quick Reference – Most Often Used Commands</h3>
+
+{syntaxhighlighter brush: ps}
+$ cd /path/to/repository
+$ git init
+$ git add .
+$ git add -u
+$ git log
+$ git status
+$ git commit -m "initial commit"
+
+# made a mistake on the git commit
+$ git commit -amend -m "initial commit"
+
+# Add the remote repository
+
+# ex 1
+$ git remote add unfuddle git@subdomain.unfuddle.com:subdomain/abbreviation.git
+
+# ex 2
+$ git remote add origin git@subdomain.unfuddle.com:subdomain/abbreviation.git
+
+# Configure the repository
+$ git config remote.unfuddle.push refs/heads/master:refs/heads/master
+
+# Push master branch to remote repository named unfuddle
+$ git push unfuddle master
+
+# Other commands:
+
+# Clone an existing remote repo 
+$ git clone git@subdomain.unfuddle.com:subdomain/abbreviation.git
+
+# List all branches within your repo
+$ git branch -a
+
+#Create and switch to a new branch "whatever"
+$ git checkout -b whatever 
+
+{/syntaxhighlighter}
+
+<p>Those are the basics, should be enough to make you dangerous. </p>
+
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[YUI3 Rails Application Template]]></title>
+    <link href="http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template/"/>
+    <updated>2011-01-30T01:02:15-06:00</updated>
+    <id>http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template</id>
+    <content type="html"><![CDATA[<div class="">
+<p>I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.</p> 
+
+<p>The template takes care of removing the Prototype library, including yui-debug.js and the CSS framework including reset, and the new <a href="http://developer.yahoo.com/yui/3/cssgrids/">Grids</a> - currently in beta. I also wanted to deliver my basic markup quickly so I've added <a href="http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#html_elements">Haml</a></p>
+
+<p>Since I have been disciplining myself to follow Test Driven Development on the server, I included all of my Rails testing dependencies in the app template as well (RSpec, Cucumber, WebRat, Factory Girl) and I plan to continue to leverage <a href="http://developer.yahoo.com/yui/3/test/">YUI Test</a> on the client as I run through browser validations of the <a href="http://developer.yahoo.com/yui/3/examples/datasource/datasource_polling.html">datasource-polling sub-module</a>. Clone the rails app template <a href="https://github.com/jessecravens/yui3-rails-template">here</a>.</p>
+
+{syntaxhighlighter brush: ruby}
+# YUI3 Application Generator Template
+# Generates a Rails app; includes YUI3, Haml, RSpec, Cucumber, WebRat, Factory Girl ...
+
+puts "Generating a new YUI3 Rails app"
+
+#----------------------------------------------------------------------------
+# Create the database
+#----------------------------------------------------------------------------
+puts "creating the database..."
+run 'rake db:create:all'
+
+#----------------------------------------------------------------------------
+# GIT
+#----------------------------------------------------------------------------
+puts "setting up 'git'"
+
+append_file '.gitignore' do <<-FILE
+'.DS_Store'
+'.rvmrc'
+FILE
+end
+git :init
+git :add => '.'
+git :commit => "-m 'Initial Commit of YUI3 Rails App'"
+
+#----------------------------------------------------------------------------
+# Remove files
+#----------------------------------------------------------------------------
+puts "removing files..."
+run 'rm public/index.html'
+run 'rm public/favicon.ico'
+run 'rm public/images/rails.png'
+run 'rm README'
+run 'touch README'
+
+puts "banning spiders from your site by changing robots.txt..."
+gsub_file 'public/robots.txt', /# User-Agent/, 'User-Agent'
+gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'
+
+#----------------------------------------------------------------------------
+# Haml 
+#----------------------------------------------------------------------------
+  puts "setting up Gemfile for Haml..."
+  append_file 'Gemfile', "\n# Bundle gems needed for Haml\n"
+  gem 'haml', '3.0.18'
+  gem 'haml-rails', '0.2', :group => :development
+
+#----------------------------------------------------------------------------
+# Set up YUI3
+#----------------------------------------------------------------------------
+
+puts "replacing Prototype with YUI3"
+run 'rm public/javascripts/controls.js'
+run 'rm public/javascripts/dragdrop.js'
+run 'rm public/javascripts/effects.js'
+run 'rm public/javascripts/prototype.js'
+run 'rm public/javascripts/rails.js'
+
+get "http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-debug.js",  "public/javascripts/yui-debug.js"
+get "http://yui.yahooapis.com/3.3.0/build/cssreset/reset.css",  "public/stylesheets/reset.css"
+get "http://yui.yahooapis.com/3.3.0/build/cssbase/base.css",  "public/stylesheets/base.css"
+get "http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts.css",  "public/stylesheets/fonts.css"
+get "http://yui.yahooapis.com/3.3.0/build/cssgrids/grids.css",  "public/stylesheets/grids.css"
+
+#----------------------------------------------------------------------------
+# Create an index page
+#----------------------------------------------------------------------------
+puts "create a home controller and view"
+generate(:controller, "home index")
+gsub_file 'config/routes.rb', /get \"home\/index\"/, 'root :to => "home#index"'
+append_file 'app/views/home/index.html.haml'do <<-FILE
+!!!
+%h2{:class => "subtitle"} Get Started
+%p{:class => "content"} Update application.js with your logic
+%div{:class => "container", :id => "container"}
+%div{:id => "testLogger"}
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Generate Application Layout
+#----------------------------------------------------------------------------
+
+run 'rm app/views/layouts/application.html.erb'
+  create_file 'app/views/layouts/application.html.haml' do <<-FILE
+!!!
+%html
+  %head
+    %title YUI3 App
+    = stylesheet_link_tag "reset"
+    = stylesheet_link_tag "base"
+    = stylesheet_link_tag "fonts"
+    = stylesheet_link_tag "grids"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag :all
+    = csrf_meta_tag
+  %body{:class =>"yui3-skin-sam  yui-skin-sam"}
+    = yield
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Add Stylesheets
+#----------------------------------------------------------------------------
+create_file 'public/stylesheets/application.css' do <<-FILE
+div.container {
+  width: 100%;
+  height: 100px; 
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid red;
+}
+
+#testLogger {
+    margin-bottom: 1em;
+}
+
+#testLogger .yui3-console .yui3-console-title {
+    border: 0 none;
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: none;
+}
+#testLogger .yui3-console .yui3-console-entry-meta {
+    margin: 0;
+}
+
+.yui3-skin-sam .yui3-console-entry-pass .yui3-console-entry-cat {
+    background: #070;
+    color: #fff;
+}
+
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Initialize YUI and add YUI Test
+#----------------------------------------------------------------------------
+append_file 'public/javascripts/application.js' do <<-FILE
+  
+  YUI({ filter: 'raw' }).use("node", "console", "test",function (Y) {
+
+      Y.namespace("example.test");
+
+      Y.example.test.DataTestCase = new Y.Test.Case({
+
+          //name of the test case - if not provided, one is auto-generated
+          name : "Data Tests",
+
+          //---------------------------------------------------------------------
+          // setUp and tearDown methods - optional
+          //---------------------------------------------------------------------
+
+          /*
+           * Sets up data that is needed by each test.
+           */
+          setUp : function () {
+              this.data = {
+                  name: "test",
+                  year: 2007,
+                  beta: true
+              };
+          },
+
+          /*
+           * Cleans up everything that was created by setUp().
+           */
+          tearDown : function () {
+              delete this.data;
+          },
+
+          //---------------------------------------------------------------------
+          // Test methods - names must begin with "test"
+          //---------------------------------------------------------------------
+
+          testName : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isString(this.data.name);
+              Assert.areEqual("test", this.data.name);            
+          },
+
+          testYear : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isNumber(this.data.year);
+              Assert.areEqual(2007, this.data.year);            
+          },
+
+          testBeta : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isBoolean(this.data.beta);
+              Assert.isTrue(this.data.beta);
+          }
+
+      });
+
+      Y.example.test.ArrayTestCase = new Y.Test.Case({
+
+          //name of the test case - if not provided, one is auto-generated
+          name : "Array Tests",
+
+          //---------------------------------------------------------------------
+          // setUp and tearDown methods - optional
+          //---------------------------------------------------------------------
+
+          /*
+           * Sets up data that is needed by each test.
+           */
+          setUp : function () {
+              this.data = [0,1,2,3,4]
+          },
+
+          /*
+           * Cleans up everything that was created by setUp().
+           */
+          tearDown : function () {
+              delete this.data;
+          },
+
+          //---------------------------------------------------------------------
+          // Test methods - names must begin with "test"
+          //---------------------------------------------------------------------
+
+          testPop : function () {
+              var Assert = Y.Assert;
+
+              var value = this.data.pop();
+
+              Assert.areEqual(4, this.data.length);
+              Assert.areEqual(4, value);            
+          },        
+
+          testPush : function () {
+              var Assert = Y.Assert;
+
+              this.data.push(5);
+
+              Assert.areEqual(6, this.data.length);
+              Assert.areEqual(5, this.data[5]);            
+          },
+
+          testSplice : function () {
+              var Assert = Y.Assert;
+
+              this.data.splice(2, 1, 6, 7);
+
+              Assert.areEqual(6, this.data.length);
+              Assert.areEqual(6, this.data[2]);           
+              Assert.areEqual(7, this.data[3]);           
+          }
+
+      });    
+
+      Y.example.test.ExampleSuite = new Y.Test.Suite("Example Suite");
+      Y.example.test.ExampleSuite.add(Y.example.test.DataTestCase);
+      Y.example.test.ExampleSuite.add(Y.example.test.ArrayTestCase);
+
+      //create the console
+      var r = new Y.Console({
+          newestOnTop : false,
+          style: 'block' // to anchor in the example content
+      });
+
+      r.render('#testLogger');
+
+      Y.Test.Runner.add(Y.example.test.ExampleSuite);
+
+      //run the tests
+      Y.Test.Runner.run();
+
+  });
+
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Setup RSpec & Cucumber
+#----------------------------------------------------------------------------
+puts 'Setting up RSpec, Cucumber, webrat, factory_girl, faker'
+append_file 'Gemfile' do <<-FILE
+group :development, :test do
+  gem "rspec-rails", ">= 2.0.1"
+  gem "cucumber-rails", ">= 0.3.2"
+  gem "webrat", ">= 0.7.2.beta.2"
+  gem "factory_girl_rails"
+  gem "faker"
+end
+FILE
+end
+
+run 'bundle install'
+run 'script/rails generate rspec:install'
+run 'script/rails generate cucumber:install'
+run 'rake db:migrate'
+run 'rake db:test:prepare'
+
+run 'touch spec/factories.rb'
+#----------------------------------------------------------------------------
+# Finish up
+#----------------------------------------------------------------------------
+puts "Commiting to Git repository..."
+git :add => '.'
+git :commit => "-am 'Setup Complete'"
+
+puts "DONE - setting up your YUI3 Rails App."
+
+
+{/syntaxhighlighter}
+</div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rails 2.0 on Windows: Making Sense of Old Tutorials]]></title>
+    <link href="http://jessecravens.com/blog/2008/02/11/rails-2-0-on-windows-making-sense-of-old-tutorials/"/>
+    <updated>2008-02-11T09:08:36-06:00</updated>
+    <id>http://jessecravens.com/blog/2008/02/11/rails-2-0-on-windows-making-sense-of-old-tutorials</id>
+    <content type="html"><![CDATA[<p><img src="http://jessecravens.com/sites/jessecravens.com/files/images/rails.png" style="float: right; margin: 10px"/></p>
+
+<p>I know it is fairly well documented around the web that some of the old 'ROR up and running' tutorials are a bit difficult to digest with the new features in in Rails 2.0. So, I wanted to document my findings. And provide links to the resources that have helped me.</p>
+
+
+
+
+<p>Here's a couple of resources to get started:</p>
+
+
+<p></p>
+
+<p><a href="http://www.akitaonrails.com/2007/12/12/rolling-with-rails-2-0-the-first-full-tutorial">akitaonrails.com</a>
+<a href="http://weblog.infoworld.com/stratdev/archives/2007/12/installing_rail.html">weblog.infoworld.com</a></p>
+
+<p>Stay posted for more of my findings.</p>
+
+]]></content>
+  </entry>
+  
+</feed>

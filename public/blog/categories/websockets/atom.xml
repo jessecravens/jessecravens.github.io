@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: WebSockets | Jesse Cravens]]></title>
+  <link href="http://jessecravens.com/blog/categories/websockets/atom.xml" rel="self"/>
+  <link href="http://jessecravens.com/"/>
+  <updated>2012-10-15T20:59:53-05:00</updated>
+  <id>http://jessecravens.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Robodeck]]></title>
+    <link href="http://jessecravens.com/blog/2012/05/22/robodeck/"/>
+    <updated>2012-05-22T10:01:42-05:00</updated>
+    <id>http://jessecravens.com/blog/2012/05/22/robodeck</id>
+    <content type="html"><![CDATA[<p>Awhile back, I built a websocket powered interactive presentation framework called <a href="https://github.com/jessecravens/robodeck">Robodeck</a>.</p>
+
+
+<p>The solution uses the following technologies:</p>
+
+
+
+
+<ul>
+<li>Node.js</li>
+<li>Socket.io</li>
+<li>WebSockets</li>
+<li>GeoLocatin APIs</li>
+<li>Deck.js</li>
+</ul>
+
+
+
+
+<p>To name a few.</p>
+
+
+<p>To learn more, check it out here: <a href="http://jessecravens.github.com/robodeck">http://jessecravens.github.com/robodeck</a></p>
+
+
+<p><a href="http://jessecravens.github.com/robodeck"><img class="imgL" width="500px" src="http://jessecravens.com/images/blogposts/robodeck.png"></a></p>
+]]></content>
+  </entry>
+  
+</feed>

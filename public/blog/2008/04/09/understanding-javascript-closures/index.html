@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Understanding JavaScript Closures - Jesse Cravens</title>
+  <meta name="author" content="Jesse Cravens">
+
+  
+  <meta name="description" content="So it took me awhile to truly understand JavaScript closures. There is limited documentation of the subject on the web, but here is a list of the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jessecravens.com/blog/2008/04/09/understanding-javascript-closures/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Jesse Cravens" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic
+" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Paytone+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Allerta+Stencil' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Griffy' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-803126-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Jesse Cravens</a></h1>
+  
+    <h2>u·biq·ui·tous javascript and html5</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jessecravens.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/resume">Resume</a></li>
+<!--   <li><a href="/portfolio">Portfolio</a></li>
+  <li><a href="/music">Music</a></li> -->
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Understanding JavaScript Closures</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-09T22:37:05-05:00" pubdate data-updated="true">Apr 9<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>So it took me awhile to truly understand JavaScript closures. There is limited documentation of the subject on the web, but here is a list of the resources I used to finally grasp not only what specifically creates a closure, but also why we would want to use them.</p>
+
+
+
+
+<ul>
+<li><a href="http://books.google.com/books?id=VOS6IlCsuU4C&dq=javascript">JavaScript: the Definitive Guide</a></li>
+<li><a href="http://www.crockford.com/javascript/private.html">Douglas Crockford: Private Members in JavaScript</a></li>
+<li><a href="http://blog.morrisjohns.com/javascript_closures_for_dummies">JavaScript Closures for Dummies</a></li>
+<li><a href="http://www.jibbering.com/faq/faq_notes/closures.html">jibbering.com/faq/faq_notes/closures.html</a></li>
+</ul>
+
+
+
+
+<p>First, let&#8217;s define closures:</p>
+
+
+<ul>
+<li>A &#8220;closure&#8221; is an expression (typically a function) that can have free variables together with an environment that binds those variables (that &#8220;closes&#8221; the expression). - Jim Ley </li>
+<li>&#8230;JavaScript has closures. What this means is that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned. This is an extremely powerful property of the language. - Douglas Crockford</li>
+<li>Things are different if you save a reference to the nested function in the global scope. You do so by using the nested function as the return value of the outer function or by storing the nested function as a property of some other object. - JavaScript: the Definitive Guide</li>
+<li>Simply put, a closure is a variable, created inside a function, which continues to exist after the function has finished executing. - Patrick Hunlock</li>
+</ul>
+
+
+
+
+<p>I should preface the more detailed explanation below with a few prerequisite concepts. If you don&#8217;t truly grasp these concepts, then you may get hung up when trying to understand JavaScript closures. Fortunately, your quest to understand closures should force you to understand these concepts on a deeper level first.</p>
+
+
+
+
+<ul>
+<li>global object and global scope</li>
+<li>reference types and primitive types</li>
+<li>lexical scope and the scope chain</li>
+<li>the call object or the ECMA activation object</li>
+<li>idea of persistent data</li>
+<li>private variables</li>
+<li>using return</li>
+</ul>
+
+
+
+
+<p>To begin, we want to create a reusable function containing data that persists across invocations.</p>
+
+
+<p>We don&#8217;t want to hard code variables into the reusable function, and a local variable will not persist.</p>
+
+
+<p>From what we have learned by our <a href="#">&#8216;Responsible JavaScript for the Enterprise&#8217;</a> guidelines and through our understanding of the call object, lexical scope, and namespacing: we also know that we want to greatly limit global variables in our global scope.</p>
+
+
+
+
+<p>So instead, we want the developer to make two calls: One, to set up or &#8216;configure&#8217; the function, and two, to invoke this &#8216;pre-configured&#8217; function.</p>
+
+
+<p>The power is in the first call. I like to refer to it as the configuration call. </p>
+
+
+<p>During the configuration call, we &#8216;freeze&#8217; the inner function by setting a reference to it in the global scope.</p>
+
+
+<p>So this data persists. Why?</p>
+
+
+<p>We have an external reference to this inner function.</p>
+
+
+<p>The inner nested function retains its reference to the call object of the outer function.</p>
+
+
+<p>The outer function&#8217;s local scope resolves and the reference to its inner function remains.</p>
+
+
+<p></p>
+
+
+<p></p>
+
+
+
+
+<p>This is an example from a <a href="http://www.synthesispraxis.com/">friend</a> that helped me finally wrap my head around the power of the technique.</p>
+
+
+<p>{syntaxhighlighter brush: js; ruler: true; first-line: 1}
+function configEquation(A,B,C){
+  //The equation: Ax<sup>ex1</sup> + Bx<sup>ex2</sup> + Cx<sup>ex3</sup>
+  //The exponents are ex1, ex2, and ex3
+  //The coefficients are A, B, and C and are set</p>
+
+<p>  var ex1 = 2;
+  var ex2 = 1;
+  var ex3 = 0;</p>
+
+<p>//The exponents constitute a quadratic equation.
+function theEquation(x){</p>
+
+<pre><code>var result = A * Math.pow(x,ex1) + B * Math.pow(x,ex2) + C * Math.pow(x,ex3);
+return result; 
+</code></pre>
+
+<p>  }</p>
+
+<pre><code>return theEquation; //notice we return the reference not the invocation of the function(no params)
+</code></pre>
+
+<p>  }</p>
+
+<p>var myEquation = configEquation(2,3,0); //the configuration call
+  console.log(&#8216;myEquation, x = 2: &#8217; + myEquation(2));
+  console.log(&#8216;myEquation, x = 5: &#8217; + myEquation(5));</p>
+
+<p>var myEquation2 = configEquation(1,1,1); //a 2nd configuration call
+  console.log(&#8216;myEquation2, x = 2: &#8217; + myEquation2(2));
+  console.log(&#8216;myEquation2, x = 5: &#8217; + myEquation2(5));
+{/syntaxhighlighter}</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jesse Cravens</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-09T22:37:05-05:00" pubdate data-updated="true">Apr 9<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/programming/'>Programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jessecravens.com/blog/2008/04/09/understanding-javascript-closures/" data-via="jdcravens" data-counturl="http://jessecravens.com/blog/2008/04/09/understanding-javascript-closures/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/02/11/rails-2-0-on-windows-making-sense-of-old-tutorials/" title="Previous Post: Rails 2.0 on Windows: Making Sense of Old Tutorials">&laquo; Rails 2.0 on Windows: Making Sense of Old Tutorials</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/01/05/my-morning-jacket-live-at-madison-square-garden-on-2008-12-31/" title="Next Post: My Morning Jacket Live at Madison Square Garden on 2008-12-31">My Morning Jacket Live at Madison Square Garden on 2008-12-31 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/104030737657254860138?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+<section>
+<a href="http://shop.oreilly.com/product/0636920026273.do?sortby=bestSellers"><img src="/images/book.jpeg" /></a>
+  <b>Purchase O'Reilly Media's HTML5 Hacks</b>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs/">Upcoming Talk at Devcon5-Austin: Rapid Prototyping HTML5 Applications with NodeJS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit/">Just moved HTML5 Hacks into Copy/Edit</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/23/migration-from-drupal-to-octopress/">Migration from Drupal to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/17/javascript-modules/">JavaScript Modules</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/22/robodeck/">Robodeck</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/jessecravens">@jessecravens</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jessecravens',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jdcravens", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jdcravens" class="twitter-follow-button" data-show-count="false">Follow @jdcravens</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/cravens?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/cravens">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Jesse Cravens -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'jessecravens';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://jessecravens.com/blog/2008/04/09/understanding-javascript-closures/';
+        var disqus_url = 'http://jessecravens.com/blog/2008/04/09/understanding-javascript-closures/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
