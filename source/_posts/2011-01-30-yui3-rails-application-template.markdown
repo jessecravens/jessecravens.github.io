@@ -5,14 +5,14 @@ date: 2011-01-30 01:02:15 -0600
 comments: true
 categories: ["Semantic HTML", "Ruby on Rails", "Programming", "YUI", "JavaScript", "Hacks", "code"]
 ---
-<div class="">
-<p>I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.</p> 
+I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.
 
-<p>The template takes care of removing the Prototype library, including yui-debug.js and the CSS framework including reset, and the new <a href="http://developer.yahoo.com/yui/3/cssgrids/">Grids</a> - currently in beta. I also wanted to deliver my basic markup quickly so I've added <a href="http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#html_elements">Haml</a></p>
+The template takes care of removing the Prototype library, including yui-debug.js and the CSS framework including reset, and the new <a href="http://developer.yahoo.com/yui/3/cssgrids/">Grids</a> - currently in beta. I also wanted to deliver my basic markup quickly so I've added <a href="http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#html_elements">Haml</a>
 
-<p>Since I have been disciplining myself to follow Test Driven Development on the server, I included all of my Rails testing dependencies in the app template as well (RSpec, Cucumber, WebRat, Factory Girl) and I plan to continue to leverage <a href="http://developer.yahoo.com/yui/3/test/">YUI Test</a> on the client as I run through browser validations of the <a href="http://developer.yahoo.com/yui/3/examples/datasource/datasource_polling.html">datasource-polling sub-module</a>. Clone the rails app template <a href="https://github.com/jessecravens/yui3-rails-template">here</a>.</p>
+Since I have been disciplining myself to follow Test Driven Development on the server, I included all of my Rails testing dependencies in the app template as well (RSpec, Cucumber, WebRat, Factory Girl) and I plan to continue to leverage <a href="http://developer.yahoo.com/yui/3/test/">YUI Test</a> on the client as I run through browser validations of the <a href="http://developer.yahoo.com/yui/3/examples/datasource/datasource_polling.html">datasource-polling sub-module</a>. Clone the rails app template <a href="https://github.com/jessecravens/yui3-rails-template">here</a>.
 
-{syntaxhighlighter brush: ruby}
+{% codeblock yui-rails.rb %}
+
 # YUI3 Application Generator Template
 # Generates a Rails app; includes YUI3, Haml, RSpec, Cucumber, WebRat, Factory Girl ...
 
@@ -327,6 +327,4 @@ git :commit => "-am 'Setup Complete'"
 puts "DONE - setting up your YUI3 Rails App."
 
 
-{/syntaxhighlighter}
-</div>
-	
+{% endcodeblock %}	

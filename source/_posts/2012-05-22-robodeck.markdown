@@ -12,7 +12,7 @@ categories: ["CSS3", "HTML5", "JavaScript", "Web Application Launch", "Web Desig
 <li>Node.js</li>
 <li>Socket.io</li>
 <li>WebSockets</li>
-<li>GeoLocatin APIs</li>
+<li>GeoLocation APIs</li>
 <li>Deck.js</li>
 </ul>
 

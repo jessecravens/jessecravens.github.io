@@ -114,131 +114,126 @@
   </header>
 
 
-<div class="entry-content"><p>Here is a brief overview of <a href="http://beginrescueend.com/">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn&#8217;t live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
-
-
-
+<div class="entry-content"><p>Here is a brief overview of <a href="http://beginrescueend.com">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn&#8217;t live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
 
 <p>This allows me to essentially sandbox each of these applications&#8217; dependencies.</p>
 
-
-
-
-<p>One helpful hint I might offer is to get in the habit of declaring your gemset when you launch a new terminal. I tend to have multiple terminals open at once and it took me awhile to remember that each time I launched a terminal, RVM would fall back to my default gemset. So if I clone a Rails 3.1 project, I need to remember to switch to my rails3.1 gemset prior to runninig bundle install. </p>
-
-
-
+<p>One helpful hint I might offer is to get in the habit of declaring your gemset when you launch a new terminal. I tend to have multiple terminals open at once and it took me awhile to remember that each time I launched a terminal, RVM would fall back to my default gemset. So if I clone a Rails 3.1 project, I need to remember to switch to my rails3.1 gemset prior to runninig bundle install.</p>
 
 <p>Simply put, RVM helps:</p>
 
-
-<ol>
-  <li>manage versions of Ruby</li>
-  <li>manage packages of Gemsets</li>
-</ol>
-
+<ul>
+<li>manage versions of Ruby</li>
+<li>manage packages of Gemsets</li>
+</ul>
 
 
+<h2>RUBY</h2>
 
-<h3>RUBY</h3>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm list
+</span><span class='line'>$ rvm install 1.9.2-head</span></code></pre></td></tr></table></div></figure>
 
-
-<p>{syntaxhighlighter brush: ps}</p>
-
-<p>$ rvm list
-$ rvm install 1.9.2-head</p>
-
-<p>{/syntaxhighlighter}</p>
 
 <p>And, you can set a version as default</p>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm use 1.9.2-head --default</span></code></pre></td></tr></table></div></figure>
 
-<p>{syntaxhighlighter brush: ps}</p>
-
-<p>$ rvm use 1.9.2-head &#8211;default</p>
-
-<p>{/syntaxhighlighter}</p>
 
 <h3>GEMSETS</h3>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Start by creating our gemset(s):
+</span><span class='line'>
+</span><span class='line'>$  rvm gemset create rails309
+</span><span class='line'>
+</span><span class='line'># Or create multiple at a time:
+</span><span class='line'>
+</span><span class='line'>$  rvm gemset create rails307 rails31
+</span><span class='line'>
+</span><span class='line'># The result can be verified by listing the available gemsets:
+</span><span class='line'>
+</span><span class='line'>$  rvm gemset list
+</span><span class='line'>
+</span><span class='line'># See everything with list_all, this has been very useful:
+</span><span class='line'>
+</span><span class='line'>$ rvm gemset list_all
+</span><span class='line'>
+</span><span class='line'># If a gem’s name still leaves room for confusion, simply delete it and create a more meaningful one (e.g., rails31rc):
+</span><span class='line'>
+</span><span class='line'>$  rvm gemset delete rails31</span></code></pre></td></tr></table></div></figure>
 
-<p>{syntaxhighlighter brush: ps}</p>
 
-<h1>Start by creating our gemset(s):</h1>
+<p>Now that we have multiple gemsets installed, we must first select the one we want to use, and we can also set it as the default gemset by passing it the —default flag:
+  </p>
 
-<p>$  rvm gemset create rails309</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm use 1.9.2-head@rails309 --default</span></code></pre></td></tr></table></div></figure>
 
-<h1>Or create multiple at a time:</h1>
-
-<p>$  rvm gemset create rails307 rails31</p>
-
-<h1>The result can be verified by listing the available gemsets:</h1>
-
-<p>$  rvm gemset list</p>
-
-<h1>See everything with list_all, this has been very useful:</h1>
-
-<p>$ rvm gemset list_all</p>
-
-<h1>If a gem’s name still leaves room for confusion, simply delete it and create a more meaningful one (e.g., rails31rc):</h1>
-
-<p>$  rvm gemset delete rails31</p>
-
-<p>{/syntaxhighlighter}</p>
-
-<p>Now that we have multiple gemsets installed, we must first select the one we want to use, and we can also set it as the default gemset by passing it the —default flag:</p>
-
-
-<p>  
-{syntaxhighlighter brush: ps}</p>
-
-<p>$ rvm use 1.9.2-head@rails309 &#8211;default</p>
-
-<p>{/syntaxhighlighter}</p>
 
 <h3>Installing Rails</h3>
 
+<p>Installing rails is as easy as installing any other gem: we only need to specify it’s name, but we can always choose a specific version, or to speed up the installation process by skipping the documentation:</p>
 
-<p>Installing rails is as easy as installing any other gem: we only need to specify it’s name, but we can always choose a specific version, or to speed up the installation process by skipping the documentation: </p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ gem install rails --no-rdoc --no-ri
+</span><span class='line'># Or
+</span><span class='line'>$ gem install rails [-v 3.0.7] [--no-rdoc --no-ri]
+</span><span class='line'># Or
+</span><span class='line'>$ gem install rails -v ">=3.1.0rc"</span></code></pre></td></tr></table></div></figure>
 
-
-<p>{syntaxhighlighter brush: ps}
-$ gem install rails &#8211;no-rdoc &#8211;no-ri</p>
-
-<h1>Or</h1>
-
-<p>$ gem install rails [-v 3.0.7] [&#8211;no-rdoc &#8211;no-ri]</p>
-
-<h1>Or</h1>
-
-<p>$ gem install rails -v &#8220;>=3.1.0rc&#8221;
-{/syntaxhighlighter}</p>
 
 <h3>In Summary and Why Am I doing this?</h3>
 
-
-
-
 <p>Rails is distributed as a gem, and there are conflicts between Rails 2 and Rails 3, so if you want to run multiple versions of Rails on the same system you need to create a separate gemset for each:</p>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm --create 1.8.7-p302@rails2app
+</span><span class='line'>$ rvm --create use 1.9.2@rails3app</span></code></pre></td></tr></table></div></figure>
 
-<p>{syntaxhighlighter brush: ps}
-$ rvm &#8211;create 1.8.7-p302@rails2app
-$ rvm &#8211;create use 1.9.2@rails3app
-{/syntaxhighlighter}</p>
 
 <p>In other words, for application specific gemsets it is convenient to select the version of Ruby and the collection of gems by doing the following:</p>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm --create use 1.9.2@mongoid-app
+</span><span class='line'>
+</span><span class='line'># Also, which gemset am I using?
+</span><span class='line'>$ rvm gemset name
+</span><span class='line'>
+</span><span class='line'>$ rvm gemdir</span></code></pre></td></tr></table></div></figure>
 
-<p>{syntaxhighlighter brush: ps}
-$ rvm &#8211;create use 1.9.2@mongoid-app</p>
 
-<h1>Also, which gemset am I using?</h1>
 
-<p>$ rvm gemset name</p>
-
-<p>$ rvm gemdir
-{/syntaxhighlighter}</p>
 </div>
 
 
@@ -289,7 +284,7 @@ $ rvm &#8211;create use 1.9.2@mongoid-app</p>
         <a class="basic-alignment left" href="/blog/2011/09/26/git-cheatsheet/" title="Previous Post: Git Cheatsheet">&laquo; Git Cheatsheet</a>
       
       
-        <a class="basic-alignment right" href="/blog/2011/12/11/hack-82-web-wokers-basics-of-the-web-browsers-ui-thread/" title="Next Post: Hack #82 Web Wokers: Basics of the Web Browser's UI Thread">Hack #82 Web Wokers: Basics of the Web Browser's UI Thread &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2011/12/11/hack-82-web-wokers-basics-of-the-web-browsers-ui-thread/" title="Next Post: Web Wokers: Basics of the Web Browser's UI Thread">Web Wokers: Basics of the Web Browser's UI Thread &raquo;</a>
       
     </p>
   </footer>

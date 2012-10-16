@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: HTML5 | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/html5/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Web Workers | Jesse Cravens]]></title>
+  <link href="http://jessecravens.com/blog/categories/web-workers/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
   <updated>2012-10-15T23:04:18-05:00</updated>
   <id>http://jessecravens.com/</id>
@@ -12,133 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Upcoming Talk at Devcon5-Austin: Rapid Prototyping HTML5 Applications with NodeJS]]></title>
-    <link href="http://jessecravens.com/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs/"/>
-    <updated>2012-09-25T21:50:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs</id>
-    <content type="html"><![CDATA[<p>I'm getting ready for an upcoming talk titled: Rapid Prototyping HTML5 Applications with NodeJS, which I will presenting at <a href="http://www.html5report.com/conference/austin2012/Agenda/Agenda-at-a-glance.aspx">Devcon 5 - Austin</a>.</p>
-
-<p>Here is a brief summary:</p>
-
-<p>With HTML5, the modern web browser continues to mature as a capable application platform.
-The new specifications are broad, impacting nearly every technology associated with modern web development including graphics, connectivity, client-side storage, offline access, graphics, multimedia, and performance.
-JavaScript continues to be front and center as the core language. NodeJS extends JavaScript's event loop paradigm to the server, and provides JavaScript engineers with the ability to produce functionality deeper in the software stack. This phenomenon has had an impact on types of software development ranging from full-scale, enterprise, mobile applications to robot hobbyists platforms.
-See innovative example solutions and learn why NodeJS is an ideal development platform for the production acceleration of next-generation HTML5 applications.</p>
-
-<p>This is the beginning of a transition for me. With the release of HTML5 Hacks, I'm beginning to focus more on my ubiquitous JavaScript content. I'm excited, I have a lot to share.</p>
-
-<p>Look for an update with a web based version of the slides.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Just moved HTML5 Hacks into Copy/Edit]]></title>
-    <link href="http://jessecravens.com/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit/"/>
-    <updated>2012-09-24T21:57:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit</id>
-    <content type="html"><![CDATA[<p>After a marathon of hackery starting in April, <a href="http://www.oreillynet.com/pub/au/5370">Jeff Burtoft</a> and I pushed out 90 hacks and 435 pages of <a href="http://shop.oreilly.com/product/0636920026273.do">HTML5 Hacks</a> this week. We also had a few guest hackers that created some really great content as well.</p>
-
-<ul>
-<li>Raymond Camden of Adobe</li>
-<li>Phil Legetter of Pusher.com</li>
-<li>Alexander Schulze of jWebsocket</li>
-<li><a href="http://j.hn/">John Dyer</a> of Dallas Theological Seminary</li>
-<li>Alex Sirota of FoxyTunes</li>
-</ul>
-
-
-<p>Overall, it was a great experience. What I enjoyed the most was getting into a workflow groove, much like when you are building an API or contributing to a project. With each hack, it was necessary to ideate, plan, create the code, test it, and then put it into a understandable format. By the end, I was feeling pretty efficient at kicking out interesting hacks pretty quickly.</p>
-
-<p>I felt as though I improved over time, looking back is always interesting. I like to keep fine tuning and revising, but at some point you have to ship the product. I'm really proud of the work, it has been hard, but I learned a ton in the process.</p>
-
-<p>Most of my hacks I tried to make relevant to real world software development challenges, and mix in a number of HTML5 specifications. Hopefully, that turns out to benefit the reader ... I'm all ears on the feedback. So don't hesitate to drop us a line.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[JavaScript Modules]]></title>
-    <link href="http://jessecravens.com/blog/2012/06/17/javascript-modules/"/>
-    <updated>2012-06-17T16:23:21-05:00</updated>
-    <id>http://jessecravens.com/blog/2012/06/17/javascript-modules</id>
-    <content type="html"><![CDATA[<p>For a talk last March at USAA's internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
-
-
-<p><a href="http://jessecravens.github.com/js-modules-demo/"><img class="imgL" width="500px" src="http://jessecravens.com/images/blogposts/js-modules.png"></a></p>
-
-<p>This demonstrates the following Module Definitions:</p>
-
-
-
-
-<ul>
-<li>AMD</li>
-<li>CommonJS</li>
-<li>YUI3</li>
-<li>JS Harmony</li>
-</ul>
-
-
-
-
-<p>And a few script loaders:</p>
-
-
-
-
-<ul>
-<li>RequireJS</li>
-<li>yepnope</li>
-<li>YUI3 - YUI Loader</li>
-</ul>
-
-
-
-
-<p>If you want to know more about the state of modules, dependency loading and management in the JavaScript world, there is always room for more contributors, just fork or clone the project ... and you will have a playground to begin playing with some of the most popular implementations.</p>
-
-
-<p>To learn more, check it out here: <a href="http://jessecravens.github.com/js-modules-demo/">jessecravens.github.com/js-modules-demo</a></p>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Robodeck]]></title>
-    <link href="http://jessecravens.com/blog/2012/05/22/robodeck/"/>
-    <updated>2012-05-22T10:01:42-05:00</updated>
-    <id>http://jessecravens.com/blog/2012/05/22/robodeck</id>
-    <content type="html"><![CDATA[<p>Awhile back, I built a websocket powered interactive presentation framework called <a href="https://github.com/jessecravens/robodeck">Robodeck</a>.</p>
-
-
-<p>The solution uses the following technologies:</p>
-
-
-
-
-<ul>
-<li>Node.js</li>
-<li>Socket.io</li>
-<li>WebSockets</li>
-<li>GeoLocation APIs</li>
-<li>Deck.js</li>
-</ul>
-
-
-
-
-<p>To name a few.</p>
-
-
-<p>To learn more, check it out here: <a href="http://jessecravens.github.com/robodeck">http://jessecravens.github.com/robodeck</a></p>
-
-
-<p><a href="http://jessecravens.github.com/robodeck"><img class="imgL" width="500px" src="http://jessecravens.com/images/blogposts/robodeck.png"></a></p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Web Wokers: Basics of the Web Browser's UI Thread]]></title>

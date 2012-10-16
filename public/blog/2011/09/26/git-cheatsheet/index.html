@@ -9,7 +9,7 @@
   <meta name="author" content="Jesse Cravens">
 
   
-  <meta name="description" content="I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I&#8217; &hellip;">
+  <meta name="description" content="I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I&#8217;d &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -114,77 +114,109 @@
   </header>
 
 
-<div class="entry-content"><div class="">
-
-<p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I&#8217;d share.</p> 
+<div class="entry-content"><p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I&#8217;d share.</p>
 
 <h3>Git First-Time System Setup</h3>
 
 <p>After installing Git, you should perform a set of one-time setup steps. These are system setups, meaning you only have to do them once per computer:</p>
 
-{syntaxhighlighter brush: ps}
-$ sudo apt-get install git-core
-$ git config &#8211;global user.email youremail[at symbol]example.com
-$ git config &#8211;global user.name &#8220;John Doe&#8221;
-$ git config &#8211;global user.name &#8220;Your Name&#8221;
-$ git config &#8211;global alias.co checkout
-{/syntaxhighlighter}
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install git-core
+</span><span class='line'>$ git config --global user.email youremail[at symbol]example.com
+</span><span class='line'>$ git config --global user.name "John Doe"
+</span><span class='line'>$ git config --global user.name "Your Name"
+</span><span class='line'>$ git config --global alias.co checkout</span></code></pre></td></tr></table></div></figure>
+
 
 <p>As a final setup step, you can optionally set the editor Git will use for commit messages.</p>
 
-{syntaxhighlighter brush: ps}
-$ git config &#8211;global core.editor &#8220;mate -w&#8221;
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config --global core.editor "mate -w"
+</span><span class='line'>
+</span><span class='line'># Replace “mate -w” with “gvim -f” for gVim or “mvim -f” for MacVim.</span></code></pre></td></tr></table></div></figure>
 
-# Replace “mate -w” with “gvim -f” for gVim or “mvim -f” for MacVim.
-{/syntaxhighlighter}
 
 <h3>Quick Reference – Most Often Used Commands</h3>
 
-{syntaxhighlighter brush: ps}
-$ cd /path/to/repository
-$ git init
-$ git add .
-$ git add -u
-$ git log
-$ git status
-$ git commit -m &#8220;initial commit&#8221;
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd /path/to/repository
+</span><span class='line'>$ git init
+</span><span class='line'>$ git add .
+</span><span class='line'>$ git add -u
+</span><span class='line'>$ git log
+</span><span class='line'>$ git status
+</span><span class='line'>$ git commit -m "initial commit"
+</span><span class='line'>
+</span><span class='line'># made a mistake on the git commit
+</span><span class='line'>$ git commit -amend -m "initial commit"
+</span><span class='line'>
+</span><span class='line'># Add the remote repository
+</span><span class='line'>
+</span><span class='line'># ex 1
+</span><span class='line'>$ git remote add unfuddle git@subdomain.unfuddle.com:subdomain/abbreviation.git
+</span><span class='line'>
+</span><span class='line'># ex 2
+</span><span class='line'>$ git remote add origin git@subdomain.unfuddle.com:subdomain/abbreviation.git
+</span><span class='line'>
+</span><span class='line'># Configure the repository
+</span><span class='line'>$ git config remote.unfuddle.push refs/heads/master:refs/heads/master
+</span><span class='line'>
+</span><span class='line'># Push master branch to remote repository named unfuddle
+</span><span class='line'>$ git push unfuddle master
+</span><span class='line'>
+</span><span class='line'># Other commands:
+</span><span class='line'>
+</span><span class='line'># Clone an existing remote repo 
+</span><span class='line'>$ git clone git@subdomain.unfuddle.com:subdomain/abbreviation.git
+</span><span class='line'>
+</span><span class='line'># List all branches within your repo
+</span><span class='line'>$ git branch -a
+</span><span class='line'>
+</span><span class='line'>#Create and switch to a new branch "whatever"
+</span><span class='line'>$ git checkout -b whatever</span></code></pre></td></tr></table></div></figure>
 
-# made a mistake on the git commit
-$ git commit -amend -m &#8220;initial commit&#8221;
 
-# Add the remote repository
-
-# ex 1
-$ git remote add unfuddle git@subdomain.unfuddle.com:subdomain/abbreviation.git
-
-# ex 2
-$ git remote add origin git@subdomain.unfuddle.com:subdomain/abbreviation.git
-
-# Configure the repository
-$ git config remote.unfuddle.push refs/heads/master:refs/heads/master
-
-# Push master branch to remote repository named unfuddle
-$ git push unfuddle master
-
-# Other commands:
-
-# Clone an existing remote repo 
-$ git clone git@subdomain.unfuddle.com:subdomain/abbreviation.git
-
-# List all branches within your repo
-$ git branch -a
-
-#Create and switch to a new branch &#8220;whatever&#8221;
-$ git checkout -b whatever 
-
-{/syntaxhighlighter}
-
-<p>Those are the basics, should be enough to make you dangerous. </p>
-
-</div>
-
-
-
+<p>Those are the basics, should be enough to make you dangerous.</p>
 </div>
 
 

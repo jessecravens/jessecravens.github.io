@@ -5,38 +5,37 @@ date: 2011-09-26 23:35:58 -0500
 comments: true
 categories: ["Ruby on Rails", "Programming", "Productivity", "Open Source", "code", "Business Computer Programming"]
 ---
-<p>Here is a brief overview of <a href="http://beginrescueend.com/">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn't live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
+Here is a brief overview of [Ruby Version Manager](http://beginrescueend.com) and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn't live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.
 
-<p>This allows me to essentially sandbox each of these applications' dependencies.</p>
+This allows me to essentially sandbox each of these applications' dependencies.
 
-<p>One helpful hint I might offer is to get in the habit of declaring your gemset when you launch a new terminal. I tend to have multiple terminals open at once and it took me awhile to remember that each time I launched a terminal, RVM would fall back to my default gemset. So if I clone a Rails 3.1 project, I need to remember to switch to my rails3.1 gemset prior to runninig bundle install. </p>
+One helpful hint I might offer is to get in the habit of declaring your gemset when you launch a new terminal. I tend to have multiple terminals open at once and it took me awhile to remember that each time I launched a terminal, RVM would fall back to my default gemset. So if I clone a Rails 3.1 project, I need to remember to switch to my rails3.1 gemset prior to runninig bundle install.
 
-<p>Simply put, RVM helps:</p>
-<ol>
-  <li>manage versions of Ruby</li>
-  <li>manage packages of Gemsets</li>
-</ol>
+Simply put, RVM helps:
 
-<h3>RUBY</h3>
+- manage versions of Ruby
+- manage packages of Gemsets
 
-{syntaxhighlighter brush: ps} 
+##RUBY
+
+{% codeblock %}
 
 $ rvm list
 $ rvm install 1.9.2-head
 
-{/syntaxhighlighter}
+{% endcodeblock %}
 
-<p>And, you can set a version as default</p>
+And, you can set a version as default
 
-{syntaxhighlighter brush: ps}
+{% codeblock %}
 
 $ rvm use 1.9.2-head --default
 
-{/syntaxhighlighter}
+{% endcodeblock %}
 
-<h3>GEMSETS</h3>
+###GEMSETS
 
-{syntaxhighlighter brush: ps}
+{% codeblock %}
 # Start by creating our gemset(s):
 
 $  rvm gemset create rails309
@@ -57,44 +56,51 @@ $ rvm gemset list_all
 
 $  rvm gemset delete rails31
 
-{/syntaxhighlighter}
+{% endcodeblock %}
 
-<p>Now that we have multiple gemsets installed, we must first select the one we want to use, and we can also set it as the default gemset by passing it the —default flag:</p>
+Now that we have multiple gemsets installed, we must first select the one we want to use, and we can also set it as the default gemset by passing it the —default flag:
   
-{syntaxhighlighter brush: ps}
+{% codeblock %}
 
 $ rvm use 1.9.2-head@rails309 --default
 
-{/syntaxhighlighter}
+{% endcodeblock %}
 
-<h3>Installing Rails</h3>
-<p>Installing rails is as easy as installing any other gem: we only need to specify it’s name, but we can always choose a specific version, or to speed up the installation process by skipping the documentation: </p>
+###Installing Rails
 
-{syntaxhighlighter brush: ps}
+Installing rails is as easy as installing any other gem: we only need to specify it’s name, but we can always choose a specific version, or to speed up the installation process by skipping the documentation:
+
+{% codeblock %}
+
 $ gem install rails --no-rdoc --no-ri
 # Or
 $ gem install rails [-v 3.0.7] [--no-rdoc --no-ri]
 # Or
 $ gem install rails -v ">=3.1.0rc"
-{/syntaxhighlighter}
 
-<h3>In Summary and Why Am I doing this?</h3>
+{% endcodeblock %}
 
-<p>Rails is distributed as a gem, and there are conflicts between Rails 2 and Rails 3, so if you want to run multiple versions of Rails on the same system you need to create a separate gemset for each:</p>
+###In Summary and Why Am I doing this?
 
-{syntaxhighlighter brush: ps}
+Rails is distributed as a gem, and there are conflicts between Rails 2 and Rails 3, so if you want to run multiple versions of Rails on the same system you need to create a separate gemset for each:
+
+{% codeblock %}
+
 $ rvm --create 1.8.7-p302@rails2app
 $ rvm --create use 1.9.2@rails3app
-{/syntaxhighlighter}
+
+{% endcodeblock %}
 
 
-<p>In other words, for application specific gemsets it is convenient to select the version of Ruby and the collection of gems by doing the following:</p>
+In other words, for application specific gemsets it is convenient to select the version of Ruby and the collection of gems by doing the following:
 
-{syntaxhighlighter brush: ps}
+{% codeblock %}
+
 $ rvm --create use 1.9.2@mongoid-app
 
 # Also, which gemset am I using?
 $ rvm gemset name
 
 $ rvm gemdir
-{/syntaxhighlighter}
+
+{% endcodeblock %}

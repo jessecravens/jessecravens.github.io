@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Application Launch | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/web-application-launch/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2012-10-15T22:22:56-05:00</updated>
+  <updated>2012-10-15T23:04:18-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -30,7 +30,7 @@
 <li>Node.js</li>
 <li>Socket.io</li>
 <li>WebSockets</li>
-<li>GeoLocatin APIs</li>
+<li>GeoLocation APIs</li>
 <li>Deck.js</li>
 </ul>
 
