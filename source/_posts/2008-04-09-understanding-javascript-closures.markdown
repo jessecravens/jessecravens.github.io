@@ -52,7 +52,7 @@ categories: ["Programming", "JavaScript"]
 
 <p>This is an example from a <a href="http://www.synthesispraxis.com/">friend</a> that helped me finally wrap my head around the power of the technique.</p>
 
-{syntaxhighlighter brush: js; ruler: true; first-line: 1}
+{% codeblock Initialize closure.js %}
 function configEquation(A,B,C){
   //The equation: Ax^ex1 + Bx^ex2 + Cx^ex3
   //The exponents are ex1, ex2, and ex3
@@ -78,4 +78,4 @@ var myEquation = configEquation(2,3,0); //the configuration call
 var myEquation2 = configEquation(1,1,1); //a 2nd configuration call
   console.log('myEquation2, x = 2: ' + myEquation2(2));
   console.log('myEquation2, x = 5: ' + myEquation2(5));
-{/syntaxhighlighter}
+{% endcodeblock %}

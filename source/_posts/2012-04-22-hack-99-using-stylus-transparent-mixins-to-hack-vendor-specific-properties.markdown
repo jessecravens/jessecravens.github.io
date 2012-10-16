@@ -1,28 +1,22 @@
 ---
 layout: post
-title: "Hack #99: Using Stylus’ Transparent Mixins to Hack Vendor-Specific Properties"
+title: "Using Stylus’ Transparent Mixins to Hack Vendor-Specific Properties"
 date: 2012-04-22 19:11:35 -0500
 comments: true
 categories: ["CSS"]
 ---
-<div class="">
 
-<p>This post is mirrored at: <a href="http://html5hacks.com/hack/web-workers/hack-82-web-wokers-basics-web-browsers-ui-thread">html5hacks.com</a></p>
+One of the most interesting features of [Stylus](https://github.com/LearnBoost/stylus) is transparent Mixins. One reason they are interesting is that at the time of this writing, this feature is exclusive to Stylus, other CSS metalanguages like Less and Sass do not offer Transparent Mixin support.
 
+We already defined a mixin earlier, when we explored mixins with Jade. Here they are used similarly.
 
-<p>One of the most interesting features of <a href="https://github.com/LearnBoost/stylus">Stylus</a> is transparent Mixins. One reason they are interesting is that at the time of this writing, this feature is exclusive to Stylus, other CSS metalanguages like Less and Sass do not offer Transparent Mixin support. </p></p>
+Before we begin with the transparent aspect of Stylus mixin support, let’s build a simple CSS mixin. Perhaps, the best example, as provided by TJ Holowaychuk in this [beginner screencast]( http://www.screenr.com/bNY) uses vendor-specific prefixes.
 
-<p>We already defined a mixin earlier, when we explored mixins with Jade. Here they are used similarly.</p>
+How about we take his example and expand it to a slightly more challenging scenario.
 
-<p>Before we begin with the transparent aspect of Stylus mixin support, let’s build a simple CSS mixin. Perhaps, the best example, as provided by TJ Holowaychuk in this beginner screencast: http://www.screenr.com/bNY uses vendor-specific prefixes. </p>
+In case you haven’t come across this challenge before, lets set some context. Browser makers, or vendors, implement proprietary extensions to standard CSS specifications to release and test browser features that have been developed pre ‘Candidate Recommendation’ W3C draft status. Although vendor-specific prefixes can be frustrating for web developers, they are a necessary evil, allowing new properties to be widely tested before they become available as standard CSS properties.
 
-<p>How about we take his example and expand it to a slightly more challenging scenario. </p>
-
-<p>In case you haven’t come across this challenge before, lets set some context. Browser makers, or vendors, implement proprietary extensions to standard CSS specifications to release and test browser features that have been developed pre ‘Candidate Recommendation’ W3C draft status. Although vendor-specific prefixes can be frustrating for web developers, they are a necessary evil, allowing new properties to be widely tested before they become available as standard CSS properties.</p>
-
-<p>Each Vendor maintains a list of their proprietary CSS properties. The following table provides the extension prefixes for all the modern browsers:</p>
-
-<p>Extension Rendering Engine Browser(s) Example -moz- Mozilla Firefox, Camino -moz-border-radius -ms- Trident Internet Explorer -ms-layout-grid -o- Presto Opera -o-border-radius -webkit- Webkit Chrome, Safari -webkit-border-radius</p>
+Each Vendor maintains a list of their proprietary CSS properties. The following table provides the extension prefixes for all the modern browsers:
 
 <table border="1">
 <tr>
@@ -57,24 +51,21 @@ categories: ["CSS"]
 </tr>
 </table>
 
-<p>And here is a few valuable resources for finding these properties.</p>
-<ul>
-<li>Webkit (unofficial at css-infos.net) : http://css-infos.net/properties/webkit</li> 
 
-<li>Safari: http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-SW1</li>
+And here is a few valuable resources for finding these properties:
 
-<li>Mozilla: https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions</li>
+- [Webkit-unofficial at css-infos.net](http://css-infos.net/properties/webkit) 
+- [Safari](http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-SW1)
+- [Mozilla](https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions)
+- [Opera](http://www.opera.com/docs/specs/presto28/css/o-vendor/)
+- [Internet Explorer](http://blogs.msdn.com/b/ie/archive/2008/09/08/microsoft-css-vendor-extensions.aspx)
 
-<li>Opera: http://www.opera.com/docs/specs/presto28/css/o-vendor/</li>
+Without a metalanguage that provides logic to CSS, these declarations can become cumbersome and repetitive.
+Here is an example of a div element that needs to have corners take on different size radiuses:
 
-<li>Internet Explorer: http://blogs.msdn.com/b/ie/archive/2008/09/08/microsoft-css-vendor-extensions.aspx</li>
-</ul>
+First, the markup in Jade.
 
-<p>Without a metalanguage that provides logic to CSS, these declarations can become cumbersome and repetitive. Here is an example of a div element that needs to have corners take on different size radiuses:</p>
-
-<p>First, the markup in Jade.</p>
-
-<pre class="brush: html; ruler: true; first-line: 1; highlight: [0]">
+{% codeblock example.html %}
 header
   h1= title
   p Welcome to #{title}
@@ -82,37 +73,34 @@ header
 div.panel panel test
 div.mixin-panel mixin-panel test
 div.t-mixin-panel transparent-mixin-panel test
-</pre>
+{% endcodeblock %}
 
-<p>Then, the styles in basic CSS.</p>
+Then, the styles in basic CSS.
 
-
-<pre class="brush: css; ruler: true; first-line: 1; highlight: [0]">
+{% codeblock example.css %}
 div.panel {
   -moz-border-radius: 10px 5px;
   -webkit-border-radius: 10px 5px;
   border-radius: 10px 5px;
 }
-</pre>
+{% endcodeblock %}
 
-<p>This produces the following effect:</p>
+This produces the following effect:
 
-<p>
-<img src="http://html5hacks.com/sites/default/files/images/stylus-example265x185.png"/>
-</p>
+<img src="/images/blogposts/stylus-example265x185.png"/>
 
-<p> With that context in mind, let’s leverage Stylus to help us manage our code. First, we are able to remove all parenthesis, semi-colons, and colons. </p>
+With that context in mind, let’s leverage Stylus to help us manage our code. First, we are able to remove all parenthesis, semi-colons, and colons.
 
-<pre class="brush: css; ruler: true; first-line: 1; highlight: [0]">
+{% codeblock example2.css %}
 div.panel
   -moz-border-radius 10px 5px
   -webkit-border-radius 10px 5px
   border-radius 10px 5px
-</pre>
+{% endcodeblock %}
 
-<p>Much like Jade, this simplified syntax goes along way in our ability to quickly write CSS. Now, let’s apply some logic, by creating a border-radius mixin, and pass our values as arguments to our mixin:</p>
+Much like Jade, this simplified syntax goes along way in our ability to quickly write CSS. Now, let’s apply some logic, by creating a border-radius mixin, and pass our values as arguments to our mixin:
 
-<pre class="brush: css; ruler: true; first-line: 1; highlight: [0]">
+{% codeblock example3.css %}
 my-border-radius-mixin (...args)
   -moz-border-radius args
   -webkit-border-radius args
@@ -121,11 +109,11 @@ my-border-radius-mixin (...args)
 div.panel
   my-border-radius-mixin (10px 5px)
 
-</pre>
+{% endcodeblock %}
 
-<p>And we can reuse this mixin in other contexts, which continues to help reduce code bloat and keep your code DRY. </p>
+And we can reuse this mixin in other contexts, which continues to help reduce code bloat and keep your code DRY.
 
-<pre class="brush: css; ruler: true; first-line: 1; highlight: [0]">
+{% codeblock example4.css %}
 my-border-radius-mixin (...args)
   -moz-border-radius args
   -webkit-border-radius args
@@ -140,11 +128,11 @@ div.other-panel
 div.another-panel
   my-border-radius-mixin (5px 10px 33px 43px)
 
-</pre>
+{% endcodeblock %}
 
-<p> While Stylus allows us to name our mixin as we choose, we are also given the ability to apply mixins ‘transparently.’ In the case of a simple implementation of border-radius, a transparent mixin would make a lot of sense. In effect, this normalizes browser implementations and provides an abstraction layer for CSS developers. </p>
+While Stylus allows us to name our mixin as we choose, we are also given the ability to apply mixins ‘transparently.’ In the case of a simple implementation of border-radius, a transparent mixin would make a lot of sense. In effect, this normalizes browser implementations and provides an abstraction layer for CSS developers.
 
-<pre class="brush: css; ruler: true; first-line: 1; highlight: [0]">
+{% codeblock example5.css %}
 border-radius (...args)
   -moz-border-radius args
   -webkit-border-radius args
@@ -153,8 +141,7 @@ border-radius (...args)
 div.panel
   border-radius 10px 5px
 
-</pre>
+{% endcodeblock %}
 
-<p>As long as a border-radius mixin is present, Stylus will find it, and apply the vendor-specific properties transparently. </p>
+As long as a border-radius mixin is present, Stylus will find it, and apply the vendor-specific properties transparently.
 
-</div>

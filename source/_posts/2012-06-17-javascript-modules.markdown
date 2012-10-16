@@ -27,8 +27,6 @@ categories: ["Programming", "Open Source", "JQuery", "JavaScript", "HTML5", "Hac
 <li>YUI3 - YUI Loader</li>
 </ul>
 
-
-
 <p>If you want to know more about the state of modules, dependency loading and management in the JavaScript world, there is always room for more contributors, just fork or clone the project ... and you will have a playground to begin playing with some of the most popular implementations.</p>
 <p>To learn more, check it out here: <a href="http://jessecravens.github.com/js-modules-demo/">jessecravens.github.com/js-modules-demo</a></p>
 

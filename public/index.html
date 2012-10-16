@@ -489,7 +489,7 @@ EOF
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/04/22/hack-99-using-stylus-transparent-mixins-to-hack-vendor-specific-properties/">Hack #99: Using Stylus’ Transparent Mixins to Hack Vendor-Specific Properties</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/04/22/hack-99-using-stylus-transparent-mixins-to-hack-vendor-specific-properties/">Using Stylus’ Transparent Mixins to Hack Vendor-Specific Properties</a></h1>
     
     
       <p class="meta">
@@ -512,24 +512,17 @@ EOF
   </header>
 
 
-  <div class="entry-content"><div class="">
-
-<p>This post is mirrored at: <a href="http://html5hacks.com/hack/web-workers/hack-82-web-wokers-basics-web-browsers-ui-thread">html5hacks.com</a></p>
-
-
-<p>One of the most interesting features of <a href="https://github.com/LearnBoost/stylus">Stylus</a> is transparent Mixins. One reason they are interesting is that at the time of this writing, this feature is exclusive to Stylus, other CSS metalanguages like Less and Sass do not offer Transparent Mixin support. </p></p>
+  <div class="entry-content"><p>One of the most interesting features of <a href="https://github.com/LearnBoost/stylus">Stylus</a> is transparent Mixins. One reason they are interesting is that at the time of this writing, this feature is exclusive to Stylus, other CSS metalanguages like Less and Sass do not offer Transparent Mixin support.</p>
 
 <p>We already defined a mixin earlier, when we explored mixins with Jade. Here they are used similarly.</p>
 
-<p>Before we begin with the transparent aspect of Stylus mixin support, let’s build a simple CSS mixin. Perhaps, the best example, as provided by TJ Holowaychuk in this beginner screencast: http://www.screenr.com/bNY uses vendor-specific prefixes. </p>
+<p>Before we begin with the transparent aspect of Stylus mixin support, let’s build a simple CSS mixin. Perhaps, the best example, as provided by TJ Holowaychuk in this <a href="http://www.screenr.com/bNY">beginner screencast</a> uses vendor-specific prefixes.</p>
 
-<p>How about we take his example and expand it to a slightly more challenging scenario. </p>
+<p>How about we take his example and expand it to a slightly more challenging scenario.</p>
 
 <p>In case you haven’t come across this challenge before, lets set some context. Browser makers, or vendors, implement proprietary extensions to standard CSS specifications to release and test browser features that have been developed pre ‘Candidate Recommendation’ W3C draft status. Although vendor-specific prefixes can be frustrating for web developers, they are a necessary evil, allowing new properties to be widely tested before they become available as standard CSS properties.</p>
 
 <p>Each Vendor maintains a list of their proprietary CSS properties. The following table provides the extension prefixes for all the modern browsers:</p>
-
-<p>Extension Rendering Engine Browser(s) Example -moz- Mozilla Firefox, Camino -moz-border-radius -ms- Trident Internet Explorer -ms-layout-grid -o- Presto Opera -o-border-radius -webkit- Webkit Chrome, Safari -webkit-border-radius</p>
 
 <table border="1">
 <tr>
@@ -564,108 +557,148 @@ EOF
 </tr>
 </table>
 
-<p>And here is a few valuable resources for finding these properties.</p>
+
+<p>And here is a few valuable resources for finding these properties:</p>
+
 <ul>
-<li>Webkit (unofficial at css-infos.net) : http://css-infos.net/properties/webkit</li> 
-
-<li>Safari: http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-SW1</li>
-
-<li>Mozilla: https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions</li>
-
-<li>Opera: http://www.opera.com/docs/specs/presto28/css/o-vendor/</li>
-
-<li>Internet Explorer: http://blogs.msdn.com/b/ie/archive/2008/09/08/microsoft-css-vendor-extensions.aspx</li>
+<li><a href="http://css-infos.net/properties/webkit">Webkit-unofficial at css-infos.net</a></li>
+<li><a href="http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-SW1">Safari</a></li>
+<li><a href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">Mozilla</a></li>
+<li><a href="http://www.opera.com/docs/specs/presto28/css/o-vendor/">Opera</a></li>
+<li><a href="http://blogs.msdn.com/b/ie/archive/2008/09/08/microsoft-css-vendor-extensions.aspx">Internet Explorer</a></li>
 </ul>
 
-<p>Without a metalanguage that provides logic to CSS, these declarations can become cumbersome and repetitive. Here is an example of a div element that needs to have corners take on different size radiuses:</p>
+
+<p>Without a metalanguage that provides logic to CSS, these declarations can become cumbersome and repetitive.
+Here is an example of a div element that needs to have corners take on different size radiuses:</p>
 
 <p>First, the markup in Jade.</p>
 
-<pre class="brush: html; ruler: true; first-line: 1; highlight: [0]">
-header
-  h1= title
-  p Welcome to #{title}
+<figure class='code'><figcaption><span>example.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>header
+</span><span class='line'>  h1= title
+</span><span class='line'>  p Welcome to #{title}
+</span><span class='line'>
+</span><span class='line'>div.panel panel test
+</span><span class='line'>div.mixin-panel mixin-panel test
+</span><span class='line'>div.t-mixin-panel transparent-mixin-panel test
+</span></code></pre></td></tr></table></div></figure>
 
-div.panel panel test
-div.mixin-panel mixin-panel test
-div.t-mixin-panel transparent-mixin-panel test
-</pre>
 
 <p>Then, the styles in basic CSS.</p>
 
+<figure class='code'><figcaption><span>example.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">div</span><span class="nc">.panel</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre class="brush: css; ruler: true; first-line: 1; highlight: [0]">
-div.panel {
-  -moz-border-radius: 10px 5px;
-  -webkit-border-radius: 10px 5px;
-  border-radius: 10px 5px;
-}
-</pre>
 
 <p>This produces the following effect:</p>
 
-<p>
-<img src="http://html5hacks.com/sites/default/files/images/stylus-example265x185.png"/>
-</p>
+<p><img src="/images/blogposts/stylus-example265x185.png"/></p>
 
-<p> With that context in mind, let’s leverage Stylus to help us manage our code. First, we are able to remove all parenthesis, semi-colons, and colons. </p>
+<p>With that context in mind, let’s leverage Stylus to help us manage our code. First, we are able to remove all parenthesis, semi-colons, and colons.</p>
 
-<pre class="brush: css; ruler: true; first-line: 1; highlight: [0]">
-div.panel
-  -moz-border-radius 10px 5px
-  -webkit-border-radius 10px 5px
-  border-radius 10px 5px
-</pre>
+<figure class='code'><figcaption><span>example2.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">div</span><span class="nc">.panel</span>
+</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
+</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
+</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Much like Jade, this simplified syntax goes along way in our ability to quickly write CSS. Now, let’s apply some logic, by creating a border-radius mixin, and pass our values as arguments to our mixin:</p>
 
-<pre class="brush: css; ruler: true; first-line: 1; highlight: [0]">
-my-border-radius-mixin (...args)
-  -moz-border-radius args
-  -webkit-border-radius args
-  border-radius args
+<figure class='code'><figcaption><span>example3.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">my-border-radius-mixin</span> <span class="o">(..</span><span class="nc">.args</span><span class="o">)</span>
+</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
+</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
+</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">div</span><span class="nc">.panel</span>
+</span><span class='line'>  <span class="nt">my-border-radius-mixin</span> <span class="o">(</span><span class="nt">10px</span> <span class="nt">5px</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
-div.panel
-  my-border-radius-mixin (10px 5px)
 
-</pre>
+<p>And we can reuse this mixin in other contexts, which continues to help reduce code bloat and keep your code DRY.</p>
 
-<p>And we can reuse this mixin in other contexts, which continues to help reduce code bloat and keep your code DRY. </p>
+<figure class='code'><figcaption><span>example4.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">my-border-radius-mixin</span> <span class="o">(..</span><span class="nc">.args</span><span class="o">)</span>
+</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
+</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
+</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">div</span><span class="nc">.panel</span>
+</span><span class='line'>  <span class="nt">border-radius-mixin</span> <span class="o">(</span><span class="nt">10px</span> <span class="nt">5px</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">div</span><span class="nc">.other-panel</span>
+</span><span class='line'>  <span class="nt">border-radius-mixin</span> <span class="o">(</span><span class="nt">3px</span> <span class="nt">32px</span> <span class="nt">100px</span> <span class="nt">55px</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">div</span><span class="nc">.another-panel</span>
+</span><span class='line'>  <span class="nt">my-border-radius-mixin</span> <span class="o">(</span><span class="nt">5px</span> <span class="nt">10px</span> <span class="nt">33px</span> <span class="nt">43px</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre class="brush: css; ruler: true; first-line: 1; highlight: [0]">
-my-border-radius-mixin (...args)
-  -moz-border-radius args
-  -webkit-border-radius args
-  border-radius args
 
-div.panel
-  border-radius-mixin (10px 5px)
+<p>While Stylus allows us to name our mixin as we choose, we are also given the ability to apply mixins ‘transparently.’ In the case of a simple implementation of border-radius, a transparent mixin would make a lot of sense. In effect, this normalizes browser implementations and provides an abstraction layer for CSS developers.</p>
 
-div.other-panel
-  border-radius-mixin (3px 32px 100px 55px)
+<figure class='code'><figcaption><span>example5.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">border-radius</span> <span class="o">(..</span><span class="nc">.args</span><span class="o">)</span>
+</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
+</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
+</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">div</span><span class="nc">.panel</span>
+</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
+</span></code></pre></td></tr></table></div></figure>
 
-div.another-panel
-  my-border-radius-mixin (5px 10px 33px 43px)
 
-</pre>
-
-<p> While Stylus allows us to name our mixin as we choose, we are also given the ability to apply mixins ‘transparently.’ In the case of a simple implementation of border-radius, a transparent mixin would make a lot of sense. In effect, this normalizes browser implementations and provides an abstraction layer for CSS developers. </p>
-
-<pre class="brush: css; ruler: true; first-line: 1; highlight: [0]">
-border-radius (...args)
-  -moz-border-radius args
-  -webkit-border-radius args
-  border-radius args
-
-div.panel
-  border-radius 10px 5px
-
-</pre>
-
-<p>As long as a border-radius mixin is present, Stylus will find it, and apply the vendor-specific properties transparently. </p>
-
-</div>
-
+<p>As long as a border-radius mixin is present, Stylus will find it, and apply the vendor-specific properties transparently.</p>
 </div>
   
   
@@ -1102,7 +1135,7 @@ $ git checkout -b whatever
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/06/08/creation-of-iboerne-com/">Creation of iBoerne.com</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/01/30/yui3-rails-application-template/">YUI3 Rails Application Template</a></h1>
     
     
       <p class="meta">
@@ -1118,469 +1151,340 @@ $ git checkout -b whatever
   
 
 
-<time datetime="2011-06-08T21:44:44-05:00" pubdate data-updated="true">Jun 8<span>th</span>, 2011</time>
+<time datetime="2011-01-30T01:02:15-06:00" pubdate data-updated="true">Jan 30<span>th</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h2>Creation of iBoerne.com</h2>
+  <div class="entry-content"><div class="">
+<p>I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.</p> 
 
-<p>secret sauce
- - local domain name
- - transparent account creation
- - targeted Facebook ads
- - exceptional member experience/UI design
- - presence on all platforms iOS and Android</p>
+<p>The template takes care of removing the Prototype library, including yui-debug.js and the CSS framework including reset, and the new <a href="http://developer.yahoo.com/yui/3/cssgrids/">Grids</a> - currently in beta. I also wanted to deliver my basic markup quickly so I&#8217;ve added <a href="http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#html_elements">Haml</a></p>
 
-<p>TAGLINES</p>
+<p>Since I have been disciplining myself to follow Test Driven Development on the server, I included all of my Rails testing dependencies in the app template as well (RSpec, Cucumber, WebRat, Factory Girl) and I plan to continue to leverage <a href="http://developer.yahoo.com/yui/3/test/">YUI Test</a> on the client as I run through browser validations of the <a href="http://developer.yahoo.com/yui/3/examples/datasource/datasource_polling.html">datasource-polling sub-module</a>. Clone the rails app template <a href="https://github.com/jessecravens/yui3-rails-template">here</a>.</p>
 
-<p>Be Cool. Use iBoerne.com
-iBoerne.com doesn&#8217;t suck
-events.iBoerne - Wuz Happenin?
-iBoerne - keep up with Boerne</p>
+{syntaxhighlighter brush: ruby}
+# YUI3 Application Generator Template
+# Generates a Rails app; includes YUI3, Haml, RSpec, Cucumber, WebRat, Factory Girl &#8230;
 
-<p>The simple way to keep up with friends, events, deals, rentals, etc.</p>
+puts &#8220;Generating a new YUI3 Rails app&#8221;
 
-<hr />
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Create the database
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+puts &#8220;creating the database&#8230;&#8221;
+run &#8216;rake db:create:all&#8217;
 
-<p>First lets talk Business concept and strategy:</p>
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# GIT
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+puts &#8220;setting up &#8216;git&#8217;&#8221;
 
-<p>So, I don&#8217;t know what the hell I want IBoerne to be - what the hell does Boerne need?</p>
-
-<p>Can you start a business and just see where it goes? Is that possible?
-What would events.iBoerne be considered? - Content Provider?</p>
-
-<p>Have an event? List it on events.iBoerne today.
-Screenscrape
-Manual</p>
-
-<p>Once traffic reaches a certain point begin to sell space - large events, festivals, etc
-Very simple Application - but available on all platforms</p>
-
-<hr />
-
-<p>What drives traffic?
-Best online experience for EVENTS</p>
-
-<p>Start targeting ad</p>
-
-<p>!!!! START SOMEWHERE
-use events to get started</p>
-
-<p>events.iBoerne - Wuz Happenin?
-Superior online/mobile experience for Local Events
-Download the iPhone/ Android app
-Very simple App concept.
-http://visitmix.com/Articles/Web-Forms-for-People
-USE brightkite as an example</p>
-
-<p>Jesse Cravens of LokalLogik - creators of Local Social Mobile applications.
-LokalLogik Small Town Platform</p>
-
-<p>NETWORK EFFECT!</p>
-
-<hr />
-
-<p>Best online experience for DEALS / COUPONS
-coupons.iBoerne - Start Saving Now
-Affiliate - Groupons, livingsocial?</p>
-
-<hr />
-
-<p>iBoerne - Interactive Boerne by TastyAppz or LokalLogik Small Town Solutions (Social/Mobile/Local) - sociomobiloco
- - so what does this entail?</p>
-
-<p>Concepts to test out - market research.</p>
-
-<p>What is the appetite for MultiChannel Marketing solutions in Boerne?
-Ping.fm</p>
-
-<p>Retailers
-Schools
-Churches
-Restaurants
-Appointment Reminders
-Promoters
-Realtors</p>
-
-<p>Start with One Feature like Events
-Multiple Inputs
-Screen Scrapers
-Input Form
-Integration with Facebook
-Manual Entry by Admin</p>
-
-<p>Audience Scope?
-++++++
-The domain is obviously limiting, but that might be ok.
-So - first I think town - LOCAL - SOCIAL - MOBILE
-Then I go regional. Central Texas, I think hill country visitor - more broad - all small towns in central texas - which changes the domain,
-Then my mind wanders to Domestic, and then International.</p>
-
-<p>So theres also the notion that I could use this as an example Business.
-And maybe the iBoerne app - or appsuite is the flagship products for a Consulting Business for Local Businesses.
-That way the local scope will make sense to any small business owner in any Texas small town</p>
-
-<p>Much like Kuhl Yogurt - just another use case.</p>
-
-<p>?Feature Scope?
-++++++</p>
-
-<p>One place for what I need in Boerne</p>
-
-<p>events.iboerne.com - Events - am I the only one that wants to go to one place to see whats happening in Boerne?
-rentals.iboerne.com - Rentals - I want to see all rentals in Boerne in one spot
-coupons.iboerne.com - Coupons and Deals -  I want to save money, so does everyone else</p>
-
-<p>TRANSPARENT Account creation and login</p>
-
-<p>this stuff here sounds more like - lokallogik.com &#8212;->
-Stored Value Card Creation
-Managed Multi-Channel Marketing Campaigns - SMS text, MMS, Social (Facebook and Twiter)</p>
-
-<p>Random Acts of Refreshment - expands on gift card model
-Sends purchased gift via social media</p>
-
-<p>?Business Model?
-++++++
-Very targeted ad campaigns</p>
-
-<p>?Technical?
-++++++
-Drupal vs Rails
-Already moving forward with Rails  - not really wanting the Drupal PHP overhead.
-Id rather learn rails cuz Ill be learning on or the other.</p>
-
-<hr />
-
-<p>Use an application generator template</p>
-
-<p>rails new iboerne2 -m tmpls/railsApps/rails3-application-templates/rails3-mongoid-devise-template.rb -T -O -J</p>
-
-<p>Once you’ve assembled the proper Gemfile, install the gems using bundle install
-$ bundle install</p>
-
-<p>rails s</p>
-
-<p>For iboerne3 , I decided to not use the mongo install - due to event calendar but after understanding default test and fixtures, i opted for this template rails new APP_NAME -m https://raw.github.com/RailsApps/rails3-application-templates/master/rails3-devise-rspec-cucumber-template.rb -T</p>
-
-<hr />
-
-<p>git init</p>
-
-<p>Jesse-Cravenss-MacBook-Pro:iboerne jessecravens$ git init
-Reinitialized existing Git repository in /Users/jessecravens/Codebase/rails_projects/iboerne/.git/</p>
-
-<p>Jesse-Cravenss-MacBook-Pro:iboerne jessecravens$ git log
-commit ad64981ea09bb72ce1024b2e05b5a319a7004e51
-Author: Jesse Cravens <a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#x6a;&#101;&#x73;&#115;&#x65;&#46;&#99;&#x72;&#x61;&#x76;&#101;&#x6e;&#115;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x6a;&#101;&#x73;&#115;&#101;&#46;&#99;&#114;&#x61;&#x76;&#x65;&#x6e;&#115;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a>
-Date:   Tue May 31 21:02:13 2011 -0500</p>
-
-<pre><code>new Rails app generated by rails_apps_composer
-</code></pre>
-
-<p>Jesse-Cravenss-MacBook-Pro:iboerne jessecravens$ git status</p>
-
-<h1>On branch working_branch</h1>
-
-<h2>nothing to commit (working directory clean)</h2>
-
-<p>work on a different branch</p>
-
-<p>Here, we will both create a new branch and switch to it</p>
-
-<p>$ git checkout -b add-RWD-stylesheets
-Switched to a new branch &#8216;add-RWD-stylesheets&#8217;</p>
-
-<p>$ git branch
-master
-* add-RWD-stylesheets</p>
-
-<p>The full value of branching only becomes clear when working on a project with multiple developers, but branches are helpful even for a single-developer tutorial such as this one.</p>
-
-<p>In particular, the master branch is insulated from any changes we make to the topic branch, so even if we really screw things up we can always abandon the changes by checking out the master branch and deleting the topic branch. We’ll see how to do this at the end of the section.</p>
-
-<hr />
-
-<p>installing Event Calendar
-https://github.com/elevation/event_calendar</p>
-
-<p>Rails 3
-As a gem:
-  gem install event-calendar
-Add this to your Gemfile:
-  gem &#8216;event-calendar&#8217;, :require => &#8216;event_calendar&#8217;
-Or as a plugin:
-  rails plugin install git://github.com/elevation/event_calendar.git
-To generate the necessary static files AND the example below:
-  rails generate event_calendar</p>
-
-<p>this is what I had in the Event model using Mongoid</p>
-
-<p>class Event
-  include Mongoid::Document
-  field :name, :type => String
-  field :description, :type => String
-end</p>
-
-<p>So I made the decision that Event Calendar wasn&#8217;t going to work with Mongo without some considerable pain.</p>
-
-<p>I created a new app that wasn&#8217;t mongo configured and tried out event calendar</p>
-
-<h2>I tested the plugin, had an issue with has_event_calendar, but restarted the server and now its working fine. - per forum recommendation</h2>
-
-<p>So in the meantime, I created a static site with html and css, web fonts, etc , Now i have the style of my site that I want to move forward with.</p>
-
-<p>I plan to create the logo in Canvas - maybe.
-or webfonts</p>
-
-<hr />
-
-<p>Next Ill scaffold the Event</p>
-
-<p>rails generate scaffold Event name:string start_at:datetime end_at:datetime all_day:boolean</p>
-
-<p>without validations
-later we will write a few tests, that will break - and then add validations to resolve the failed tests</p>
-
-<p>git commit -m &#8220;scaffolded Event&#8221;</p>
-
-<p>Now we are ready to install the event-calendar plugin</p>
-
-<p>  gem install event-calendar</p>
-
-<p>Add this to your Gemfile:</p>
-
-<p>  gem &#8216;event-calendar&#8217;, :require => &#8216;event_calendar&#8217;</p>
-
-<p>and run bundle</p>
-
-<p>To generate the necessary static files AND the example below:</p>
-
-<p>  rails generate event_calendar</p>
-
-<p>It will ask if you want to force the override of the Event model.</p>
-
-<p>I select yes and move forward
-There is also a conflict with the migration script.</p>
-
-<p>woops i forgot to add 2 parameters to the generator:</p>
-
-<p>rails generate event_calendar &#8211;use-jquery &#8211;use-all-day</p>
-
-<p>so lets just run it again.</p>
-
-<p>now i got to http://localhost:3000/events</p>
-
-<p>hmm
-SQLite3::SQLException: no such table: events: SELECT &#8220;events&#8221;.* FROM &#8220;events&#8221;</p>
-
-<p>well - i haven&#8217;t run my db migration yet</p>
-
-<p>rake db:migrate</p>
-
-<p>ok now events work</p>
-
-<p>lets try calendar…</p>
-
-<p>hmm - we need to update our routes, for some reason our generator assumed this entry was in our routes file</p>
-
-<p>  match &#8216;:controller(/:action(/:id(.:format)))&#8217;</p>
-
-<p>this is legacy and it is not recommended but for now
-  # This is a legacy wild controller route that&#8217;s not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.</p>
-
-<p>Next - we can add a color field to the Event model</p>
-
-<h1>But we can do that later - lets finish our basic application by formulating our testing strategy and merge to master branch</h1>
-
-<ol>
-<li>Commit our changes and additions to the &#8216;working&#8217; Event branch</li>
-</ol>
-
-
-<p>git commit -m &#8220;added Event-calendar&#8221;</p>
-
-<ol>
-<li>Run our Tests (first we need to write our tests)</li>
-</ol>
-
-
-<p>and even before that make sure we get our testing framework set up</p>
-
-<p>Generate RSpec
-Use the rspec-rails generator to set up files needed for RSpec:
-$ rails generate rspec:install
-The rspec-rails generator creates the files:</p>
-
-<pre><code>• .rspec
-• spec/spec_helper.rb
-</code></pre>
-
-<p>You can remove the test folder (it is not needed for RSpec):
-$ rm -rf test/
-Add Factory Girl for Test Objects</p>
-
-<p>The Factory Girl gem is used to create default model objects for tests. For example, if a controller action requires finding a User object before displaying a “show” page, Factory Girl will create a user just for a test of the controller. You’ll need gem &#8216;factory_girl_rails&#8217;, :group => :test in your Gemfile.</p>
-
-<p>You’ll need a spec/factories.rb file to contain the factory definitions for any default objects used for testing. You can create one like this:</p>
-
-<p>require &#8216;factory_girl&#8217;</p>
-
-<p>Factory.define :user do |u|
-  u.name &#8216;Test User&#8217;
-  u.email &#8216;user@test.com&#8217;
-  u.password &#8216;please&#8217;
-end</p>
-
-<p>Add Devise Test Helpers</p>
-
-<p>Using Devise, your controllers will often include before_filter :authenticate_user! to limit access to signed-in users. Your tests will fail unless a default user is created and logs in before each test runs. Devise provides test helpers to make it simple to create and log in a default user.</p>
-
-<p>Create a file spec/support/devise.rb:</p>
-
-<p>RSpec.configure do |config|
-  config.include Devise::TestHelpers, :type => :controller
-end</p>
-
-<p>Now you can write controller specs that set up a signed-in user before tests are run.</p>
-
-<p>Run RSpec
-Run rake -T to check that rake tasks for RSpec are available.
-Yep, they are there.
-run rake db:migrate:status to view the status of your migrations
-Run rake db:migrate to create a db/schema.rb file so rake spec can run successfully.
-You should be able to run rake spec to run all specs. If you haven’t written any specs, you’ll see the message “No examples matching ./spec//_spec.rb could be found”.
-You can copy the files from the example spec directory to use our ready-made specs.
-Add Cucumber for Behavior Driven Development
-If you are creating an application template, this step uses the cucumber recipe from the rails_apps_composer repository.
-Use the gem cucumber-rails to set up the app for Cucumber.
-You should have the following gems in your Gemfile file:
-group :test do
-  gem &#8216;cucumber-rails&#8217;
-  gem &#8216;capybara&#8217;
-  gem &#8216;database_cleaner&#8217;
+append_file &#8216;.gitignore&#8217; do <<-FILE
+'.DS_Store'
+'.rvmrc'
+FILE
 end
-Install the required gems on your computer:
-$ bundle install
-Use the cucumber-rails generator to set up files needed for Cucumber:
-$ rails generate cucumber:install &#8211;capybara &#8211;rspec
-The -–capybara option specifies Capybara instead of the default Webrat for acceptance testing. The -–rspec option enables RSpec matchers for your step definitions.</p>
+git :init
+git :add => &#8216;.&#8217;
+git :commit => &#8220;-m &#8216;Initial Commit of YUI3 Rails App&#8217;&#8221;
 
-<p>So whats all this</p>
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Remove files
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+puts &#8220;removing files&#8230;&#8221;
+run &#8216;rm public/index.html&#8217;
+run &#8216;rm public/favicon.ico&#8217;
+run &#8216;rm public/images/rails.png&#8217;
+run &#8216;rm README&#8217;
+run &#8216;touch README&#8217;
 
-<p>Unit Testing
-Integration Testing
-Acceptance Testing
-Functional Testing
-Performance Testing</p>
+puts &#8220;banning spiders from your site by changing robots.txt&#8230;&#8221;
+gsub_file &#8216;public/robots.txt&#8217;, /# User-Agent/, &#8216;User-Agent&#8217;
+gsub_file &#8216;public/robots.txt&#8217;, /# Disallow/, &#8216;Disallow&#8217;
 
-<p>Acceptance Tests/Criteria (in Agile Software Development) are usually created by business customers and expressed in a business domain language. These are high-level tests to test the completeness of a user story or stories &#8216;played&#8217; during any sprint/iteration. These tests are created ideally through collaboration between business customers, business analysts, testers and developers, however the business customers (product owners) are the primary owners of these tests. As the user stories pass their acceptance criteria, the business owners can be sure of the fact that the developers are progressing in the right direction about how the application was envisaged to work and so it&#8217;s essential that these tests include both business logic tests as well as UI validation elements (if need be).</p>
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Haml 
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+  puts &#8220;setting up Gemfile for Haml&#8230;&#8221;
+  append_file &#8216;Gemfile&#8217;, &#8220;\n# Bundle gems needed for Haml\n&#8221;
+  gem &#8216;haml&#8217;, &#8216;3.0.18&#8217;
+  gem &#8216;haml-rails&#8217;, &#8216;0.2&#8217;, :group => :development
 
-<ol>
-<li><p>Merge Event branch with master branch</p></li>
-<li><p>Finish with a Push to unfuddle private repo</p></li>
-</ol>
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Set up YUI3
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+
+puts &#8220;replacing Prototype with YUI3&#8221;
+run &#8216;rm public/javascripts/controls.js&#8217;
+run &#8216;rm public/javascripts/dragdrop.js&#8217;
+run &#8216;rm public/javascripts/effects.js&#8217;
+run &#8216;rm public/javascripts/prototype.js&#8217;
+run &#8216;rm public/javascripts/rails.js&#8217;
+
+get &#8220;http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-debug.js&#8221;,  &#8220;public/javascripts/yui-debug.js&#8221;
+get &#8220;http://yui.yahooapis.com/3.3.0/build/cssreset/reset.css&#8221;,  &#8220;public/stylesheets/reset.css&#8221;
+get &#8220;http://yui.yahooapis.com/3.3.0/build/cssbase/base.css&#8221;,  &#8220;public/stylesheets/base.css&#8221;
+get &#8220;http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts.css&#8221;,  &#8220;public/stylesheets/fonts.css&#8221;
+get &#8220;http://yui.yahooapis.com/3.3.0/build/cssgrids/grids.css&#8221;,  &#8220;public/stylesheets/grids.css&#8221;
+
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Create an index page
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+puts &#8220;create a home controller and view&#8221;
+generate(:controller, &#8220;home index&#8221;)
+gsub_file &#8216;config/routes.rb&#8217;, /get &#34;home\/index&#34;/, &#8216;root :to => &#8220;home#index&#8221;&#8217;
+append_file &#8216;app/views/home/index.html.haml&#8217;do <<-FILE
+!!!
+%h2{:class => &#8220;subtitle&#8221;} Get Started
+%p{:class => &#8220;content&#8221;} Update application.js with your logic
+%div{:class => &#8220;container&#8221;, :id => &#8220;container&#8221;}
+%div{:id => &#8220;testLogger&#8221;}
+FILE
+end
+
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Generate Application Layout
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+
+run &#8216;rm app/views/layouts/application.html.erb&#8217;
+  create_file &#8216;app/views/layouts/application.html.haml&#8217; do <<-FILE
+!!!
+%html
+  %head
+    %title YUI3 App
+    = stylesheet_link_tag "reset"
+    = stylesheet_link_tag "base"
+    = stylesheet_link_tag "fonts"
+    = stylesheet_link_tag "grids"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag :all
+    = csrf_meta_tag
+  %body{:class =>&#8220;yui3-skin-sam  yui-skin-sam&#8221;}
+    = yield
+FILE
+end
+
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Add Stylesheets
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+create_file &#8216;public/stylesheets/application.css&#8217; do <<-FILE
+div.container {
+  width: 100%;
+  height: 100px; 
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid red;
+}
+
+#testLogger {
+    margin-bottom: 1em;
+}
+
+#testLogger .yui3-console .yui3-console-title {
+    border: 0 none;
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: none;
+}
+#testLogger .yui3-console .yui3-console-entry-meta {
+    margin: 0;
+}
+
+.yui3-skin-sam .yui3-console-entry-pass .yui3-console-entry-cat {
+    background: #070;
+    color: #fff;
+}
+
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Initialize YUI and add YUI Test
+#----------------------------------------------------------------------------
+append_file 'public/javascripts/application.js' do <<-FILE
+  
+  YUI({ filter: 'raw' }).use("node", "console", "test",function (Y) {
+
+      Y.namespace("example.test");
+
+      Y.example.test.DataTestCase = new Y.Test.Case({
+
+          //name of the test case - if not provided, one is auto-generated
+          name : "Data Tests",
+
+          //---------------------------------------------------------------------
+          // setUp and tearDown methods - optional
+          //---------------------------------------------------------------------
+
+          /*
+           * Sets up data that is needed by each test.
+           */
+          setUp : function () {
+              this.data = {
+                  name: "test",
+                  year: 2007,
+                  beta: true
+              };
+          },
+
+          /*
+           * Cleans up everything that was created by setUp().
+           */
+          tearDown : function () {
+              delete this.data;
+          },
+
+          //---------------------------------------------------------------------
+          // Test methods - names must begin with "test"
+          //---------------------------------------------------------------------
+
+          testName : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isString(this.data.name);
+              Assert.areEqual("test", this.data.name);            
+          },
+
+          testYear : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isNumber(this.data.year);
+              Assert.areEqual(2007, this.data.year);            
+          },
+
+          testBeta : function () {
+              var Assert = Y.Assert;
+
+              Assert.isObject(this.data);
+              Assert.isBoolean(this.data.beta);
+              Assert.isTrue(this.data.beta);
+          }
+
+      });
+
+      Y.example.test.ArrayTestCase = new Y.Test.Case({
+
+          //name of the test case - if not provided, one is auto-generated
+          name : "Array Tests",
+
+          //---------------------------------------------------------------------
+          // setUp and tearDown methods - optional
+          //---------------------------------------------------------------------
+
+          /*
+           * Sets up data that is needed by each test.
+           */
+          setUp : function () {
+              this.data = [0,1,2,3,4]
+          },
+
+          /*
+           * Cleans up everything that was created by setUp().
+           */
+          tearDown : function () {
+              delete this.data;
+          },
+
+          //---------------------------------------------------------------------
+          // Test methods - names must begin with "test"
+          //---------------------------------------------------------------------
+
+          testPop : function () {
+              var Assert = Y.Assert;
+
+              var value = this.data.pop();
+
+              Assert.areEqual(4, this.data.length);
+              Assert.areEqual(4, value);            
+          },        
+
+          testPush : function () {
+              var Assert = Y.Assert;
+
+              this.data.push(5);
+
+              Assert.areEqual(6, this.data.length);
+              Assert.areEqual(5, this.data[5]);            
+          },
+
+          testSplice : function () {
+              var Assert = Y.Assert;
+
+              this.data.splice(2, 1, 6, 7);
+
+              Assert.areEqual(6, this.data.length);
+              Assert.areEqual(6, this.data[2]);           
+              Assert.areEqual(7, this.data[3]);           
+          }
+
+      });    
+
+      Y.example.test.ExampleSuite = new Y.Test.Suite("Example Suite");
+      Y.example.test.ExampleSuite.add(Y.example.test.DataTestCase);
+      Y.example.test.ExampleSuite.add(Y.example.test.ArrayTestCase);
+
+      //create the console
+      var r = new Y.Console({
+          newestOnTop : false,
+          style: 'block' // to anchor in the example content
+      });
+
+      r.render('#testLogger');
+
+      Y.Test.Runner.add(Y.example.test.ExampleSuite);
+
+      //run the tests
+      Y.Test.Runner.run();
+
+  });
+
+FILE
+end
+
+#----------------------------------------------------------------------------
+# Setup RSpec & Cucumber
+#----------------------------------------------------------------------------
+puts 'Setting up RSpec, Cucumber, webrat, factory_girl, faker'
+append_file 'Gemfile' do <<-FILE
+group :development, :test do
+  gem "rspec-rails", ">= 2.0.1&#8221;
+  gem &#8220;cucumber-rails&#8221;, &#8220;>= 0.3.2&#8221;
+  gem &#8220;webrat&#8221;, &#8220;>= 0.7.2.beta.2&#8221;
+  gem &#8220;factory_girl_rails&#8221;
+  gem &#8220;faker&#8221;
+end
+FILE
+end
+
+run &#8216;bundle install&#8217;
+run &#8216;script/rails generate rspec:install&#8217;
+run &#8216;script/rails generate cucumber:install&#8217;
+run &#8216;rake db:migrate&#8217;
+run &#8216;rake db:test:prepare&#8217;
+
+run &#8216;touch spec/factories.rb&#8217;
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+# Finish up
+#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+puts &#8220;Commiting to Git repository&#8230;&#8221;
+git :add => &#8216;.&#8217;
+git :commit => &#8220;-am &#8216;Setup Complete&#8217;&#8221;
+
+puts &#8220;DONE - setting up your YUI3 Rails App.&#8221;
 
 
-<hr />
-
-<p>Design for Mobile First</p>
-
-<p>included RWD - media queries</p>
-
-<p>semantic forms markup/stylesheets</p>
-
-<p>need to consider :
-http://visitmix.com/Articles/Web-Forms-for-People
-http://www.alistapart.com/articles/signupforms/</p>
-
-<p>The signup form may need to be rethought</p>
-
-<h2>but, this will when we get to Facebook integration</h2>
-
-<p>Design for Mobile First - Device Recognition</p>
-
-<p>Devise Atlas integration to inched a different to include different libraries for different form factors</p>
-
-<p>rails plugin install https://github.com/lastminutelabs/Device-Aware.git
-make sure you have dependencies installed</p>
-
-<ol>
-<li><p>gem install json</p></li>
-<li><p>gem install rubyzip</p></li>
-</ol>
+{/syntaxhighlighter}
+</div>
 
 
-<p>rake -T
-rake deviceatlas_update</p>
 
-<p>be sure to update your api key
-after some finagling and moving items around, i determined that the file appeared to be downloaded using:</p>
-
-<p>http://deviceatlas.com/user/13758/pm_licencing/downloadlatest/9653/zip</p>
-
-<p>instead of the url used in the plugin:
-&#8220;/getJSON.php?licencekey=&#8221; + DEVICE_ATLAS_LICENSE + &#8220;&amp;format=zip&#8221;</p>
-
-<p>the rake task did not run without error, but it wasn&#8217;t until later i noticed the file had actually been downloaded.</p>
-
-<p>from there once i included the</p>
-
-<p>include ActsAsDeviceAware</p>
-
-<p>in the ApplicationController:
-ActionController::RoutingError (uninitialized constant ApplicationController::ActsAsDeviceAware):
-  app/controllers/application_controller.rb:2:in <code>&lt;class:ApplicationController&gt;'
-  app/controllers/application_controller.rb:1:in</code><top (required)>&#8217;
-  app/controllers/home_controller.rb:1:in `<top (required)>&#8217;</p>
-
-<hr />
-
-<p>RSpec and testing
-created a Events scaffold</p>
-
-<hr />
-
-<p>Facebook integration
-Sign up with Facebook</p>
-
-<p>Created an application at developer.facebook.com</p>
-
-<p>App ID
-177214749000843
-API Key
-fefb831fad6a0dbd7e8131410ae5cf1e
-App Secret
-fc2ee483812471349f43730bf5e7e720
-Site URL
-http://iboerne.com/
-Site Domain
-iboerne.com
-Contact Email
-jesse.cravens@gmail.com
-Support Email
-jesse.cravens@gmail.com
-App Description
-iBoerne
-Sample Code
-Get started quickly with some example code!</p>
-
-<hr />
-
-<p>Trumpia Integration
-Set up a free account at trumpia.com</p>
-
-<p>Gave me an online webform that can be embedded using an iframe.</p>
-
-<hr />
-
-<hr />
-
-<hr />
 </div>
   
   

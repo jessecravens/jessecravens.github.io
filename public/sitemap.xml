@@ -338,7 +338,7 @@
     </url>
     <url>
         <loc>http://jessecravens.com/blog/2008/04/09/understanding-javascript-closures/</loc>
-        <lastmod>2012-10-15T16:18:15-05:00</lastmod>
+        <lastmod>2012-10-15T21:49:30-05:00</lastmod>
     </url>
     <url>
         <loc>
@@ -389,10 +389,6 @@
         <lastmod>2012-10-15T16:18:15-05:00</lastmod>
     </url>
     <url>
-        <loc>http://jessecravens.com/blog/2011/06/08/creation-of-iboerne-com/</loc>
-        <lastmod>2012-10-15T16:18:15-05:00</lastmod>
-    </url>
-    <url>
         <loc>http://jessecravens.com/blog/2011/09/26/git-cheatsheet/</loc>
         <lastmod>2012-10-15T16:18:15-05:00</lastmod>
     </url>
@@ -412,7 +408,7 @@
         <loc>
             http://jessecravens.com/blog/2012/04/22/hack-99-using-stylus-transparent-mixins-to-hack-vendor-specific-properties/
         </loc>
-        <lastmod>2012-10-15T16:18:15-05:00</lastmod>
+        <lastmod>2012-10-15T22:22:32-05:00</lastmod>
     </url>
     <url>
         <loc>http://jessecravens.com/blog/2012/05/22/robodeck/</loc>
@@ -420,7 +416,7 @@
     </url>
     <url>
         <loc>http://jessecravens.com/blog/2012/06/17/javascript-modules/</loc>
-        <lastmod>2012-10-15T16:18:15-05:00</lastmod>
+        <lastmod>2012-10-15T21:48:18-05:00</lastmod>
     </url>
     <url>
         <loc>http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress/</loc>
@@ -826,15 +822,15 @@
     </url>
     <url>
         <loc>http://jessecravens.com/about/</loc>
-        <lastmod>2012-09-23T13:50:51-05:00</lastmod>
+        <lastmod>2012-10-15T21:40:48-05:00</lastmod>
     </url>
     <url>
         <loc>http://jessecravens.com/blog/archives/</loc>
-        <lastmod>2012-10-15T16:33:05-05:00</lastmod>
+        <lastmod>2012-10-15T22:22:32-05:00</lastmod>
     </url>
     <url>
         <loc>http://jessecravens.com/</loc>
-        <lastmod>2012-10-15T16:33:05-05:00</lastmod>
+        <lastmod>2012-10-15T22:22:32-05:00</lastmod>
     </url>
     <url>
         <loc>http://jessecravens.com/music/</loc>

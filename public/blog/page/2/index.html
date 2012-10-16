@@ -9,7 +9,7 @@
   <meta name="author" content="Jesse Cravens">
 
   
-  <meta name="description" content="I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out YUI3 functionality quickly. Rails 3 makes it &hellip;">
+  <meta name="description" content="El Nino, French Fries, Chippendale with Swayze, but do you remember this one? ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,368 +88,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/30/yui3-rails-application-template/">YUI3 Rails Application Template</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-30T01:02:15-06:00" pubdate data-updated="true">Jan 30<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class="">
-<p>I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.</p> 
-
-<p>The template takes care of removing the Prototype library, including yui-debug.js and the CSS framework including reset, and the new <a href="http://developer.yahoo.com/yui/3/cssgrids/">Grids</a> - currently in beta. I also wanted to deliver my basic markup quickly so I&#8217;ve added <a href="http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#html_elements">Haml</a></p>
-
-<p>Since I have been disciplining myself to follow Test Driven Development on the server, I included all of my Rails testing dependencies in the app template as well (RSpec, Cucumber, WebRat, Factory Girl) and I plan to continue to leverage <a href="http://developer.yahoo.com/yui/3/test/">YUI Test</a> on the client as I run through browser validations of the <a href="http://developer.yahoo.com/yui/3/examples/datasource/datasource_polling.html">datasource-polling sub-module</a>. Clone the rails app template <a href="https://github.com/jessecravens/yui3-rails-template">here</a>.</p>
-
-{syntaxhighlighter brush: ruby}
-# YUI3 Application Generator Template
-# Generates a Rails app; includes YUI3, Haml, RSpec, Cucumber, WebRat, Factory Girl &#8230;
-
-puts &#8220;Generating a new YUI3 Rails app&#8221;
-
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-# Create the database
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-puts &#8220;creating the database&#8230;&#8221;
-run &#8216;rake db:create:all&#8217;
-
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-# GIT
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-puts &#8220;setting up &#8216;git&#8217;&#8221;
-
-append_file &#8216;.gitignore&#8217; do <<-FILE
-'.DS_Store'
-'.rvmrc'
-FILE
-end
-git :init
-git :add => &#8216;.&#8217;
-git :commit => &#8220;-m &#8216;Initial Commit of YUI3 Rails App&#8217;&#8221;
-
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-# Remove files
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-puts &#8220;removing files&#8230;&#8221;
-run &#8216;rm public/index.html&#8217;
-run &#8216;rm public/favicon.ico&#8217;
-run &#8216;rm public/images/rails.png&#8217;
-run &#8216;rm README&#8217;
-run &#8216;touch README&#8217;
-
-puts &#8220;banning spiders from your site by changing robots.txt&#8230;&#8221;
-gsub_file &#8216;public/robots.txt&#8217;, /# User-Agent/, &#8216;User-Agent&#8217;
-gsub_file &#8216;public/robots.txt&#8217;, /# Disallow/, &#8216;Disallow&#8217;
-
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-# Haml 
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-  puts &#8220;setting up Gemfile for Haml&#8230;&#8221;
-  append_file &#8216;Gemfile&#8217;, &#8220;\n# Bundle gems needed for Haml\n&#8221;
-  gem &#8216;haml&#8217;, &#8216;3.0.18&#8217;
-  gem &#8216;haml-rails&#8217;, &#8216;0.2&#8217;, :group => :development
-
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-# Set up YUI3
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-
-puts &#8220;replacing Prototype with YUI3&#8221;
-run &#8216;rm public/javascripts/controls.js&#8217;
-run &#8216;rm public/javascripts/dragdrop.js&#8217;
-run &#8216;rm public/javascripts/effects.js&#8217;
-run &#8216;rm public/javascripts/prototype.js&#8217;
-run &#8216;rm public/javascripts/rails.js&#8217;
-
-get &#8220;http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-debug.js&#8221;,  &#8220;public/javascripts/yui-debug.js&#8221;
-get &#8220;http://yui.yahooapis.com/3.3.0/build/cssreset/reset.css&#8221;,  &#8220;public/stylesheets/reset.css&#8221;
-get &#8220;http://yui.yahooapis.com/3.3.0/build/cssbase/base.css&#8221;,  &#8220;public/stylesheets/base.css&#8221;
-get &#8220;http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts.css&#8221;,  &#8220;public/stylesheets/fonts.css&#8221;
-get &#8220;http://yui.yahooapis.com/3.3.0/build/cssgrids/grids.css&#8221;,  &#8220;public/stylesheets/grids.css&#8221;
-
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-# Create an index page
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-puts &#8220;create a home controller and view&#8221;
-generate(:controller, &#8220;home index&#8221;)
-gsub_file &#8216;config/routes.rb&#8217;, /get &#34;home\/index&#34;/, &#8216;root :to => &#8220;home#index&#8221;&#8217;
-append_file &#8216;app/views/home/index.html.haml&#8217;do <<-FILE
-!!!
-%h2{:class => &#8220;subtitle&#8221;} Get Started
-%p{:class => &#8220;content&#8221;} Update application.js with your logic
-%div{:class => &#8220;container&#8221;, :id => &#8220;container&#8221;}
-%div{:id => &#8220;testLogger&#8221;}
-FILE
-end
-
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-# Generate Application Layout
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-
-run &#8216;rm app/views/layouts/application.html.erb&#8217;
-  create_file &#8216;app/views/layouts/application.html.haml&#8217; do <<-FILE
-!!!
-%html
-  %head
-    %title YUI3 App
-    = stylesheet_link_tag "reset"
-    = stylesheet_link_tag "base"
-    = stylesheet_link_tag "fonts"
-    = stylesheet_link_tag "grids"
-    = stylesheet_link_tag "application"
-    = javascript_include_tag :all
-    = csrf_meta_tag
-  %body{:class =>&#8220;yui3-skin-sam  yui-skin-sam&#8221;}
-    = yield
-FILE
-end
-
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-# Add Stylesheets
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-create_file &#8216;public/stylesheets/application.css&#8217; do <<-FILE
-div.container {
-  width: 100%;
-  height: 100px; 
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid red;
-}
-
-#testLogger {
-    margin-bottom: 1em;
-}
-
-#testLogger .yui3-console .yui3-console-title {
-    border: 0 none;
-    color: #000;
-    font-size: 13px;
-    font-weight: bold;
-    margin: 0;
-    text-transform: none;
-}
-#testLogger .yui3-console .yui3-console-entry-meta {
-    margin: 0;
-}
-
-.yui3-skin-sam .yui3-console-entry-pass .yui3-console-entry-cat {
-    background: #070;
-    color: #fff;
-}
-
-FILE
-end
-
-#----------------------------------------------------------------------------
-# Initialize YUI and add YUI Test
-#----------------------------------------------------------------------------
-append_file 'public/javascripts/application.js' do <<-FILE
-  
-  YUI({ filter: 'raw' }).use("node", "console", "test",function (Y) {
-
-      Y.namespace("example.test");
-
-      Y.example.test.DataTestCase = new Y.Test.Case({
-
-          //name of the test case - if not provided, one is auto-generated
-          name : "Data Tests",
-
-          //---------------------------------------------------------------------
-          // setUp and tearDown methods - optional
-          //---------------------------------------------------------------------
-
-          /*
-           * Sets up data that is needed by each test.
-           */
-          setUp : function () {
-              this.data = {
-                  name: "test",
-                  year: 2007,
-                  beta: true
-              };
-          },
-
-          /*
-           * Cleans up everything that was created by setUp().
-           */
-          tearDown : function () {
-              delete this.data;
-          },
-
-          //---------------------------------------------------------------------
-          // Test methods - names must begin with "test"
-          //---------------------------------------------------------------------
-
-          testName : function () {
-              var Assert = Y.Assert;
-
-              Assert.isObject(this.data);
-              Assert.isString(this.data.name);
-              Assert.areEqual("test", this.data.name);            
-          },
-
-          testYear : function () {
-              var Assert = Y.Assert;
-
-              Assert.isObject(this.data);
-              Assert.isNumber(this.data.year);
-              Assert.areEqual(2007, this.data.year);            
-          },
-
-          testBeta : function () {
-              var Assert = Y.Assert;
-
-              Assert.isObject(this.data);
-              Assert.isBoolean(this.data.beta);
-              Assert.isTrue(this.data.beta);
-          }
-
-      });
-
-      Y.example.test.ArrayTestCase = new Y.Test.Case({
-
-          //name of the test case - if not provided, one is auto-generated
-          name : "Array Tests",
-
-          //---------------------------------------------------------------------
-          // setUp and tearDown methods - optional
-          //---------------------------------------------------------------------
-
-          /*
-           * Sets up data that is needed by each test.
-           */
-          setUp : function () {
-              this.data = [0,1,2,3,4]
-          },
-
-          /*
-           * Cleans up everything that was created by setUp().
-           */
-          tearDown : function () {
-              delete this.data;
-          },
-
-          //---------------------------------------------------------------------
-          // Test methods - names must begin with "test"
-          //---------------------------------------------------------------------
-
-          testPop : function () {
-              var Assert = Y.Assert;
-
-              var value = this.data.pop();
-
-              Assert.areEqual(4, this.data.length);
-              Assert.areEqual(4, value);            
-          },        
-
-          testPush : function () {
-              var Assert = Y.Assert;
-
-              this.data.push(5);
-
-              Assert.areEqual(6, this.data.length);
-              Assert.areEqual(5, this.data[5]);            
-          },
-
-          testSplice : function () {
-              var Assert = Y.Assert;
-
-              this.data.splice(2, 1, 6, 7);
-
-              Assert.areEqual(6, this.data.length);
-              Assert.areEqual(6, this.data[2]);           
-              Assert.areEqual(7, this.data[3]);           
-          }
-
-      });    
-
-      Y.example.test.ExampleSuite = new Y.Test.Suite("Example Suite");
-      Y.example.test.ExampleSuite.add(Y.example.test.DataTestCase);
-      Y.example.test.ExampleSuite.add(Y.example.test.ArrayTestCase);
-
-      //create the console
-      var r = new Y.Console({
-          newestOnTop : false,
-          style: 'block' // to anchor in the example content
-      });
-
-      r.render('#testLogger');
-
-      Y.Test.Runner.add(Y.example.test.ExampleSuite);
-
-      //run the tests
-      Y.Test.Runner.run();
-
-  });
-
-FILE
-end
-
-#----------------------------------------------------------------------------
-# Setup RSpec & Cucumber
-#----------------------------------------------------------------------------
-puts 'Setting up RSpec, Cucumber, webrat, factory_girl, faker'
-append_file 'Gemfile' do <<-FILE
-group :development, :test do
-  gem "rspec-rails", ">= 2.0.1&#8221;
-  gem &#8220;cucumber-rails&#8221;, &#8220;>= 0.3.2&#8221;
-  gem &#8220;webrat&#8221;, &#8220;>= 0.7.2.beta.2&#8221;
-  gem &#8220;factory_girl_rails&#8221;
-  gem &#8220;faker&#8221;
-end
-FILE
-end
-
-run &#8216;bundle install&#8217;
-run &#8216;script/rails generate rspec:install&#8217;
-run &#8216;script/rails generate cucumber:install&#8217;
-run &#8216;rake db:migrate&#8217;
-run &#8216;rake db:test:prepare&#8217;
-
-run &#8216;touch spec/factories.rb&#8217;
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-# Finish up
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
-puts &#8220;Commiting to Git repository&#8230;&#8221;
-git :add => &#8216;.&#8217;
-git :commit => &#8220;-am &#8216;Setup Complete&#8217;&#8221;
-
-puts &#8220;DONE - setting up your YUI3 Rails App.&#8221;
-
-
-{/syntaxhighlighter}
-</div>
-
-
-
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -866,38 +504,115 @@ puts &#8220;DONE - setting up your YUI3 Rails App.&#8221;
 <p>This is an example from a <a href="http://www.synthesispraxis.com/">friend</a> that helped me finally wrap my head around the power of the technique.</p>
 
 
-<p>{syntaxhighlighter brush: js; ruler: true; first-line: 1}
-function configEquation(A,B,C){
-  //The equation: Ax<sup>ex1</sup> + Bx<sup>ex2</sup> + Cx<sup>ex3</sup>
-  //The exponents are ex1, ex2, and ex3
-  //The coefficients are A, B, and C and are set</p>
 
-<p>  var ex1 = 2;
-  var ex2 = 1;
-  var ex3 = 0;</p>
 
-<p>//The exponents constitute a quadratic equation.
-function theEquation(x){</p>
+<figure class='code'><figcaption><span>Initialize closure.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">configEquation</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span><span class="nx">B</span><span class="p">,</span><span class="nx">C</span><span class="p">){</span>
+</span><span class='line'>  <span class="c1">//The equation: Ax^ex1 + Bx^ex2 + Cx^ex3</span>
+</span><span class='line'>  <span class="c1">//The exponents are ex1, ex2, and ex3</span>
+</span><span class='line'>  <span class="c1">//The coefficients are A, B, and C and are set</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">ex1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">ex2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">ex3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//The exponents constitute a quadratic equation.</span>
+</span><span class='line'><span class="kd">function</span> <span class="nx">theEquation</span><span class="p">(</span><span class="nx">x</span><span class="p">){</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">A</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">ex1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">B</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">ex2</span><span class="p">)</span> <span class="o">+</span> <span class="nx">C</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">ex3</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">theEquation</span><span class="p">;</span> <span class="c1">//notice we return the reference not the invocation of the function(no params)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">myEquation</span> <span class="o">=</span> <span class="nx">configEquation</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> <span class="c1">//the configuration call</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;myEquation, x = 2: &#39;</span> <span class="o">+</span> <span class="nx">myEquation</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;myEquation, x = 5: &#39;</span> <span class="o">+</span> <span class="nx">myEquation</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">myEquation2</span> <span class="o">=</span> <span class="nx">configEquation</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//a 2nd configuration call</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;myEquation2, x = 2: &#39;</span> <span class="o">+</span> <span class="nx">myEquation2</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;myEquation2, x = 5: &#39;</span> <span class="o">+</span> <span class="nx">myEquation2</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>var result = A * Math.pow(x,ex1) + B * Math.pow(x,ex2) + C * Math.pow(x,ex3);
-return result; 
-</code></pre>
 
-<p>  }</p>
 
-<pre><code>return theEquation; //notice we return the reference not the invocation of the function(no params)
-</code></pre>
+</div>
+  
+  
 
-<p>  }</p>
 
-<p>var myEquation = configEquation(2,3,0); //the configuration call
-  console.log(&#8216;myEquation, x = 2: &#8217; + myEquation(2));
-  console.log(&#8216;myEquation, x = 5: &#8217; + myEquation(5));</p>
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/02/11/rails-2-0-on-windows-making-sense-of-old-tutorials/">Rails 2.0 on Windows: Making Sense of Old Tutorials</a></h1>
+    
+    
+      <p class="meta">
+        
 
-<p>var myEquation2 = configEquation(1,1,1); //a 2nd configuration call
-  console.log(&#8216;myEquation2, x = 2: &#8217; + myEquation2(2));
-  console.log(&#8216;myEquation2, x = 5: &#8217; + myEquation2(5));
-{/syntaxhighlighter}</p>
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-02-11T09:08:36-06:00" pubdate data-updated="true">Feb 11<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="http://jessecravens.com/sites/jessecravens.com/files/images/rails.png" style="float: right; margin: 10px"/></p>
+
+<p>I know it is fairly well documented around the web that some of the old &#8216;ROR up and running&#8217; tutorials are a bit difficult to digest with the new features in in Rails 2.0. So, I wanted to document my findings. And provide links to the resources that have helped me.</p>
+
+
+
+
+<p>Here&#8217;s a couple of resources to get started:</p>
+
+
+<p></p>
+
+<p><a href="http://www.akitaonrails.com/2007/12/12/rolling-with-rails-2-0-the-first-full-tutorial">akitaonrails.com</a>
+<a href="http://weblog.infoworld.com/stratdev/archives/2007/12/installing_rail.html">weblog.infoworld.com</a></p>
+
+<p>Stay posted for more of my findings.</p>
+
 </div>
   
   
