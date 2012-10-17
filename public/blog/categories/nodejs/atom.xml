@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NodeJS | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/nodejs/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2012-10-15T23:04:18-05:00</updated>
+  <updated>2012-10-16T13:58:41-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -30,6 +30,9 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
 <p>This is the beginning of a transition for me. With the release of HTML5 Hacks, I'm beginning to focus more on my ubiquitous JavaScript content. I'm excited, I have a lot to share.</p>
 
 <p>Look for an update with a web based version of the slides.</p>
+
+<script async class="speakerdeck-embed" data-id="507da9caa2a4030002063d67" data-ratio="1.299492385786802" src="http://jessecravens.com//speakerdeck.com/assets/embed.js"></script>
+
 ]]></content>
   </entry>
   

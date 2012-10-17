@@ -18,3 +18,5 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
 This is the beginning of a transition for me. With the release of HTML5 Hacks, I'm beginning to focus more on my ubiquitous JavaScript content. I'm excited, I have a lot to share. 
 
 Look for an update with a web based version of the slides.
+
+<script async class="speakerdeck-embed" data-id="507da9caa2a4030002063d67" data-ratio="1.299492385786802" src="//speakerdeck.com/assets/embed.js"></script>
