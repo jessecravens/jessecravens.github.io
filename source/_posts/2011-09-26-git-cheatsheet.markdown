@@ -15,11 +15,9 @@ After installing Git, you should perform a set of one-time setup steps. These ar
 {% codeblock %}
 $ sudo apt-get install git-core
 $ git config --global user.email youremail[at symbol]example.com
-$ git config --global user.name "John Doe"
 $ git config --global user.name "Your Name"
 $ git config --global alias.co checkout
 {% endcodeblock %}
-
 
 As a final setup step, you can optionally set the editor Git will use for commit messages.
 
