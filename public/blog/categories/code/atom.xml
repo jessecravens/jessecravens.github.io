@@ -4,7 +4,7 @@
   <title><![CDATA[Category: code | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/code/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2012-10-16T13:58:41-05:00</updated>
+  <updated>2012-10-26T11:43:18-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -261,10 +261,8 @@
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install git-core
 </span><span class='line'>$ git config --global user.email youremail[at symbol]example.com
-</span><span class='line'>$ git config --global user.name "John Doe"
 </span><span class='line'>$ git config --global user.name "Your Name"
 </span><span class='line'>$ git config --global alias.co checkout</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
