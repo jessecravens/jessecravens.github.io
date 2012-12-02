@@ -9,8 +9,7 @@
   <meta name="author" content="Jesse Cravens">
 
   
-  <meta name="description" content="Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
-make requests to other domains from within the browser. With CORS &hellip;">
+  <meta name="description" content="Im giving a talk at Devcon 5 - San Francisco this afternoon: Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,6 +88,86 @@ make requests to other domains from within the browser. With CORS &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship/">Client/Server 3.0: 6 Ways JavaScript Is Revolutionizing the Client/Server Relationship</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-28T10:02:00-06:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Im giving a talk at Devcon 5 - San Francisco this afternoon: Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship. Here is the other talks on the agenda: <a href="http://www.html5report.com/conference/california/agenda.aspx">Devcon 5 - San Francisco</a>.</p>
+
+<p>Here is a brief summary:</p>
+
+<h3>1 Device Access Within the Browser</h3>
+
+<p>The client gets smarter.</p>
+
+<p>JavaScript Device APIs continue to evolve, allowing more access to device hardware, services and applications such as the camera, microphone, system sensors, native address books, calendars and native messaging applications.
+We will explore examples utilizing GeoLocation API, and Device Orientation.</p>
+
+<h3>2 Client Side Processing w/ Background Threads</h3>
+
+<p>The modern web browser&#8217;s runtime is a single threaded, event loop. Asynchronous programming models, reactionary systems design actually benefit from this architecture. Maturing interpreters improve performance. Web Workers API enables background threads in the browser, making heavy computations realistic.</p>
+
+<p>So, the client gets more powerful, and becomes an application development evnvironment.
+We will explore Web Workers processing heavy computations without blocking the UI for further user interaction.</p>
+
+<h3>3 Device Detection and Descriptors / Adaptive Frameworks</h3>
+
+<p>Responsive Web Design is great, but it often isn&#8217;t enough for larger applications, and applications that need to reach a highly fragmented device market. Adaptive frameworks use DDRs (Device Description Repositories)</p>
+
+<p>We will explore a framework that mixes the best of Responsive with the best of Adaptive: <a href="https://github.com/jessecravens/responderjs">respnderJS</a>.</p>
+
+<h3>4 HTML5 Connectivity Revolution and HTTP 2.0</h3>
+
+<p>Peter Lubbers coined the term, HTML5 Connectivity Revolution, to describe the next level, web network technologies such as: Web Sockets API, XHR2, Event Source and Server Sent Events, SPDY, CORS.</p>
+
+<p>Engage in a demo of <a href="https://github.com/jessecravens/robodeck">Robodeck</a>, a Web Socket driven Collaborative presenations framework.</p>
+
+<h3>5 Single Runtime, Shared Syntax</h3>
+
+<p>Node.js has enabled the same language, single runtime. But, the paradigms are still quite different. Node streams, inspired by Linux pipes, make IO easy and intuitive. Explore pipe(), pump(), and events in Node streams.</p>
+
+<p>Solutions like Browserify, help bring Node.js libraries and NPM dependency management to the browser. Next up, Domnode, wrapping common I/O bound APIs (XHR, SSE, WebRTC, etc.) in Node streams syntax.</p>
+
+<h3>6 Embedded JavaScript</h3>
+
+<p>With Node.js and Angstrom Linux, and cloud document stores like MongoDB, the server is now embedded in the Micro Controller client.
+We will explore Arduino wrappers, and Node.js running on the Beaglebone from Texas Instruments.</p>
+
+<p>The combination of Linux and JavaScript open worlds of opportunity.</p>
+
+<script async class="speakerdeck-embed" data-id="507da9caa2a4030002063d67" data-ratio="1.299492385786802" src="//speakerdeck.com/assets/embed.js"></script>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1347,142 +1426,6 @@ Here is an example of a div element that needs to have corners take on different
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/26/git-cheatsheet/">Git Cheatsheet</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-26T23:10:56-05:00" pubdate data-updated="true">Sep 26<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I&#8217;d share.</p>
-
-<h3>Git First-Time System Setup</h3>
-
-<p>After installing Git, you should perform a set of one-time setup steps. These are system setups, meaning you only have to do them once per computer:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install git-core
-</span><span class='line'>$ git config --global user.email youremail[at symbol]example.com
-</span><span class='line'>$ git config --global user.name "Your Name"
-</span><span class='line'>$ git config --global alias.co checkout</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As a final setup step, you can optionally set the editor Git will use for commit messages.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config --global core.editor "mate -w"
-</span><span class='line'>
-</span><span class='line'># Replace “mate -w” with “gvim -f” for gVim or “mvim -f” for MacVim.</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Quick Reference – Most Often Used Commands</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd /path/to/repository
-</span><span class='line'>$ git init
-</span><span class='line'>$ git add .
-</span><span class='line'>$ git add -u
-</span><span class='line'>$ git log
-</span><span class='line'>$ git status
-</span><span class='line'>$ git commit -m "initial commit"
-</span><span class='line'>
-</span><span class='line'># made a mistake on the git commit
-</span><span class='line'>$ git commit -amend -m "initial commit"
-</span><span class='line'>
-</span><span class='line'># Add the remote repository
-</span><span class='line'>
-</span><span class='line'># ex 1
-</span><span class='line'>$ git remote add unfuddle git@subdomain.unfuddle.com:subdomain/abbreviation.git
-</span><span class='line'>
-</span><span class='line'># ex 2
-</span><span class='line'>$ git remote add origin git@subdomain.unfuddle.com:subdomain/abbreviation.git
-</span><span class='line'>
-</span><span class='line'># Configure the repository
-</span><span class='line'>$ git config remote.unfuddle.push refs/heads/master:refs/heads/master
-</span><span class='line'>
-</span><span class='line'># Push master branch to remote repository named unfuddle
-</span><span class='line'>$ git push unfuddle master
-</span><span class='line'>
-</span><span class='line'># Other commands:
-</span><span class='line'>
-</span><span class='line'># Clone an existing remote repo 
-</span><span class='line'>$ git clone git@subdomain.unfuddle.com:subdomain/abbreviation.git
-</span><span class='line'>
-</span><span class='line'># List all branches within your repo
-</span><span class='line'>$ git branch -a
-</span><span class='line'>
-</span><span class='line'>#Create and switch to a new branch "whatever"
-</span><span class='line'>$ git checkout -b whatever</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Those are the basics, should be enough to make you dangerous.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1513,6 +1456,10 @@ Here is an example of a div element that needs to have corners take on different
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship/">Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/">Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font</a>
       </li>
     
@@ -1526,10 +1473,6 @@ Here is an example of a div element that needs to have corners take on different
     
       <li class="post">
         <a href="/blog/2012/09/23/migration-from-drupal-to-octopress/">Migration from Drupal to Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/17/javascript-modules/">JavaScript Modules</a>
       </li>
     
   </ul>

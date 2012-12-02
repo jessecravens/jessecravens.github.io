@@ -4,7 +4,7 @@
   <title><![CDATA[Category: CSS | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2012-11-18T20:46:07-06:00</updated>
+  <updated>2012-12-02T17:24:29-06:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -80,37 +80,25 @@ Here is an example of a div element that needs to have corners take on different
 
 <p>First, the markup in Jade.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'>header
-</span><span class='line'>  h1= title
-</span><span class='line'>  p Welcome to #{title}<span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>div.panel panel test
-</span><span class='line'>div.mixin-panel mixin-panel test
-</span><span class='line'>div.t-mixin-panel transparent-mixin-panel test
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock example.html %}
+header
+  h1= title
+  p Welcome to #{title}</p>
+
+<p>div.panel panel test
+div.mixin-panel mixin-panel test
+div.t-mixin-panel transparent-mixin-panel test
+{% endcodeblock %}</p>
 
 <p>Then, the styles in basic CSS.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">div</span><span class="nc">.panel</span> <span class="p">{</span>
-</span><span class='line'>  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
-</span><span class='line'>  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock example.css %}
+div.panel {
+  -moz-border-radius: 10px 5px;
+  -webkit-border-radius: 10px 5px;
+  border-radius: 10px 5px;
+}
+{% endcodeblock %}</p>
 
 <p>This produces the following effect:</p>
 
@@ -118,97 +106,57 @@ Here is an example of a div element that needs to have corners take on different
 
 <p>With that context in mind, let’s leverage Stylus to help us manage our code. First, we are able to remove all parenthesis, semi-colons, and colons.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example2.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">div</span><span class="nc">.panel</span>
-</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
-</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
-</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock example2.css %}
+div.panel
+  -moz-border-radius 10px 5px
+  -webkit-border-radius 10px 5px
+  border-radius 10px 5px
+{% endcodeblock %}</p>
 
 <p>Much like Jade, this simplified syntax goes along way in our ability to quickly write CSS. Now, let’s apply some logic, by creating a border-radius mixin, and pass our values as arguments to our mixin:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example3.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">my-border-radius-mixin</span> <span class="o">(..</span><span class="nc">.args</span><span class="o">)</span>
-</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
-</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
-</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">div</span><span class="nc">.panel</span>
-</span><span class='line'>  <span class="nt">my-border-radius-mixin</span> <span class="o">(</span><span class="nt">10px</span> <span class="nt">5px</span><span class="o">)&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock example3.css %}
+my-border-radius-mixin (...args)
+  -moz-border-radius args
+  -webkit-border-radius args
+  border-radius args</p>
+
+<p>div.panel
+  my-border-radius-mixin (10px 5px)</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>And we can reuse this mixin in other contexts, which continues to help reduce code bloat and keep your code DRY.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example4.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">my-border-radius-mixin</span> <span class="o">(..</span><span class="nc">.args</span><span class="o">)</span>
-</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
-</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
-</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">div</span><span class="nc">.panel</span>
-</span><span class='line'>  <span class="nt">border-radius-mixin</span> <span class="o">(</span><span class="nt">10px</span> <span class="nt">5px</span><span class="o">)&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">div</span><span class="nc">.other-panel</span>
-</span><span class='line'>  <span class="nt">border-radius-mixin</span> <span class="o">(</span><span class="nt">3px</span> <span class="nt">32px</span> <span class="nt">100px</span> <span class="nt">55px</span><span class="o">)&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">div</span><span class="nc">.another-panel</span>
-</span><span class='line'>  <span class="nt">my-border-radius-mixin</span> <span class="o">(</span><span class="nt">5px</span> <span class="nt">10px</span> <span class="nt">33px</span> <span class="nt">43px</span><span class="o">)&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock example4.css %}
+my-border-radius-mixin (...args)
+  -moz-border-radius args
+  -webkit-border-radius args
+  border-radius args</p>
+
+<p>div.panel
+  border-radius-mixin (10px 5px)</p>
+
+<p>div.other-panel
+  border-radius-mixin (3px 32px 100px 55px)</p>
+
+<p>div.another-panel
+  my-border-radius-mixin (5px 10px 33px 43px)</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>While Stylus allows us to name our mixin as we choose, we are also given the ability to apply mixins ‘transparently.’ In the case of a simple implementation of border-radius, a transparent mixin would make a lot of sense. In effect, this normalizes browser implementations and provides an abstraction layer for CSS developers.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example5.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">border-radius</span> <span class="o">(..</span><span class="nc">.args</span><span class="o">)</span>
-</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
-</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
-</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">div</span><span class="nc">.panel</span>
-</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock example5.css %}
+border-radius (...args)
+  -moz-border-radius args
+  -webkit-border-radius args
+  border-radius args</p>
+
+<p>div.panel
+  border-radius 10px 5px</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>As long as a border-radius mixin is present, Stylus will find it, and apply the vendor-specific properties transparently.</p>
 ]]></content>
