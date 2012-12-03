@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Fonts | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/web-fonts/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2012-12-02T17:24:29-06:00</updated>
+  <updated>2012-12-03T14:17:29-06:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -141,42 +141,78 @@ page.</p>
 <p>Here is our page. Let’s call it index.html, and add a <link> tag pointing to our base
 stylesheet, styles.css.</p>
 
-<p>{% codeblock geo.html %}</p>
-
-<p><html>
-  <head></p>
-
-<pre><code>&lt;title&gt;S3 - font&lt;/title&gt;
-&lt;meta charset="utf-8" /&gt;
-&lt;link rel="stylesheet" type="text/css" href="styles.css"&gt;
-</code></pre>
-
-<p>  </head>
-  <body></p>
-
-<pre><code>&lt;h1 class="test"&gt;HTML5 Hacks&lt;/&gt;
-</code></pre>
-
-<p>  </body>
-</html></p>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>geo.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;html&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;head&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>S3 - font<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>meta charset=&quot;utf-8&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;body&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>h1 class=&quot;test&quot;<span class="ni">&amp;gt;</span>HTML5 Hacks<span class="ni">&amp;lt;</span>/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>In our styles.css let’s add the following and point to our uploaded file. Also, let’s assign
 the font to our H1 header via the test class name.</p>
 
-<p>{% codeblock style.css %}</p>
-
-<p>@font-face {
-  font-family: BebasNeue;
-  src: url('https://s3.amazonaws.com/html5hacks/BebasNeue.otf');
-}</p>
-
-<p>.test {
-  font-family: 'BebasNeue';
-}</p>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>style.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="k">@font-face</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">font-family</span><span class="o">:</span> <span class="nt">BebasNeue</span><span class="o">;</span>
+</span><span class='line'>  <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://s3.amazonaws.com/html5hacks/BebasNeue.otf&#39;</span><span class="o">);</span>
+</span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.test</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;BebasNeue&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Now we’ll open a browser and point to our newly created HTML page. In Opera (see
 Figure 9-26), Safari, and Chrome our header tag is being styled correctly.</p>
@@ -244,16 +280,28 @@ request, Amazon S3 will return any requested headers.</p>
 <p>The second rule allows cross-origin GET requests from all origins. The * wildcard
 character refers to all origins.</p>
 
-<p>{% codeblock config.xml %}</p>
-
-<p><CORSConfiguration>
-<CORSRule>
-<AllowedOrigin>*/AllowedOrigin>
-<AllowedMethod>GET</AllowedMethod>
-</CORSRule>
-</CORSConfiguration></p>
-
-<p>{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>config.xml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;CORSConfiguration&gt;</span>
+</span><span class='line'><span class="nt">&lt;CORSRule&gt;</span>
+</span><span class='line'><span class="nt">&lt;AllowedOrigin&gt;</span>*/AllowedOrigin&gt;
+</span><span class='line'><span class="nt">&lt;AllowedMethod&gt;</span>GET<span class="nt">&lt;/AllowedMethod&gt;</span>
+</span><span class='line'><span class="nt">&lt;/CORSRule&gt;</span>
+</span><span class='line'><span class="nt">&lt;/CORSConfiguration&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>So, let’s add our new configuration to our Editor and save (see Figure 9-29).</p>
 
