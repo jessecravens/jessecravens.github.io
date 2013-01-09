@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2012-12-03T14:17:29-06:00</updated>
+  <updated>2013-01-09T17:29:57-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[JavaScript Modules]]></title>
     <link href="http://jessecravens.com/blog/2012/06/17/javascript-modules/"/>
-    <updated>2012-06-17T16:23:21-05:00</updated>
+    <updated>2012-06-17T17:23:21-04:00</updated>
     <id>http://jessecravens.com/blog/2012/06/17/javascript-modules</id>
     <content type="html"><![CDATA[<p>For a talk last March at USAA's internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
 
@@ -65,7 +65,7 @@
   <entry>
     <title type="html"><![CDATA[Web Wokers: Basics of the Web Browser's UI Thread]]></title>
     <link href="http://jessecravens.com/blog/2011/12/11/hack-82-web-wokers-basics-of-the-web-browsers-ui-thread/"/>
-    <updated>2011-12-11T11:08:01-06:00</updated>
+    <updated>2011-12-11T12:08:01-05:00</updated>
     <id>http://jessecravens.com/blog/2011/12/11/hack-82-web-wokers-basics-of-the-web-browsers-ui-thread</id>
     <content type="html"><![CDATA[<h2>Single Threadin'</h2>
 
@@ -234,9 +234,9 @@
   
   <entry>
     <title type="html"><![CDATA[RVM (Ruby Version Manager) and Ruby On Rails]]></title>
-    <link href="http://jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails/"/>
-    <updated>2011-09-26T23:35:58-05:00</updated>
-    <id>http://jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails</id>
+    <link href="http://jessecravens.com/blog/2011/09/27/rvm-ruby-version-manager-and-ruby-on-rails/"/>
+    <updated>2011-09-27T00:35:58-04:00</updated>
+    <id>http://jessecravens.com/blog/2011/09/27/rvm-ruby-version-manager-and-ruby-on-rails</id>
     <content type="html"><![CDATA[<p>Here is a brief overview of <a href="http://beginrescueend.com">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn't live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
 
 <p>This allows me to essentially sandbox each of these applications' dependencies.</p>
@@ -418,9 +418,9 @@
   
   <entry>
     <title type="html"><![CDATA[Git Cheatsheet]]></title>
-    <link href="http://jessecravens.com/blog/2011/09/26/git-cheatsheet/"/>
-    <updated>2011-09-26T23:10:56-05:00</updated>
-    <id>http://jessecravens.com/blog/2011/09/26/git-cheatsheet</id>
+    <link href="http://jessecravens.com/blog/2011/09/27/git-cheatsheet/"/>
+    <updated>2011-09-27T00:10:56-04:00</updated>
+    <id>http://jessecravens.com/blog/2011/09/27/git-cheatsheet</id>
     <content type="html"><![CDATA[<p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I'd share.</p>
 
 <h3>Git First-Time System Setup</h3>
@@ -549,7 +549,7 @@
   <entry>
     <title type="html"><![CDATA[YUI3 Rails Application Template]]></title>
     <link href="http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template/"/>
-    <updated>2011-01-30T01:02:15-06:00</updated>
+    <updated>2011-01-30T02:02:15-05:00</updated>
     <id>http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template</id>
     <content type="html"><![CDATA[<p>I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.</p>
 
