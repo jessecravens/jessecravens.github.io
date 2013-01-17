@@ -4,7 +4,7 @@
   <title><![CDATA[Category: CSS3 | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/css3/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-01-09T17:29:57-05:00</updated>
+  <updated>2013-01-17T09:20:46-06:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Robodeck]]></title>
     <link href="http://jessecravens.com/blog/2012/05/22/robodeck/"/>
-    <updated>2012-05-22T11:01:42-04:00</updated>
+    <updated>2012-05-22T10:01:42-05:00</updated>
     <id>http://jessecravens.com/blog/2012/05/22/robodeck</id>
     <content type="html"><![CDATA[<p>Awhile back, I built a websocket powered interactive presentation framework called <a href="https://github.com/jessecravens/robodeck">Robodeck</a>.</p>
 

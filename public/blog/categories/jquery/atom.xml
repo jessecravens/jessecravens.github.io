@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JQuery | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/jquery/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-01-09T17:29:57-05:00</updated>
+  <updated>2013-01-17T09:20:46-06:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[JavaScript Modules]]></title>
     <link href="http://jessecravens.com/blog/2012/06/17/javascript-modules/"/>
-    <updated>2012-06-17T17:23:21-04:00</updated>
+    <updated>2012-06-17T16:23:21-05:00</updated>
     <id>http://jessecravens.com/blog/2012/06/17/javascript-modules</id>
     <content type="html"><![CDATA[<p>For a talk last March at USAA's internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
 

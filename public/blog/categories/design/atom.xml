@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Design | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-01-09T17:29:57-05:00</updated>
+  <updated>2013-01-17T09:20:46-06:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[American Modern Vintage: Peacefield.info gets Redesigned]]></title>
     <link href="http://jessecravens.com/blog/2008/01/20/american-modern-vintage-peacefield-info-gets-redesigned/"/>
-    <updated>2008-01-20T01:33:18-05:00</updated>
+    <updated>2008-01-20T00:33:18-06:00</updated>
     <id>http://jessecravens.com/blog/2008/01/20/american-modern-vintage-peacefield-info-gets-redesigned</id>
     <content type="html"><![CDATA[<p><img style="float: right; display: inline; margin: 10px" src="http://jessecravens.com/images/pf2008.jpg" /></p>
 
@@ -50,7 +50,7 @@
   <entry>
     <title type="html"><![CDATA[Sites updated with Google Maps]]></title>
     <link href="http://jessecravens.com/blog/2006/10/09/sites-updated-with-google-maps/"/>
-    <updated>2006-10-09T10:38:20-04:00</updated>
+    <updated>2006-10-09T09:38:20-05:00</updated>
     <id>http://jessecravens.com/blog/2006/10/09/sites-updated-with-google-maps</id>
     <content type="html"><![CDATA[<p><a href="http://sessionswest.com/location"><img src="http://jessecravens.com/images/sitethumbs/sessions_150.jpg" style="float:right; margin: 10px"></a>Both <a href="http://sessionswest.com">sessionswest.com</a> and <a href="http://bajioranch.com">bajioranch.com</a> received embedded google maps this weekend courtesy of the great <a href="http://drupal.org/node/33591drupal">drupal gmap module</a>. I'm looking forward to taking this module and getting really creative - the possibilities are endless. <br> <br><a href="http://bajioranch.com/location"><img src="http://jessecravens.com/images/sitethumbs/bajio_150.jpg" style="float:left; margin: 10px"></a>For community websites this module gets really exciting by allowing users that have lat,long information entered to be displayed on a single map so that you can see where in the world all of your users are coming from. The gmap.module also includes functionality to allow users to set their latitude and longitude on a gmap in an interactive fashion.<br> <br>I am speaking with some of my other clients about incorporating more complex maps such as a historical map of the Tuscarawas River Band's 'Full Circle' tour. For other band's this may be expressed in a 'Places we have played" Interactive Map. For non-profits, such as the findingmyvoice.org project - this could be beneficial in providing individuals with disabilites an interactive map of local colleges and universities Disability Services departments.</p>
 ]]></content>
@@ -59,7 +59,7 @@
   <entry>
     <title type="html"><![CDATA[One great CSS resource]]></title>
     <link href="http://jessecravens.com/blog/2006/09/26/one-great-css-resource/"/>
-    <updated>2006-09-26T17:34:31-04:00</updated>
+    <updated>2006-09-26T16:34:31-05:00</updated>
     <id>http://jessecravens.com/blog/2006/09/26/one-great-css-resource</id>
     <content type="html"><![CDATA[<p><a href="http://www.alistapart.com/articles/12lessonsCSSandstandards">A List Apart: Articles: 12 Lessons for Those Afraid of CSS and Standards</a><br /><br />A great resource for anyone interested in CSS. I tell you what, it makes me feel alot better about all of my struggles with what Ben refers to as whack-a-mole rendering bugs and stylesheet hacks.<br /></p>
 ]]></content>
@@ -68,7 +68,7 @@
   <entry>
     <title type="html"><![CDATA[Business Computer Programming]]></title>
     <link href="http://jessecravens.com/blog/2006/08/24/business-computer-programming/"/>
-    <updated>2006-08-24T23:13:30-04:00</updated>
+    <updated>2006-08-24T22:13:30-05:00</updated>
     <id>http://jessecravens.com/blog/2006/08/24/business-computer-programming</id>
     <content type="html"><![CDATA[<p>My 9th grade Business Computer Programming class will be creating their own web page, as their first major project. Unlike most curriculums I have seen - the page will grow with them as they learn - and evolve into a fully functional html page w/ external css and javascript, and an embedded .swf that uses an xml playlist to play .mp3s.</p>
 
@@ -89,7 +89,7 @@
   <entry>
     <title type="html"><![CDATA[Web Development Cheat Sheets]]></title>
     <link href="http://jessecravens.com/blog/2006/05/23/web-development-cheat-sheets/"/>
-    <updated>2006-05-23T16:00:22-04:00</updated>
+    <updated>2006-05-23T15:00:22-05:00</updated>
     <id>http://jessecravens.com/blog/2006/05/23/web-development-cheat-sheets</id>
     <content type="html"><![CDATA[<p>Dave Child has posted a number of Web development related <a href="http://www.ilovejackdaniels.com/cheat-sheets/">cheat sheets</a> in .pdf and .png format on his blog. These include CSS, xHTML, JavaScript, Ruby on Rails, PHP, and MySQL.</p>
 
