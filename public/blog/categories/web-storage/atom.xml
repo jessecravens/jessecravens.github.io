@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Storage | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/web-storage/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-01-17T09:20:46-06:00</updated>
+  <updated>2013-02-03T23:36:26-06:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[HTML5.tx 2013]]></title>
+    <link href="http://jessecravens.com/blog/2013/02/03/html5-dot-tx-2013/"/>
+    <updated>2013-02-03T23:09:00-06:00</updated>
+    <id>http://jessecravens.com/blog/2013/02/03/html5-dot-tx-2013</id>
+    <content type="html"><![CDATA[<h3>Embedded JavaScript, HTML5 and the Internet of Things</h3>
+
+<script async class="speakerdeck-embed" data-slide="46" data-id="92b31ab050b501308fcd1231381d555c" data-ratio="1.2994923857868" src="http://jessecravens.com//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>I had a great time presenting at HTML5.tx 2013, here is an embed above of the slide deck. I should have the trailr node module in a presentable format soon and I'll tweet its inclusion in NPM. I have a placeholder here: <a href="https://npmjs.org/package/trailr">trailr at npm</a>.</p>
+
+<p>I also pushed out the version 1 trailr-admin UI here: <a href="http://trailr-admin.herokuapp.com/dashboard">trailr-admin.herokuapp.com</a>.</p>
+
+<p>Very soon, initial documentation will be available at: <a href="http://trailr.io">trailr.io</a></p>
+
+<p><img class="" alt=""  src="http://jessecravens.com/images/html5tx2013/embedded.jpg">
+Photo credit: Mitch Fincher: <a href="http://mitchfincher.blogspot.com/2013/02/pictures-from-html5tx-2013-in-austin-tx.html">mitchfincher.blogspot.com</a></p>
+
+<p><img class="" alt=""  src="http://jessecravens.com/images/html5tx2013/embedded2.jpg">
+Photo credit: Mitch Fincher: <a href="http://mitchfincher.blogspot.com/2013/02/pictures-from-html5tx-2013-in-austin-tx.html">mitchfincher.blogspot.com</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Build a Milestone Calendar with IndexedDB and FullCalendar.js]]></title>

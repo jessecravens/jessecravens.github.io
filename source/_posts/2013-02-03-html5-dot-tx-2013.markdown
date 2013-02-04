@@ -1,0 +1,26 @@
+---
+layout: post
+title: "HTML5.tx 2013"
+date: 2013-02-03 23:09
+comments: true
+categories: ["JavaScript","IndexedDB","Web Storage"]
+author: Jesse Cravens
+---
+
+### Embedded JavaScript, HTML5 and the Internet of Things
+
+<script async class="speakerdeck-embed" data-slide="46" data-id="92b31ab050b501308fcd1231381d555c" data-ratio="1.2994923857868" src="//speakerdeck.com/assets/embed.js"></script>
+
+I had a great time presenting at HTML5.tx 2013, here is an embed above of the slide deck. I should have the trailr node module in a presentable format soon and I'll tweet its inclusion in NPM. I have a placeholder here: [trailr at npm](https://npmjs.org/package/trailr).
+
+I also pushed out the version 1 trailr-admin UI here: [trailr-admin.herokuapp.com](http://trailr-admin.herokuapp.com/dashboard).
+
+Very soon, initial documentation will be available at: [trailr.io](http://trailr.io)
+
+<img class="" alt=""  src="/images/html5tx2013/embedded.jpg">
+Photo credit: Mitch Fincher: [mitchfincher.blogspot.com](http://mitchfincher.blogspot.com/2013/02/pictures-from-html5tx-2013-in-austin-tx.html)
+
+<img class="" alt=""  src="/images/html5tx2013/embedded2.jpg">
+Photo credit: Mitch Fincher: [mitchfincher.blogspot.com](http://mitchfincher.blogspot.com/2013/02/pictures-from-html5tx-2013-in-austin-tx.html)
+
+
