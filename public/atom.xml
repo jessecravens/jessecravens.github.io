@@ -4,7 +4,7 @@
   <title><![CDATA[Jesse Cravens]]></title>
   <link href="http://jessecravens.com/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-02-04T12:10:07-06:00</updated>
+  <updated>2013-03-13T11:08:00-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[SXSWi 2013: 'Battle of the HTML5 Hackers' and 'HTML5 Hacks' Book Signing]]></title>
+    <link href="http://jessecravens.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/"/>
+    <updated>2013-03-12T23:55:00-05:00</updated>
+    <id>http://jessecravens.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
+    <content type="html"><![CDATA[<p>We had a great turnout for the &#8216;Battle of the HTML5 Hackers&#8217; presentation at SXSWi on Tuesday.</p>
+
+<p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers" src="http://jessecravens.com/images/sxsw13/sxsw13-crowd.jpg"></p>
+
+<p>Using our best CDD (Conference Driven Devlopment) techniques, we walked the audience through the creation of <a href="http://nerdclustr.jit.su">Nerdclustr</a>: an HTML5 mobile Application that helps nerds find other like-minded nerds at conferences events.</p>
+
+<p>Using realtime and mapping technolgies, the app visualizes nerd behavior in map pin clusters.</p>
+
+<p><img class="imgR200" alt="SXSWi 2013 Nerdclustr Ballroom G Austin Convention Center"  src="http://jessecravens.com/images/sxsw13/sxsw13-app.png"></p>
+
+<p>Here is a shot of the app in action (Ballroom G in the Austin Convention Center); it performed well during the presentation. Thanks to <a href="https://www.nodejitsu.com/">Nodjitsu</a> for the quality node.js WebSocket service. After a 2-day hackathon to get the app launched, I ran through a number of deployment options, many of which I have used before for Rails applications. <a href="https://www.nodejitsu.com/">Nodjitsu</a> won out in that it actually supported the WebSokcet protocol and made deployment super simple using the jitsu CLI.</p>
+
+<p><img class="imgL200" alt="SXSWi 2013: HTML5 Hacks Book Signing"  src="http://jessecravens.com/images/sxsw13/sxsw13-booksigning.png"></p>
+
+<p>Nerdclustr source code is available <a href="https://github.com/html5hacks/nerd-clustr">here</a>.</p>
+
+<p>During the book signing, the bookstore informed us there were only 3 copies left. I&#8217;m not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
+
+<p>The slide deck is available here:</p>
+
+<script async class="speakerdeck-embed" data-id="c69c92f06d880130bfaa22000a1f8363" data-ratio="1.77777777777778" src="http://jessecravens.com//speakerdeck.com/assets/embed.js"></script>
+
+
+
+
+<hr>
+
+
+<p>Stay tuned for our next presentation happening online, through O&#8217;Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">&#8216;Rethinking the Possibilities of Browser-based Apps with HTML5&#8217;</a> on Wednesday, March 27, 2013 10AM PT.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[HTML5.tx 2013]]></title>
@@ -2350,16 +2387,6 @@ Here is an example of a div element that needs to have corners take on different
     <updated>2010-01-30T09:42:38-06:00</updated>
     <id>http://jessecravens.com/blog/2010/01/30/youtube-broadcast-yourself-html5-version</id>
     <content type="html"><![CDATA[<p><a href="http://www.youtube.com/html5">YouTube - Broadcast Yourself.</a> - <em></em> [<a href="http://delicious.com/cravens/post">delicious.com/cravens</a>]</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[EduPunk]]></title>
-    <link href="http://jessecravens.com/blog/2009/03/15/edupunk/"/>
-    <updated>2009-03-15T12:22:26-05:00</updated>
-    <id>http://jessecravens.com/blog/2009/03/15/edupunk</id>
-    <content type="html"><![CDATA[<object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
-
 ]]></content>
   </entry>
   
