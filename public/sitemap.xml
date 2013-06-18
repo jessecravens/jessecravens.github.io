@@ -468,6 +468,24 @@
     </url>
     <url>
         <loc>
+            http://jessecravens.com/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/
+        </loc>
+        <lastmod>2013-06-18T12:37:18-05:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://jessecravens.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/
+        </loc>
+        <lastmod>2013-06-18T12:37:22-05:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://jessecravens.com/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers/
+        </loc>
+        <lastmod>2013-06-18T12:32:10-05:00</lastmod>
+    </url>
+    <url>
+        <loc>
             http://jessecravens.com/01052009/my-morning-jacket-live-madison-square-garden-20081231/
         </loc>
         <lastmod>2012-10-15T16:18:15-05:00</lastmod>
@@ -858,11 +876,11 @@
     </url>
     <url>
         <loc>http://jessecravens.com/blog/archives/</loc>
-        <lastmod>2013-04-21T18:48:31-05:00</lastmod>
+        <lastmod>2013-06-18T12:37:22-05:00</lastmod>
     </url>
     <url>
         <loc>http://jessecravens.com/</loc>
-        <lastmod>2013-04-21T18:48:31-05:00</lastmod>
+        <lastmod>2013-06-18T12:37:22-05:00</lastmod>
     </url>
     <url>
         <loc>http://jessecravens.com/music/</loc>
@@ -1222,7 +1240,7 @@
     </url>
     <url>
         <loc>http://jessecravens.com/resume/</loc>
-        <lastmod>2013-06-18T00:08:24-05:00</lastmod>
+        <lastmod>2013-06-18T00:11:41-05:00</lastmod>
     </url>
     <url>
         <loc>http://jessecravens.com/work/usaa/</loc>

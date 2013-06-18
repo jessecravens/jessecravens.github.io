@@ -9,7 +9,7 @@
   <meta name="author" content="Jesse Cravens">
 
   
-  <meta name="description" content="Awhile back, I built a websocket powered interactive presentation framework called Robodeck. The solution uses the following technologies: Node.js &hellip;">
+  <meta name="description" content="After a marathon of hackery starting in April, Jeff Burtoft and I pushed out 90 hacks and 435 pages of HTML5 Hacks this week. We also had a few guest &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,293 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit/">Just Moved HTML5 Hacks Into Copy/Edit</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-24T21:57:00-05:00" pubdate data-updated="true">Sep 24<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After a marathon of hackery starting in April, <a href="http://www.oreillynet.com/pub/au/5370">Jeff Burtoft</a> and I pushed out 90 hacks and 435 pages of <a href="http://shop.oreilly.com/product/0636920026273.do">HTML5 Hacks</a> this week. We also had a few guest hackers that created some really great content as well.</p>
+
+<ul>
+<li>Raymond Camden of Adobe</li>
+<li>Phil Legetter of Pusher.com</li>
+<li>Alexander Schulze of jWebsocket</li>
+<li><a href="http://j.hn/">John Dyer</a> of Dallas Theological Seminary</li>
+<li>Alex Sirota of FoxyTunes</li>
+</ul>
+
+
+<p>Overall, it was a great experience. What I enjoyed the most was getting into a workflow groove, much like when you are building an API or contributing to a project. With each hack, it was necessary to ideate, plan, create the code, test it, and then put it into a understandable format. By the end, I was feeling pretty efficient at kicking out interesting hacks pretty quickly.</p>
+
+<p>I felt as though I improved over time, looking back is always interesting. I like to keep fine tuning and revising, but at some point you have to ship the product. I&#8217;m really proud of the work, it has been hard, but I learned a ton in the process.</p>
+
+<p>Most of my hacks I tried to make relevant to real world software development challenges, and mix in a number of HTML5 specifications. Hopefully, that turns out to benefit the reader &#8230; I&#8217;m all ears on the feedback. So don&#8217;t hesitate to drop us a line.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/23/migration-from-drupal-to-octopress/">Migration From Drupal to Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-23T13:39:00-05:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Why?</h2>
+
+<p>For the last 6 years, I have hosted my personal blog using Drupal at bluehost.com, and I finally have made the decision to migrate.</p>
+
+<p>I have been using Ruby on Rails, Sinatra, and Node.js for prototypes, demos, web-based presentations, and production apps, and deploying to Heroku for the past couple of years. The productivity gains and integration with github and social media, have brought me to the point that I&#8217;d prefer for my workflow for blogging, updating to my microformats resume and portfolios to be similar to how I create and manage my other content.</p>
+
+<p>So here, it is. Once I have written a proper migration script, and taken care of all the custom urls, I&#8217;ll post my solution here.</p>
+
+<p>UPDATE:</p>
+
+<div><script src='https://gist.github.com/3895430.js'></script>
+<noscript><pre><code># inspired by: http://www.infovore.info/blog/2011/09/24/octopress-setup-and-drupal-migration/
+# simplified to be dropped in your root Octopress app directory, along with an export (.sql) of your mysql db.
+
+###### Creates post in this basic format ######
+
+#  ---
+#  layout: post
+#  title: #{title}
+#  date: #{time}
+#  comments: true
+#  categories: #{tag_list}
+#  ---       
+#  content
+
+################################################
+
+
+  require 'rubygems'
+  require 'sequel'
+  require 'fileutils'
+  require 'yaml'
+
+
+        puts &quot;Building refresh layout&quot;
+        File.open(&quot;source/_layouts/refresh.html&quot;, &quot;w&quot;) do |f|
+        f.puts &lt;&lt;EOF    
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url={{ page.refresh_to_post_id }}.html&quot; /&gt;
+&lt;/head&gt;
+&lt;/html&gt;
+EOF
+        end
+
+        DB = Sequel.connect(:adapter =&gt; 'mysql', :user =&gt; 'root', :host =&gt; 'localhost', :database =&gt; 'jessecra',:password=&gt;'frog')
+        puts DB.tables
+
+        QUERY = &quot;select  node.nid, node.title, node_revisions.body, node.created, node.status, f.name as format, u.dst \
+             from node \
+                  join node_revisions on node.vid = node_revisions.vid \
+                  join filter_formats f on node_revisions.format = f.format \
+                  left join url_alias u on concat('node/', node.nid) = u.src \
+             where (node.type = 'blog' OR node.type = 'story' OR node.type = 'article')&quot;
+
+         DB[QUERY].each do |post|
+
+            # Get required fields and construct Jekyll compatible name
+            node_id = post[:nid]
+            # puts node_id
+            title = post[:title]
+            puts title
+            content = post[:body]
+            # puts content
+            created = post[:created]
+            format = post[:format].strip.downcase == 'textile' ? 'textile' : 'markdown'
+            dst  = post[:dst] || nil
+            time = Time.at(created)
+            is_published = post[:status] == 1
+            published = is_published ? nil : false
+            dir = &quot;source&quot;
+            posts_dir = &quot;#{dir}/_posts&quot;
+            slug = title.strip.downcase.gsub(/(&amp;|&amp;amp;)/, ' and ').gsub(/[\s\.\/\\]/, '-').gsub(/[^\w-]/, '').gsub(/[-_]{2,}/, '-').gsub(/^[-_]/, '').gsub(/[-_]$/, '')
+            name = time.strftime(&quot;%Y-%m-%d-&quot;) + slug + '.' + format
+            # puts name
+
+            tag_query = &quot;select distinct node.nid, type, td.name \
+                         from node \
+                              join term_node tn on node.nid = tn.nid \
+                              join term_data td on tn.tid = td.tid \
+                         where node.nid = #{node_id} order by node.nid&quot;
+            tags = []
+            DB[tag_query].each do |tag|
+              stripped_tag = tag[:name].gsub /&quot;/, '|'
+              tags.push stripped_tag
+            end
+            tag_list = tags.length == 0 ? nil : tags
+            
+            puts tag_list
+
+            # Write out the data and content to file
+            File.open(&quot;#{posts_dir}/#{name}&quot;, &quot;w&quot;) do |f|
+              f.puts &quot;---&quot;
+              f.puts &quot;layout: post&quot;
+              f.puts &quot;title: \&quot;#{title}\&quot;&quot; 
+              f.puts &quot;date: #{time}&quot; 
+              f.puts &quot;comments: true&quot;
+              f.puts &quot;categories: #{tag_list}&quot;
+              f.puts &quot;---&quot;
+              f.puts content
+            end
+
+            # Make a file to redirect from the old Drupal URL
+            if is_published
+              FileUtils.mkdir_p(dir + &quot;/node/#{node_id}&quot;)
+              File.open(dir + &quot;/node/#{node_id}/index.md&quot;, &quot;w&quot;) do |f|
+                f.puts &quot;---&quot;
+                f.puts &quot;layout: refresh&quot;
+                f.puts &quot;refresh_to_post_id: /blog/#{time.strftime(&quot;%Y/%m/%d/&quot;) + slug}/index&quot;
+                f.puts &quot;---&quot;
+              end
+              if dst
+                FileUtils.mkdir_p(&quot;#{dir}/#{dst}&quot;)
+                File.open(&quot;#{dir}/#{dst}/index.md&quot;, &quot;w&quot;) do |f|
+                  f.puts &quot;---&quot;
+                  f.puts &quot;layout: refresh&quot;
+                  f.puts &quot;refresh_to_post_id: /blog/#{time.strftime(&quot;%Y/%m/%d/&quot;) + slug}/index&quot;
+                  f.puts &quot;---&quot;
+                end
+              end
+            end
+          end</code></pre></noscript></div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/17/javascript-modules/">JavaScript Modules</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-17T16:23:21-05:00" pubdate data-updated="true">Jun 17<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>For a talk last March at USAA&#8217;s internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
+
+
+<p><a href="http://jessecravens.github.com/js-modules-demo/"><img class="imgL" width="500px" src="http://jessecravens.com/images/blogposts/js-modules.png"></a></p>
+
+<p>This demonstrates the following Module Definitions:</p>
+
+
+
+
+<ul>
+<li>AMD</li>
+<li>CommonJS</li>
+<li>YUI3</li>
+<li>JS Harmony</li>
+</ul>
+
+
+
+
+<p>And a few script loaders:</p>
+
+
+
+
+<ul>
+<li>RequireJS</li>
+<li>yepnope</li>
+<li>YUI3 - YUI Loader</li>
+</ul>
+
+
+
+
+<p>If you want to know more about the state of modules, dependency loading and management in the JavaScript world, there is always room for more contributors, just fork or clone the project &#8230; and you will have a playground to begin playing with some of the most popular implementations.</p>
+
+
+<p>To learn more, check it out here: <a href="http://jessecravens.github.com/js-modules-demo/">jessecravens.github.com/js-modules-demo</a></p>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1554,114 +1841,6 @@ Here is an example of a div element that needs to have corners take on different
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/01/30/researching-the-latest-in-htpc-home-theater-pc/">Researching the Latest in HTPC (Home Theater PC)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-30T19:30:56-06:00" pubdate data-updated="true">Jan 30<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Fed up with paying for lame content, we recently turned off our cable and turned in our DVR.<br />Since then, I have been doing my research and preparing to build or purchase a system that leverages our broadband connection and Local HD Channels for content.<br /><br />Here is my growing list of resources: <br /><b><br />General Information</b><br /><ul><li><a href="http://en.wikipedia.org/wiki/Home_theater_PC">Home theater PC - Wikipedia, the free encyclopedia</a></li></ul><br /><b>Articles</b><br /><ul><li><a href="http://gizmodo.com/5366161/life-without-cable-or-satellite-tv-is-easier-than-you-think">Life Without Cable or Satellite TV Is Easier Than You Think - Htpc - Gizmodo</a></li><li><a href="http://gizmodo.com/5420853/why-its-finally-time-to-get-a-home-theater-pc">Why It&#8217;s Finally Time To Get a Home Theater PC - Htpc - Gizmodo</a></li><li><a href="http://www.extremetech.com/article2/0,2845,2349560,00.asp">Mini-Roundup: The Best New HTPC Cases - Chieftec HM-02 - CPUs, Boards &amp; Components by ExtremeTech</a></li><li><a href="http://www.engadget.com/2009/11/12/dells-inspiron-zino-hd-on-sale-now-in-america-starts-at-229/">Dell&#8217;s Inspiron Zino HD on sale now in America: starts at $229, doubles as an HTPC &#8211; Engadget</a></li><li><a href="http://www.engadget.com/2009/07/21/how-to-build-a-blu-ray-tv-tuner-equipped-htpc-for-under-1-00/">How-to: Build a Blu-ray / TV tuner-equipped HTPC for under $1,000 &#8211; Engadget</a></li><li><a href="http://sewelldirect.com/articles/vga-to-hdmi.aspx">Convert VGA to HDMI with Audio (HDMI to VGA)</a></li></ul>      <br /><b>Videos</b><br /><ul><li><a href="http://www.howcast.com/videos/185705-How-To-Connect-Your-Laptop-To-Your-Television">How To Connect Your Laptop To Your Television Video | Laptop Computers Videos | Howcast.com</a></li><li><a href="http://www.youtube.com/watch?v=5c9-LLY33Gw">YouTube - CES 2010 - Core i5 is the new HTPC powerhouse</a></li></ul><br /><b>Channels</b><br /><ul><li><a href="http://www.hulu.com/">Hulu - Watch your favorites. Anytime. For free.</a></li><li><a href="http://www.fancast.com/">Fancast | Watch Full TV Shows and Movies | Free Online Streaming</a></li><li><a href="http://www.joost.com/epg/us/shows/">Shows - Featured - United States - Joost</a></li><li><a href="http://www.clicker.com/">Clicker - What&#8217;s On Online</a></li></ul>   <br /><b>On Demand Content</b><br /><ul><li><a href="http://www.amazon.com/Video-On-Demand/b/ref=topnav_storetab_atv?ie=UTF8&amp;node=16261631">Amazon.com Video On Demand: TV shows, movies, international videos and more, ready to download</a></li></ul> <br /><b>Players </b><br /><ul><li><a href="http://www.roku.com/">Roku Digital Video Player | Watch Netflix, Amazon Video On Demand and MLB.TV on Roku Player</a></li><li><a href="http://www.vudu.com/noscript.html">VUDU - Turn Javscript On Please</a></li></ul> <b><br />Hardware - All In One</b><br /><ul><li><a href="http://usa.asus.com/product.aspx?P_ID=wH1q2VTqyLXaCw1f">ASUSTeK Computer Inc. EeeBox PC EB1012</a></li><li><a href="http://www.dell.com/us/en/corp/desktops/inspiron-zino-hd/pd.aspx?refid=inspiron-zino-hd&amp;s=corp">Inspiron Zino HD Desktop | Dell</a></li><li><a href="http://mvixusa.com/product/ultiopro">Mvix UltioPro (MX-880HD) HD Media Center with PVR</a></li><li><a href="http://www.bodhiboxes.com/index.php?option=com_content&amp;view=article&amp;id=10&amp;Itemid=17">BodhiBoxes - Home Theater Personal Computer - Configure</a></li></ul>    <br /><b>Hardware - Parts</b><br /><ul><li><a href="http://www.google.com/products?q=nmediapc+htpc+2000b&amp;hl=en&amp;output=nojs">nmediapc htpc 2000b - Google Product Search</a></li><li><a href="http://www.google.com/products?q=intel+core+2+quad+q8400&amp;hl=en&amp;output=nojs">intel core 2 quad q8400 - Google Product Search</a></li><li><a href="http://www.google.com/products?q=lg+CH08LS10&amp;hl=en&amp;output=nojs">lg CH08LS10 - Google Product Search</a></li></ul>  <br /><b>Software and OS</b><br /><ul><li><a href="http://www.boxee.tv/">Boxee</a></li><li><a href="http://www.elementmypc.com/main/">Element OS: Linux on your HTPC</a></li><li><a href="http://www.mythbuntu.org/about">About Mythbuntu | Mythbuntu</a></li><li><a href="http://www.linuxmce.org/">Welcome to LinuxMCE</a></li><li><a href="http://knoppmyth.net/knoppmyth.html">KnoppMyth</a></li><li><a href="http://geexbox.org/en/index.html">GeeXboX HomePage</a></li></ul>     <br /><b>Network Storage</b><br /><ul><li><a href="http://www.shopping.hp.com/product/computer/categories/home_servers/1/accessories/FL702AA%2523ABA;HHOJSID=dVn4LdMJq4ls00VSvQvFH4bRJR9T82wLy4nVJLn25KB81KF1Pvpz%21181851530">HP® Official Store — Buy the HP MediaSmart Server LX195 direct from HP</a></li></ul> <br /><b>Recorders</b><br /><ul><li><a href="http://www.hauppauge.com/index.htm">Hauppauge Computer Works</a></li><li><a href="http://mvixusa.com/product/ultiopro">Mvix UltioPro (MX-880HD) HD Media Center with PVR</a></li></ul>  <br /><b>Antennas</b><br /><ul><li><a target="HDTV Indoor / Outdoor Antenna" title="HDTV Indoor / Outdoor Antenna" href="http://www.monoprice.com/products/product.asp?c_id=109&amp;cp_id=10901&amp;cs_id=1090102&amp;p_id=4730&amp;seq=1&amp;format=4#feedback">HDMI Cable, Home Theater Accessories, HDMI Products, Cables, Adapters, Video/Audio Switch, Networking, USB, Firewire, Printer Toner, and more!</a></li></ul> <br /><b>Remotes</b><br /><ul><li><a href="http://gizmodo.com/5435219/lenovos-multimedia-remote-with-keyboard">Lenovo&#8217;s Multimedia Remote with Keyboard - trackpad - Gizmodo</a></li><li><a href="http://www.gmote.org/">Gmote &gt; Android Remote</a></li><li><a href="http://www.logitech.com/index.cfm/keyboards/keyboard/devices/3848&amp;cl=us,en">diNovo Mini™</a></li><li><a href="http://www.google.com/products?q=HTPCKB&amp;hl=en">HTPCKB - Google Product Search</a></li></ul>   <br /><b>Cables/Converters</b><br /><ul><li><a href="http://www.monoprice.com/products/search.asp?keyword=vga+to+hdmi&amp;x=24&amp;y=15">HDMI Cable, Home Theater Accessories, HDMI Products, Cables, Adapters, Video/Audio Switch, Networking, USB, Firewire, Printer Toner, and more!</a></li><li><a href="http://sewelldirect.com/ATLONA-VGA-TO-HDMI-CONVERTERSCALER.asp">ATLONA VGA TO HDMI CONVERTER/SCALER - AT-HD500, $197.10</a></li></ul>  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />  <br /><br /><div class="zemanta-pixie"><img class="zemanta-pixie-img" alt="" src="http://img.zemanta.com/pixy.gif?x-id=37492be8-1a37-87f8-8f30-353c32d3f0b9" /></div></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/01/30/jerry-joseph-and-the-jackmormons-live-at-blue-nile-upstairs-on-2010-01-23-january-23-2010/">Jerry Joseph and the Jackmormons Live at Blue Nile (Upstairs) on 2010-01-23 (January 23, 2010)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-30T12:14:19-06:00" pubdate data-updated="true">Jan 30<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><embed type="application/x-shockwave-flash" width="350"     height="24"     allowfullscreen="true"  allowscriptaccess="always"  src="http://www.archive.org/flow/flowplayer.commercial-3.0.5.swf"   w3c="true"  flashvars='config={"key":"#$b6eb72a0f2f1e29f3d4","playlist":[{"url":"http://www.archive.org/download/jj2010-01-23/jj2010-01-24v2_d1t01_vbr.mp3","autoPlay":false},{"url":"http://www.archive.org/download/jj2010-01-23/jj2010-01-24v2_d1t02_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/jj2010-01-23/jj2010-01-24v2_d1t03_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/jj2010-01-23/jj2010-01-24v2_d1t04_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/jj2010-01-23/jj2010-01-24v2_d1t05_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/jj2010-01-23/jj2010-01-24v2_d1t06_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/jj2010-01-23/jj2010-01-24v2_d1t07_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/jj2010-01-23/jj2010-01-24v2_d1t08_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/jj2010-01-23/jj2010-01-24v2_d2t01_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/jj2010-01-23/jj2010-01-24v2_d2t02_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/jj2010-01-23/jj2010-01-24v2_d2t03_vbr.mp3","autoPlay":true}],"clip":{"autoPlay":true},"canvas":{"backgroundColor":"0x000000","backgroundGradient":"none"},"plugins":{"audio":{"url":"http://www.archive.org/flow/flowplayer.audio-3.0.3-dev.swf"},"controls":{"playlist":true,"fullscreen":false,"gloss":"high","backgroundColor":"0x000000","backgroundGradient":"medium","sliderColor":"0x777777","progressColor":"0x777777","timeColor":"0xeeeeee","durationColor":"0x01DAFF","buttonColor":"0x333333","buttonOverColor":"0x505050"}},"contextMenu":[{"Listen+to+jj2010-01-23+at+archive.org":"function()"},"-","Flowplayer 3.0.5"]}'> </embed></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/01/30/head-for-the-hills-live-at-hotel-oregon-on-2010-01-23-january-23-2010/">Head for the Hills Live at Hotel Oregon on 2010-01-23 (January 23, 2010)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-30T12:07:03-06:00" pubdate data-updated="true">Jan 30<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><embed type="application/x-shockwave-flash" width="350"     height="24"     allowfullscreen="true"  allowscriptaccess="always"  src="http://www.archive.org/flow/flowplayer.commercial-3.0.5.swf"   w3c="true"  flashvars='config={"key":"#$b6eb72a0f2f1e29f3d4","playlist":[{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track01_vbr.mp3","autoPlay":false},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track02_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track03_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track04_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track05_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track06_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track07_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track08_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track09_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track10_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track11_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track12_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track13_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track14_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track15_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track16_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track17_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track18_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track19_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set01track20_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track01_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track02_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track03_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track04_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track05_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track06_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track07_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track08_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track09_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track10_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track11_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track12_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track13_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track14_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track15_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track16_vbr.mp3","autoPlay":true},{"url":"http://www.archive.org/download/headforthehills2010-01-23.matrix.flac16/headforthehills2010-01-23matrix-set02track17_vbr.mp3","autoPlay":true}],"clip":{"autoPlay":true},"canvas":{"backgroundColor":"0x000000","backgroundGradient":"none"},"plugins":{"audio":{"url":"http://www.archive.org/flow/flowplayer.audio-3.0.3-dev.swf"},"controls":{"playlist":true,"fullscreen":false,"gloss":"high","backgroundColor":"0x000000","backgroundGradient":"medium","sliderColor":"0x777777","progressColor":"0x777777","timeColor":"0xeeeeee","durationColor":"0x01DAFF","buttonColor":"0x333333","buttonOverColor":"0x505050"}},"contextMenu":[{"Listen+to+headforthehills2010-01-23.matrix.flac16+at+archive.org":"function()"},"-","Flowplayer 3.0.5"]}'> </embed></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1724,23 +1903,23 @@ Here is an example of a div element that needs to have corners take on different
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers/">Fluent Conf 2013: Battle of the HTML5 Hackers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/">Ember.js Views and Live Templates with Handlebars.js Part 1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/">Modern Ember.js Application Workflow with Yeoman and Mocha</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/">Push Notifications to the Browser with Server Sent Events</a>
       </li>
     
       <li class="post">
         <a href="/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/">SXSWi 2013: &#8216;Battle of the HTML5 Hackers&#8217; and &#8216;HTML5 Hacks&#8217; Book Signing</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/03/html5-dot-tx-2013/">HTML5.tx 2013</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/">Build a Milestone Calendar with IndexedDB and FullCalendar.js</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship/">Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship</a>
       </li>
     
   </ul>

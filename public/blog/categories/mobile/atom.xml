@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mobile | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/mobile/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-06-18T00:11:17-05:00</updated>
+  <updated>2013-06-18T12:38:00-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Fluent Conf 2013: Battle of the HTML5 Hackers]]></title>
+    <link href="http://jessecravens.com/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers/"/>
+    <updated>2013-06-05T10:12:00-05:00</updated>
+    <id>http://jessecravens.com/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers</id>
+    <content type="html"><![CDATA[<p>Our presentation at Fluent Conference 2013 was a success, as <a href="https://twitter.com/boyofgreen">Jeff</a> and I delivered our final version of the 'Battle of the Hackers' series.</p>
+
+<p><img class="imgR300" alt="Jesse Cravens - Fluent Conf 2013" src="http://jessecravens.com/images/fluent_video.png"></p>
+
+<p>If you missed the conference, you can still catch every workshop, session, and keynote with the complete video compilation of the event.Catch up with this year’s lineup of speakers—seasoned pros as well as notable newcomers—as they share their expertise with JavaScript, HTML5, CSS, and related technologies that power the Web.</p>
+
+<p>You can order the series <a href="http://shop.oreilly.com/product/0636920030843.do">here</a>.</p>
+
+<p><img class="imgL200" alt="Jesse Cravens - Fluent Conf 2013" src="http://jessecravens.com/images/jesse_fluent.png"></p>
+
+<p>It was a great pleasure to share the stage with Brendan Eich (Mozilla), Paul Irish (Google), Lea Verou (W3C), Bill Scott (PayPal), Jesse Freeman (Microsoft), Dion Almaer (Walmart.com), and dozens more in the field.</p>
+
+<p>We also had a great turn out for the book signing, thanks for all the support. And congrats to Doug Hall for winning a free ebook copy of our book <a href="http://shop.oreilly.com/product/0636920026273.do">HTML5 Hacks</a></p>
+
+<p><img class="imgR300" alt="Jesse Cravens - Fluent Conf 2013" src="http://jessecravens.com/images/fluent_books.jpg"></p>
+
+<p>As always we've made all the code available and more at <a href="http://html5hacks.com">html5hacks.com</a>, and on github: <a href="http://github.com/html5hacks">github.com/html5hacks</a>.</p>
+
+<p>I also added a few more new hacks, involoving Web Components (Shadow DOM, HTML Imports, Custom Elements) and Polymer.js. You can find that source code available here: <a href="https://github.com/html5hacks/fluent2013-html5hacks">github.com/html5hacks/fluent2013-html5hacks</a></p>
+
+<p>It's been alot of fun co-presenting with Jeff, but my next two sessions, I will be going at HTML5 Hacking solo. You can catch my next presentations in NYC on July 24th–25th at <a href="http://lanyrd.com/2013/devcon5/">Devcon5 2013 NYC</a> or November 4th–8th at <a href="http://lanyrd.com/2013/redev/">Øredev 2013</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[SXSWi 2013: 'Battle of the HTML5 Hackers' and 'HTML5 Hacks' Book Signing]]></title>
