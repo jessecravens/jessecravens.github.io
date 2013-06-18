@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby on Rails | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-04-21T18:56:56-05:00</updated>
+  <updated>2013-06-18T00:11:17-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -34,166 +34,97 @@
 
 <h2>RUBY</h2>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm list
-</span><span class='line'>$ rvm install 1.9.2-head&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<p>$ rvm list
+$ rvm install 1.9.2-head</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>And, you can set a version as default</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm use 1.9.2-head --default&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<p>$ rvm use 1.9.2-head --default</p>
+
+<p>{% endcodeblock %}</p>
 
 <h3>GEMSETS</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Start by creating our gemset(s):&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$  rvm gemset create rails309&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Or create multiple at a time:&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$  rvm gemset create rails307 rails31&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>The result can be verified by listing the available gemsets:&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$  rvm gemset list&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>See everything with list_all, this has been very useful:&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm gemset list_all&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>If a gem’s name still leaves room for confusion, simply delete it and create a more meaningful one (e.g., rails31rc):&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$  rvm gemset delete rails31&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<h1>Start by creating our gemset(s):</h1>
+
+<p>$  rvm gemset create rails309</p>
+
+<h1>Or create multiple at a time:</h1>
+
+<p>$  rvm gemset create rails307 rails31</p>
+
+<h1>The result can be verified by listing the available gemsets:</h1>
+
+<p>$  rvm gemset list</p>
+
+<h1>See everything with list_all, this has been very useful:</h1>
+
+<p>$ rvm gemset list_all</p>
+
+<h1>If a gem’s name still leaves room for confusion, simply delete it and create a more meaningful one (e.g., rails31rc):</h1>
+
+<p>$  rvm gemset delete rails31</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>Now that we have multiple gemsets installed, we must first select the one we want to use, and we can also set it as the default gemset by passing it the —default flag:
   
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm use 1.9.2-head@rails309 --default&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}</p>
+
+<p>$ rvm use 1.9.2-head@rails309 --default</p>
+
+<p>{% endcodeblock %}</p>
 
 <h3>Installing Rails</h3>
 
 <p>Installing rails is as easy as installing any other gem: we only need to specify it’s name, but we can always choose a specific version, or to speed up the installation process by skipping the documentation:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ gem install rails --no-rdoc --no-ri&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Or&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ gem install rails [-v 3.0.7] [--no-rdoc --no-ri]&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Or&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ gem install rails -v ">=3.1.0rc"&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<p>$ gem install rails --no-rdoc --no-ri</p>
+
+<h1>Or</h1>
+
+<p>$ gem install rails [-v 3.0.7] [--no-rdoc --no-ri]</p>
+
+<h1>Or</h1>
+
+<p>$ gem install rails -v ">=3.1.0rc"</p>
+
+<p>{% endcodeblock %}</p>
 
 <h3>In Summary and Why Am I doing this?</h3>
 
 <p>Rails is distributed as a gem, and there are conflicts between Rails 2 and Rails 3, so if you want to run multiple versions of Rails on the same system you need to create a separate gemset for each:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm --create 1.8.7-p302@rails2app
-</span><span class='line'>$ rvm --create use 1.9.2@rails3app&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<p>$ rvm --create 1.8.7-p302@rails2app
+$ rvm --create use 1.9.2@rails3app</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>In other words, for application specific gemsets it is convenient to select the version of Ruby and the collection of gems by doing the following:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm --create use 1.9.2@mongoid-app&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Also, which gemset am I using?&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm gemset name&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm gemdir&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<p>$ rvm --create use 1.9.2@mongoid-app</p>
+
+<h1>Also, which gemset am I using?</h1>
+
+<p>$ rvm gemset name</p>
+
+<p>$ rvm gemdir</p>
+
+<p>{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
@@ -208,746 +139,375 @@
 
 <p>Since I have been disciplining myself to follow Test Driven Development on the server, I included all of my Rails testing dependencies in the app template as well (RSpec, Cucumber, WebRat, Factory Girl) and I plan to continue to leverage <a href="http://developer.yahoo.com/yui/3/test/">YUI Test</a> on the client as I run through browser validations of the <a href="http://developer.yahoo.com/yui/3/examples/datasource/datasource_polling.html">datasource-polling sub-module</a>. Clone the rails app template <a href="https://github.com/jessecravens/yui3-rails-template">here</a>.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>yui-rails.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-<span class='line-number'>119</span>
-<span class='line-number'>120</span>
-<span class='line-number'>121</span>
-<span class='line-number'>122</span>
-<span class='line-number'>123</span>
-<span class='line-number'>124</span>
-<span class='line-number'>125</span>
-<span class='line-number'>126</span>
-<span class='line-number'>127</span>
-<span class='line-number'>128</span>
-<span class='line-number'>129</span>
-<span class='line-number'>130</span>
-<span class='line-number'>131</span>
-<span class='line-number'>132</span>
-<span class='line-number'>133</span>
-<span class='line-number'>134</span>
-<span class='line-number'>135</span>
-<span class='line-number'>136</span>
-<span class='line-number'>137</span>
-<span class='line-number'>138</span>
-<span class='line-number'>139</span>
-<span class='line-number'>140</span>
-<span class='line-number'>141</span>
-<span class='line-number'>142</span>
-<span class='line-number'>143</span>
-<span class='line-number'>144</span>
-<span class='line-number'>145</span>
-<span class='line-number'>146</span>
-<span class='line-number'>147</span>
-<span class='line-number'>148</span>
-<span class='line-number'>149</span>
-<span class='line-number'>150</span>
-<span class='line-number'>151</span>
-<span class='line-number'>152</span>
-<span class='line-number'>153</span>
-<span class='line-number'>154</span>
-<span class='line-number'>155</span>
-<span class='line-number'>156</span>
-<span class='line-number'>157</span>
-<span class='line-number'>158</span>
-<span class='line-number'>159</span>
-<span class='line-number'>160</span>
-<span class='line-number'>161</span>
-<span class='line-number'>162</span>
-<span class='line-number'>163</span>
-<span class='line-number'>164</span>
-<span class='line-number'>165</span>
-<span class='line-number'>166</span>
-<span class='line-number'>167</span>
-<span class='line-number'>168</span>
-<span class='line-number'>169</span>
-<span class='line-number'>170</span>
-<span class='line-number'>171</span>
-<span class='line-number'>172</span>
-<span class='line-number'>173</span>
-<span class='line-number'>174</span>
-<span class='line-number'>175</span>
-<span class='line-number'>176</span>
-<span class='line-number'>177</span>
-<span class='line-number'>178</span>
-<span class='line-number'>179</span>
-<span class='line-number'>180</span>
-<span class='line-number'>181</span>
-<span class='line-number'>182</span>
-<span class='line-number'>183</span>
-<span class='line-number'>184</span>
-<span class='line-number'>185</span>
-<span class='line-number'>186</span>
-<span class='line-number'>187</span>
-<span class='line-number'>188</span>
-<span class='line-number'>189</span>
-<span class='line-number'>190</span>
-<span class='line-number'>191</span>
-<span class='line-number'>192</span>
-<span class='line-number'>193</span>
-<span class='line-number'>194</span>
-<span class='line-number'>195</span>
-<span class='line-number'>196</span>
-<span class='line-number'>197</span>
-<span class='line-number'>198</span>
-<span class='line-number'>199</span>
-<span class='line-number'>200</span>
-<span class='line-number'>201</span>
-<span class='line-number'>202</span>
-<span class='line-number'>203</span>
-<span class='line-number'>204</span>
-<span class='line-number'>205</span>
-<span class='line-number'>206</span>
-<span class='line-number'>207</span>
-<span class='line-number'>208</span>
-<span class='line-number'>209</span>
-<span class='line-number'>210</span>
-<span class='line-number'>211</span>
-<span class='line-number'>212</span>
-<span class='line-number'>213</span>
-<span class='line-number'>214</span>
-<span class='line-number'>215</span>
-<span class='line-number'>216</span>
-<span class='line-number'>217</span>
-<span class='line-number'>218</span>
-<span class='line-number'>219</span>
-<span class='line-number'>220</span>
-<span class='line-number'>221</span>
-<span class='line-number'>222</span>
-<span class='line-number'>223</span>
-<span class='line-number'>224</span>
-<span class='line-number'>225</span>
-<span class='line-number'>226</span>
-<span class='line-number'>227</span>
-<span class='line-number'>228</span>
-<span class='line-number'>229</span>
-<span class='line-number'>230</span>
-<span class='line-number'>231</span>
-<span class='line-number'>232</span>
-<span class='line-number'>233</span>
-<span class='line-number'>234</span>
-<span class='line-number'>235</span>
-<span class='line-number'>236</span>
-<span class='line-number'>237</span>
-<span class='line-number'>238</span>
-<span class='line-number'>239</span>
-<span class='line-number'>240</span>
-<span class='line-number'>241</span>
-<span class='line-number'>242</span>
-<span class='line-number'>243</span>
-<span class='line-number'>244</span>
-<span class='line-number'>245</span>
-<span class='line-number'>246</span>
-<span class='line-number'>247</span>
-<span class='line-number'>248</span>
-<span class='line-number'>249</span>
-<span class='line-number'>250</span>
-<span class='line-number'>251</span>
-<span class='line-number'>252</span>
-<span class='line-number'>253</span>
-<span class='line-number'>254</span>
-<span class='line-number'>255</span>
-<span class='line-number'>256</span>
-<span class='line-number'>257</span>
-<span class='line-number'>258</span>
-<span class='line-number'>259</span>
-<span class='line-number'>260</span>
-<span class='line-number'>261</span>
-<span class='line-number'>262</span>
-<span class='line-number'>263</span>
-<span class='line-number'>264</span>
-<span class='line-number'>265</span>
-<span class='line-number'>266</span>
-<span class='line-number'>267</span>
-<span class='line-number'>268</span>
-<span class='line-number'>269</span>
-<span class='line-number'>270</span>
-<span class='line-number'>271</span>
-<span class='line-number'>272</span>
-<span class='line-number'>273</span>
-<span class='line-number'>274</span>
-<span class='line-number'>275</span>
-<span class='line-number'>276</span>
-<span class='line-number'>277</span>
-<span class='line-number'>278</span>
-<span class='line-number'>279</span>
-<span class='line-number'>280</span>
-<span class='line-number'>281</span>
-<span class='line-number'>282</span>
-<span class='line-number'>283</span>
-<span class='line-number'>284</span>
-<span class='line-number'>285</span>
-<span class='line-number'>286</span>
-<span class='line-number'>287</span>
-<span class='line-number'>288</span>
-<span class='line-number'>289</span>
-<span class='line-number'>290</span>
-<span class='line-number'>291</span>
-<span class='line-number'>292</span>
-<span class='line-number'>293</span>
-<span class='line-number'>294</span>
-<span class='line-number'>295</span>
-<span class='line-number'>296</span>
-<span class='line-number'>297</span>
-<span class='line-number'>298</span>
-<span class='line-number'>299</span>
-<span class='line-number'>300</span>
-<span class='line-number'>301</span>
-<span class='line-number'>302</span>
-<span class='line-number'>303</span>
-<span class='line-number'>304</span>
-<span class='line-number'>305</span>
-<span class='line-number'>306</span>
-<span class='line-number'>307</span>
-<span class='line-number'>308</span>
-<span class='line-number'>309</span>
-<span class='line-number'>310</span>
-<span class='line-number'>311</span>
-<span class='line-number'>312</span>
-<span class='line-number'>313</span>
-<span class='line-number'>314</span>
-<span class='line-number'>315</span>
-<span class='line-number'>316</span>
-<span class='line-number'>317</span>
-<span class='line-number'>318</span>
-<span class='line-number'>319</span>
-<span class='line-number'>320</span>
-<span class='line-number'>321</span>
-<span class='line-number'>322</span>
-<span class='line-number'>323</span>
-<span class='line-number'>324</span>
-<span class='line-number'>325</span>
-<span class='line-number'>326</span>
-<span class='line-number'>327</span>
-<span class='line-number'>328</span>
-<span class='line-number'>329</span>
-<span class='line-number'>330</span>
-<span class='line-number'>331</span>
-<span class='line-number'>332</span>
-<span class='line-number'>333</span>
-<span class='line-number'>334</span>
-<span class='line-number'>335</span>
-<span class='line-number'>336</span>
-<span class='line-number'>337</span>
-<span class='line-number'>338</span>
-<span class='line-number'>339</span>
-<span class='line-number'>340</span>
-<span class='line-number'>341</span>
-<span class='line-number'>342</span>
-<span class='line-number'>343</span>
-<span class='line-number'>344</span>
-<span class='line-number'>345</span>
-<span class='line-number'>346</span>
-<span class='line-number'>347</span>
-<span class='line-number'>348</span>
-<span class='line-number'>349</span>
-<span class='line-number'>350</span>
-<span class='line-number'>351</span>
-<span class='line-number'>352</span>
-<span class='line-number'>353</span>
-<span class='line-number'>354</span>
-<span class='line-number'>355</span>
-<span class='line-number'>356</span>
-<span class='line-number'>357</span>
-<span class='line-number'>358</span>
-<span class='line-number'>359</span>
-<span class='line-number'>360</span>
-<span class='line-number'>361</span>
-<span class='line-number'>362</span>
-<span class='line-number'>363</span>
-<span class='line-number'>364</span>
-<span class='line-number'>365</span>
-<span class='line-number'>366</span>
-<span class='line-number'>367</span>
-<span class='line-number'>368</span>
-<span class='line-number'>369</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;YUI3 Application Generator Template&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Generates</span> <span class="n">a</span> <span class="no">Rails</span> <span class="n">app</span><span class="p">;</span> <span class="n">includes</span> <span class="no">YUI3</span><span class="p">,</span> <span class="no">Haml</span><span class="p">,</span> <span class="no">RSpec</span><span class="p">,</span> <span class="no">Cucumber</span><span class="p">,</span> <span class="no">WebRat</span><span class="p">,</span> <span class="no">Factory</span> <span class="no">Girl</span> <span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;puts &quot;Generating a new YUI3 Rails app&quot;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;----------------------------------------------------------------------------&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;Create the database&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;----------------------------------------------------------------------------&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;puts &quot;creating the database...&quot;</span>
-</span><span class='line'><span class="sr">run &#39;rake db:create:all&#39;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;----------------------------------------------------------------------------&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;GIT&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;----------------------------------------------------------------------------&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;puts &quot;setting up &#39;git&#39;&quot;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">append_file</span> <span class="s1">&#39;.gitignore&#39;</span> <span class="k">do</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&lt;-</span><span class="no">FILE</span>
-</span><span class='line'><span class="s1">&#39;.DS_Store&#39;</span>
-</span><span class='line'><span class="s1">&#39;.rvmrc&#39;</span>
-</span><span class='line'><span class="no">FILE</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="n">git</span> <span class="ss">:init</span>
-</span><span class='line'><span class="n">git</span> <span class="ss">:add</span> <span class="o">=&gt;</span> <span class="s1">&#39;.&#39;</span>
-</span><span class='line'><span class="n">git</span> <span class="ss">:commit</span> <span class="o">=&gt;</span> <span class="s2">&quot;-m &#39;Initial Commit of YUI3 Rails App&#39;&quot;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;----------------------------------------------------------------------------&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Remove</span> <span class="n">files</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;----------------------------------------------------------------------------&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="nb">puts</span> <span class="s2">&quot;removing files...&quot;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm public/index.html&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm public/favicon.ico&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm public/images/rails.png&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm README&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;touch README&#39;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;puts &quot;banning spiders from your site by changing robots.txt...&quot;</span>
-</span><span class='line'><span class="sr">gsub_file &#39;public/</span><span class="n">robots</span><span class="o">.</span><span class="n">txt</span><span class="s1">&#39;, /# User-Agent/, &#39;</span><span class="no">User</span><span class="o">-</span><span class="no">Agent</span><span class="s1">&#39;</span>
-</span><span class='line'><span class="s1">gsub_file &#39;</span><span class="kp">public</span><span class="o">/</span><span class="n">robots</span><span class="o">.</span><span class="n">txt</span><span class="s1">&#39;, /# Disallow/, &#39;</span><span class="no">Disallow</span><span class="s1">&#39;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;Haml&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;  puts &quot;setting up Gemfile for Haml...&quot;</span>
-</span><span class='line'><span class="s1">  append_file &#39;</span><span class="no">Gemfile</span><span class="s1">&#39;, &quot;\n# Bundle gems needed for Haml\n&quot;</span>
-</span><span class='line'><span class="s1">  gem &#39;</span><span class="n">haml</span><span class="s1">&#39;, &#39;</span><span class="mi">3</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">18</span><span class="s1">&#39;</span>
-</span><span class='line'><span class="s1">  gem &#39;</span><span class="n">haml</span><span class="o">-</span><span class="n">rails</span><span class="s1">&#39;, &#39;</span><span class="mi">0</span><span class="o">.</span><span class="mi">2</span><span class="s1">&#39;, :group =&gt; :development&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;Set up YUI3&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;puts &quot;replacing Prototype with YUI3&quot;</span>
-</span><span class='line'><span class="s1">run &#39;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">controls</span><span class="o">.</span><span class="n">js</span><span class="s1">&#39;</span>
-</span><span class='line'><span class="s1">run &#39;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">dragdrop</span><span class="o">.</span><span class="n">js</span><span class="s1">&#39;</span>
-</span><span class='line'><span class="s1">run &#39;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">effects</span><span class="o">.</span><span class="n">js</span><span class="s1">&#39;</span>
-</span><span class='line'><span class="s1">run &#39;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">prototype</span><span class="o">.</span><span class="n">js</span><span class="s1">&#39;</span>
-</span><span class='line'><span class="s1">run &#39;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">rails</span><span class="o">.</span><span class="n">js</span><span class="s1">&#39;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;get &quot;http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-debug.js&quot;,  &quot;public/javascripts/yui-debug.js&quot;</span>
-</span><span class='line'><span class="s1">get &quot;http://yui.yahooapis.com/3.3.0/build/cssreset/reset.css&quot;,  &quot;public/stylesheets/reset.css&quot;</span>
-</span><span class='line'><span class="s1">get &quot;http://yui.yahooapis.com/3.3.0/build/cssbase/base.css&quot;,  &quot;public/stylesheets/base.css&quot;</span>
-</span><span class='line'><span class="s1">get &quot;http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts.css&quot;,  &quot;public/stylesheets/fonts.css&quot;</span>
-</span><span class='line'><span class="s1">get &quot;http://yui.yahooapis.com/3.3.0/build/cssgrids/grids.css&quot;,  &quot;public/stylesheets/grids.css&quot;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;Create an index page&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;puts &quot;create a home controller and view&quot;</span>
-</span><span class='line'><span class="s1">generate(:controller, &quot;home index&quot;)</span>
-</span><span class='line'><span class="s1">gsub_file &#39;</span><span class="n">config</span><span class="o">/</span><span class="n">routes</span><span class="o">.</span><span class="n">rb</span><span class="s1">&#39;, /get \&quot;home\/index\&quot;/, &#39;</span><span class="n">root</span> <span class="ss">:to</span> <span class="o">=&gt;</span> <span class="s2">&quot;home#index&quot;</span><span class="s1">&#39;</span>
-</span><span class='line'><span class="s1">append_file &#39;</span><span class="n">app</span><span class="o">/</span><span class="n">views</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">haml</span><span class="s1">&#39;do &amp;lt;&lt;-FILE</span>
-</span><span class='line'><span class="s1">!!!</span>
-</span><span class='line'><span class="s1">%h2{:class =&gt; &quot;subtitle&quot;} Get Started</span>
-</span><span class='line'><span class="s1">%p{:class =&gt; &quot;content&quot;} Update application.js with your logic</span>
-</span><span class='line'><span class="s1">%div{:class =&gt; &quot;container&quot;, :id =&gt; &quot;container&quot;}</span>
-</span><span class='line'><span class="s1">%div{:id =&gt; &quot;testLogger&quot;}</span>
-</span><span class='line'><span class="s1">FILE</span>
-</span><span class='line'><span class="s1">end&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;Generate Application Layout&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;run &#39;</span><span class="n">rm</span> <span class="n">app</span><span class="o">/</span><span class="n">views</span><span class="o">/</span><span class="n">layouts</span><span class="o">/</span><span class="n">application</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">erb</span><span class="s1">&#39;</span>
-</span><span class='line'><span class="s1">  create_file &#39;</span><span class="n">app</span><span class="o">/</span><span class="n">views</span><span class="o">/</span><span class="n">layouts</span><span class="o">/</span><span class="n">application</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">haml</span><span class="s1">&#39; do &amp;lt;&amp;lt;-FILE</span>
-</span><span class='line'><span class="s1">!!!</span>
-</span><span class='line'><span class="s1">%html</span>
-</span><span class='line'><span class="s1">  %head&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;pre&gt;&lt;code&gt;%title YUI3 App</span>
-</span><span class='line'><span class="s1">= stylesheet_link_tag &quot;reset&quot;</span>
-</span><span class='line'><span class="s1">= stylesheet_link_tag &quot;base&quot;</span>
-</span><span class='line'><span class="s1">= stylesheet_link_tag &quot;fonts&quot;</span>
-</span><span class='line'><span class="s1">= stylesheet_link_tag &quot;grids&quot;</span>
-</span><span class='line'><span class="s1">= stylesheet_link_tag &quot;application&quot;</span>
-</span><span class='line'><span class="s1">= javascript_include_tag :all</span>
-</span><span class='line'><span class="s1">= csrf_meta_tag</span>
-</span><span class='line'><span class="s1">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;  %body{:class =&gt;&quot;yui3-skin-sam  yui-skin-sam&quot;}&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;pre&gt;&lt;code&gt;= yield</span>
-</span><span class='line'><span class="s1">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;FILE</span>
-</span><span class='line'><span class="s1">end&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;Add Stylesheets&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;create_file &#39;</span><span class="kp">public</span><span class="o">/</span><span class="n">stylesheets</span><span class="o">/</span><span class="n">application</span><span class="o">.</span><span class="n">css</span><span class="s1">&#39; do &amp;lt;&amp;lt;-FILE</span>
-</span><span class='line'><span class="s1">div.container {</span>
-</span><span class='line'><span class="s1">  width: 100%;</span>
-</span><span class='line'><span class="s1">  height: 100px;</span>
-</span><span class='line'><span class="s1">  padding: 10px;</span>
-</span><span class='line'><span class="s1">  margin: 10px;</span>
-</span><span class='line'><span class="s1">  border: 1px solid red;</span>
-</span><span class='line'><span class="s1">}&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;testLogger {&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;pre&gt;&lt;code&gt;margin-bottom: 1em;</span>
-</span><span class='line'><span class="s1">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;}&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;testLogger .yui3-console .yui3-console-title {&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;pre&gt;&lt;code&gt;border: 0 none;</span>
-</span><span class='line'><span class="s1">color: #000;</span>
-</span><span class='line'><span class="s1">font-size: 13px;</span>
-</span><span class='line'><span class="s1">font-weight: bold;</span>
-</span><span class='line'><span class="s1">margin: 0;</span>
-</span><span class='line'><span class="s1">text-transform: none;</span>
-</span><span class='line'><span class="s1">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;}&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;testLogger .yui3-console .yui3-console-entry-meta {&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;pre&gt;&lt;code&gt;margin: 0;</span>
-</span><span class='line'><span class="s1">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;}&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;.yui3-skin-sam .yui3-console-entry-pass .yui3-console-entry-cat {&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;pre&gt;&lt;code&gt;background: #070;</span>
-</span><span class='line'><span class="s1">color: #fff;</span>
-</span><span class='line'><span class="s1">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;}&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;FILE</span>
-</span><span class='line'><span class="s1">end&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;Initialize YUI and add YUI Test&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;append_file &#39;</span><span class="kp">public</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">application</span><span class="o">.</span><span class="n">js</span><span class="s1">&#39; do &amp;lt;&amp;lt;-FILE&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;  YUI({ filter: &#39;</span><span class="n">raw</span><span class="s1">&#39; }).use(&quot;node&quot;, &quot;console&quot;, &quot;test&quot;,function (Y) {&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;pre&gt;&lt;code&gt;  Y.namespace(&quot;example.test&quot;);</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">  Y.example.test.DataTestCase = new Y.Test.Case({</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      //name of the test case - if not provided, one is auto-generated</span>
-</span><span class='line'><span class="s1">      name : &quot;Data Tests&quot;,</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      //---------------------------------------------------------------------</span>
-</span><span class='line'><span class="s1">      // setUp and tearDown methods - optional</span>
-</span><span class='line'><span class="s1">      //---------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      /*</span>
-</span><span class='line'><span class="s1">       * Sets up data that is needed by each test.</span>
-</span><span class='line'><span class="s1">       */</span>
-</span><span class='line'><span class="s1">      setUp : function () {</span>
-</span><span class='line'><span class="s1">          this.data = {</span>
-</span><span class='line'><span class="s1">              name: &quot;test&quot;,</span>
-</span><span class='line'><span class="s1">              year: 2007,</span>
-</span><span class='line'><span class="s1">              beta: true</span>
-</span><span class='line'><span class="s1">          };</span>
-</span><span class='line'><span class="s1">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      /*</span>
-</span><span class='line'><span class="s1">       * Cleans up everything that was created by setUp().</span>
-</span><span class='line'><span class="s1">       */</span>
-</span><span class='line'><span class="s1">      tearDown : function () {</span>
-</span><span class='line'><span class="s1">          delete this.data;</span>
-</span><span class='line'><span class="s1">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      //---------------------------------------------------------------------</span>
-</span><span class='line'><span class="s1">      // Test methods - names must begin with &quot;test&quot;</span>
-</span><span class='line'><span class="s1">      //---------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      testName : function () {</span>
-</span><span class='line'><span class="s1">          var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">          Assert.isObject(this.data);</span>
-</span><span class='line'><span class="s1">          Assert.isString(this.data.name);</span>
-</span><span class='line'><span class="s1">          Assert.areEqual(&quot;test&quot;, this.data.name);            </span>
-</span><span class='line'><span class="s1">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      testYear : function () {</span>
-</span><span class='line'><span class="s1">          var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">          Assert.isObject(this.data);</span>
-</span><span class='line'><span class="s1">          Assert.isNumber(this.data.year);</span>
-</span><span class='line'><span class="s1">          Assert.areEqual(2007, this.data.year);            </span>
-</span><span class='line'><span class="s1">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      testBeta : function () {</span>
-</span><span class='line'><span class="s1">          var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">          Assert.isObject(this.data);</span>
-</span><span class='line'><span class="s1">          Assert.isBoolean(this.data.beta);</span>
-</span><span class='line'><span class="s1">          Assert.isTrue(this.data.beta);</span>
-</span><span class='line'><span class="s1">      }</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">  });</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">  Y.example.test.ArrayTestCase = new Y.Test.Case({</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      //name of the test case - if not provided, one is auto-generated</span>
-</span><span class='line'><span class="s1">      name : &quot;Array Tests&quot;,</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      //---------------------------------------------------------------------</span>
-</span><span class='line'><span class="s1">      // setUp and tearDown methods - optional</span>
-</span><span class='line'><span class="s1">      //---------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      /*</span>
-</span><span class='line'><span class="s1">       * Sets up data that is needed by each test.</span>
-</span><span class='line'><span class="s1">       */</span>
-</span><span class='line'><span class="s1">      setUp : function () {</span>
-</span><span class='line'><span class="s1">          this.data = [0,1,2,3,4]</span>
-</span><span class='line'><span class="s1">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      /*</span>
-</span><span class='line'><span class="s1">       * Cleans up everything that was created by setUp().</span>
-</span><span class='line'><span class="s1">       */</span>
-</span><span class='line'><span class="s1">      tearDown : function () {</span>
-</span><span class='line'><span class="s1">          delete this.data;</span>
-</span><span class='line'><span class="s1">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      //---------------------------------------------------------------------</span>
-</span><span class='line'><span class="s1">      // Test methods - names must begin with &quot;test&quot;</span>
-</span><span class='line'><span class="s1">      //---------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      testPop : function () {</span>
-</span><span class='line'><span class="s1">          var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">          var value = this.data.pop();</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">          Assert.areEqual(4, this.data.length);</span>
-</span><span class='line'><span class="s1">          Assert.areEqual(4, value);            </span>
-</span><span class='line'><span class="s1">      },        </span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      testPush : function () {</span>
-</span><span class='line'><span class="s1">          var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">          this.data.push(5);</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">          Assert.areEqual(6, this.data.length);</span>
-</span><span class='line'><span class="s1">          Assert.areEqual(5, this.data[5]);            </span>
-</span><span class='line'><span class="s1">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">      testSplice : function () {</span>
-</span><span class='line'><span class="s1">          var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">          this.data.splice(2, 1, 6, 7);</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">          Assert.areEqual(6, this.data.length);</span>
-</span><span class='line'><span class="s1">          Assert.areEqual(6, this.data[2]);           </span>
-</span><span class='line'><span class="s1">          Assert.areEqual(7, this.data[3]);           </span>
-</span><span class='line'><span class="s1">      }</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">  });    </span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">  Y.example.test.ExampleSuite = new Y.Test.Suite(&quot;Example Suite&quot;);</span>
-</span><span class='line'><span class="s1">  Y.example.test.ExampleSuite.add(Y.example.test.DataTestCase);</span>
-</span><span class='line'><span class="s1">  Y.example.test.ExampleSuite.add(Y.example.test.ArrayTestCase);</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">  //create the console</span>
-</span><span class='line'><span class="s1">  var r = new Y.Console({</span>
-</span><span class='line'><span class="s1">      newestOnTop : false,</span>
-</span><span class='line'><span class="s1">      style: &#39;</span><span class="n">block</span><span class="s1">&#39; // to anchor in the example content</span>
-</span><span class='line'><span class="s1">  });</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">  r.render(&#39;</span><span class="c1">#testLogger&#39;);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">Y</span><span class="o">.</span><span class="n">Test</span><span class="o">.</span><span class="n">Runner</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">ExampleSuite</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="sr">//</span><span class="n">run</span> <span class="n">the</span> <span class="n">tests</span>
-</span><span class='line'>  <span class="n">Y</span><span class="o">.</span><span class="n">Test</span><span class="o">.</span><span class="n">Runner</span><span class="o">.</span><span class="n">run</span><span class="p">();</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="p">});</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;FILE</span>
-</span><span class='line'><span class="sr">end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;----------------------------------------------------------------------------&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;Setup RSpec &amp;amp; Cucumber&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;----------------------------------------------------------------------------&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;puts &#39;Setting up RSpec, Cucumber, webrat, factory_girl, faker&#39;</span>
-</span><span class='line'><span class="sr">append_file &#39;Gemfile&#39; do &amp;lt;&lt;-FILE</span>
-</span><span class='line'><span class="sr">group :development, :test do</span>
-</span><span class='line'><span class="sr">  gem &quot;rspec-rails&quot;, &quot;&gt;= 2.0.1&quot;</span>
-</span><span class='line'><span class="sr">  gem &quot;cucumber-rails&quot;, &quot;&gt;= 0.3.2&quot;</span>
-</span><span class='line'><span class="sr">  gem &quot;webrat&quot;, &quot;&gt;= 0.7.2.beta.2&quot;</span>
-</span><span class='line'><span class="sr">  gem &quot;factory_girl_rails&quot;</span>
-</span><span class='line'><span class="sr">  gem &quot;faker&quot;</span>
-</span><span class='line'><span class="sr">end</span>
-</span><span class='line'><span class="sr">FILE</span>
-</span><span class='line'><span class="sr">end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">run</span> <span class="s1">&#39;bundle install&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;script/rails generate rspec:install&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;script/rails generate cucumber:install&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rake db:migrate&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rake db:test:prepare&#39;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;run &#39;touch spec/</span><span class="n">factories</span><span class="o">.</span><span class="n">rb</span><span class="s1">&#39;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;Finish up&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;h1&gt;----------------------------------------------------------------------------&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s1">&lt;p&gt;puts &quot;Commiting to Git repository...&quot;</span>
-</span><span class='line'><span class="s1">git :add =&gt; &#39;</span><span class="o">.</span><span class="s1">&#39;</span>
-</span><span class='line'><span class="s1">git :commit =&gt; &quot;-am &#39;</span><span class="no">Setup</span> <span class="no">Complete</span><span class="err">&#39;</span><span class="s2">&quot;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;puts &quot;</span><span class="no">DONE</span> <span class="o">-</span> <span class="n">setting</span> <span class="n">up</span> <span class="n">your</span> <span class="no">YUI3</span> <span class="no">Rails</span> <span class="no">App</span><span class="o">.</span><span class="s2">&quot;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock yui-rails.rb %}</p>
+
+<h1>YUI3 Application Generator Template</h1>
+
+<h1>Generates a Rails app; includes YUI3, Haml, RSpec, Cucumber, WebRat, Factory Girl ...</h1>
+
+<p>puts "Generating a new YUI3 Rails app"</p>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<h1>Create the database</h1>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<p>puts "creating the database..."
+run 'rake db:create:all'</p>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<h1>GIT</h1>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<p>puts "setting up 'git'"</p>
+
+<p>append_file '.gitignore' do &lt;<-FILE
+'.DS_Store'
+'.rvmrc'
+FILE
+end
+git :init
+git :add => '.'
+git :commit => "-m 'Initial Commit of YUI3 Rails App'"</p>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<h1>Remove files</h1>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<p>puts "removing files..."
+run 'rm public/index.html'
+run 'rm public/favicon.ico'
+run 'rm public/images/rails.png'
+run 'rm README'
+run 'touch README'</p>
+
+<p>puts "banning spiders from your site by changing robots.txt..."
+gsub_file 'public/robots.txt', /# User-Agent/, 'User-Agent'
+gsub_file 'public/robots.txt', /# Disallow/, 'Disallow'</p>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<h1>Haml</h1>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<p>  puts "setting up Gemfile for Haml..."
+  append_file 'Gemfile', "\n# Bundle gems needed for Haml\n"
+  gem 'haml', '3.0.18'
+  gem 'haml-rails', '0.2', :group => :development</p>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<h1>Set up YUI3</h1>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<p>puts "replacing Prototype with YUI3"
+run 'rm public/javascripts/controls.js'
+run 'rm public/javascripts/dragdrop.js'
+run 'rm public/javascripts/effects.js'
+run 'rm public/javascripts/prototype.js'
+run 'rm public/javascripts/rails.js'</p>
+
+<p>get "http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-debug.js",  "public/javascripts/yui-debug.js"
+get "http://yui.yahooapis.com/3.3.0/build/cssreset/reset.css",  "public/stylesheets/reset.css"
+get "http://yui.yahooapis.com/3.3.0/build/cssbase/base.css",  "public/stylesheets/base.css"
+get "http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts.css",  "public/stylesheets/fonts.css"
+get "http://yui.yahooapis.com/3.3.0/build/cssgrids/grids.css",  "public/stylesheets/grids.css"</p>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<h1>Create an index page</h1>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<p>puts "create a home controller and view"
+generate(:controller, "home index")
+gsub_file 'config/routes.rb', /get \"home\/index\"/, 'root :to => "home#index"'
+append_file 'app/views/home/index.html.haml'do &lt;<-FILE
+!!!
+%h2{:class => "subtitle"} Get Started
+%p{:class => "content"} Update application.js with your logic
+%div{:class => "container", :id => "container"}
+%div{:id => "testLogger"}
+FILE
+end</p>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<h1>Generate Application Layout</h1>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<p>run 'rm app/views/layouts/application.html.erb'
+  create_file 'app/views/layouts/application.html.haml' do &lt;&lt;-FILE
+!!!
+%html
+  %head</p>
+
+<pre><code>%title YUI3 App
+= stylesheet_link_tag "reset"
+= stylesheet_link_tag "base"
+= stylesheet_link_tag "fonts"
+= stylesheet_link_tag "grids"
+= stylesheet_link_tag "application"
+= javascript_include_tag :all
+= csrf_meta_tag
+</code></pre>
+
+<p>  %body{:class =>"yui3-skin-sam  yui-skin-sam"}</p>
+
+<pre><code>= yield
+</code></pre>
+
+<p>FILE
+end</p>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<h1>Add Stylesheets</h1>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<p>create_file 'public/stylesheets/application.css' do &lt;&lt;-FILE
+div.container {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid red;
+}</p>
+
+<h1>testLogger {</h1>
+
+<pre><code>margin-bottom: 1em;
+</code></pre>
+
+<p>}</p>
+
+<h1>testLogger .yui3-console .yui3-console-title {</h1>
+
+<pre><code>border: 0 none;
+color: #000;
+font-size: 13px;
+font-weight: bold;
+margin: 0;
+text-transform: none;
+</code></pre>
+
+<p>}</p>
+
+<h1>testLogger .yui3-console .yui3-console-entry-meta {</h1>
+
+<pre><code>margin: 0;
+</code></pre>
+
+<p>}</p>
+
+<p>.yui3-skin-sam .yui3-console-entry-pass .yui3-console-entry-cat {</p>
+
+<pre><code>background: #070;
+color: #fff;
+</code></pre>
+
+<p>}</p>
+
+<p>FILE
+end</p>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<h1>Initialize YUI and add YUI Test</h1>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<p>append_file 'public/javascripts/application.js' do &lt;&lt;-FILE</p>
+
+<p>  YUI({ filter: 'raw' }).use("node", "console", "test",function (Y) {</p>
+
+<pre><code>  Y.namespace("example.test");
+
+  Y.example.test.DataTestCase = new Y.Test.Case({
+
+      //name of the test case - if not provided, one is auto-generated
+      name : "Data Tests",
+
+      //---------------------------------------------------------------------
+      // setUp and tearDown methods - optional
+      //---------------------------------------------------------------------
+
+      /*
+       * Sets up data that is needed by each test.
+       */
+      setUp : function () {
+          this.data = {
+              name: "test",
+              year: 2007,
+              beta: true
+          };
+      },
+
+      /*
+       * Cleans up everything that was created by setUp().
+       */
+      tearDown : function () {
+          delete this.data;
+      },
+
+      //---------------------------------------------------------------------
+      // Test methods - names must begin with "test"
+      //---------------------------------------------------------------------
+
+      testName : function () {
+          var Assert = Y.Assert;
+
+          Assert.isObject(this.data);
+          Assert.isString(this.data.name);
+          Assert.areEqual("test", this.data.name);            
+      },
+
+      testYear : function () {
+          var Assert = Y.Assert;
+
+          Assert.isObject(this.data);
+          Assert.isNumber(this.data.year);
+          Assert.areEqual(2007, this.data.year);            
+      },
+
+      testBeta : function () {
+          var Assert = Y.Assert;
+
+          Assert.isObject(this.data);
+          Assert.isBoolean(this.data.beta);
+          Assert.isTrue(this.data.beta);
+      }
+
+  });
+
+  Y.example.test.ArrayTestCase = new Y.Test.Case({
+
+      //name of the test case - if not provided, one is auto-generated
+      name : "Array Tests",
+
+      //---------------------------------------------------------------------
+      // setUp and tearDown methods - optional
+      //---------------------------------------------------------------------
+
+      /*
+       * Sets up data that is needed by each test.
+       */
+      setUp : function () {
+          this.data = [0,1,2,3,4]
+      },
+
+      /*
+       * Cleans up everything that was created by setUp().
+       */
+      tearDown : function () {
+          delete this.data;
+      },
+
+      //---------------------------------------------------------------------
+      // Test methods - names must begin with "test"
+      //---------------------------------------------------------------------
+
+      testPop : function () {
+          var Assert = Y.Assert;
+
+          var value = this.data.pop();
+
+          Assert.areEqual(4, this.data.length);
+          Assert.areEqual(4, value);            
+      },        
+
+      testPush : function () {
+          var Assert = Y.Assert;
+
+          this.data.push(5);
+
+          Assert.areEqual(6, this.data.length);
+          Assert.areEqual(5, this.data[5]);            
+      },
+
+      testSplice : function () {
+          var Assert = Y.Assert;
+
+          this.data.splice(2, 1, 6, 7);
+
+          Assert.areEqual(6, this.data.length);
+          Assert.areEqual(6, this.data[2]);           
+          Assert.areEqual(7, this.data[3]);           
+      }
+
+  });    
+
+  Y.example.test.ExampleSuite = new Y.Test.Suite("Example Suite");
+  Y.example.test.ExampleSuite.add(Y.example.test.DataTestCase);
+  Y.example.test.ExampleSuite.add(Y.example.test.ArrayTestCase);
+
+  //create the console
+  var r = new Y.Console({
+      newestOnTop : false,
+      style: 'block' // to anchor in the example content
+  });
+
+  r.render('#testLogger');
+
+  Y.Test.Runner.add(Y.example.test.ExampleSuite);
+
+  //run the tests
+  Y.Test.Runner.run();
+</code></pre>
+
+<p>  });</p>
+
+<p>FILE
+end</p>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<h1>Setup RSpec &amp; Cucumber</h1>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<p>puts 'Setting up RSpec, Cucumber, webrat, factory_girl, faker'
+append_file 'Gemfile' do &lt;<-FILE
+group :development, :test do
+  gem "rspec-rails", ">= 2.0.1"
+  gem "cucumber-rails", ">= 0.3.2"
+  gem "webrat", ">= 0.7.2.beta.2"
+  gem "factory_girl_rails"
+  gem "faker"
+end
+FILE
+end</p>
+
+<p>run 'bundle install'
+run 'script/rails generate rspec:install'
+run 'script/rails generate cucumber:install'
+run 'rake db:migrate'
+run 'rake db:test:prepare'</p>
+
+<p>run 'touch spec/factories.rb'</p>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<h1>Finish up</h1>
+
+<h1>----------------------------------------------------------------------------</h1>
+
+<p>puts "Commiting to Git repository..."
+git :add => '.'
+git :commit => "-am 'Setup Complete'"</p>
+
+<p>puts "DONE - setting up your YUI3 Rails App."</p>
+
+<p>{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
