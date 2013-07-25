@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Drupal | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/drupal/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-06-18T12:38:00-05:00</updated>
+  <updated>2013-07-25T16:06:59-04:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Drupal Basics]]></title>
     <link href="http://jessecravens.com/blog/2007/10/15/drupal-basics/"/>
-    <updated>2007-10-15T07:57:26-05:00</updated>
+    <updated>2007-10-15T08:57:26-04:00</updated>
     <id>http://jessecravens.com/blog/2007/10/15/drupal-basics</id>
     <content type="html"><![CDATA[<p>I've received a number of requests for help with 'Drupal Basics' in the last couple of weeks. Here's something to get you started, hope it helps.</p>
 
@@ -31,7 +31,7 @@
   <entry>
     <title type="html"><![CDATA[the blogosphere's conversation of drupal.org]]></title>
     <link href="http://jessecravens.com/blog/2006/11/17/the-blogospheres-conversation-of-drupal-org/"/>
-    <updated>2006-11-17T15:40:47-06:00</updated>
+    <updated>2006-11-17T16:40:47-05:00</updated>
     <id>http://jessecravens.com/blog/2006/11/17/the-blogospheres-conversation-of-drupal-org</id>
     <content type="html"><![CDATA[<p>...this chart from technocrati is tracking the blogosphere's conversation of drupal: Posts that contain <a href="http://technorati.com/search/drupal">Drupal</a> per day for the last 30 days.<br /><a href="http://technorati.com/search/drupal"><br /><a href="http://technorati.com/chart/drupal">Get your own chart!</a></p>
 ]]></content>
@@ -40,7 +40,7 @@
   <entry>
     <title type="html"><![CDATA[iBoerne.com selected for 2007 TCEA Convention student showcase]]></title>
     <link href="http://jessecravens.com/blog/2006/11/15/iboerne-com-selected-for-2007-tcea-convention-student-showcase/"/>
-    <updated>2006-11-15T07:36:10-06:00</updated>
+    <updated>2006-11-15T08:36:10-05:00</updated>
     <id>http://jessecravens.com/blog/2006/11/15/iboerne-com-selected-for-2007-tcea-convention-student-showcase</id>
     <content type="html"><![CDATA[<p>Congratulations to my students for their great work on iBoerne.com. Our submission for Student Showcase
 has been accepted for the 2007 TCEA Convention !<br /><br /><a href="http://jessecravens.com/node/79">iBoerne.com: an Interactive Online Game for Programming Students | jessecravens.com</a></p>
@@ -50,7 +50,7 @@ has been accepted for the 2007 TCEA Convention !<br /><br /><a href="http://jess
   <entry>
     <title type="html"><![CDATA[iBoerne.com: an Interactive Online Game for Programming Students]]></title>
     <link href="http://jessecravens.com/blog/2006/10/10/iboerne-com-an-interactive-online-game-for-programming-students/"/>
-    <updated>2006-10-10T07:13:22-05:00</updated>
+    <updated>2006-10-10T08:13:22-04:00</updated>
     <id>http://jessecravens.com/blog/2006/10/10/iboerne-com-an-interactive-online-game-for-programming-students</id>
     <content type="html"><![CDATA[<p><a href="http://iboerne.com"><img style="float:left; margin: 10px" src="http://jessecravens.com/images/jessecravens/iboerne_150.jpg"></a><a href="http://iboerne.com">iBoerne.com</a> is a mashup of Google maps and Drupal using the drupal gmap module to create virtual competition between teams of students. The teams are: Yellow, Red, Green, Blue. The rules of the game were created to encourage the six member teams to discuss concepts such as project management, virtual teams, workflow, efficiency, and collaboration tools.</p>
 ]]></content>
@@ -59,7 +59,7 @@ has been accepted for the 2007 TCEA Convention !<br /><br /><a href="http://jess
   <entry>
     <title type="html"><![CDATA[Sites updated with Google Maps]]></title>
     <link href="http://jessecravens.com/blog/2006/10/09/sites-updated-with-google-maps/"/>
-    <updated>2006-10-09T09:38:20-05:00</updated>
+    <updated>2006-10-09T10:38:20-04:00</updated>
     <id>http://jessecravens.com/blog/2006/10/09/sites-updated-with-google-maps</id>
     <content type="html"><![CDATA[<p><a href="http://sessionswest.com/location"><img src="http://jessecravens.com/images/sitethumbs/sessions_150.jpg" style="float:right; margin: 10px"></a>Both <a href="http://sessionswest.com">sessionswest.com</a> and <a href="http://bajioranch.com">bajioranch.com</a> received embedded google maps this weekend courtesy of the great <a href="http://drupal.org/node/33591drupal">drupal gmap module</a>. I'm looking forward to taking this module and getting really creative - the possibilities are endless. <br> <br><a href="http://bajioranch.com/location"><img src="http://jessecravens.com/images/sitethumbs/bajio_150.jpg" style="float:left; margin: 10px"></a>For community websites this module gets really exciting by allowing users that have lat,long information entered to be displayed on a single map so that you can see where in the world all of your users are coming from. The gmap.module also includes functionality to allow users to set their latitude and longitude on a gmap in an interactive fashion.<br> <br>I am speaking with some of my other clients about incorporating more complex maps such as a historical map of the Tuscarawas River Band's 'Full Circle' tour. For other band's this may be expressed in a 'Places we have played" Interactive Map. For non-profits, such as the findingmyvoice.org project - this could be beneficial in providing individuals with disabilites an interactive map of local colleges and universities Disability Services departments.</p>
 ]]></content>

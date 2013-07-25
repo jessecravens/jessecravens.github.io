@@ -4,7 +4,7 @@
   <title><![CDATA[Jesse Cravens]]></title>
   <link href="http://jessecravens.com/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-06-18T12:38:00-05:00</updated>
+  <updated>2013-07-25T16:06:59-04:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -14,9 +14,28 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Building Next Generation Widgets with Web Components]]></title>
+    <link href="http://jessecravens.com/blog/2013/07/25/building-next-generation-widgets-with-web-components/"/>
+    <updated>2013-07-25T03:41:00-04:00</updated>
+    <id>http://jessecravens.com/blog/2013/07/25/building-next-generation-widgets-with-web-components</id>
+    <content type="html"><![CDATA[<p><img class="imgL400" alt="Nerdclustr" src="http://tpstatic.com/img/usermedia/9ylQdMSRLUiffrQPG4hHJw/original.png"></p>
+
+<p>For SXSWi and FluentConf this year, <a href="http://twitter.com/boyofgreen">@boyofgreen</a> and I created a demo application to showcase some of the hacks that we included in our book OReilly&#8217;s HTML5 Hacks.</p>
+
+<p>The demo application, Nerdclustr, is an HTML5 mobile application that brings &#8216;nerds&#8217; of all types together conferences and provides a visual map that updates in real time. The application was written with Node.js and the Express web framework. It demonstrates the following specifications: HTML5 Web Forms, Geo Location API, WebSocket, Canvas, CSS3 transforms.</p>
+
+<p>Given, the attention that Web Components and <a href="http://www.polymer-project.org/polymer.html">Polymer.js</a> have been getting lately, I felt this was a good opportunity to demonstrate some of the exciting new specifications that are making their way to modern browsers. For the sake of this tutorial, I&#8217;ll be using and providing screenshots of Google Chrome, but it should be worth your time to explore the status of each of the specifications in other modern browsers as well.</p>
+
+<p>In this tutorial, we will take a look at the HTML5 specs mentioned above in detail. Then, we will explore Polymer.js and build out an example application.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1421/building-next-generation-widgets-with-web-components">http://tech.pro/tutorial/1421/building-next-generation-widgets-with-web-components</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Fluent Conf 2013: Battle of the HTML5 Hackers]]></title>
     <link href="http://jessecravens.com/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers/"/>
-    <updated>2013-06-05T10:12:00-05:00</updated>
+    <updated>2013-06-05T10:12:00-04:00</updated>
     <id>http://jessecravens.com/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers</id>
     <content type="html"><![CDATA[<p>Our presentation at Fluent Conference 2013 was a success, as <a href="https://twitter.com/boyofgreen">Jeff</a> and I delivered our final version of the &#8216;Battle of the Hackers&#8217; series.</p>
 
@@ -45,7 +64,7 @@
   <entry>
     <title type="html"><![CDATA[Ember.js Views and Live Templates with Handlebars.js Part 1]]></title>
     <link href="http://jessecravens.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/"/>
-    <updated>2013-06-04T10:05:00-05:00</updated>
+    <updated>2013-06-04T10:05:00-04:00</updated>
     <id>http://jessecravens.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1</id>
     <content type="html"><![CDATA[<p><img class="imgL200" alt="Tech-pro Ember.js Views" src="http://tpstatic.com/img/usermedia/cHI1WdevsEyBJ7dLfmVUdA/cropped-w220-h220.png"></p>
 
@@ -60,7 +79,7 @@
   <entry>
     <title type="html"><![CDATA[Modern Ember.js Application Workflow with Yeoman and Mocha]]></title>
     <link href="http://jessecravens.com/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/"/>
-    <updated>2013-04-23T10:05:00-05:00</updated>
+    <updated>2013-04-23T10:05:00-04:00</updated>
     <id>http://jessecravens.com/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha</id>
     <content type="html"><![CDATA[<p><img class="imgL200" alt="Tech-pro Modern Ember.js Application Workflow" src="http://tpstatic.com/img/usermedia/LgFpf2qDCkGfHlDBR4oGDA/cropped-w220-h220.png"></p>
 
@@ -75,7 +94,7 @@
   <entry>
     <title type="html"><![CDATA[Push Notifications to the Browser with Server Sent Events]]></title>
     <link href="http://jessecravens.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/"/>
-    <updated>2013-04-21T15:44:00-05:00</updated>
+    <updated>2013-04-21T15:44:00-04:00</updated>
     <id>http://jessecravens.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events</id>
     <content type="html"><![CDATA[<p>Mirrored from: <a href="http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/">http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/</a></p>
 
@@ -526,7 +545,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
   <entry>
     <title type="html"><![CDATA[SXSWi 2013: 'Battle of the HTML5 Hackers' and 'HTML5 Hacks' Book Signing]]></title>
     <link href="http://jessecravens.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/"/>
-    <updated>2013-03-12T23:55:00-05:00</updated>
+    <updated>2013-03-12T23:55:00-04:00</updated>
     <id>http://jessecravens.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
     <content type="html"><![CDATA[<p>We had a great turnout for the &#8216;Battle of the HTML5 Hackers&#8217; presentation at SXSWi on Tuesday.</p>
 
@@ -563,7 +582,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
   <entry>
     <title type="html"><![CDATA[HTML5.tx 2013]]></title>
     <link href="http://jessecravens.com/blog/2013/02/03/html5-dot-tx-2013/"/>
-    <updated>2013-02-03T23:09:00-06:00</updated>
+    <updated>2013-02-03T23:09:00-05:00</updated>
     <id>http://jessecravens.com/blog/2013/02/03/html5-dot-tx-2013</id>
     <content type="html"><![CDATA[<h3>Embedded JavaScript, HTML5 and the Internet of Things</h3>
 
@@ -604,7 +623,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
   <entry>
     <title type="html"><![CDATA[Build a Milestone Calendar with IndexedDB and FullCalendar.js]]></title>
     <link href="http://jessecravens.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/"/>
-    <updated>2013-01-17T08:47:00-06:00</updated>
+    <updated>2013-01-17T08:47:00-05:00</updated>
     <id>http://jessecravens.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js</id>
     <content type="html"><![CDATA[<h4>IndexedDB is a persistent object data store in the browser. Although it is not a full SQL implementation and it is more complex than the unstructured key–value pairs in localStorage, you can use it to define an API that provides the ability to read and write key–value objects as structured JavaScript objects, and an indexing system that facilitates filtering and lookup.</h4>
 
@@ -1031,7 +1050,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
   <entry>
     <title type="html"><![CDATA[Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship]]></title>
     <link href="http://jessecravens.com/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship/"/>
-    <updated>2012-11-28T10:02:00-06:00</updated>
+    <updated>2012-11-28T10:02:00-05:00</updated>
     <id>http://jessecravens.com/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship</id>
     <content type="html"><![CDATA[<p>Im giving a talk at Devcon 5 - San Francisco this afternoon: Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship. Here is the other talks on the agenda: <a href="http://www.html5report.com/conference/california/agenda.aspx">Devcon 5 - San Francisco</a>.</p>
 
@@ -1093,7 +1112,7 @@ The Johnny Five code is located here: <a href="https://github.com/nodejshacks/no
   <entry>
     <title type="html"><![CDATA[Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font]]></title>
     <link href="http://jessecravens.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/"/>
-    <updated>2012-11-18T19:42:00-06:00</updated>
+    <updated>2012-11-18T19:42:00-05:00</updated>
     <id>http://jessecravens.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font</id>
     <content type="html"><![CDATA[<p>Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
 make requests to other domains from within the browser. With CORS you have a secure
@@ -1370,7 +1389,7 @@ own CORS hacks.</p>
   <entry>
     <title type="html"><![CDATA[Upcoming Talk at Devcon5-Austin: Rapid Prototyping HTML5 Applications with NodeJS]]></title>
     <link href="http://jessecravens.com/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs/"/>
-    <updated>2012-09-25T21:50:00-05:00</updated>
+    <updated>2012-09-25T21:50:00-04:00</updated>
     <id>http://jessecravens.com/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs</id>
     <content type="html"><![CDATA[<p>I&#8217;m getting ready for an upcoming talk titled: Rapid Prototyping HTML5 Applications with NodeJS, which I will presenting at <a href="http://www.html5report.com/conference/austin2012/Agenda/Agenda-at-a-glance.aspx">Devcon 5 - Austin</a>.</p>
 
@@ -1393,7 +1412,7 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
   <entry>
     <title type="html"><![CDATA[Just moved HTML5 Hacks into Copy/Edit]]></title>
     <link href="http://jessecravens.com/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit/"/>
-    <updated>2012-09-24T21:57:00-05:00</updated>
+    <updated>2012-09-24T21:57:00-04:00</updated>
     <id>http://jessecravens.com/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit</id>
     <content type="html"><![CDATA[<p>After a marathon of hackery starting in April, <a href="http://www.oreillynet.com/pub/au/5370">Jeff Burtoft</a> and I pushed out 90 hacks and 435 pages of <a href="http://shop.oreilly.com/product/0636920026273.do">HTML5 Hacks</a> this week. We also had a few guest hackers that created some really great content as well.</p>
 
@@ -1417,7 +1436,7 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
   <entry>
     <title type="html"><![CDATA[Migration from Drupal to Octopress]]></title>
     <link href="http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress/"/>
-    <updated>2012-09-23T13:39:00-05:00</updated>
+    <updated>2012-09-23T13:39:00-04:00</updated>
     <id>http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress</id>
     <content type="html"><![CDATA[<h2>Why?</h2>
 
@@ -1550,7 +1569,7 @@ EOF
   <entry>
     <title type="html"><![CDATA[JavaScript Modules]]></title>
     <link href="http://jessecravens.com/blog/2012/06/17/javascript-modules/"/>
-    <updated>2012-06-17T16:23:21-05:00</updated>
+    <updated>2012-06-17T17:23:21-04:00</updated>
     <id>http://jessecravens.com/blog/2012/06/17/javascript-modules</id>
     <content type="html"><![CDATA[<p>For a talk last March at USAA&#8217;s internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
 
@@ -1599,7 +1618,7 @@ EOF
   <entry>
     <title type="html"><![CDATA[Robodeck]]></title>
     <link href="http://jessecravens.com/blog/2012/05/22/robodeck/"/>
-    <updated>2012-05-22T10:01:42-05:00</updated>
+    <updated>2012-05-22T11:01:42-04:00</updated>
     <id>http://jessecravens.com/blog/2012/05/22/robodeck</id>
     <content type="html"><![CDATA[<p>Awhile back, I built a websocket powered interactive presentation framework called <a href="https://github.com/jessecravens/robodeck">Robodeck</a>.</p>
 
@@ -1633,7 +1652,7 @@ EOF
   <entry>
     <title type="html"><![CDATA[Using Stylus’ Transparent Mixins to Hack Vendor-Specific Properties]]></title>
     <link href="http://jessecravens.com/blog/2012/04/22/hack-99-using-stylus-transparent-mixins-to-hack-vendor-specific-properties/"/>
-    <updated>2012-04-22T19:11:35-05:00</updated>
+    <updated>2012-04-22T20:11:35-04:00</updated>
     <id>http://jessecravens.com/blog/2012/04/22/hack-99-using-stylus-transparent-mixins-to-hack-vendor-specific-properties</id>
     <content type="html"><![CDATA[<p>One of the most interesting features of <a href="https://github.com/LearnBoost/stylus">Stylus</a> is transparent Mixins. One reason they are interesting is that at the time of this writing, this feature is exclusive to Stylus, other CSS metalanguages like Less and Sass do not offer Transparent Mixin support.</p>
 
@@ -1828,7 +1847,7 @@ Here is an example of a div element that needs to have corners take on different
   <entry>
     <title type="html"><![CDATA[Web Wokers: Basics of the Web Browser's UI Thread]]></title>
     <link href="http://jessecravens.com/blog/2011/12/11/hack-82-web-wokers-basics-of-the-web-browsers-ui-thread/"/>
-    <updated>2011-12-11T11:08:01-06:00</updated>
+    <updated>2011-12-11T12:08:01-05:00</updated>
     <id>http://jessecravens.com/blog/2011/12/11/hack-82-web-wokers-basics-of-the-web-browsers-ui-thread</id>
     <content type="html"><![CDATA[<h2>Single Threadin&#8217;</h2>
 
@@ -1978,9 +1997,9 @@ Here is an example of a div element that needs to have corners take on different
   
   <entry>
     <title type="html"><![CDATA[RVM (Ruby Version Manager) and Ruby On Rails]]></title>
-    <link href="http://jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails/"/>
-    <updated>2011-09-26T23:35:58-05:00</updated>
-    <id>http://jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails</id>
+    <link href="http://jessecravens.com/blog/2011/09/27/rvm-ruby-version-manager-and-ruby-on-rails/"/>
+    <updated>2011-09-27T00:35:58-04:00</updated>
+    <id>http://jessecravens.com/blog/2011/09/27/rvm-ruby-version-manager-and-ruby-on-rails</id>
     <content type="html"><![CDATA[<p>Here is a brief overview of <a href="http://beginrescueend.com">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn&#8217;t live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
 
 <p>This allows me to essentially sandbox each of these applications&#8217; dependencies.</p>
@@ -2106,9 +2125,9 @@ Here is an example of a div element that needs to have corners take on different
   
   <entry>
     <title type="html"><![CDATA[Git Cheatsheet]]></title>
-    <link href="http://jessecravens.com/blog/2011/09/26/git-cheatsheet/"/>
-    <updated>2011-09-26T23:10:56-05:00</updated>
-    <id>http://jessecravens.com/blog/2011/09/26/git-cheatsheet</id>
+    <link href="http://jessecravens.com/blog/2011/09/27/git-cheatsheet/"/>
+    <updated>2011-09-27T00:10:56-04:00</updated>
+    <id>http://jessecravens.com/blog/2011/09/27/git-cheatsheet</id>
     <content type="html"><![CDATA[<p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I&#8217;d share.</p>
 
 <h3>Git First-Time System Setup</h3>
@@ -2216,7 +2235,7 @@ Here is an example of a div element that needs to have corners take on different
   <entry>
     <title type="html"><![CDATA[YUI3 Rails Application Template]]></title>
     <link href="http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template/"/>
-    <updated>2011-01-30T01:02:15-06:00</updated>
+    <updated>2011-01-30T02:02:15-05:00</updated>
     <id>http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template</id>
     <content type="html"><![CDATA[<p>I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.</p>
 
@@ -2852,19 +2871,6 @@ Here is an example of a div element that needs to have corners take on different
 </span></code></pre></td></tr></table></div></figure>
 
 
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[El Nino, French Fries, Chippendale with Swayze, but do you remember this one? Chris Farley as Christian Laettner]]></title>
-    <link href="http://jessecravens.com/blog/2010/10/18/el-nino-french-fries-chippendale-with-swayze-but-do-you-remember-this-one-chris-farley-as-christian-laettner/"/>
-    <updated>2010-10-18T18:48:09-05:00</updated>
-    <id>http://jessecravens.com/blog/2010/10/18/el-nino-french-fries-chippendale-with-swayze-but-do-you-remember-this-one-chris-farley-as-christian-laettner</id>
-    <content type="html"><![CDATA[<p>El Nino, French Fries, Chippendale with Swayze, but do you remember this one?</p>
-
-
-<object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/bPMo14XTTvE?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/bPMo14XTTvE?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>
 
 ]]></content>
   </entry>

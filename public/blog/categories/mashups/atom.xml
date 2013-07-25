@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mashups | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/mashups/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-06-18T12:38:00-05:00</updated>
+  <updated>2013-07-25T16:06:59-04:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[iBoerne.com: an Interactive Online Game for Programming Students]]></title>
     <link href="http://jessecravens.com/blog/2006/10/10/iboerne-com-an-interactive-online-game-for-programming-students/"/>
-    <updated>2006-10-10T07:13:22-05:00</updated>
+    <updated>2006-10-10T08:13:22-04:00</updated>
     <id>http://jessecravens.com/blog/2006/10/10/iboerne-com-an-interactive-online-game-for-programming-students</id>
     <content type="html"><![CDATA[<p><a href="http://iboerne.com"><img style="float:left; margin: 10px" src="http://jessecravens.com/images/jessecravens/iboerne_150.jpg"></a><a href="http://iboerne.com">iBoerne.com</a> is a mashup of Google maps and Drupal using the drupal gmap module to create virtual competition between teams of students. The teams are: Yellow, Red, Green, Blue. The rules of the game were created to encourage the six member teams to discuss concepts such as project management, virtual teams, workflow, efficiency, and collaboration tools.</p>
 ]]></content>
@@ -25,7 +25,7 @@
   <entry>
     <title type="html"><![CDATA[Cool Google mashups]]></title>
     <link href="http://jessecravens.com/blog/2006/07/03/cool-google-mashups/"/>
-    <updated>2006-07-03T19:18:36-05:00</updated>
+    <updated>2006-07-03T20:18:36-04:00</updated>
     <id>http://jessecravens.com/blog/2006/07/03/cool-google-mashups</id>
     <content type="html"><![CDATA[<object align="middle"><embed style=" width:400px; height:326px;" id="VideoPlayback" align="middle"  type="application/x-shockwave-flash" src="http://video.google.com/googleplayer.swf?docId=-7524776252092369816" allowScriptAccess="sameDomain" quality="best" bgcolor="#ffffff" scale="noScale" salign="TL"  FlashVars="playerMode=embedded"> </embed></object>
 
