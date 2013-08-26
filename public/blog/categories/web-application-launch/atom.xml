@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Application Launch | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/web-application-launch/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-07-25T16:06:59-04:00</updated>
+  <updated>2013-08-26T14:08:09-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Robodeck]]></title>
     <link href="http://jessecravens.com/blog/2012/05/22/robodeck/"/>
-    <updated>2012-05-22T11:01:42-04:00</updated>
+    <updated>2012-05-22T10:01:42-05:00</updated>
     <id>http://jessecravens.com/blog/2012/05/22/robodeck</id>
     <content type="html"><![CDATA[<p>Awhile back, I built a websocket powered interactive presentation framework called <a href="https://github.com/jessecravens/robodeck">Robodeck</a>.</p>
 
@@ -50,7 +50,7 @@
   <entry>
     <title type="html"><![CDATA[American Modern Vintage: Peacefield.info gets Redesigned]]></title>
     <link href="http://jessecravens.com/blog/2008/01/20/american-modern-vintage-peacefield-info-gets-redesigned/"/>
-    <updated>2008-01-20T01:33:18-05:00</updated>
+    <updated>2008-01-20T00:33:18-06:00</updated>
     <id>http://jessecravens.com/blog/2008/01/20/american-modern-vintage-peacefield-info-gets-redesigned</id>
     <content type="html"><![CDATA[<p><img style="float: right; display: inline; margin: 10px" src="http://jessecravens.com/images/pf2008.jpg" /></p>
 
@@ -84,7 +84,7 @@
   <entry>
     <title type="html"><![CDATA[campustechnology.org]]></title>
     <link href="http://jessecravens.com/blog/2006/09/13/campustechnology-org/"/>
-    <updated>2006-09-13T10:57:27-04:00</updated>
+    <updated>2006-09-13T09:57:27-05:00</updated>
     <id>http://jessecravens.com/blog/2006/09/13/campustechnology-org</id>
     <content type="html"><![CDATA[<p>I am beginning to make educators aware of my launch of <a href="http://Campustechnology.org" target="_blank" title="Campustechnology.org">campustechnology.org</a> . </p>
 
@@ -106,7 +106,7 @@
   <entry>
     <title type="html"><![CDATA[sessionswest.com's 'Morning Surf']]></title>
     <link href="http://jessecravens.com/blog/2006/07/30/sessionswest-coms-morning-surf/"/>
-    <updated>2006-07-30T09:01:21-04:00</updated>
+    <updated>2006-07-30T08:01:21-05:00</updated>
     <id>http://jessecravens.com/blog/2006/07/30/sessionswest-coms-morning-surf</id>
     <content type="html"><![CDATA[<p>Another new design for <a href="http://sessionswest.com">SessionsWest.com</a>. I was digging for inspiration for this site, when Jeff called me from San Deigo last week right before he was about to go surfing. </a>The color scheme is known as 'Morning surf,' and I built a custom flash player inspired by the album cover from the Fever Sessions. This new buildout has been my most complex drupal site to date. I embedded a photo gallery, and the mp3 player I mentioned earlier. I used drupal's front page module to give the home page a real clean, simple entry to the site. All in all it doesn't get much more simple, but I think thats what I like about it , and it reflects Jeff's style to the tee.</p>
 ]]></content>
@@ -115,7 +115,7 @@
   <entry>
     <title type="html"><![CDATA[sessionswest.com]]></title>
     <link href="http://jessecravens.com/blog/2006/02/23/sessionswest-com/"/>
-    <updated>2006-02-23T18:19:55-05:00</updated>
+    <updated>2006-02-23T17:19:55-06:00</updated>
     <id>http://jessecravens.com/blog/2006/02/23/sessionswest-com</id>
     <content type="html"><![CDATA[<p><a href="http://sessionswest.com/2.0/"><img src="http://jessecravens.com/images/sessions/front.jpg" alt="sessionswest.com" style="float:left;margin:10px;border:0px solid black"/></a></p>
 

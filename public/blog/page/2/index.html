@@ -9,7 +9,8 @@
   <meta name="author" content="Jesse Cravens">
 
   
-  <meta name="description" content="I&#8217;m getting ready for an upcoming talk titled: Rapid Prototyping HTML5 Applications with NodeJS, which I will presenting at Devcon 5 - Austin. &hellip;">
+  <meta name="description" content="Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
+make requests to other domains from within the browser. With CORS &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,6 +98,310 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/">Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-18T19:42:00-06:00" pubdate data-updated="true">Nov 18<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
+make requests to other domains from within the browser. With CORS you have a secure
+and easy-to-implement approach for circumventing the browser’s same origin
+policy.</p>
+
+<p>In this hack we will explore hosting a web font on a cloud drive. In order to do so, we
+will learn how to configure an Amazon S3 bucket to accept requests from other domains.</p>
+
+<p>If you are not already familiar with web fonts and @font-face, refer to Hack #12.</p>
+
+<p>In the next section I provide a bit more background on Amazon S3 and the same origin
+policy, before we get into the details of CORS.</p>
+
+<h3>What Is an Amazon S3 Bucket?</h3>
+
+<p>Amazon S3 (Simple Storage Service) is simply a cloud drive. Files of all kinds can be
+stored using this service, but web application developers often use it to store static
+assets such as images, JavaScript files, and stylesheets.</p>
+
+<p>For performance improvements, web developers like to employ Content Delivery Networks
+(CDNs) to serve their static files. While Amazon S3 is not a CDN in and of itself,
+it’s easy to activate it as one by using CloudFront.</p>
+
+<p>A bucket refers to the directory name that you choose to store your static files.
+To get started let’s set up an account at Amazon and navigate to the Amazon Management
+Console; see Figure 9-21.</p>
+
+<p>Figure 9-21. S3 Management Console</p>
+
+<p><img class="figure" alt="Figure 9-21" src="/images/chapter9-images/9-21.png"></p>
+
+<p>If we click on Create a Bucket we should see the prompt shown in Figure 9-22.</p>
+
+<p>Figure 9-22. Creating an S3 bucket in the S3 Management Console</p>
+
+<p><img class="figure" alt="Figure 9-22" src="/images/chapter9-images/9-22.png"></p>
+
+<p>Let’s name the bucket and choose a region (see Figure 9-23). As I stated earlier, you
+can choose a region to optimize for latency, minimize costs, or address regulatory
+requirements.</p>
+
+<p>Figure 9-23. Naming an S3 bucket in the S3 Management Console</p>
+
+<p><img class="figure" alt="Figure 9-23" src="/images/chapter9-images/9-23.png"></p>
+
+<p>We will go ahead and name our bucket none other than “html5hacks.” You should now
+see an admin screen that shows an empty filesystem (see Figure 9-24).</p>
+
+<p>Figure 9-24. The html5hacks S3 bucket</p>
+
+<p><img class="figure" alt="Figure 9-24" src="/images/chapter9-images/9-24.png"></p>
+
+<p>Well, that was simple. So why are we doing this? Let’s start with some simple browser
+security—something called the same origin policy.</p>
+
+<h3>Same Origin Policy</h3>
+
+<p>As the browser becomes more and more of an application platform, application developers
+have compelling reasons to write code that makes requests to other domains
+in order to interact directly with the content. Wikipedia defines same origin policy as
+follows:</p>
+
+<p>In computing, the same origin policy is an important security concept for a
+number of browser-side programming languages, such as JavaScript. The
+policy permits scripts running on pages originating from the same site to
+access each other’s methods and properties with no specific restrictions,
+but prevents access to most methods and properties across pages on different
+sites.1</p>
+
+<p>1 http://en.wikipedia.org/wiki/Same_origin_policy</p>
+
+<p>As stated in Wikipedia’s definition, the same origin policy is a good thing; it protects
+the end user from security attacks. But it does cause some challenges for web developers.</p>
+
+<p>This is where CORS comes into the picture. CORS allows developers of remote data
+and content to designate which domains (through a whitelist) can interact with their
+content.</p>
+
+<h3>Using Web Fonts in Your Application</h3>
+
+<p>There are a number of ways to use a web font within your web pages, such as calling
+the @font-face service, bundling the font within your application, hosting the web font
+in your own Amazon S3 bucket (more on this later), or converting the file to Base64
+and embedding the data inline in a data-uri. By the way, the last technique is similar
+to the one outlined in Hack #13.</p>
+
+<p>Each of these techniques has limitations.</p>
+
+<ul>
+<li>When calling the @font-face service you are limited to the fonts within the particular
+service’s database.</li>
+<li>Bundling the font within your application does not make use of HTTP caching, so
+your application will continue to download the font file on every page request.
+Furthermore, you cannot reuse the font within other applications.</li>
+<li>Hosting the font in an Amazon S3 bucket works great, except with Firefox, which
+enforces the same origin policy on all resources. So the response from the remote
+server will be denied.</li>
+<li>Converting the font to Base64 adds additional weight to the stylesheet, and does
+not take advantage of caching.</li>
+</ul>
+
+
+<p>An exploration into the different types of web fonts is beyond the scope of this hack,
+so I will assume that you have already selected the web font BebasNeue.otf.
+You can download free and open fonts from sites such as http://www.dafont.com.</p>
+
+<h3>Uploading Your Font to Your Amazon S3 Bucket</h3>
+
+<p>Now, all we have to do is to upload the font onto our filesystem in the cloud (see
+Figure 9-25).</p>
+
+<p>Figure 9-25. An uploaded BebasNeue font</p>
+
+<p><img class="figure" alt="Figure 9-25" src="/images/chapter9-images/9-25.png"></p>
+
+<h3>Adding the Web Font to Your Web Page</h3>
+
+<p>In order to add a web font to our page, we need to add a single stylesheet to an HTML
+page.</p>
+
+<p>Here is our page. Let’s call it index.html, and add a <link> tag pointing to our base
+stylesheet, styles.css.</p>
+
+<figure class='code'><figcaption><span>geo.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;head&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;title&gt;</span>S3 - font<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;styles.css&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;body&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;test&quot;</span><span class="nt">&gt;</span>HTML5 Hacks<span class="err">&lt;</span>/&gt;
+</span><span class='line'>  <span class="nt">&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>In our styles.css let’s add the following and point to our uploaded file. Also, let’s assign
+the font to our H1 header via the test class name.</p>
+
+<figure class='code'><figcaption><span>style.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@font-face</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">font-family</span><span class="o">:</span> <span class="nt">BebasNeue</span><span class="o">;</span>
+</span><span class='line'>  <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://s3.amazonaws.com/html5hacks/BebasNeue.otf&#39;</span><span class="o">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nc">.test</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;BebasNeue&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now we’ll open a browser and point to our newly created HTML page. In Opera (see
+Figure 9-26), Safari, and Chrome our header tag is being styled correctly.</p>
+
+<p>Figure 9-26. Opera browser showing the BebasNeue font</p>
+
+<p><img class="figure" alt="Figure 9-26" src="/images/chapter9-images/9-26.png"></p>
+
+<p>But if we view it in Firefox, we are having issues (see Figure 9-27).</p>
+
+<p>Figure 9-27. Firefox browser failing to show the BebasNeue font</p>
+
+<p><img class="figure" alt="Figure 9-27" src="/images/chapter9-images/9-27.png"></p>
+
+<p>If we examine the request for our font in the Chrome Dev Tools Network tab, we will
+see that the response from the server is empty (see Figure 9-28).</p>
+
+<p>Figure 9-28. Firefox browser showing an empty response</p>
+
+<p><img class="figure" alt="Figure 9-28" src="/images/chapter9-images/9-28.png"></p>
+
+<p>What gives? Well, by default, Firefox will only accept links from the same domain as
+the host page. If we want to include fonts from different domains, we need to add an
+Access-Control-Allow-Origin header to the font.</p>
+
+<p>So, if you try to serve fonts from any CDN, Firefox will not load them.</p>
+
+<h3>What Is CORS?</h3>
+
+<p>The CORS specification uses the XMLHttpRequest object to send and receive headers
+from the originating web page to a server that is properly configured in order to
+enable cross-site requests.</p>
+
+<p>The server accepting the request must respond with the
+Access-Control-Allow-Origin header with either a wildcard (*) or the correct
+origin domain sent by the originating web page as the value. If the value is not included,
+the request will fail.</p>
+
+<p>Furthermore, for HTTP methods other than GET or POST, such as PUT, a preflight request
+is necessary, in which the browser sends an HTTP OPTIONS request to establish
+a handshake with the server before accepting the PUT request.</p>
+
+<p>Fortunately, after enough backlash from the development community, Amazon made
+CORS configuration available on Amazon S3 via a very simple XML configuration.</p>
+
+<p>Let’s get started.</p>
+
+<h3>Configuring CORS at Amazon S3</h3>
+
+<p>You should already be at your Amazon Management Console at http://
+console.aws.amazon.com. Click on Properties→Permissions→Edit CORS configuration,
+and you should receive a modal prompt.</p>
+
+<p>The configuration can accept up to 100 rule definitions, but for our web font we will
+only need a few. For this example we will use the wildcard, but if you are doing this in
+production, you should whitelist the domains to prevent others from serving your font
+from your S3 account on their own web pages. It wouldn’t be the end of the world, but
+it might get costly.</p>
+
+<p>The first rule allows cross-origin GET requests from any origin. The rule also allows all
+headers in a preflight OPTIONS request through the
+Access-Control-Request-Headers header. In response to any preflight OPTIONS
+request, Amazon S3 will return any requested headers.</p>
+
+<p>The second rule allows cross-origin GET requests from all origins. The * wildcard
+character refers to all origins.</p>
+
+<figure class='code'><figcaption><span>config.xml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;CORSConfiguration&gt;</span>
+</span><span class='line'><span class="nt">&lt;CORSRule&gt;</span>
+</span><span class='line'><span class="nt">&lt;AllowedOrigin&gt;</span>*/AllowedOrigin&gt;
+</span><span class='line'><span class="nt">&lt;AllowedMethod&gt;</span>GET<span class="nt">&lt;/AllowedMethod&gt;</span>
+</span><span class='line'><span class="nt">&lt;/CORSRule&gt;</span>
+</span><span class='line'><span class="nt">&lt;/CORSConfiguration&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So, let’s add our new configuration to our Editor and save (see Figure 9-29).</p>
+
+<p>Figure 9-29. Configuring CORS in the S3 Management Console</p>
+
+<p><img class="figure" alt="Figure 9-29" src="/images/chapter9-images/9-29.png"></p>
+
+<p>Now, let’s return to Firefox and reload the page. We should now see the header font
+styled with our BebasNeue web font, as shown in Figure 9-30.</p>
+
+<p>Figure 9-30. Firefox browser successfully showing the BebasNeue font</p>
+
+<p><img class="figure" alt="Figure 9-30" src="/images/chapter9-images/9-30.png"></p>
+
+<p>There is much more to learn about CORS, most notably, HTTP POST usage with certain
+MIME types, and sending cookies and HTTP authentication data with requests if so
+requested by the CORS-enabled server. So get out there and starting creating your
+own CORS hacks.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs/">Upcoming Talk at Devcon5-Austin: Rapid Prototyping HTML5 Applications With NodeJS</a></h1>
     
     
@@ -113,7 +418,7 @@
   
 
 
-<time datetime="2012-09-25T21:50:00-04:00" pubdate data-updated="true">Sep 25<span>th</span>, 2012</time>
+<time datetime="2012-09-25T21:50:00-05:00" pubdate data-updated="true">Sep 25<span>th</span>, 2012</time>
         
       </p>
     
@@ -163,7 +468,7 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
   
 
 
-<time datetime="2012-09-24T21:57:00-04:00" pubdate data-updated="true">Sep 24<span>th</span>, 2012</time>
+<time datetime="2012-09-24T21:57:00-05:00" pubdate data-updated="true">Sep 24<span>th</span>, 2012</time>
         
       </p>
     
@@ -214,7 +519,7 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
   
 
 
-<time datetime="2012-09-23T13:39:00-04:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2012</time>
+<time datetime="2012-09-23T13:39:00-05:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2012</time>
         
       </p>
     
@@ -374,7 +679,7 @@ EOF
   
 
 
-<time datetime="2012-06-17T17:23:21-04:00" pubdate data-updated="true">Jun 17<span>th</span>, 2012</time>
+<time datetime="2012-06-17T16:23:21-05:00" pubdate data-updated="true">Jun 17<span>th</span>, 2012</time>
         
       </p>
     
@@ -450,7 +755,7 @@ EOF
   
 
 
-<time datetime="2012-05-22T11:01:42-04:00" pubdate data-updated="true">May 22<span>nd</span>, 2012</time>
+<time datetime="2012-05-22T10:01:42-05:00" pubdate data-updated="true">May 22<span>nd</span>, 2012</time>
         
       </p>
     
@@ -511,7 +816,7 @@ EOF
   
 
 
-<time datetime="2012-04-22T20:11:35-04:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2012</time>
+<time datetime="2012-04-22T19:11:35-05:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2012</time>
         
       </p>
     
@@ -733,7 +1038,7 @@ Here is an example of a div element that needs to have corners take on different
   
 
 
-<time datetime="2011-12-11T12:08:01-05:00" pubdate data-updated="true">Dec 11<span>th</span>, 2011</time>
+<time datetime="2011-12-11T11:08:01-06:00" pubdate data-updated="true">Dec 11<span>th</span>, 2011</time>
         
       </p>
     
@@ -895,7 +1200,7 @@ Here is an example of a div element that needs to have corners take on different
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/09/27/rvm-ruby-version-manager-and-ruby-on-rails/">RVM (Ruby Version Manager) and Ruby on Rails</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails/">RVM (Ruby Version Manager) and Ruby on Rails</a></h1>
     
     
       <p class="meta">
@@ -911,7 +1216,7 @@ Here is an example of a div element that needs to have corners take on different
   
 
 
-<time datetime="2011-09-27T00:35:58-04:00" pubdate data-updated="true">Sep 27<span>th</span>, 2011</time>
+<time datetime="2011-09-26T23:35:58-05:00" pubdate data-updated="true">Sep 26<span>th</span>, 2011</time>
         
       </p>
     
@@ -1050,7 +1355,7 @@ Here is an example of a div element that needs to have corners take on different
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2011/09/27/git-cheatsheet/">Git Cheatsheet</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/09/26/git-cheatsheet/">Git Cheatsheet</a></h1>
     
     
       <p class="meta">
@@ -1066,7 +1371,7 @@ Here is an example of a div element that needs to have corners take on different
   
 
 
-<time datetime="2011-09-27T00:10:56-04:00" pubdate data-updated="true">Sep 27<span>th</span>, 2011</time>
+<time datetime="2011-09-26T23:10:56-05:00" pubdate data-updated="true">Sep 26<span>th</span>, 2011</time>
         
       </p>
     
@@ -1181,676 +1486,6 @@ Here is an example of a div element that needs to have corners take on different
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/01/30/yui3-rails-application-template/">YUI3 Rails Application Template</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-30T02:02:15-05:00" pubdate data-updated="true">Jan 30<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.</p>
-
-<p>The template takes care of removing the Prototype library, including yui-debug.js and the CSS framework including reset, and the new <a href="http://developer.yahoo.com/yui/3/cssgrids/">Grids</a> - currently in beta. I also wanted to deliver my basic markup quickly so I&#8217;ve added <a href="http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#html_elements">Haml</a></p>
-
-<p>Since I have been disciplining myself to follow Test Driven Development on the server, I included all of my Rails testing dependencies in the app template as well (RSpec, Cucumber, WebRat, Factory Girl) and I plan to continue to leverage <a href="http://developer.yahoo.com/yui/3/test/">YUI Test</a> on the client as I run through browser validations of the <a href="http://developer.yahoo.com/yui/3/examples/datasource/datasource_polling.html">datasource-polling sub-module</a>. Clone the rails app template <a href="https://github.com/jessecravens/yui3-rails-template">here</a>.</p>
-
-<figure class='code'><figcaption><span>yui-rails.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-<span class='line-number'>119</span>
-<span class='line-number'>120</span>
-<span class='line-number'>121</span>
-<span class='line-number'>122</span>
-<span class='line-number'>123</span>
-<span class='line-number'>124</span>
-<span class='line-number'>125</span>
-<span class='line-number'>126</span>
-<span class='line-number'>127</span>
-<span class='line-number'>128</span>
-<span class='line-number'>129</span>
-<span class='line-number'>130</span>
-<span class='line-number'>131</span>
-<span class='line-number'>132</span>
-<span class='line-number'>133</span>
-<span class='line-number'>134</span>
-<span class='line-number'>135</span>
-<span class='line-number'>136</span>
-<span class='line-number'>137</span>
-<span class='line-number'>138</span>
-<span class='line-number'>139</span>
-<span class='line-number'>140</span>
-<span class='line-number'>141</span>
-<span class='line-number'>142</span>
-<span class='line-number'>143</span>
-<span class='line-number'>144</span>
-<span class='line-number'>145</span>
-<span class='line-number'>146</span>
-<span class='line-number'>147</span>
-<span class='line-number'>148</span>
-<span class='line-number'>149</span>
-<span class='line-number'>150</span>
-<span class='line-number'>151</span>
-<span class='line-number'>152</span>
-<span class='line-number'>153</span>
-<span class='line-number'>154</span>
-<span class='line-number'>155</span>
-<span class='line-number'>156</span>
-<span class='line-number'>157</span>
-<span class='line-number'>158</span>
-<span class='line-number'>159</span>
-<span class='line-number'>160</span>
-<span class='line-number'>161</span>
-<span class='line-number'>162</span>
-<span class='line-number'>163</span>
-<span class='line-number'>164</span>
-<span class='line-number'>165</span>
-<span class='line-number'>166</span>
-<span class='line-number'>167</span>
-<span class='line-number'>168</span>
-<span class='line-number'>169</span>
-<span class='line-number'>170</span>
-<span class='line-number'>171</span>
-<span class='line-number'>172</span>
-<span class='line-number'>173</span>
-<span class='line-number'>174</span>
-<span class='line-number'>175</span>
-<span class='line-number'>176</span>
-<span class='line-number'>177</span>
-<span class='line-number'>178</span>
-<span class='line-number'>179</span>
-<span class='line-number'>180</span>
-<span class='line-number'>181</span>
-<span class='line-number'>182</span>
-<span class='line-number'>183</span>
-<span class='line-number'>184</span>
-<span class='line-number'>185</span>
-<span class='line-number'>186</span>
-<span class='line-number'>187</span>
-<span class='line-number'>188</span>
-<span class='line-number'>189</span>
-<span class='line-number'>190</span>
-<span class='line-number'>191</span>
-<span class='line-number'>192</span>
-<span class='line-number'>193</span>
-<span class='line-number'>194</span>
-<span class='line-number'>195</span>
-<span class='line-number'>196</span>
-<span class='line-number'>197</span>
-<span class='line-number'>198</span>
-<span class='line-number'>199</span>
-<span class='line-number'>200</span>
-<span class='line-number'>201</span>
-<span class='line-number'>202</span>
-<span class='line-number'>203</span>
-<span class='line-number'>204</span>
-<span class='line-number'>205</span>
-<span class='line-number'>206</span>
-<span class='line-number'>207</span>
-<span class='line-number'>208</span>
-<span class='line-number'>209</span>
-<span class='line-number'>210</span>
-<span class='line-number'>211</span>
-<span class='line-number'>212</span>
-<span class='line-number'>213</span>
-<span class='line-number'>214</span>
-<span class='line-number'>215</span>
-<span class='line-number'>216</span>
-<span class='line-number'>217</span>
-<span class='line-number'>218</span>
-<span class='line-number'>219</span>
-<span class='line-number'>220</span>
-<span class='line-number'>221</span>
-<span class='line-number'>222</span>
-<span class='line-number'>223</span>
-<span class='line-number'>224</span>
-<span class='line-number'>225</span>
-<span class='line-number'>226</span>
-<span class='line-number'>227</span>
-<span class='line-number'>228</span>
-<span class='line-number'>229</span>
-<span class='line-number'>230</span>
-<span class='line-number'>231</span>
-<span class='line-number'>232</span>
-<span class='line-number'>233</span>
-<span class='line-number'>234</span>
-<span class='line-number'>235</span>
-<span class='line-number'>236</span>
-<span class='line-number'>237</span>
-<span class='line-number'>238</span>
-<span class='line-number'>239</span>
-<span class='line-number'>240</span>
-<span class='line-number'>241</span>
-<span class='line-number'>242</span>
-<span class='line-number'>243</span>
-<span class='line-number'>244</span>
-<span class='line-number'>245</span>
-<span class='line-number'>246</span>
-<span class='line-number'>247</span>
-<span class='line-number'>248</span>
-<span class='line-number'>249</span>
-<span class='line-number'>250</span>
-<span class='line-number'>251</span>
-<span class='line-number'>252</span>
-<span class='line-number'>253</span>
-<span class='line-number'>254</span>
-<span class='line-number'>255</span>
-<span class='line-number'>256</span>
-<span class='line-number'>257</span>
-<span class='line-number'>258</span>
-<span class='line-number'>259</span>
-<span class='line-number'>260</span>
-<span class='line-number'>261</span>
-<span class='line-number'>262</span>
-<span class='line-number'>263</span>
-<span class='line-number'>264</span>
-<span class='line-number'>265</span>
-<span class='line-number'>266</span>
-<span class='line-number'>267</span>
-<span class='line-number'>268</span>
-<span class='line-number'>269</span>
-<span class='line-number'>270</span>
-<span class='line-number'>271</span>
-<span class='line-number'>272</span>
-<span class='line-number'>273</span>
-<span class='line-number'>274</span>
-<span class='line-number'>275</span>
-<span class='line-number'>276</span>
-<span class='line-number'>277</span>
-<span class='line-number'>278</span>
-<span class='line-number'>279</span>
-<span class='line-number'>280</span>
-<span class='line-number'>281</span>
-<span class='line-number'>282</span>
-<span class='line-number'>283</span>
-<span class='line-number'>284</span>
-<span class='line-number'>285</span>
-<span class='line-number'>286</span>
-<span class='line-number'>287</span>
-<span class='line-number'>288</span>
-<span class='line-number'>289</span>
-<span class='line-number'>290</span>
-<span class='line-number'>291</span>
-<span class='line-number'>292</span>
-<span class='line-number'>293</span>
-<span class='line-number'>294</span>
-<span class='line-number'>295</span>
-<span class='line-number'>296</span>
-<span class='line-number'>297</span>
-<span class='line-number'>298</span>
-<span class='line-number'>299</span>
-<span class='line-number'>300</span>
-<span class='line-number'>301</span>
-<span class='line-number'>302</span>
-<span class='line-number'>303</span>
-<span class='line-number'>304</span>
-<span class='line-number'>305</span>
-<span class='line-number'>306</span>
-<span class='line-number'>307</span>
-<span class='line-number'>308</span>
-<span class='line-number'>309</span>
-<span class='line-number'>310</span>
-<span class='line-number'>311</span>
-<span class='line-number'>312</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="c1"># YUI3 Application Generator Template</span>
-</span><span class='line'><span class="c1"># Generates a Rails app; includes YUI3, Haml, RSpec, Cucumber, WebRat, Factory Girl ...</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Generating a new YUI3 Rails app&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="c1"># Create the database</span>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;creating the database...&quot;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rake db:create:all&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="c1"># GIT</span>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;setting up &#39;git&#39;&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">append_file</span> <span class="s1">&#39;.gitignore&#39;</span> <span class="k">do</span> <span class="o">&lt;&lt;-</span><span class="no">FILE</span>
-</span><span class='line'><span class="sh">&#39;.DS_Store&#39;</span>
-</span><span class='line'><span class="sh">&#39;.rvmrc&#39;</span>
-</span><span class='line'><span class="no">FILE</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="n">git</span> <span class="ss">:init</span>
-</span><span class='line'><span class="n">git</span> <span class="ss">:add</span> <span class="o">=&gt;</span> <span class="s1">&#39;.&#39;</span>
-</span><span class='line'><span class="n">git</span> <span class="ss">:commit</span> <span class="o">=&gt;</span> <span class="s2">&quot;-m &#39;Initial Commit of YUI3 Rails App&#39;&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="c1"># Remove files</span>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;removing files...&quot;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm public/index.html&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm public/favicon.ico&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm public/images/rails.png&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm README&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;touch README&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;banning spiders from your site by changing robots.txt...&quot;</span>
-</span><span class='line'><span class="n">gsub_file</span> <span class="s1">&#39;public/robots.txt&#39;</span><span class="p">,</span> <span class="sr">/# User-Agent/</span><span class="p">,</span> <span class="s1">&#39;User-Agent&#39;</span>
-</span><span class='line'><span class="n">gsub_file</span> <span class="s1">&#39;public/robots.txt&#39;</span><span class="p">,</span> <span class="sr">/# Disallow/</span><span class="p">,</span> <span class="s1">&#39;Disallow&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="c1"># Haml </span>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;setting up Gemfile for Haml...&quot;</span>
-</span><span class='line'>  <span class="n">append_file</span> <span class="s1">&#39;Gemfile&#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># Bundle gems needed for Haml</span><span class="se">\n</span><span class="s2">&quot;</span>
-</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;haml&#39;</span><span class="p">,</span> <span class="s1">&#39;3.0.18&#39;</span>
-</span><span class='line'>  <span class="n">gem</span> <span class="s1">&#39;haml-rails&#39;</span><span class="p">,</span> <span class="s1">&#39;0.2&#39;</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="c1"># Set up YUI3</span>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;replacing Prototype with YUI3&quot;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm public/javascripts/controls.js&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm public/javascripts/dragdrop.js&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm public/javascripts/effects.js&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm public/javascripts/prototype.js&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm public/javascripts/rails.js&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">get</span> <span class="s2">&quot;http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-debug.js&quot;</span><span class="p">,</span>  <span class="s2">&quot;public/javascripts/yui-debug.js&quot;</span>
-</span><span class='line'><span class="n">get</span> <span class="s2">&quot;http://yui.yahooapis.com/3.3.0/build/cssreset/reset.css&quot;</span><span class="p">,</span>  <span class="s2">&quot;public/stylesheets/reset.css&quot;</span>
-</span><span class='line'><span class="n">get</span> <span class="s2">&quot;http://yui.yahooapis.com/3.3.0/build/cssbase/base.css&quot;</span><span class="p">,</span>  <span class="s2">&quot;public/stylesheets/base.css&quot;</span>
-</span><span class='line'><span class="n">get</span> <span class="s2">&quot;http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts.css&quot;</span><span class="p">,</span>  <span class="s2">&quot;public/stylesheets/fonts.css&quot;</span>
-</span><span class='line'><span class="n">get</span> <span class="s2">&quot;http://yui.yahooapis.com/3.3.0/build/cssgrids/grids.css&quot;</span><span class="p">,</span>  <span class="s2">&quot;public/stylesheets/grids.css&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="c1"># Create an index page</span>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;create a home controller and view&quot;</span>
-</span><span class='line'><span class="n">generate</span><span class="p">(</span><span class="ss">:controller</span><span class="p">,</span> <span class="s2">&quot;home index&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="n">gsub_file</span> <span class="s1">&#39;config/routes.rb&#39;</span><span class="p">,</span> <span class="sr">/get \&quot;home\/index\&quot;/</span><span class="p">,</span> <span class="s1">&#39;root :to =&gt; &quot;home#index&quot;&#39;</span>
-</span><span class='line'><span class="n">append_file</span> <span class="s1">&#39;app/views/home/index.html.haml&#39;</span><span class="k">do</span> <span class="o">&lt;&lt;-</span><span class="no">FILE</span>
-</span><span class='line'><span class="sh">!!!</span>
-</span><span class='line'><span class="sh">%h2{:class =&gt; &quot;subtitle&quot;} Get Started</span>
-</span><span class='line'><span class="sh">%p{:class =&gt; &quot;content&quot;} Update application.js with your logic</span>
-</span><span class='line'><span class="sh">%div{:class =&gt; &quot;container&quot;, :id =&gt; &quot;container&quot;}</span>
-</span><span class='line'><span class="sh">%div{:id =&gt; &quot;testLogger&quot;}</span>
-</span><span class='line'><span class="no">FILE</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="c1"># Generate Application Layout</span>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rm app/views/layouts/application.html.erb&#39;</span>
-</span><span class='line'>  <span class="n">create_file</span> <span class="s1">&#39;app/views/layouts/application.html.haml&#39;</span> <span class="k">do</span> <span class="o">&lt;&lt;-</span><span class="no">FILE</span>
-</span><span class='line'><span class="sh">!!!</span>
-</span><span class='line'><span class="sh">%html</span>
-</span><span class='line'><span class="sh">  %head</span>
-</span><span class='line'><span class="sh">    %title YUI3 App</span>
-</span><span class='line'><span class="sh">    = stylesheet_link_tag &quot;reset&quot;</span>
-</span><span class='line'><span class="sh">    = stylesheet_link_tag &quot;base&quot;</span>
-</span><span class='line'><span class="sh">    = stylesheet_link_tag &quot;fonts&quot;</span>
-</span><span class='line'><span class="sh">    = stylesheet_link_tag &quot;grids&quot;</span>
-</span><span class='line'><span class="sh">    = stylesheet_link_tag &quot;application&quot;</span>
-</span><span class='line'><span class="sh">    = javascript_include_tag :all</span>
-</span><span class='line'><span class="sh">    = csrf_meta_tag</span>
-</span><span class='line'><span class="sh">  %body{:class =&gt;&quot;yui3-skin-sam  yui-skin-sam&quot;}</span>
-</span><span class='line'><span class="sh">    = yield</span>
-</span><span class='line'><span class="no">FILE</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="c1"># Add Stylesheets</span>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="n">create_file</span> <span class="s1">&#39;public/stylesheets/application.css&#39;</span> <span class="k">do</span> <span class="o">&lt;&lt;-</span><span class="no">FILE</span>
-</span><span class='line'><span class="sh">div.container {</span>
-</span><span class='line'><span class="sh">  width: 100%;</span>
-</span><span class='line'><span class="sh">  height: 100px; </span>
-</span><span class='line'><span class="sh">  padding: 10px;</span>
-</span><span class='line'><span class="sh">  margin: 10px;</span>
-</span><span class='line'><span class="sh">  border: 1px solid red;</span>
-</span><span class='line'><span class="sh">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">#testLogger {</span>
-</span><span class='line'><span class="sh">    margin-bottom: 1em;</span>
-</span><span class='line'><span class="sh">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">#testLogger .yui3-console .yui3-console-title {</span>
-</span><span class='line'><span class="sh">    border: 0 none;</span>
-</span><span class='line'><span class="sh">    color: #000;</span>
-</span><span class='line'><span class="sh">    font-size: 13px;</span>
-</span><span class='line'><span class="sh">    font-weight: bold;</span>
-</span><span class='line'><span class="sh">    margin: 0;</span>
-</span><span class='line'><span class="sh">    text-transform: none;</span>
-</span><span class='line'><span class="sh">}</span>
-</span><span class='line'><span class="sh">#testLogger .yui3-console .yui3-console-entry-meta {</span>
-</span><span class='line'><span class="sh">    margin: 0;</span>
-</span><span class='line'><span class="sh">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">.yui3-skin-sam .yui3-console-entry-pass .yui3-console-entry-cat {</span>
-</span><span class='line'><span class="sh">    background: #070;</span>
-</span><span class='line'><span class="sh">    color: #fff;</span>
-</span><span class='line'><span class="sh">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="no">FILE</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="c1"># Initialize YUI and add YUI Test</span>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="n">append_file</span> <span class="s1">&#39;public/javascripts/application.js&#39;</span> <span class="k">do</span> <span class="o">&lt;&lt;-</span><span class="no">FILE</span>
-</span><span class='line'><span class="sh">  </span>
-</span><span class='line'><span class="sh">  YUI({ filter: &#39;raw&#39; }).use(&quot;node&quot;, &quot;console&quot;, &quot;test&quot;,function (Y) {</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">      Y.namespace(&quot;example.test&quot;);</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">      Y.example.test.DataTestCase = new Y.Test.Case({</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          //name of the test case - if not provided, one is auto-generated</span>
-</span><span class='line'><span class="sh">          name : &quot;Data Tests&quot;,</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          //---------------------------------------------------------------------</span>
-</span><span class='line'><span class="sh">          // setUp and tearDown methods - optional</span>
-</span><span class='line'><span class="sh">          //---------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          /*</span>
-</span><span class='line'><span class="sh">           * Sets up data that is needed by each test.</span>
-</span><span class='line'><span class="sh">           */</span>
-</span><span class='line'><span class="sh">          setUp : function () {</span>
-</span><span class='line'><span class="sh">              this.data = {</span>
-</span><span class='line'><span class="sh">                  name: &quot;test&quot;,</span>
-</span><span class='line'><span class="sh">                  year: 2007,</span>
-</span><span class='line'><span class="sh">                  beta: true</span>
-</span><span class='line'><span class="sh">              };</span>
-</span><span class='line'><span class="sh">          },</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          /*</span>
-</span><span class='line'><span class="sh">           * Cleans up everything that was created by setUp().</span>
-</span><span class='line'><span class="sh">           */</span>
-</span><span class='line'><span class="sh">          tearDown : function () {</span>
-</span><span class='line'><span class="sh">              delete this.data;</span>
-</span><span class='line'><span class="sh">          },</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          //---------------------------------------------------------------------</span>
-</span><span class='line'><span class="sh">          // Test methods - names must begin with &quot;test&quot;</span>
-</span><span class='line'><span class="sh">          //---------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          testName : function () {</span>
-</span><span class='line'><span class="sh">              var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">              Assert.isObject(this.data);</span>
-</span><span class='line'><span class="sh">              Assert.isString(this.data.name);</span>
-</span><span class='line'><span class="sh">              Assert.areEqual(&quot;test&quot;, this.data.name);            </span>
-</span><span class='line'><span class="sh">          },</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          testYear : function () {</span>
-</span><span class='line'><span class="sh">              var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">              Assert.isObject(this.data);</span>
-</span><span class='line'><span class="sh">              Assert.isNumber(this.data.year);</span>
-</span><span class='line'><span class="sh">              Assert.areEqual(2007, this.data.year);            </span>
-</span><span class='line'><span class="sh">          },</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          testBeta : function () {</span>
-</span><span class='line'><span class="sh">              var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">              Assert.isObject(this.data);</span>
-</span><span class='line'><span class="sh">              Assert.isBoolean(this.data.beta);</span>
-</span><span class='line'><span class="sh">              Assert.isTrue(this.data.beta);</span>
-</span><span class='line'><span class="sh">          }</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">      });</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">      Y.example.test.ArrayTestCase = new Y.Test.Case({</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          //name of the test case - if not provided, one is auto-generated</span>
-</span><span class='line'><span class="sh">          name : &quot;Array Tests&quot;,</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          //---------------------------------------------------------------------</span>
-</span><span class='line'><span class="sh">          // setUp and tearDown methods - optional</span>
-</span><span class='line'><span class="sh">          //---------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          /*</span>
-</span><span class='line'><span class="sh">           * Sets up data that is needed by each test.</span>
-</span><span class='line'><span class="sh">           */</span>
-</span><span class='line'><span class="sh">          setUp : function () {</span>
-</span><span class='line'><span class="sh">              this.data = [0,1,2,3,4]</span>
-</span><span class='line'><span class="sh">          },</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          /*</span>
-</span><span class='line'><span class="sh">           * Cleans up everything that was created by setUp().</span>
-</span><span class='line'><span class="sh">           */</span>
-</span><span class='line'><span class="sh">          tearDown : function () {</span>
-</span><span class='line'><span class="sh">              delete this.data;</span>
-</span><span class='line'><span class="sh">          },</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          //---------------------------------------------------------------------</span>
-</span><span class='line'><span class="sh">          // Test methods - names must begin with &quot;test&quot;</span>
-</span><span class='line'><span class="sh">          //---------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          testPop : function () {</span>
-</span><span class='line'><span class="sh">              var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">              var value = this.data.pop();</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">              Assert.areEqual(4, this.data.length);</span>
-</span><span class='line'><span class="sh">              Assert.areEqual(4, value);            </span>
-</span><span class='line'><span class="sh">          },        </span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          testPush : function () {</span>
-</span><span class='line'><span class="sh">              var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">              this.data.push(5);</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">              Assert.areEqual(6, this.data.length);</span>
-</span><span class='line'><span class="sh">              Assert.areEqual(5, this.data[5]);            </span>
-</span><span class='line'><span class="sh">          },</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">          testSplice : function () {</span>
-</span><span class='line'><span class="sh">              var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">              this.data.splice(2, 1, 6, 7);</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">              Assert.areEqual(6, this.data.length);</span>
-</span><span class='line'><span class="sh">              Assert.areEqual(6, this.data[2]);           </span>
-</span><span class='line'><span class="sh">              Assert.areEqual(7, this.data[3]);           </span>
-</span><span class='line'><span class="sh">          }</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">      });    </span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">      Y.example.test.ExampleSuite = new Y.Test.Suite(&quot;Example Suite&quot;);</span>
-</span><span class='line'><span class="sh">      Y.example.test.ExampleSuite.add(Y.example.test.DataTestCase);</span>
-</span><span class='line'><span class="sh">      Y.example.test.ExampleSuite.add(Y.example.test.ArrayTestCase);</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">      //create the console</span>
-</span><span class='line'><span class="sh">      var r = new Y.Console({</span>
-</span><span class='line'><span class="sh">          newestOnTop : false,</span>
-</span><span class='line'><span class="sh">          style: &#39;block&#39; // to anchor in the example content</span>
-</span><span class='line'><span class="sh">      });</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">      r.render(&#39;#testLogger&#39;);</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">      Y.Test.Runner.add(Y.example.test.ExampleSuite);</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">      //run the tests</span>
-</span><span class='line'><span class="sh">      Y.Test.Runner.run();</span>
-</span><span class='line'>
-</span><span class='line'><span class="sh">  });</span>
-</span><span class='line'>
-</span><span class='line'><span class="no">FILE</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="c1"># Setup RSpec &amp; Cucumber</span>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s1">&#39;Setting up RSpec, Cucumber, webrat, factory_girl, faker&#39;</span>
-</span><span class='line'><span class="n">append_file</span> <span class="s1">&#39;Gemfile&#39;</span> <span class="k">do</span> <span class="o">&lt;&lt;-</span><span class="no">FILE</span>
-</span><span class='line'><span class="sh">group :development, :test do</span>
-</span><span class='line'><span class="sh">  gem &quot;rspec-rails&quot;, &quot;&gt;= 2.0.1&quot;</span>
-</span><span class='line'><span class="sh">  gem &quot;cucumber-rails&quot;, &quot;&gt;= 0.3.2&quot;</span>
-</span><span class='line'><span class="sh">  gem &quot;webrat&quot;, &quot;&gt;= 0.7.2.beta.2&quot;</span>
-</span><span class='line'><span class="sh">  gem &quot;factory_girl_rails&quot;</span>
-</span><span class='line'><span class="sh">  gem &quot;faker&quot;</span>
-</span><span class='line'><span class="sh">end</span>
-</span><span class='line'><span class="no">FILE</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;bundle install&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;script/rails generate rspec:install&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;script/rails generate cucumber:install&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rake db:migrate&#39;</span>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;rake db:test:prepare&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">run</span> <span class="s1">&#39;touch spec/factories.rb&#39;</span>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="c1"># Finish up</span>
-</span><span class='line'><span class="c1">#----------------------------------------------------------------------------</span>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Commiting to Git repository...&quot;</span>
-</span><span class='line'><span class="n">git</span> <span class="ss">:add</span> <span class="o">=&gt;</span> <span class="s1">&#39;.&#39;</span>
-</span><span class='line'><span class="n">git</span> <span class="ss">:commit</span> <span class="o">=&gt;</span> <span class="s2">&quot;-am &#39;Setup Complete&#39;&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;DONE - setting up your YUI3 Rails App.&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1907,6 +1542,10 @@ Here is an example of a div element that needs to have corners take on different
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/26/web-worker-patterns/">Web Worker Patterns</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/07/25/building-next-generation-widgets-with-web-components/">Building Next Generation Widgets with Web Components</a>
       </li>
     
@@ -1920,10 +1559,6 @@ Here is an example of a div element that needs to have corners take on different
     
       <li class="post">
         <a href="/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/">Modern Ember.js Application Workflow with Yeoman and Mocha</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/">Push Notifications to the Browser with Server Sent Events</a>
       </li>
     
   </ul>

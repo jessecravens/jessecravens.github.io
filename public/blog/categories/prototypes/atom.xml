@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Prototypes | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/prototypes/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-07-25T16:06:59-04:00</updated>
+  <updated>2013-08-26T14:08:09-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship]]></title>
     <link href="http://jessecravens.com/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship/"/>
-    <updated>2012-11-28T10:02:00-05:00</updated>
+    <updated>2012-11-28T10:02:00-06:00</updated>
     <id>http://jessecravens.com/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship</id>
     <content type="html"><![CDATA[<p>Im giving a talk at Devcon 5 - San Francisco this afternoon: Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship. Here is the other talks on the agenda: <a href="http://www.html5report.com/conference/california/agenda.aspx">Devcon 5 - San Francisco</a>.</p>
 
@@ -78,7 +78,7 @@ The Johnny Five code is located here: <a href="https://github.com/nodejshacks/no
   <entry>
     <title type="html"><![CDATA[Upcoming Talk at Devcon5-Austin: Rapid Prototyping HTML5 Applications with NodeJS]]></title>
     <link href="http://jessecravens.com/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs/"/>
-    <updated>2012-09-25T21:50:00-04:00</updated>
+    <updated>2012-09-25T21:50:00-05:00</updated>
     <id>http://jessecravens.com/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs</id>
     <content type="html"><![CDATA[<p>I'm getting ready for an upcoming talk titled: Rapid Prototyping HTML5 Applications with NodeJS, which I will presenting at <a href="http://www.html5report.com/conference/austin2012/Agenda/Agenda-at-a-glance.aspx">Devcon 5 - Austin</a>.</p>
 
@@ -101,7 +101,7 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
   <entry>
     <title type="html"><![CDATA[Just moved HTML5 Hacks into Copy/Edit]]></title>
     <link href="http://jessecravens.com/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit/"/>
-    <updated>2012-09-24T21:57:00-04:00</updated>
+    <updated>2012-09-24T21:57:00-05:00</updated>
     <id>http://jessecravens.com/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit</id>
     <content type="html"><![CDATA[<p>After a marathon of hackery starting in April, <a href="http://www.oreillynet.com/pub/au/5370">Jeff Burtoft</a> and I pushed out 90 hacks and 435 pages of <a href="http://shop.oreilly.com/product/0636920026273.do">HTML5 Hacks</a> this week. We also had a few guest hackers that created some really great content as well.</p>
 
@@ -125,7 +125,7 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
   <entry>
     <title type="html"><![CDATA[Migration from Drupal to Octopress]]></title>
     <link href="http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress/"/>
-    <updated>2012-09-23T13:39:00-04:00</updated>
+    <updated>2012-09-23T13:39:00-05:00</updated>
     <id>http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress</id>
     <content type="html"><![CDATA[<h2>Why?</h2>
 

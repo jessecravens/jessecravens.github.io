@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Wordpress | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/wordpress/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-07-25T16:06:59-04:00</updated>
+  <updated>2013-08-26T14:08:09-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[migrating from Wordpress to Drupal with the wordpress2drupal module]]></title>
     <link href="http://jessecravens.com/blog/2006/08/04/migrating-from-wordpress-to-drupal-with-the-wordpress2drupal-module/"/>
-    <updated>2006-08-04T15:46:31-04:00</updated>
+    <updated>2006-08-04T14:46:31-05:00</updated>
     <id>http://jessecravens.com/blog/2006/08/04/migrating-from-wordpress-to-drupal-with-the-wordpress2drupal-module</id>
     <content type="html"><![CDATA[<p>I just completed a migration from wordpress to Drupal using the wordpress2drupal module. It was fairly simple. I plan on discussing this further. - more later</p>
 ]]></content>
@@ -25,7 +25,7 @@
   <entry>
     <title type="html"><![CDATA[Effective Blogging: An 11-step guide for writing quick, powerful blogposts]]></title>
     <link href="http://jessecravens.com/blog/2006/04/17/effective-blogging-an-11-step-guide-for-writing-quick-powerful-blogposts/"/>
-    <updated>2006-04-17T20:03:17-04:00</updated>
+    <updated>2006-04-17T19:03:17-05:00</updated>
     <id>http://jessecravens.com/blog/2006/04/17/effective-blogging-an-11-step-guide-for-writing-quick-powerful-blogposts</id>
     <content type="html"><![CDATA[<p>I have struggled with blogging long enough. Creating consistent, meaningful content can be a great challenge. For me it isn't the actual content. I have plenty of ideas, plenty of inspiration. For me, it is the absence of a quick, organized delivery. In an effort to streamline my delivery process, I have created an 11-step guide to aid in getting my ideas from my head and onto my blog.</p>
 
@@ -100,7 +100,7 @@
   <entry>
     <title type="html"><![CDATA[Gallery2 plug-in for Wordpress]]></title>
     <link href="http://jessecravens.com/blog/2006/01/31/gallery2-plug-in-for-wordpress/"/>
-    <updated>2006-01-31T21:50:02-05:00</updated>
+    <updated>2006-01-31T20:50:02-06:00</updated>
     <id>http://jessecravens.com/blog/2006/01/31/gallery2-plug-in-for-wordpress</id>
     <content type="html"><![CDATA[<p><img src="http://gallery.menalto.com/themes/gmc/logo.png" alt="Gallery2" /></p>
 

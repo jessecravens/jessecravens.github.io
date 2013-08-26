@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Photography | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/photography/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-07-25T16:06:59-04:00</updated>
+  <updated>2013-08-26T14:08:09-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[sessionswest.com's 'Morning Surf']]></title>
     <link href="http://jessecravens.com/blog/2006/07/30/sessionswest-coms-morning-surf/"/>
-    <updated>2006-07-30T09:01:21-04:00</updated>
+    <updated>2006-07-30T08:01:21-05:00</updated>
     <id>http://jessecravens.com/blog/2006/07/30/sessionswest-coms-morning-surf</id>
     <content type="html"><![CDATA[<p>Another new design for <a href="http://sessionswest.com">SessionsWest.com</a>. I was digging for inspiration for this site, when Jeff called me from San Deigo last week right before he was about to go surfing. </a>The color scheme is known as 'Morning surf,' and I built a custom flash player inspired by the album cover from the Fever Sessions. This new buildout has been my most complex drupal site to date. I embedded a photo gallery, and the mp3 player I mentioned earlier. I used drupal's front page module to give the home page a real clean, simple entry to the site. All in all it doesn't get much more simple, but I think thats what I like about it , and it reflects Jeff's style to the tee.</p>
 ]]></content>
@@ -25,7 +25,7 @@
   <entry>
     <title type="html"><![CDATA[Texas Hill Country Music as of Lately]]></title>
     <link href="http://jessecravens.com/blog/2006/05/24/texas-hill-country-music-as-of-lately/"/>
-    <updated>2006-05-24T18:37:20-04:00</updated>
+    <updated>2006-05-24T17:37:20-05:00</updated>
     <id>http://jessecravens.com/blog/2006/05/24/texas-hill-country-music-as-of-lately</id>
     <content type="html"><![CDATA[<p><a href="http://www.mytexasmusic.com/rodneyjoesmith/"><img src="http://jessecravens.com/images/2006/02/rodneypic250.jpg" style="margin: 10px; float: right; border: 0px" alt="rodneypic250.jpg" align="baseline" width="200" height="247" /></a>This morning I ate breakfast listening to Rodney Joe Smith at our Digett sponsored Boerne Chamber of Commerce Networking Breakfast at <a href="http://enchantedspringsranch.com">Enchanted Springs Ranch</a>.  Boy, Rodney can sing and play. It was a real pleasure.</p>
 
@@ -47,7 +47,7 @@ I love that ol' Country Gospel music and I am looking forward to checking him an
   <entry>
     <title type="html"><![CDATA[In search of a better photo gallery]]></title>
     <link href="http://jessecravens.com/blog/2006/03/31/in-search-of-a-better-photo-gallery/"/>
-    <updated>2006-03-31T19:30:06-05:00</updated>
+    <updated>2006-03-31T18:30:06-06:00</updated>
     <id>http://jessecravens.com/blog/2006/03/31/in-search-of-a-better-photo-gallery</id>
     <content type="html"><![CDATA[<p>So digg and reddit have both posted on the work of Stu Nichols and his pure CSS photo gallery. Check it out: <a href="http://www.cssplay.co.uk/menu/lightbox.html#Trees">here</a>. I'm anxious to try it out. I'd like to find a way to blend this image gallery with a liquid three column layout, but the gallery is fixed - so it may have to be implemented on an internal page. Although, it would be interesting to have this image gallery present on a home page - since before the hover it only takes up the room of a horizontal menu. I'll be exploring this idea further - stay tuned.</p>
 ]]></content>
@@ -56,7 +56,7 @@ I love that ol' Country Gospel music and I am looking forward to checking him an
   <entry>
     <title type="html"><![CDATA[minishowcase: Ajax PhotoGallery]]></title>
     <link href="http://jessecravens.com/blog/2006/03/08/minishowcase-ajax-photogallery/"/>
-    <updated>2006-03-08T07:35:19-05:00</updated>
+    <updated>2006-03-08T06:35:19-06:00</updated>
     <id>http://jessecravens.com/blog/2006/03/08/minishowcase-ajax-photogallery</id>
     <content type="html"><![CDATA[<p>Check out this ajax photogallery: <a href="http://minishowcase.backpackit.com/pub/367875">minishowcase</a>. It's lightweight, easy to customize, and a piece of cake to get up an running in no time. I removed the enormous Gallery2 from my server and replaced it with minishowcase. I lost the theming of Gallery 2, but minishowcase theming is on the way, and it wouldn't take much to create your own from scratch. Download also included easy to customize .css file.</p>
 
@@ -67,7 +67,7 @@ I love that ol' Country Gospel music and I am looking forward to checking him an
   <entry>
     <title type="html"><![CDATA[Gallery2 plug-in for Wordpress]]></title>
     <link href="http://jessecravens.com/blog/2006/01/31/gallery2-plug-in-for-wordpress/"/>
-    <updated>2006-01-31T21:50:02-05:00</updated>
+    <updated>2006-01-31T20:50:02-06:00</updated>
     <id>http://jessecravens.com/blog/2006/01/31/gallery2-plug-in-for-wordpress</id>
     <content type="html"><![CDATA[<p><img src="http://gallery.menalto.com/themes/gmc/logo.png" alt="Gallery2" /></p>
 
