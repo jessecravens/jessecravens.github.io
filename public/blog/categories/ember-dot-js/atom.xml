@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ember.js | Jesse Cravens]]></title>
+  <link href="http://jessecravens.com/blog/categories/ember-dot-js/atom.xml" rel="self"/>
+  <link href="http://jessecravens.com/"/>
+  <updated>2013-10-06T19:32:55-05:00</updated>
+  <id>http://jessecravens.com/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ember.js Views and Live Templates with Handlebars.js Part 1]]></title>
+    <link href="http://jessecravens.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/"/>
+    <updated>2013-06-04T10:05:00-05:00</updated>
+    <id>http://jessecravens.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1</id>
+    <content type="html"><![CDATA[<p><img class="imgL200" alt="Tech-pro Ember.js Views" src="http://tpstatic.com/img/usermedia/cHI1WdevsEyBJ7dLfmVUdA/cropped-w220-h220.png"></p>
+
+<p>This is an exploration of Handlebars.js template library when used with Ember.js views. Many of the Handlebars.js tutorials on the web discuss the Handlebars API, but not in the specific context of using Handlebars with Ember.js. In addition to filling that void, I&rsquo;ll also give a brief background of JavaScript templating in general to provide perspective as to the problems it is solving.</p>
+
+<p>This tutorial will be divided into two parts. In Part 1, you should gain a clear understanding of JavaScript templates, the capabilities of Handlebars expressions and helpers, and how to write your own Handlebars helpers.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1308/emberjs-views-and-live-templates-with-handlebarsjs-part-1">http://tech.pro/tutorial/1308/emberjs-views-and-live-templates-with-handlebarsjs-part-1</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Modern Ember.js Application Workflow with Yeoman and Mocha]]></title>
+    <link href="http://jessecravens.com/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/"/>
+    <updated>2013-04-23T10:05:00-05:00</updated>
+    <id>http://jessecravens.com/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha</id>
+    <content type="html"><![CDATA[<p><img class="imgL200" alt="Tech-pro Modern Ember.js Application Workflow" src="http://tpstatic.com/img/usermedia/LgFpf2qDCkGfHlDBR4oGDA/cropped-w220-h220.png"></p>
+
+<p>The following tutorial will provide an overview for building Ember.js applications with Yeoman. Keep in mind, Yeoman is a framework agnostic collection of tools, used to manage the workflow of any JavaScript application or plugin. For the sake of this tutorial, we have chosen to focus on Ember.js, as a case study.</p>
+
+<p>Our workflow would not be complete without also setting up our testing strategy, so we will also include a standard BDD (Behavior Driven Development) setup with the Mocha testing framework.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1249/modern-emberjs-application-workflow-with-yeoman-and-mocha">http://tech.pro/tutorial/1249/modern-emberjs-application-workflow-with-yeoman-and-mocha</a></p>
+]]></content>
+  </entry>
+  
+</feed>

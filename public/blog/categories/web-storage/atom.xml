@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Storage | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/web-storage/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-08-26T14:08:09-05:00</updated>
+  <updated>2013-10-06T19:32:55-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -28,7 +28,7 @@
 <script async class="speakerdeck-embed" data-slide="46" data-id="92b31ab050b501308fcd1231381d555c" data-ratio="1.2994923857868" src="http://jessecravens.com//speakerdeck.com/assets/embed.js"></script>
 
 
-<p>I had a great time presenting at HTML5.tx 2013; here is an embed above of the slide deck. I should have the trailr node module in a presentable format soon and I'll tweet its inclusion in NPM. I have a placeholder here: <a href="https://npmjs.org/package/trailr">trailr at npm</a></p>
+<p>I had a great time presenting at HTML5.tx 2013; here is an embed above of the slide deck. I should have the trailr node module in a presentable format soon and I&rsquo;ll tweet its inclusion in NPM. I have a placeholder here: <a href="https://npmjs.org/package/trailr">trailr at npm</a></p>
 
 <p>I also pushed out the ver.1 trailr-admin UI here: <a href="http://trailr-admin.herokuapp.com/dashboard">trailr-admin.herokuapp.com</a></p>
 
@@ -44,7 +44,7 @@
 
 <p><img class="" alt=""  src="http://jessecravens.com/images/html5tx2013/dash.png"></p>
 
-<h3>Node.js trailr module - Web Based Edit (Ace Editor) and WebSocket Deploy to Arduino</h3>
+<h3>Node.js trailr module &ndash; Web Based Edit (Ace Editor) and WebSocket Deploy to Arduino</h3>
 
 <p><img class="" alt=""  src="http://jessecravens.com/images/html5tx2013/edit.png"></p>
 
@@ -228,7 +228,7 @@ We’ll begin with the form. You may notice that the input fields for the dates 
 </span><span class='line'>&lt;pre>&lt;code>            window.mozIndexedDB;
 </span><span class='line'>&lt;/code>&lt;/pre>
 </span><span class='line'>
-</span><span class='line'>&lt;p>if ('webkitIndexedDB' in window) {
+</span><span class='line'>&lt;p>if (&lsquo;webkitIndexedDB&rsquo; in window) {
 </span><span class='line'>  window.IDBTransaction = window.webkitIDBTransaction;
 </span><span class='line'>  window.IDBKeyRange = window.webkitIDBKeyRange;
 </span><span class='line'>}
@@ -281,7 +281,7 @@ We’ll begin with the form. You may notice that the input fields for the dates 
 <span class='line-number'>34</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.open = function() {&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>  var request = indexedDB.open("milestones");&lt;/p>
+</span><span class='line'>&lt;p>  var request = indexedDB.open(&ldquo;milestones&rdquo;);&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>  request.onsuccess = function(e) {&lt;/p>
 </span><span class='line'>
@@ -366,8 +366,8 @@ We’ll begin with the form. You may notice that the input fields for the dates 
 </pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.init = function() {&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>  var db = html5hacks.indexedDB.db;
-</span><span class='line'>  var trans = db.transaction(["milestone"], IDBTransaction.READ_WRITE);
-</span><span class='line'>  var store = trans.objectStore("milestone");&lt;/p>
+</span><span class='line'>  var trans = db.transaction([&ldquo;milestone&rdquo;], IDBTransaction.READ_WRITE);
+</span><span class='line'>  var store = trans.objectStore(&ldquo;milestone&rdquo;);&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>  var keyRange = IDBKeyRange.lowerBound(0);
 </span><span class='line'>  var cursorRequest = store.openCursor(keyRange);&lt;/p>
@@ -469,7 +469,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$('form').submit(function() {&lt;/p>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$(&lsquo;form&rsquo;).submit(function() {&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;pre>&lt;code>var data = $(this).serializeArray();
 </span><span class='line'>
@@ -522,8 +522,8 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
 <span class='line-number'>32</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.addMilestone = function(d) {
 </span><span class='line'>  var db = html5hacks.indexedDB.db;
-</span><span class='line'>  var trans = db.transaction(["milestone"], IDBTransaction.READ_WRITE);
-</span><span class='line'>  var store = trans.objectStore("milestone");&lt;/p>
+</span><span class='line'>  var trans = db.transaction([&ldquo;milestone&rdquo;], IDBTransaction.READ_WRITE);
+</span><span class='line'>  var store = trans.objectStore(&ldquo;milestone&rdquo;);&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p>  var data = {&lt;/p>
 </span><span class='line'>

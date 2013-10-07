@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Flash | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/flash/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-08-26T14:08:09-05:00</updated>
+  <updated>2013-10-06T19:32:55-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -20,7 +20,7 @@
     <id>http://jessecravens.com/blog/2007/02/17/flash-player-9-and-ie-7-fix</id>
     <content type="html"><![CDATA[<p>I have been having quite a time installing Flash 9 with IE 7 and my earlier version of IE.</p>
 
-<p>This took me some time to figure out so I thought I'd share my solution. I tried editing the registry, I found this complete standalone installer that finally fixed the problem ! This is what you should do...</p>
+<p>This took me some time to figure out so I thought I&rsquo;d share my solution. I tried editing the registry, I found this complete standalone installer that finally fixed the problem ! This is what you should do&hellip;</p>
 
 <ol>
 <li><p>Download the un-installer and un-install Flash Player.</p></li>
@@ -30,18 +30,18 @@
 
 
 <p><a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&promoid=BIOW
-">http://www.adobe.com</a></p>
+"><a href="http://www.adobe.com">http://www.adobe.com</a></a></p>
 
 <ol>
 <li>Next, download the standalone installer.
 <a href="http://fpdownload.macromedia.com/get/flashplayer/current/licensing/win/install_flash_player_active_x.msi
-">http://fpdownload.macromedia.com</a>
+"><a href="http://fpdownload.macromedia.com">http://fpdownload.macromedia.com</a></a>
 After downloading it, install it.</li>
 </ol>
 
 
 <p>5.Done ! Verify Flash player is working by going to this link.
-<a href="http://www.adobe.com/go/15507">http://www.adobe.com/go/15507</a></p>
+<a href="http://www.adobe.com/go/15507"><a href="http://www.adobe.com/go/15507">http://www.adobe.com/go/15507</a></a></p>
 
 <p>Note: I have Microsoft Windows Home Edition SP2. I also have IE7.</p>
 ]]></content>
@@ -52,7 +52,7 @@ After downloading it, install it.</li>
     <link href="http://jessecravens.com/blog/2006/11/12/youtube-com-in-schools/"/>
     <updated>2006-11-12T10:30:06-06:00</updated>
     <id>http://jessecravens.com/blog/2006/11/12/youtube-com-in-schools</id>
-    <content type="html"><![CDATA[<p><a href="http://www.smh.com.au/news/web/youtube-course-a-class-act/2006/11/06/1162661610036.html">YouTube course is a class act - web - Technology - smh.com.au</a> <br /> <blockquote>"After all, one of the jobs of a teacher is to help kids make sense of the world they live in," he says.</blockquote></p>
+    <content type="html"><![CDATA[<p><a href="http://www.smh.com.au/news/web/youtube-course-a-class-act/2006/11/06/1162661610036.html">YouTube course is a class act &ndash; web &ndash; Technology &ndash; smh.com.au</a> <br /> <blockquote>&ldquo;After all, one of the jobs of a teacher is to help kids make sense of the world they live in,&rdquo; he says.</blockquote></p>
 ]]></content>
   </entry>
   
@@ -61,7 +61,7 @@ After downloading it, install it.</li>
     <link href="http://jessecravens.com/blog/2006/07/30/sessionswest-coms-morning-surf/"/>
     <updated>2006-07-30T08:01:21-05:00</updated>
     <id>http://jessecravens.com/blog/2006/07/30/sessionswest-coms-morning-surf</id>
-    <content type="html"><![CDATA[<p>Another new design for <a href="http://sessionswest.com">SessionsWest.com</a>. I was digging for inspiration for this site, when Jeff called me from San Deigo last week right before he was about to go surfing. </a>The color scheme is known as 'Morning surf,' and I built a custom flash player inspired by the album cover from the Fever Sessions. This new buildout has been my most complex drupal site to date. I embedded a photo gallery, and the mp3 player I mentioned earlier. I used drupal's front page module to give the home page a real clean, simple entry to the site. All in all it doesn't get much more simple, but I think thats what I like about it , and it reflects Jeff's style to the tee.</p>
+    <content type="html"><![CDATA[<p>Another new design for <a href="http://sessionswest.com">SessionsWest.com</a>. I was digging for inspiration for this site, when Jeff called me from San Deigo last week right before he was about to go surfing. </a>The color scheme is known as &lsquo;Morning surf,&rsquo; and I built a custom flash player inspired by the album cover from the Fever Sessions. This new buildout has been my most complex drupal site to date. I embedded a photo gallery, and the mp3 player I mentioned earlier. I used drupal&rsquo;s front page module to give the home page a real clean, simple entry to the site. All in all it doesn&rsquo;t get much more simple, but I think thats what I like about it , and it reflects Jeff&rsquo;s style to the tee.</p>
 ]]></content>
   </entry>
   
@@ -85,7 +85,7 @@ After downloading it, install it.</li>
     <id>http://jessecravens.com/blog/2006/01/28/sifr-chaitgear</id>
     <content type="html"><![CDATA[<p><a href="http://www.chait.net/index.php?p=310">sIFR, PHP, and More! My WordPress Plugin Competition entriesâ€¦ @ CHAITGEAR @ [CG @ Site5] :</a></p>
 
-<p>Spent some time today configuring sIFR into wordpress in order to achieve these h1, h2 , h3 text you see displayed here. But then I came across this plug in for wordpress - which makes things much easier.</p>
+<p>Spent some time today configuring sIFR into wordpress in order to achieve these h1, h2 , h3 text you see displayed here. But then I came across this plug in for wordpress &ndash; which makes things much easier.</p>
 
 <p>I making use of a number of fonts, but I love the quadaptor font.</p>
 ]]></content>

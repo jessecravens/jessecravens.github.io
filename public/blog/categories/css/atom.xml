@@ -4,7 +4,7 @@
   <title><![CDATA[Category: CSS | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-08-26T14:08:09-05:00</updated>
+  <updated>2013-10-06T19:32:55-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -141,7 +141,7 @@ Here is an example of a div element that needs to have corners take on different
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">my-border-radius-mixin</span> <span class="o">(..</span><span class="nc">.args</span><span class="o">)</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">my-border-radius-mixin</span> <span class="o">(&amp;</span><span class="nt">hellip</span><span class="o">;</span><span class="nt">args</span><span class="o">)</span>
 </span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
 </span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
 </span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
@@ -170,7 +170,7 @@ Here is an example of a div element that needs to have corners take on different
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">my-border-radius-mixin</span> <span class="o">(..</span><span class="nc">.args</span><span class="o">)</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">my-border-radius-mixin</span> <span class="o">(&amp;</span><span class="nt">hellip</span><span class="o">;</span><span class="nt">args</span><span class="o">)</span>
 </span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
 </span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
 </span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
@@ -199,7 +199,7 @@ Here is an example of a div element that needs to have corners take on different
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">border-radius</span> <span class="o">(..</span><span class="nc">.args</span><span class="o">)</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">border-radius</span> <span class="o">(&amp;</span><span class="nt">hellip</span><span class="o">;</span><span class="nt">args</span><span class="o">)</span>
 </span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
 </span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
 </span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
@@ -228,7 +228,7 @@ Here is an example of a div element that needs to have corners take on different
     <link href="http://jessecravens.com/blog/2006/06/13/css3-info-and-some-firefox-extensions/"/>
     <updated>2006-06-13T02:44:49-05:00</updated>
     <id>http://jessecravens.com/blog/2006/06/13/css3-info-and-some-firefox-extensions</id>
-    <content type="html"><![CDATA[<p>If you haven't been keeping up with the latest in CSS. <a href="http://www.css3.info">Here is a site dedicated to doing it for you.</a></p>
+    <content type="html"><![CDATA[<p>If you haven&rsquo;t been keeping up with the latest in CSS. <a href="http://www.css3.info">Here is a site dedicated to doing it for you.</a></p>
 
 <p>Also today I tried out a few new Firefox extensions. All of which I think I will keep activated:
 <a href="https://addons.mozilla.org/firefox/1368/">Colorful Tabs</a>
@@ -255,7 +255,7 @@ Here is an example of a div element that needs to have corners take on different
     <link href="http://jessecravens.com/blog/2006/03/31/in-search-of-a-better-photo-gallery/"/>
     <updated>2006-03-31T18:30:06-06:00</updated>
     <id>http://jessecravens.com/blog/2006/03/31/in-search-of-a-better-photo-gallery</id>
-    <content type="html"><![CDATA[<p>So digg and reddit have both posted on the work of Stu Nichols and his pure CSS photo gallery. Check it out: <a href="http://www.cssplay.co.uk/menu/lightbox.html#Trees">here</a>. I'm anxious to try it out. I'd like to find a way to blend this image gallery with a liquid three column layout, but the gallery is fixed - so it may have to be implemented on an internal page. Although, it would be interesting to have this image gallery present on a home page - since before the hover it only takes up the room of a horizontal menu. I'll be exploring this idea further - stay tuned.</p>
+    <content type="html"><![CDATA[<p>So digg and reddit have both posted on the work of Stu Nichols and his pure CSS photo gallery. Check it out: <a href="http://www.cssplay.co.uk/menu/lightbox.html#Trees">here</a>. I&rsquo;m anxious to try it out. I&rsquo;d like to find a way to blend this image gallery with a liquid three column layout, but the gallery is fixed &ndash; so it may have to be implemented on an internal page. Although, it would be interesting to have this image gallery present on a home page &ndash; since before the hover it only takes up the room of a horizontal menu. I&rsquo;ll be exploring this idea further &ndash; stay tuned.</p>
 ]]></content>
   </entry>
   

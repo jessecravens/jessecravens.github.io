@@ -9,7 +9,7 @@
   <meta name="author" content="Jesse Cravens">
 
   
-  <meta name="description" content="I know it is fairly well documented around the web that some of the old &#8216;ROR up and running&#8217; tutorials are a bit difficult to digest &hellip;">
+  <meta name="description" content="So it took me awhile to truly understand JavaScript closures. There is limited documentation of the subject on the web, but here is a list of the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,187 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/04/09/understanding-javascript-closures/">Understanding JavaScript Closures</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-09T22:37:05-05:00" pubdate data-updated="true">Apr 9<span>th</span>, 2008</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So it took me awhile to truly understand JavaScript closures. There is limited documentation of the subject on the web, but here is a list of the resources I used to finally grasp not only what specifically creates a closure, but also why we would want to use them.</p>
+
+
+
+
+<ul>
+<li><a href="http://books.google.com/books?id=VOS6IlCsuU4C&dq=javascript">JavaScript: the Definitive Guide</a></li>
+<li><a href="http://www.crockford.com/javascript/private.html">Douglas Crockford: Private Members in JavaScript</a></li>
+<li><a href="http://blog.morrisjohns.com/javascript_closures_for_dummies">JavaScript Closures for Dummies</a></li>
+<li><a href="http://www.jibbering.com/faq/faq_notes/closures.html">jibbering.com/faq/faq_notes/closures.html</a></li>
+</ul>
+
+
+
+
+<p>First, let&#8217;s define closures:</p>
+
+
+<ul>
+<li>A &#8220;closure&#8221; is an expression (typically a function) that can have free variables together with an environment that binds those variables (that &#8220;closes&#8221; the expression). - Jim Ley </li>
+<li>&#8230;JavaScript has closures. What this means is that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned. This is an extremely powerful property of the language. - Douglas Crockford</li>
+<li>Things are different if you save a reference to the nested function in the global scope. You do so by using the nested function as the return value of the outer function or by storing the nested function as a property of some other object. - JavaScript: the Definitive Guide</li>
+<li>Simply put, a closure is a variable, created inside a function, which continues to exist after the function has finished executing. - Patrick Hunlock</li>
+</ul>
+
+
+
+
+<p>I should preface the more detailed explanation below with a few prerequisite concepts. If you don&#8217;t truly grasp these concepts, then you may get hung up when trying to understand JavaScript closures. Fortunately, your quest to understand closures should force you to understand these concepts on a deeper level first.</p>
+
+
+
+
+<ul>
+<li>global object and global scope</li>
+<li>reference types and primitive types</li>
+<li>lexical scope and the scope chain</li>
+<li>the call object or the ECMA activation object</li>
+<li>idea of persistent data</li>
+<li>private variables</li>
+<li>using return</li>
+</ul>
+
+
+
+
+<p>To begin, we want to create a reusable function containing data that persists across invocations.</p>
+
+
+<p>We don&#8217;t want to hard code variables into the reusable function, and a local variable will not persist.</p>
+
+
+<p>From what we have learned by our <a href="#">&#8216;Responsible JavaScript for the Enterprise&#8217;</a> guidelines and through our understanding of the call object, lexical scope, and namespacing: we also know that we want to greatly limit global variables in our global scope.</p>
+
+
+
+
+<p>So instead, we want the developer to make two calls: One, to set up or &#8216;configure&#8217; the function, and two, to invoke this &#8216;pre-configured&#8217; function.</p>
+
+
+<p>The power is in the first call. I like to refer to it as the configuration call. </p>
+
+
+<p>During the configuration call, we &#8216;freeze&#8217; the inner function by setting a reference to it in the global scope.</p>
+
+
+<p>So this data persists. Why?</p>
+
+
+<p>We have an external reference to this inner function.</p>
+
+
+<p>The inner nested function retains its reference to the call object of the outer function.</p>
+
+
+<p>The outer function&#8217;s local scope resolves and the reference to its inner function remains.</p>
+
+
+<p></p>
+
+
+<p></p>
+
+
+
+
+<p>This is an example from a <a href="http://www.synthesispraxis.com/">friend</a> that helped me finally wrap my head around the power of the technique.</p>
+
+
+
+
+<figure class='code'><figcaption><span>Initialize closure.js </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="kd">function</span> <span class="nx">configEquation</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span><span class="nx">B</span><span class="p">,</span><span class="nx">C</span><span class="p">){</span>
+</span><span class='line'>  <span class="c1">//The equation: Ax^ex1 + Bx^ex2 + Cx^ex3</span>
+</span><span class='line'>  <span class="c1">//The exponents are ex1, ex2, and ex3</span>
+</span><span class='line'>  <span class="c1">//The coefficients are A, B, and C and are set</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">ex1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">ex2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">ex3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//The exponents constitute a quadratic equation.</span>
+</span><span class='line'><span class="kd">function</span> <span class="nx">theEquation</span><span class="p">(</span><span class="nx">x</span><span class="p">){</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">A</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">ex1</span><span class="p">)</span> <span class="o">+</span> <span class="nx">B</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">ex2</span><span class="p">)</span> <span class="o">+</span> <span class="nx">C</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">ex3</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">theEquation</span><span class="p">;</span> <span class="c1">//notice we return the reference not the invocation of the function(no params)</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">myEquation</span> <span class="o">=</span> <span class="nx">configEquation</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> <span class="c1">//the configuration call</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;myEquation, x = 2: &#39;</span> <span class="o">+</span> <span class="nx">myEquation</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;myEquation, x = 5: &#39;</span> <span class="o">+</span> <span class="nx">myEquation</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">myEquation2</span> <span class="o">=</span> <span class="nx">configEquation</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="c1">//a 2nd configuration call</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;myEquation2, x = 2: &#39;</span> <span class="o">+</span> <span class="nx">myEquation2</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+</span><span class='line'>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;myEquation2, x = 5: &#39;</span> <span class="o">+</span> <span class="nx">myEquation2</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -473,7 +654,7 @@ View video of past performances.</a></p>
   </header>
 
 
-  <div class="entry-content"><p><a href="http://jessecravens.tumblr.com" >$(&#8220;jesse.cravens&#8221;).now</a></p>
+  <div class="entry-content"><p><a href="http://jessecravens.tumblr.com" >$(&ldquo;jesse.cravens&rdquo;).now</a></p>
 
 <p class="poweredbyperformancing">Powered by <a href="http://scribefire.com/">ScribeFire</a>.</p>
 
@@ -565,42 +746,6 @@ View video of past performances.</a></p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/08/12/interesting-snippets-a-photoset-on-flickr/">Interesting Snippets - a Photoset on Flickr</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2007-08-12T13:46:34-05:00" pubdate data-updated="true">Aug 12<span>th</span>, 2007</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://www.flickr.com/photos/lynetter/sets/72057594139269787/detail/">Interesting Snippets - a photoset on Flickr</a>  This is a fantastic set of images related to the state of the web, communications, and new media. Each image is accompanied by a thought provoking quote.  I thought this would be perfect for an anticipatory set for a new media presentation, or an introductory visual for a shared discussion on topics related to new media or web 2.0. Enjoy!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/5/">&larr; Older</a>
@@ -657,6 +802,10 @@ View video of past performances.</a></p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/">JavaScript Makers: How JS is Helping Drive the Maker Movement</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/26/web-worker-patterns/">Web Worker Patterns</a>
       </li>
     
@@ -670,10 +819,6 @@ View video of past performances.</a></p>
     
       <li class="post">
         <a href="/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/">Ember.js Views and Live Templates with Handlebars.js Part 1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/">Modern Ember.js Application Workflow with Yeoman and Mocha</a>
       </li>
     
   </ul>

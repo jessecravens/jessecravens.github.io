@@ -9,8 +9,7 @@
   <meta name="author" content="Jesse Cravens">
 
   
-  <meta name="description" content="Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
-make requests to other domains from within the browser. With CORS &hellip;">
+  <meta name="description" content="Im giving a talk at Devcon 5 &ndash; San Francisco this afternoon: Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -92,6 +91,95 @@ make requests to other domains from within the browser. With CORS &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship/">Client/Server 3.0: 6 Ways JavaScript Is Revolutionizing the Client/Server Relationship</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-28T10:02:00-06:00" pubdate data-updated="true">Nov 28<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Im giving a talk at Devcon 5 &ndash; San Francisco this afternoon: Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship. Here is the other talks on the agenda: <a href="http://www.html5report.com/conference/california/agenda.aspx">Devcon 5 &ndash; San Francisco</a>.</p>
+
+<p>Here is a brief summary:</p>
+
+<h3>1 Device Access Within the Browser</h3>
+
+<p>The client gets smarter.</p>
+
+<p>JavaScript Device APIs continue to evolve, allowing more access to device hardware, services and applications such as the camera, microphone, system sensors, native address books, calendars and native messaging applications.
+We will explore examples utilizing GeoLocation API, and Device Orientation.</p>
+
+<h3>2 Client Side Processing w/ Background Threads</h3>
+
+<p>The modern web browser&rsquo;s runtime is a single threaded, event loop. Asynchronous programming models, reactionary systems design actually benefit from this architecture. Maturing interpreters improve performance. Web Workers API enables background threads in the browser, making heavy computations realistic.</p>
+
+<p>So, the client gets more powerful, and becomes an application development evnvironment.
+We will explore Web Workers processing heavy computations without blocking the UI for further user interaction.</p>
+
+<h3>3 Device Detection and Descriptors / Adaptive Frameworks</h3>
+
+<p>Responsive Web Design is great, but it often isn&rsquo;t enough for larger applications, and applications that need to reach a highly fragmented device market. Adaptive frameworks use DDRs (Device Description Repositories)</p>
+
+<p>We will explore a framework that mixes the best of Responsive with the best of Adaptive: <a href="https://github.com/jessecravens/responderjs">responderJS</a>.</p>
+
+<h3>4 HTML5 Connectivity Revolution and HTTP 2.0</h3>
+
+<p>Peter Lubbers coined the term, HTML5 Connectivity Revolution, to describe the next level, web network technologies such as: Web Sockets API, XHR2, Event Source and Server Sent Events, SPDY, CORS.</p>
+
+<p>Engage in a demo of <a href="https://github.com/jessecravens/robodeck">robodeck</a>, a Web Socket driven Collaborative presenations framework.</p>
+
+<h3>5 Single Runtime, Shared Syntax &hellip; the right way</h3>
+
+<p>Node.js has enabled the same language, single runtime. But, the paradigms are still quite different. Node streams, inspired by Linux pipes, make IO easy and intuitive. Explore pipe(), pump(), and events in Node streams.</p>
+
+<p>Solutions like Browserify, help bring Node.js libraries and NPM dependency management to the browser. Next up, Domnode, wrapping common, client-side, I/O bound APIs (XHR, SSE, WebRTC, etc.) in Node streams syntax.</p>
+
+<h3>6 Embedded JavaScript</h3>
+
+<p>With Node.js, Angstrom Linux, and cloud document stores like MongoDB, the server is now embedded in the microcontroller client.</p>
+
+<p>We will explore Arduino wrappers, and Node.js running on the Beaglebone from Texas Instruments.</p>
+
+<p>The combination of Linux and JavaScript open worlds of opportunity.</p>
+
+<p>Here is the node.js server used on the Beaglebone in the demo: <a href="https://github.com/jessecravens/beagleserver">beagleserver</a>.
+The Johnny Five code is located here: <a href="https://github.com/nodejshacks/nodejshacks-embedded">node-embedded</a></p>
+
+<script async class="speakerdeck-embed" data-slide="4" data-id="086813701bf601302fbe22000a1f8a4e" data-ratio="1.2994923857868" src="//speakerdeck.com/assets/embed.js"></script>
+
+
+
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/eahWOUYqr90" frameborder="0" allowfullscreen></iframe>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -190,7 +278,7 @@ access each other’s methods and properties with no specific restrictions,
 but prevents access to most methods and properties across pages on different
 sites.1</p>
 
-<p>1 http://en.wikipedia.org/wiki/Same_origin_policy</p>
+<p>1 <a href="http://en.wikipedia.org/wiki/Same_origin_policy">http://en.wikipedia.org/wiki/Same_origin_policy</a></p>
 
 <p>As stated in Wikipedia’s definition, the same origin policy is a good thing; it protects
 the end user from security attacks. But it does cause some challenges for web developers.</p>
@@ -225,7 +313,7 @@ not take advantage of caching.</li>
 
 <p>An exploration into the different types of web fonts is beyond the scope of this hack,
 so I will assume that you have already selected the web font BebasNeue.otf.
-You can download free and open fonts from sites such as http://www.dafont.com.</p>
+You can download free and open fonts from sites such as <a href="http://www.dafont.com.">http://www.dafont.com.</a></p>
 
 <h3>Uploading Your Font to Your Amazon S3 Bucket</h3>
 
@@ -339,7 +427,7 @@ CORS configuration available on Amazon S3 via a very simple XML configuration.</
 
 <h3>Configuring CORS at Amazon S3</h3>
 
-<p>You should already be at your Amazon Management Console at http://
+<p>You should already be at your Amazon Management Console at <a href="http://">http://</a>
 console.aws.amazon.com. Click on Properties→Permissions→Edit CORS configuration,
 and you should receive a modal prompt.</p>
 
@@ -425,16 +513,16 @@ own CORS hacks.</p>
   </header>
 
 
-  <div class="entry-content"><p>I&#8217;m getting ready for an upcoming talk titled: Rapid Prototyping HTML5 Applications with NodeJS, which I will presenting at <a href="http://www.html5report.com/conference/austin2012/Agenda/Agenda-at-a-glance.aspx">Devcon 5 - Austin</a>.</p>
+  <div class="entry-content"><p>I&rsquo;m getting ready for an upcoming talk titled: Rapid Prototyping HTML5 Applications with NodeJS, which I will presenting at <a href="http://www.html5report.com/conference/austin2012/Agenda/Agenda-at-a-glance.aspx">Devcon 5 &ndash; Austin</a>.</p>
 
 <p>Here is a brief summary:</p>
 
 <p>With HTML5, the modern web browser continues to mature as a capable application platform.
 The new specifications are broad, impacting nearly every technology associated with modern web development including graphics, connectivity, client-side storage, offline access, graphics, multimedia, and performance.
-JavaScript continues to be front and center as the core language. NodeJS extends JavaScript&#8217;s event loop paradigm to the server, and provides JavaScript engineers with the ability to produce functionality deeper in the software stack. This phenomenon has had an impact on types of software development ranging from full-scale, enterprise, mobile applications to robot hobbyists platforms.
+JavaScript continues to be front and center as the core language. NodeJS extends JavaScript&rsquo;s event loop paradigm to the server, and provides JavaScript engineers with the ability to produce functionality deeper in the software stack. This phenomenon has had an impact on types of software development ranging from full-scale, enterprise, mobile applications to robot hobbyists platforms.
 See innovative example solutions and learn why NodeJS is an ideal development platform for the production acceleration of next-generation HTML5 applications.</p>
 
-<p>This is the beginning of a transition for me. With the release of HTML5 Hacks, I&#8217;m beginning to focus more on my ubiquitous JavaScript content. I&#8217;m excited, I have a lot to share.</p>
+<p>This is the beginning of a transition for me. With the release of HTML5 Hacks, I&rsquo;m beginning to focus more on my ubiquitous JavaScript content. I&rsquo;m excited, I have a lot to share.</p>
 
 <p>Look for an update with a web based version of the slides.</p>
 
@@ -488,9 +576,9 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
 
 <p>Overall, it was a great experience. What I enjoyed the most was getting into a workflow groove, much like when you are building an API or contributing to a project. With each hack, it was necessary to ideate, plan, create the code, test it, and then put it into a understandable format. By the end, I was feeling pretty efficient at kicking out interesting hacks pretty quickly.</p>
 
-<p>I felt as though I improved over time, looking back is always interesting. I like to keep fine tuning and revising, but at some point you have to ship the product. I&#8217;m really proud of the work, it has been hard, but I learned a ton in the process.</p>
+<p>I felt as though I improved over time, looking back is always interesting. I like to keep fine tuning and revising, but at some point you have to ship the product. I&rsquo;m really proud of the work, it has been hard, but I learned a ton in the process.</p>
 
-<p>Most of my hacks I tried to make relevant to real world software development challenges, and mix in a number of HTML5 specifications. Hopefully, that turns out to benefit the reader &#8230; I&#8217;m all ears on the feedback. So don&#8217;t hesitate to drop us a line.</p>
+<p>Most of my hacks I tried to make relevant to real world software development challenges, and mix in a number of HTML5 specifications. Hopefully, that turns out to benefit the reader &hellip; I&rsquo;m all ears on the feedback. So don&rsquo;t hesitate to drop us a line.</p>
 </div>
   
   
@@ -530,9 +618,9 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
 
 <p>For the last 6 years, I have hosted my personal blog using Drupal at bluehost.com, and I finally have made the decision to migrate.</p>
 
-<p>I have been using Ruby on Rails, Sinatra, and Node.js for prototypes, demos, web-based presentations, and production apps, and deploying to Heroku for the past couple of years. The productivity gains and integration with github and social media, have brought me to the point that I&#8217;d prefer for my workflow for blogging, updating to my microformats resume and portfolios to be similar to how I create and manage my other content.</p>
+<p>I have been using Ruby on Rails, Sinatra, and Node.js for prototypes, demos, web-based presentations, and production apps, and deploying to Heroku for the past couple of years. The productivity gains and integration with github and social media, have brought me to the point that I&rsquo;d prefer for my workflow for blogging, updating to my microformats resume and portfolios to be similar to how I create and manage my other content.</p>
 
-<p>So here, it is. Once I have written a proper migration script, and taken care of all the custom urls, I&#8217;ll post my solution here.</p>
+<p>So here, it is. Once I have written a proper migration script, and taken care of all the custom urls, I&rsquo;ll post my solution here.</p>
 
 <p>UPDATE:</p>
 
@@ -1047,9 +1135,9 @@ Here is an example of a div element that needs to have corners take on different
 
   <div class="entry-content"><h2>Single Threadin&#8217;</h2>
 
-<p>As we set out to build a highly responsive UI for our demo web application, we must fully understand how browsers manage processes. Perhaps the biggest challenge we will face has to do with browsers using a single thread for both JavaScript execution and user interface updates. While the browser&#8217;s JavaScript interpreter is executing code, the UI is unable to respond to the user&#8217;s input. If a script is taking a long time to complete, after a specified amount of time the browser will provide the user an option to terminate the script. To accommodate for the &#8216;freeze&#8217; associated with scripts that exceed the browser execution time limit, web developers have traditionally created smaller units of work and used JavaScript timers to return execution to the next event in the queue. As you will see, web workers solve the locking of the UI thread by opening an additional thread, or even multiple threads, for execution of these long running, processor intensive tasks.</p>
+<p>As we set out to build a highly responsive UI for our demo web application, we must fully understand how browsers manage processes. Perhaps the biggest challenge we will face has to do with browsers using a single thread for both JavaScript execution and user interface updates. While the browser&rsquo;s JavaScript interpreter is executing code, the UI is unable to respond to the user&rsquo;s input. If a script is taking a long time to complete, after a specified amount of time the browser will provide the user an option to terminate the script. To accommodate for the &lsquo;freeze&rsquo; associated with scripts that exceed the browser execution time limit, web developers have traditionally created smaller units of work and used JavaScript timers to return execution to the next event in the queue. As you will see, web workers solve the locking of the UI thread by opening an additional thread, or even multiple threads, for execution of these long running, processor intensive tasks.</p>
 
-<p>When designing your application, especially if you come from more of a &#8216;server-side&#8217; or Java background, it is important to understand that non-blocking execution is not the same as concurrent threading. While not extremely complex, JavaScript&#8217;s event driven style does take some getting used to for developers coming from other languages such as Java and C. Later, we will touch on a few examples where we pass a callback continuation function to take full advantage of JavaScript&#8217;s non blocking design.</p>
+<p>When designing your application, especially if you come from more of a &lsquo;server-side&rsquo; or Java background, it is important to understand that non-blocking execution is not the same as concurrent threading. While not extremely complex, JavaScript&rsquo;s event driven style does take some getting used to for developers coming from other languages such as Java and C. Later, we will touch on a few examples where we pass a callback continuation function to take full advantage of JavaScript&rsquo;s non blocking design.</p>
 
 <h2>Thread Safety</h2>
 
@@ -1093,7 +1181,7 @@ Here is an example of a div element that needs to have corners take on different
 
 <h2>Long Running Scripts</h2>
 
-<p>Our first web worker hack will be a long running script with heavy computation. It will execute 2 loops that output a two-dimensional array. First, we will use this computation to lock up the browser&#8217;s UI thread, and later we will move the task to a worker.</p>
+<p>Our first web worker hack will be a long running script with heavy computation. It will execute 2 loops that output a two-dimensional array. First, we will use this computation to lock up the browser&rsquo;s UI thread, and later we will move the task to a worker.</p>
 
 <figure class='code'><figcaption><span>init.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1133,7 +1221,7 @@ Here is an example of a div element that needs to have corners take on different
 
 <h2>Spawning a Worker</h2>
 
-<p>Now let&#8217;s move our heavy computational task to a dedicated web worker, so that the user doesn&#8217;t have to wait for the script to complete execution in order to interact with user interface. First, lets spawn a new worker:</p>
+<p>Now let&rsquo;s move our heavy computational task to a dedicated web worker, so that the user doesn&rsquo;t have to wait for the script to complete execution in order to interact with user interface. First, lets spawn a new worker:</p>
 
 <figure class='code'><figcaption><span>spawn.js </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -1223,7 +1311,7 @@ Here is an example of a div element that needs to have corners take on different
   </header>
 
 
-  <div class="entry-content"><p>Here is a brief overview of <a href="http://beginrescueend.com">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn&#8217;t live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
+  <div class="entry-content"><p>Here is a brief overview of <a href="http://beginrescueend.com">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn&rsquo;t live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
 
 <p>This allows me to essentially sandbox each of these applications&#8217; dependencies.</p>
 
@@ -1350,142 +1438,6 @@ Here is an example of a div element that needs to have corners take on different
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/26/git-cheatsheet/">Git Cheatsheet</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-26T23:10:56-05:00" pubdate data-updated="true">Sep 26<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I&#8217;d share.</p>
-
-<h3>Git First-Time System Setup</h3>
-
-<p>After installing Git, you should perform a set of one-time setup steps. These are system setups, meaning you only have to do them once per computer:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install git-core
-</span><span class='line'>$ git config --global user.email youremail[at symbol]example.com
-</span><span class='line'>$ git config --global user.name "Your Name"
-</span><span class='line'>$ git config --global alias.co checkout</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As a final setup step, you can optionally set the editor Git will use for commit messages.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config --global core.editor "mate -w"
-</span><span class='line'>
-</span><span class='line'># Replace “mate -w” with “gvim -f” for gVim or “mvim -f” for MacVim.</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Quick Reference – Most Often Used Commands</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd /path/to/repository
-</span><span class='line'>$ git init
-</span><span class='line'>$ git add .
-</span><span class='line'>$ git add -u
-</span><span class='line'>$ git log
-</span><span class='line'>$ git status
-</span><span class='line'>$ git commit -m "initial commit"
-</span><span class='line'>
-</span><span class='line'># made a mistake on the git commit
-</span><span class='line'>$ git commit -amend -m "initial commit"
-</span><span class='line'>
-</span><span class='line'># Add the remote repository
-</span><span class='line'>
-</span><span class='line'># ex 1
-</span><span class='line'>$ git remote add unfuddle git@subdomain.unfuddle.com:subdomain/abbreviation.git
-</span><span class='line'>
-</span><span class='line'># ex 2
-</span><span class='line'>$ git remote add origin git@subdomain.unfuddle.com:subdomain/abbreviation.git
-</span><span class='line'>
-</span><span class='line'># Configure the repository
-</span><span class='line'>$ git config remote.unfuddle.push refs/heads/master:refs/heads/master
-</span><span class='line'>
-</span><span class='line'># Push master branch to remote repository named unfuddle
-</span><span class='line'>$ git push unfuddle master
-</span><span class='line'>
-</span><span class='line'># Other commands:
-</span><span class='line'>
-</span><span class='line'># Clone an existing remote repo 
-</span><span class='line'>$ git clone git@subdomain.unfuddle.com:subdomain/abbreviation.git
-</span><span class='line'>
-</span><span class='line'># List all branches within your repo
-</span><span class='line'>$ git branch -a
-</span><span class='line'>
-</span><span class='line'>#Create and switch to a new branch "whatever"
-</span><span class='line'>$ git checkout -b whatever</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Those are the basics, should be enough to make you dangerous.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1542,6 +1494,10 @@ Here is an example of a div element that needs to have corners take on different
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/">JavaScript Makers: How JS is Helping Drive the Maker Movement</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/26/web-worker-patterns/">Web Worker Patterns</a>
       </li>
     
@@ -1555,10 +1511,6 @@ Here is an example of a div element that needs to have corners take on different
     
       <li class="post">
         <a href="/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/">Ember.js Views and Live Templates with Handlebars.js Part 1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/">Modern Ember.js Application Workflow with Yeoman and Mocha</a>
       </li>
     
   </ul>

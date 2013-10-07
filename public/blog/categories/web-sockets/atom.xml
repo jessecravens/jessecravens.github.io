@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Sockets | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/web-sockets/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-08-26T14:08:09-05:00</updated>
+  <updated>2013-10-06T19:32:55-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -18,7 +18,7 @@
     <link href="http://jessecravens.com/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers/"/>
     <updated>2013-06-05T10:12:00-05:00</updated>
     <id>http://jessecravens.com/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers</id>
-    <content type="html"><![CDATA[<p>Our presentation at Fluent Conference 2013 was a success, as <a href="https://twitter.com/boyofgreen">Jeff</a> and I delivered our final version of the 'Battle of the Hackers' series.</p>
+    <content type="html"><![CDATA[<p>Our presentation at Fluent Conference 2013 was a success, as <a href="https://twitter.com/boyofgreen">Jeff</a> and I delivered our final version of the &lsquo;Battle of the Hackers&rsquo; series.</p>
 
 <p><img class="imgR300" alt="Jesse Cravens - Fluent Conf 2013" src="http://jessecravens.com/images/fluent_video.png"></p>
 
@@ -34,11 +34,11 @@
 
 <p><img class="imgR300" alt="Jesse Cravens - Fluent Conf 2013" src="http://jessecravens.com/images/fluent_books.jpg"></p>
 
-<p>As always we've made all the code available and more at <a href="http://html5hacks.com">html5hacks.com</a>, and on github: <a href="http://github.com/html5hacks">github.com/html5hacks</a>.</p>
+<p>As always we&rsquo;ve made all the code available and more at <a href="http://html5hacks.com">html5hacks.com</a>, and on github: <a href="http://github.com/html5hacks">github.com/html5hacks</a>.</p>
 
 <p>I also added a few more new hacks, involoving Web Components (Shadow DOM, HTML Imports, Custom Elements) and Polymer.js. You can find that source code available here: <a href="https://github.com/html5hacks/fluent2013-html5hacks">github.com/html5hacks/fluent2013-html5hacks</a></p>
 
-<p>It's been alot of fun co-presenting with Jeff, but my next two sessions, I will be going at HTML5 Hacking solo. You can catch my next presentations in NYC on July 24th–25th at <a href="http://lanyrd.com/2013/devcon5/">Devcon5 2013 NYC</a> or November 4th–8th at <a href="http://lanyrd.com/2013/redev/">Øredev 2013</a>.</p>
+<p>It&rsquo;s been alot of fun co-presenting with Jeff, but my next two sessions, I will be going at HTML5 Hacking solo. You can catch my next presentations in NYC on July 24th–25th at <a href="http://lanyrd.com/2013/devcon5/">Devcon5 2013 NYC</a> or November 4th–8th at <a href="http://lanyrd.com/2013/redev/">Øredev 2013</a>.</p>
 ]]></content>
   </entry>
   
@@ -47,7 +47,7 @@
     <link href="http://jessecravens.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/"/>
     <updated>2013-03-12T23:55:00-05:00</updated>
     <id>http://jessecravens.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
-    <content type="html"><![CDATA[<p>We had a great turnout for the 'Battle of the HTML5 Hackers' presentation at SXSWi on Tuesday.</p>
+    <content type="html"><![CDATA[<p>We had a great turnout for the &lsquo;Battle of the HTML5 Hackers&rsquo; presentation at SXSWi on Tuesday.</p>
 
 <p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers - Jesse Cravens and Jeff Burtoft" src="http://jessecravens.com/images/sxsw13/sxsw13-crowd.jpg"></p>
 
@@ -63,7 +63,7 @@
 
 <p>Nerdclustr source code is available <a href="https://github.com/html5hacks/nerd-clustr">here</a>.</p>
 
-<p>During the book signing, the bookstore informed us there were only 3 copies left. I'm not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
+<p>During the book signing, the bookstore informed us there were only 3 copies left. I&rsquo;m not keen to the selection process of books, but I was little surprised at the limited number of technical books. This is certainly a reflection of the SXSWi demographic, and we also tailored our content and presentation style to this audience.</p>
 
 <p>The slide deck is available here:</p>
 
@@ -75,7 +75,7 @@
 <hr>
 
 
-<p>Stay tuned for our next presentation happening online, through O'Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">'Rethinking the Possibilities of Browser-based Apps with HTML5'</a> on Wednesday, March 27, 2013 10AM PT.</p>
+<p>Stay tuned for our next presentation happening online, through O'Reilly Webcasts. Join us for <a href="http://www.oreillynet.com/pub/e/2566">&lsquo;Rethinking the Possibilities of Browser-based Apps with HTML5&rsquo;</a> on Wednesday, March 27, 2013 10AM PT.</p>
 ]]></content>
   </entry>
   

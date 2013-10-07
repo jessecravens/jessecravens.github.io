@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Business Computer Programming | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/business-computer-programming/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-08-26T14:08:09-05:00</updated>
+  <updated>2013-10-06T19:32:55-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -18,7 +18,7 @@
     <link href="http://jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails/"/>
     <updated>2011-09-26T23:35:58-05:00</updated>
     <id>http://jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails</id>
-    <content type="html"><![CDATA[<p>Here is a brief overview of <a href="http://beginrescueend.com">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn't live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
+    <content type="html"><![CDATA[<p>Here is a brief overview of <a href="http://beginrescueend.com">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn&rsquo;t live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
 
 <p>This allows me to essentially sandbox each of these applications' dependencies.</p>
 
@@ -56,7 +56,7 @@
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm use 1.9.2-head --default&lt;/p>
+</span><span class='line'>&lt;p>$ rvm use 1.9.2-head &mdash;default&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
@@ -118,7 +118,7 @@
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm use 1.9.2-head@rails309 --default&lt;/p>
+</span><span class='line'>&lt;p>$ rvm use 1.9.2-head@rails309 &mdash;default&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
@@ -141,15 +141,15 @@
 <span class='line-number'>13</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>$ gem install rails --no-rdoc --no-ri&lt;/p>
+</span><span class='line'>&lt;p>$ gem install rails &mdash;no-rdoc &mdash;no-ri&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;h1>Or&lt;/h1>
 </span><span class='line'>
-</span><span class='line'>&lt;p>$ gem install rails [-v 3.0.7] [--no-rdoc --no-ri]&lt;/p>
+</span><span class='line'>&lt;p>$ gem install rails [-v 3.0.7] [&mdash;no-rdoc &mdash;no-ri]&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;h1>Or&lt;/h1>
 </span><span class='line'>
-</span><span class='line'>&lt;p>$ gem install rails -v ">=3.1.0rc"&lt;/p>
+</span><span class='line'>&lt;p>$ gem install rails -v &ldquo;>=3.1.0rc&rdquo;&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
@@ -165,8 +165,8 @@
 <span class='line-number'>6</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm --create 1.8.7-p302@rails2app
-</span><span class='line'>$ rvm --create use 1.9.2@rails3app&lt;/p>
+</span><span class='line'>&lt;p>$ rvm &mdash;create 1.8.7-p302@rails2app
+</span><span class='line'>$ rvm &mdash;create use 1.9.2@rails3app&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
@@ -185,7 +185,7 @@
 <span class='line-number'>11</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm --create use 1.9.2@mongoid-app&lt;/p>
+</span><span class='line'>&lt;p>$ rvm &mdash;create use 1.9.2@mongoid-app&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;h1>Also, which gemset am I using?&lt;/h1>
 </span><span class='line'>
@@ -202,7 +202,7 @@
     <link href="http://jessecravens.com/blog/2011/09/26/git-cheatsheet/"/>
     <updated>2011-09-26T23:10:56-05:00</updated>
     <id>http://jessecravens.com/blog/2011/09/26/git-cheatsheet</id>
-    <content type="html"><![CDATA[<p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I'd share.</p>
+    <content type="html"><![CDATA[<p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I&rsquo;d share.</p>
 
 <h3>Git First-Time System Setup</h3>
 
@@ -213,9 +213,9 @@
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install git-core
-</span><span class='line'>$ git config --global user.email youremail[at symbol]example.com
-</span><span class='line'>$ git config --global user.name "Your Name"
-</span><span class='line'>$ git config --global alias.co checkout</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'>$ git config &mdash;global user.email youremail[at symbol]example.com
+</span><span class='line'>$ git config &mdash;global user.name &ldquo;Your Name&rdquo;
+</span><span class='line'>$ git config &mdash;global alias.co checkout</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>As a final setup step, you can optionally set the editor Git will use for commit messages.</p>
 
@@ -224,7 +224,7 @@
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config --global core.editor "mate -w"&lt;/p>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config &mdash;global core.editor &ldquo;mate -w&rdquo;&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;h1>Replace “mate -w” with “gvim -f” for gVim or “mvim -f” for MacVim.&lt;/h1>
 </span><span class='line'>
@@ -283,11 +283,11 @@
 </span><span class='line'>$ git add -u
 </span><span class='line'>$ git log
 </span><span class='line'>$ git status
-</span><span class='line'>$ git commit -m "initial commit"&lt;/p>
+</span><span class='line'>$ git commit -m &ldquo;initial commit&rdquo;&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;h1>made a mistake on the git commit&lt;/h1>
 </span><span class='line'>
-</span><span class='line'>&lt;p>$ git commit -amend -m "initial commit"&lt;/p>
+</span><span class='line'>&lt;p>$ git commit -amend -m &ldquo;initial commit&rdquo;&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;h1>Add the remote repository&lt;/h1>
 </span><span class='line'>
@@ -317,7 +317,7 @@
 </span><span class='line'>
 </span><span class='line'>&lt;p>$ git branch -a&lt;/p>
 </span><span class='line'>
-</span><span class='line'>&lt;h1>Create and switch to a new branch "whatever"&lt;/h1>
+</span><span class='line'>&lt;h1>Create and switch to a new branch &ldquo;whatever&rdquo;&lt;/h1>
 </span><span class='line'>
 </span><span class='line'>&lt;p>$ git checkout -b whatever&lt;/p>
 </span><span class='line'>
@@ -347,20 +347,19 @@
 
 <p></p>
 
-<ul>
-<li>1. <a href="http://freecomputerbooks.com/">freecomputerbooks.com</a></li>  
+<p><ul>
+<li>1. <a href="http://freecomputerbooks.com/">freecomputerbooks.com</a></li></p>
 
-<li>2. <a href="http://www.freetechbooks.com/">freetechbooks.com</a> </li>  
+<p><li>2. <a href="http://www.freetechbooks.com/">freetechbooks.com</a> </li></p>
 
-<li>3. <a href="http://www.techtoolblog.com/archives/195-free-online-programming-books">techtoolblog.com</a></li>  
+<p><li>3. <a href="http://www.techtoolblog.com/archives/195-free-online-programming-books">techtoolblog.com</a></li></p>
 
-<li>4. <a href="http://www.computer-books.us/">computer-books.us</a> </li>  
+<p><li>4. <a href="http://www.computer-books.us/">computer-books.us</a> </li></p>
 
-<li>5. <a href="http://www.onlinecomputerbooks.com/">onlinecomputerbooks.com</a> </li>
-<ul>  
+<p><li>5. <a href="http://www.onlinecomputerbooks.com/">onlinecomputerbooks.com</a> </li>
+<ul></p>
 
-<p>...as this list expands keep track here: <a href="http://del.icio.us/cravens/freebook">del.icio.us/cravens/freebook</a>
-
+<p><p>&hellip;as this list expands keep track here: <a href="http://del.icio.us/cravens/freebook">del.icio.us/cravens/freebook</a></p>
 ]]></content>
   </entry>
   
@@ -369,7 +368,7 @@
     <link href="http://jessecravens.com/blog/2006/11/17/in-search-of-a-balance-integrating-the-sudbury-and-other-democratic-models-with-moodle/"/>
     <updated>2006-11-17T06:57:33-06:00</updated>
     <id>http://jessecravens.com/blog/2006/11/17/in-search-of-a-balance-integrating-the-sudbury-and-other-democratic-models-with-moodle</id>
-    <content type="html"><![CDATA[<p>I'm definitely into the hybrid thing lately. Hybrid instruction not only in the sense of implementation: online and face to face learning through moodle (http://moodle.org) and short class lectures/discussions, but also philosophically in a sense of allowing students to have some type of control over the curriculum, and direction of their own study. Every moodle assignment I offer, is open to interpretation and creativity. This is why I believe that rubrics can potentially take the fun out of learning. They limit learners to the parameters made by the teacher. Especially when we are teaching technoloies that are more native to the learner than the educator. <br /><br />This article takes a neutral approach to - what I will call the Sudbury model, but really applies to many other free, democratic school models. I agree with both sides of the argument, and I have settled on balance and moderation of both freedom and standardization. This combined with a balance between face to face and elearning and I think we might make some real progress in my classroom. <br /><a href="http://www.edutopia.org/magazine/ed1article.php?id=Art_1615&amp;issue=oct_06">Free Radicals</a> <br /> <blockquote>In the country's most alternative classrooms, there's no such thing as a report card.</p>
+    <content type="html"><![CDATA[<p>I&rsquo;m definitely into the hybrid thing lately. Hybrid instruction not only in the sense of implementation: online and face to face learning through moodle (<a href="http://moodle.org">http://moodle.org</a>) and short class lectures/discussions, but also philosophically in a sense of allowing students to have some type of control over the curriculum, and direction of their own study. Every moodle assignment I offer, is open to interpretation and creativity. This is why I believe that rubrics can potentially take the fun out of learning. They limit learners to the parameters made by the teacher. Especially when we are teaching technoloies that are more native to the learner than the educator. <br /><br />This article takes a neutral approach to &ndash; what I will call the Sudbury model, but really applies to many other free, democratic school models. I agree with both sides of the argument, and I have settled on balance and moderation of both freedom and standardization. This combined with a balance between face to face and elearning and I think we might make some real progress in my classroom. <br /><a href="http://www.edutopia.org/magazine/ed1article.php?id=Art_1615&amp;issue=oct_06">Free Radicals</a> <br /> <blockquote>In the country&rsquo;s most alternative classrooms, there&rsquo;s no such thing as a report card.</p>
 
 <br /><br />Sudbury schools are only one variety of so-called free, or democratic, schools, which eschew most conventions of traditional education in favor of a much more radical program. At most free schools, literally every decision, from those about staff hiring and firing to determinations concerning rules, facilities, and budget issues, is made by the entire school community in a one-person, one-vote process. There are no tests, no report cards, no requirements, and no classes -- and no curriculum, other than what students set for themselves.
 

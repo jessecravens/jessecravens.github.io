@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Application Launch | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/web-application-launch/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2013-08-26T14:08:09-05:00</updated>
+  <updated>2013-10-06T19:32:55-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -108,7 +108,7 @@
     <link href="http://jessecravens.com/blog/2006/07/30/sessionswest-coms-morning-surf/"/>
     <updated>2006-07-30T08:01:21-05:00</updated>
     <id>http://jessecravens.com/blog/2006/07/30/sessionswest-coms-morning-surf</id>
-    <content type="html"><![CDATA[<p>Another new design for <a href="http://sessionswest.com">SessionsWest.com</a>. I was digging for inspiration for this site, when Jeff called me from San Deigo last week right before he was about to go surfing. </a>The color scheme is known as 'Morning surf,' and I built a custom flash player inspired by the album cover from the Fever Sessions. This new buildout has been my most complex drupal site to date. I embedded a photo gallery, and the mp3 player I mentioned earlier. I used drupal's front page module to give the home page a real clean, simple entry to the site. All in all it doesn't get much more simple, but I think thats what I like about it , and it reflects Jeff's style to the tee.</p>
+    <content type="html"><![CDATA[<p>Another new design for <a href="http://sessionswest.com">SessionsWest.com</a>. I was digging for inspiration for this site, when Jeff called me from San Deigo last week right before he was about to go surfing. </a>The color scheme is known as &lsquo;Morning surf,&rsquo; and I built a custom flash player inspired by the album cover from the Fever Sessions. This new buildout has been my most complex drupal site to date. I embedded a photo gallery, and the mp3 player I mentioned earlier. I used drupal&rsquo;s front page module to give the home page a real clean, simple entry to the site. All in all it doesn&rsquo;t get much more simple, but I think thats what I like about it , and it reflects Jeff&rsquo;s style to the tee.</p>
 ]]></content>
   </entry>
   
@@ -119,11 +119,11 @@
     <id>http://jessecravens.com/blog/2006/02/23/sessionswest-com</id>
     <content type="html"><![CDATA[<p><a href="http://sessionswest.com/2.0/"><img src="http://jessecravens.com/images/sessions/front.jpg" alt="sessionswest.com" style="float:left;margin:10px;border:0px solid black"/></a></p>
 
-<p>I officially launched the rebuild of <a href="http://sessionswest.com/2.0/">sessionswest.com</a> today. The official website of a great local guitarist/singer-songwriter Jeff Anderson, a.k.a. el Jefe, and his recording studio in Boerne, TX.  El Jefe's music is an eclectic fusion of southern blues, country, and gospel. Some refer to Jeff's tunes as simply 'good ol' down home feel good music.'</p>
+<p>I officially launched the rebuild of <a href="http://sessionswest.com/2.0/">sessionswest.com</a> today. The official website of a great local guitarist/singer-songwriter Jeff Anderson, a.k.a. el Jefe, and his recording studio in Boerne, TX.  El Jefe&rsquo;s music is an eclectic fusion of southern blues, country, and gospel. Some refer to Jeff&rsquo;s tunes as simply &lsquo;good ol&rsquo; down home feel good music.'</p>
 
 <p>His latest release, Shine, is an inspirational collection of tunes that will brighten even the gloomiest of days. Shine is featured in the audio player @ sessionswest.com. Head on over and give er' a listen.</p>
 
-<p>Features of the site include an audio player, custom video from Jeff's studio, and a photo gallery. Stay tuned for updates and add-ons.</p>
+<p>Features of the site include an audio player, custom video from Jeff&rsquo;s studio, and a photo gallery. Stay tuned for updates and add-ons.</p>
 ]]></content>
   </entry>
   
