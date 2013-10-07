@@ -496,9 +496,15 @@
     </url>
     <url>
         <loc>
+            http://jessecravens.com/blog/2013/09/06/debugging-modern-web-applications-part-1/
+        </loc>
+        <lastmod>2013-10-06T19:52:12-05:00</lastmod>
+    </url>
+    <url>
+        <loc>
             http://jessecravens.com/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/
         </loc>
-        <lastmod>2013-10-06T19:31:36-05:00</lastmod>
+        <lastmod>2013-10-07T11:25:54-05:00</lastmod>
     </url>
     <url>
         <loc>
@@ -892,11 +898,11 @@
     </url>
     <url>
         <loc>http://jessecravens.com/blog/archives/</loc>
-        <lastmod>2013-10-06T19:31:36-05:00</lastmod>
+        <lastmod>2013-10-07T11:25:54-05:00</lastmod>
     </url>
     <url>
         <loc>http://jessecravens.com/</loc>
-        <lastmod>2013-10-06T19:31:36-05:00</lastmod>
+        <lastmod>2013-10-07T11:25:54-05:00</lastmod>
     </url>
     <url>
         <loc>http://jessecravens.com/music/</loc>

@@ -9,7 +9,7 @@
   <meta name="author" content="Jesse Cravens">
 
   
-  <meta name="description" content="Im giving a talk at Devcon 5 &ndash; San Francisco this afternoon: Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server &hellip;">
+  <meta name="description" content="IndexedDB is a persistent object data store in the browser. Although it is not a full SQL implementation and it is more complex than the unstructured &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,6 +91,460 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/">Build a Milestone Calendar With IndexedDB and FullCalendar.js</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-17T08:47:00-06:00" pubdate data-updated="true">Jan 17<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h4>IndexedDB is a persistent object data store in the browser. Although it is not a full SQL implementation and it is more complex than the unstructured key–value pairs in localStorage, you can use it to define an API that provides the ability to read and write key–value objects as structured JavaScript objects, and an indexing system that facilitates filtering and lookup.</h4>
+
+<p>For this hack we will use IndexedDB to store milestone objects for a calendar application. The UI will provide a simple means to create a new milestone and provide a title, start date, and end date. The calendar will then update to show the contents of the local data store. Figure 6-8 shows the result.</p>
+
+<p>Figure 6-8. FullCalendar.js and IndexedDB</p>
+
+<p><img class="figure" alt="Figure 6-8" src="/images/chapter6-images/6-8.png"></p>
+
+<p>We need to start by including the markup for the two pieces of the UI: the calendar and the form.
+We’ll begin with the form. You may notice that the input fields for the dates include data-date-format attributes. We will use these later for the JavaScript date pickers.</p>
+
+<figure class='code'><figcaption><span>milestone form </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;form>
+</span><span class='line'>     &lt;fieldset>
+</span><span class='line'>
+</span><span class='line'>       &lt;div class="control-group">
+</span><span class='line'>         &lt;label class="control-label">Add a Milestone&lt;/label>
+</span><span class='line'>         &lt;div class="controls">
+</span><span class='line'>           &lt;h2>New Milestone&lt;/h2>
+</span><span class='line'>           &lt;input type="text" name="title" value="">
+</span><span class='line'>           &lt;input type="text" class="span2" name="start"
+</span><span class='line'>             value="07/16/12" data-date-format="mm/dd/yy" id="dp1" >
+</span><span class='line'>           &lt;input type="text" class="span2" name="end"
+</span><span class='line'>             value="07/17/12"  data-date-format="mm/dd/yy" id="dp2" >
+</span><span class='line'>         &lt;/div>
+</span><span class='line'>       &lt;/div>
+</span><span class='line'>
+</span><span class='line'>       &lt;div class="form-actions">
+</span><span class='line'>          &lt;button type="submit" class="btn btn-primary">Save&lt;/button>
+</span><span class='line'>          &lt;button class="btn">Cancel&lt;/button>
+</span><span class='line'>       &lt;/div>
+</span><span class='line'>
+</span><span class='line'>      &lt;/fieldset>
+</span><span class='line'> &lt;/form></span></code></pre></td></tr></table></div></figure>
+
+
+<p>The calendar is provided by <a href="http://arshaw.com/fullcalendar/">FullCalendar.js</a>, a fantastic jQuery plug-in for generating robust calendars from event sources. The library will generate a calendar from a configuration object and a simple div.</p>
+
+<figure class='code'><figcaption><span>simple div </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;div id='calendar'>&lt;/div></span></code></pre></td></tr></table></div></figure>
+
+
+<p>And we can’t forget to include a few dependencies:</p>
+
+<figure class='code'><figcaption><span>CSS and JavaScript dependencies </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;link href="../assets/css/datepicker.css" rel="stylesheet">
+</span><span class='line'>&lt;link href="../assets/css/fullcalendar.css" rel="stylesheet">
+</span><span class='line'>
+</span><span class='line'>&lt;script src="http://code.jquery.com/jquery-1.7.1.min.js">&lt;/script>
+</span><span class='line'>&lt;script src="../assets/js/bootstrap-datepicker.js">&lt;/script>
+</span><span class='line'>&lt;script src="../assets/js/fullcalendar.min.js">&lt;/script></span></code></pre></td></tr></table></div></figure>
+
+
+<p>To improve the user experience, we will also include date pickers for choosing the dates within the form fields for start and end dates (see Figure 6-9).</p>
+
+<p>Figure 6-9. Date pickers</p>
+
+<p><img class="figure" alt="Figure 6-9" src="/images/chapter6-images/6-9.png"></p>
+
+<p>To instantiate the date pickers we will include the following toward the beginning of our script:</p>
+
+<figure class='code'><figcaption><span>instantiate the date pickers </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$(function(){
+</span><span class='line'>    $('#dp1').datepicker();
+</span><span class='line'>    $('#dp2').datepicker();
+</span><span class='line'>  });</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>The Milestone IndexedDB</h3>
+
+<p>Now we will set up a global namespace to hold our code, and set up a public milestones array (within the namespace) to hold our milestones temporarily while we pass them between our database and the FullCalendar API. This should make more sense as you continue to read. While we are at it we will need to normalize our indexedDB variable across all of the vendor-specific properties.</p>
+
+<figure class='code'><figcaption><span>namespace and normalize </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>var html5hacks = {};
+</span><span class='line'>
+</span><span class='line'>html5hacks.msArray = [];
+</span><span class='line'>
+</span><span class='line'>var indexedDB = window.indexedDB || window.webkitIndexedDB ||
+</span><span class='line'>                window.mozIndexedDB;
+</span><span class='line'>
+</span><span class='line'>if ('webkitIndexedDB' in window) {
+</span><span class='line'>  window.IDBTransaction = window.webkitIDBTransaction;
+</span><span class='line'>  window.IDBKeyRange = window.webkitIDBKeyRange;
+</span><span class='line'>}
+</span><span class='line'>Now we can begin to set up our database:
+</span><span class='line'>html5hacks.indexedDB = {};
+</span><span class='line'>html5hacks.indexedDB.db = null;
+</span><span class='line'>
+</span><span class='line'>function init() {
+</span><span class='line'>  html5hacks.indexedDB.open();
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>init();</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will obviously fail for now, but as you can see the initialization begins by calling the open() method on an html5hacks.indexedDB. So let’s take a closer look at open():</p>
+
+<figure class='code'><figcaption><span>open() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.open = function() {
+</span><span class='line'>
+</span><span class='line'>  var request = indexedDB.open("milestones");
+</span><span class='line'>
+</span><span class='line'>  request.onsuccess = function(e) {
+</span><span class='line'>    var v = "1";
+</span><span class='line'>    html5hacks.indexedDB.db = e.target.result;
+</span><span class='line'>
+</span><span class='line'>    var db = html5hacks.indexedDB.db;
+</span><span class='line'>
+</span><span class='line'>    if (v!= db.version) {
+</span><span class='line'>      var setVrequest = db.setVersion(v);
+</span><span class='line'>      setVrequest.onerror = html5hacks.indexedDB.onerror;
+</span><span class='line'>
+</span><span class='line'>      setVrequest.onsuccess = function(e) {
+</span><span class='line'>        if(db.objectStoreNames.contains("milestone")) {
+</span><span class='line'>          db.deleteObjectStore("milestone");
+</span><span class='line'>        }
+</span><span class='line'>
+</span><span class='line'>        var store = db.createObjectStore("milestone",
+</span><span class='line'>          {keyPath: "timeStamp"});
+</span><span class='line'>
+</span><span class='line'>        html5hacks.indexedDB.init();
+</span><span class='line'>      };
+</span><span class='line'>    }
+</span><span class='line'>    else {
+</span><span class='line'>      html5hacks.indexedDB.init();
+</span><span class='line'>    }
+</span><span class='line'>  };
+</span><span class='line'>  request.onerror = html5hacks.indexedDB.onerror;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>First, we need to open the database and pass a name. If the database successfully opens and a connection is made, the onsuccess() callback will be fired.</p>
+
+<p>Within the onsuccess, we then check for a version and call setVersion() if one does not exist. Then we will call createObjectStore() and pass a unique timestamp within the keypath property.</p>
+
+<p>Finally, we call init() to build the calendar and attach the events present in the database.</p>
+
+<figure class='code'><figcaption><span>onsuccess() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.init = function() {
+</span><span class='line'>
+</span><span class='line'>  var db = html5hacks.indexedDB.db;
+</span><span class='line'>  var trans = db.transaction(["milestone"], IDBTransaction.READ_WRITE);
+</span><span class='line'>  var store = trans.objectStore("milestone");
+</span><span class='line'>
+</span><span class='line'>  var keyRange = IDBKeyRange.lowerBound(0);
+</span><span class='line'>  var cursorRequest = store.openCursor(keyRange);
+</span><span class='line'>
+</span><span class='line'>  cursorRequest.onsuccess = function(e) {
+</span><span class='line'>    var result = e.target.result;
+</span><span class='line'>
+</span><span class='line'>    if(!result == false){
+</span><span class='line'>
+</span><span class='line'>        $('#calendar').fullCalendar({
+</span><span class='line'>          header: {
+</span><span class='line'>            left: 'prev,next today',
+</span><span class='line'>            center: 'title',
+</span><span class='line'>            right: 'month,agendaWeek,agendaDay'
+</span><span class='line'>          },
+</span><span class='line'>          weekmode: 'variable',
+</span><span class='line'>          height: 400,
+</span><span class='line'>          editable: true,
+</span><span class='line'>          events: html5hacks.msArray
+</span><span class='line'>        });
+</span><span class='line'>
+</span><span class='line'>      return;
+</span><span class='line'>
+</span><span class='line'>    }else{
+</span><span class='line'>
+</span><span class='line'>      console.log("result.value" , result.value);
+</span><span class='line'>      buildMilestoneArray(result.value);
+</span><span class='line'>      result.continue();
+</span><span class='line'>    }
+</span><span class='line'>  };
+</span><span class='line'>  cursorRequest.onerror = html5hacks.indexedDB.onerror;
+</span><span class='line'>};</span></code></pre></td></tr></table></div></figure>
+
+
+<p>At this point we are poised to retrieve all the data from the database and populate our calendar with milestones.
+First, we declare the type of transaction to be a READ_WRITE, set a reference to the datastore, set a keyrange, and define a cursorRequest by calling openCursor and passing in the keyrange. By passing in a 0, we ensure that we retrieve all the values greater than zero. Since our key was a timestamp, this will ensure we retrieve all the records.</p>
+
+<p>Once the onsuccess event is fired, we begin to iterate through the records and push the milestone objects to buildMilestoneArray:</p>
+
+<figure class='code'><figcaption><span>buildMilestoneArray() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>function buildMilestoneArray(ms) {
+</span><span class='line'>  html5hacks.msArray.push(ms);
+</span><span class='line'>}
+</span><span class='line'>When we reach the last record, we build the calendar by passing a configuration object to fullCalendar() and returning:
+</span><span class='line'>        $('#calendar').fullCalendar({
+</span><span class='line'>          header: {
+</span><span class='line'>            left: 'prev,next today',
+</span><span class='line'>            center: 'title',
+</span><span class='line'>            right: 'month,agendaWeek,agendaDay'
+</span><span class='line'>          },
+</span><span class='line'>          weekmode: 'variable',
+</span><span class='line'>          height: 400,
+</span><span class='line'>          editable: true,
+</span><span class='line'>          events: html5hacks.msArray
+</span><span class='line'>        });
+</span><span class='line'>
+</span><span class='line'>      return;</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Adding Milestones</h3>
+
+<p>Now that we are initializing and building our calendar, we need to begin adding milestones to the database via the form. First let’s use jQuery to set up our form to pass a serialized data object to addMilestone() on each submission:</p>
+
+<figure class='code'><figcaption><span>form submit </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$('form').submit(function() {
+</span><span class='line'>
+</span><span class='line'>    var data = $(this).serializeArray();
+</span><span class='line'>
+</span><span class='line'>    html5hacks.indexedDB.addMilestone(data);
+</span><span class='line'>    return false;
+</span><span class='line'>  });</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now let’s submit a few events and then view them in the Chrome Inspector to ensure they are there (see Figure 6-10).</p>
+
+<p>Figure 6-10. Viewing milestone objects in the Chrome Inspector</p>
+
+<p><img class="figure" alt="Figure 6-10" src="/images/chapter6-images/6-10.png"></p>
+
+<p>Let’s take a closer look at our addMilestone method:</p>
+
+<figure class='code'><figcaption><span>addMilestone() </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>html5hacks.indexedDB.addMilestone = function(d) {
+</span><span class='line'>  var db = html5hacks.indexedDB.db;
+</span><span class='line'>  var trans = db.transaction(["milestone"], IDBTransaction.READ_WRITE);
+</span><span class='line'>  var store = trans.objectStore("milestone");
+</span><span class='line'>
+</span><span class='line'>  var data = {
+</span><span class='line'>    "title": d[0].value,
+</span><span class='line'>    "start": d[1].value,
+</span><span class='line'>    "end": d[2].value,
+</span><span class='line'>    "timeStamp": new Date().getTime()
+</span><span class='line'>  };
+</span><span class='line'>
+</span><span class='line'>  var request = store.put(data);
+</span><span class='line'>
+</span><span class='line'>  var dataArr = [data]
+</span><span class='line'>  request.onsuccess = function(e) {
+</span><span class='line'>    $('#calendar').fullCalendar('addEventSource', dataArr);
+</span><span class='line'>  };
+</span><span class='line'>
+</span><span class='line'>  request.onerror = function(e) {
+</span><span class='line'>    console.log("Error Adding: ", e);
+</span><span class='line'>  };
+</span><span class='line'>};</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We established our read/write connection in much the same way as our html5hacks.indexedDB.init(), but now, instead of only reading data, we write a data object to the data store each time by calling store.put() and passing it data. On the onsuccess we then can call fullcalendar’s addEventSource() and pass it the data wrapped in an array object. Note that it is necessary to transform the data object into an array since that is what the FullCalendar API expects.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1283,161 +1737,6 @@ Here is an example of a div element that needs to have corners take on different
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails/">RVM (Ruby Version Manager) and Ruby on Rails</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-26T23:35:58-05:00" pubdate data-updated="true">Sep 26<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Here is a brief overview of <a href="http://beginrescueend.com">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn&rsquo;t live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
-
-<p>This allows me to essentially sandbox each of these applications&#8217; dependencies.</p>
-
-<p>One helpful hint I might offer is to get in the habit of declaring your gemset when you launch a new terminal. I tend to have multiple terminals open at once and it took me awhile to remember that each time I launched a terminal, RVM would fall back to my default gemset. So if I clone a Rails 3.1 project, I need to remember to switch to my rails3.1 gemset prior to runninig bundle install.</p>
-
-<p>Simply put, RVM helps:</p>
-
-<ul>
-<li>manage versions of Ruby</li>
-<li>manage packages of Gemsets</li>
-</ul>
-
-
-<h2>RUBY</h2>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm list
-</span><span class='line'>$ rvm install 1.9.2-head</span></code></pre></td></tr></table></div></figure>
-
-
-<p>And, you can set a version as default</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm use 1.9.2-head --default</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>GEMSETS</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># Start by creating our gemset(s):
-</span><span class='line'>
-</span><span class='line'>$  rvm gemset create rails309
-</span><span class='line'>
-</span><span class='line'># Or create multiple at a time:
-</span><span class='line'>
-</span><span class='line'>$  rvm gemset create rails307 rails31
-</span><span class='line'>
-</span><span class='line'># The result can be verified by listing the available gemsets:
-</span><span class='line'>
-</span><span class='line'>$  rvm gemset list
-</span><span class='line'>
-</span><span class='line'># See everything with list_all, this has been very useful:
-</span><span class='line'>
-</span><span class='line'>$ rvm gemset list_all
-</span><span class='line'>
-</span><span class='line'># If a gem’s name still leaves room for confusion, simply delete it and create a more meaningful one (e.g., rails31rc):
-</span><span class='line'>
-</span><span class='line'>$  rvm gemset delete rails31</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now that we have multiple gemsets installed, we must first select the one we want to use, and we can also set it as the default gemset by passing it the —default flag:
-  </p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm use 1.9.2-head@rails309 --default</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Installing Rails</h3>
-
-<p>Installing rails is as easy as installing any other gem: we only need to specify it’s name, but we can always choose a specific version, or to speed up the installation process by skipping the documentation:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ gem install rails --no-rdoc --no-ri
-</span><span class='line'># Or
-</span><span class='line'>$ gem install rails [-v 3.0.7] [--no-rdoc --no-ri]
-</span><span class='line'># Or
-</span><span class='line'>$ gem install rails -v ">=3.1.0rc"</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>In Summary and Why Am I doing this?</h3>
-
-<p>Rails is distributed as a gem, and there are conflicts between Rails 2 and Rails 3, so if you want to run multiple versions of Rails on the same system you need to create a separate gemset for each:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm --create 1.8.7-p302@rails2app
-</span><span class='line'>$ rvm --create use 1.9.2@rails3app</span></code></pre></td></tr></table></div></figure>
-
-
-<p>In other words, for application specific gemsets it is convenient to select the version of Ruby and the collection of gems by doing the following:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm --create use 1.9.2@mongoid-app
-</span><span class='line'>
-</span><span class='line'># Also, which gemset am I using?
-</span><span class='line'>$ rvm gemset name
-</span><span class='line'>
-</span><span class='line'>$ rvm gemdir</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1498,6 +1797,10 @@ Here is an example of a div element that needs to have corners take on different
       </li>
     
       <li class="post">
+        <a href="/blog/2013/09/06/debugging-modern-web-applications-part-1/">Debugging Modern Web Applications Part 1</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/26/web-worker-patterns/">Web Worker Patterns</a>
       </li>
     
@@ -1507,10 +1810,6 @@ Here is an example of a div element that needs to have corners take on different
     
       <li class="post">
         <a href="/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers/">Fluent Conf 2013: Battle of the HTML5 Hackers</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/">Ember.js Views and Live Templates with Handlebars.js Part 1</a>
       </li>
     
   </ul>
