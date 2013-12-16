@@ -508,6 +508,12 @@
     </url>
     <url>
         <loc>
+            http://jessecravens.com/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo/
+        </loc>
+        <lastmod>2013-12-16T09:42:39-06:00</lastmod>
+    </url>
+    <url>
+        <loc>
             http://jessecravens.com/01052009/my-morning-jacket-live-madison-square-garden-20081231/
         </loc>
         <lastmod>2012-10-15T16:18:15-05:00</lastmod>
@@ -898,11 +904,17 @@
     </url>
     <url>
         <loc>http://jessecravens.com/blog/archives/</loc>
-        <lastmod>2013-10-07T11:25:54-05:00</lastmod>
+        <lastmod>2013-12-16T09:42:39-06:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://jessecravens.com/images/logos/2013-12-07-html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo.html
+        </loc>
+        <lastmod>2013-12-11T07:10:49-06:00</lastmod>
     </url>
     <url>
         <loc>http://jessecravens.com/</loc>
-        <lastmod>2013-10-07T11:25:54-05:00</lastmod>
+        <lastmod>2013-12-16T09:42:39-06:00</lastmod>
     </url>
     <url>
         <loc>http://jessecravens.com/music/</loc>
