@@ -9,7 +9,7 @@
   <meta name="author" content="Jesse Cravens">
 
   
-  <meta name="description" content="Single Threadin&#8217; As we set out to build a highly responsive UI for our demo web application, we must fully understand how browsers manage &hellip;">
+  <meta name="description" content="One of the most interesting features of Stylus is transparent Mixins. One reason they are interesting is that at the time of this writing, this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -79,8 +79,8 @@
 <ul class="main-navigation">
   <li><a href="/about">About</a></li>
   <li><a href="/">Blog</a></li>
-  <li><a href="/resume">Resume</a></li>
-  <li><a href="/presentations">Presentations</a></li>
+  <!-- <li><a href="/resume">Resume</a></li> -->
+  <!-- <li><a href="/presentations">Presentations</a></li> -->
 <!--   <li><a href="/portfolio">Portfolio</a></li>
   <li><a href="/music">Music</a></li> -->
   <li><a href="/blog/archives">Archives</a></li>
@@ -91,6 +91,228 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/22/hack-99-using-stylus-transparent-mixins-to-hack-vendor-specific-properties/">Using Stylus’ Transparent Mixins to Hack Vendor-Specific Properties</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-22T19:11:35-05:00" pubdate data-updated="true">Apr 22<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>One of the most interesting features of <a href="https://github.com/LearnBoost/stylus">Stylus</a> is transparent Mixins. One reason they are interesting is that at the time of this writing, this feature is exclusive to Stylus, other CSS metalanguages like Less and Sass do not offer Transparent Mixin support.</p>
+
+<p>We already defined a mixin earlier, when we explored mixins with Jade. Here they are used similarly.</p>
+
+<p>Before we begin with the transparent aspect of Stylus mixin support, let’s build a simple CSS mixin. Perhaps, the best example, as provided by TJ Holowaychuk in this <a href="http://www.screenr.com/bNY">beginner screencast</a> uses vendor-specific prefixes.</p>
+
+<p>How about we take his example and expand it to a slightly more challenging scenario.</p>
+
+<p>In case you haven’t come across this challenge before, lets set some context. Browser makers, or vendors, implement proprietary extensions to standard CSS specifications to release and test browser features that have been developed pre ‘Candidate Recommendation’ W3C draft status. Although vendor-specific prefixes can be frustrating for web developers, they are a necessary evil, allowing new properties to be widely tested before they become available as standard CSS properties.</p>
+
+<p>Each Vendor maintains a list of their proprietary CSS properties. The following table provides the extension prefixes for all the modern browsers:</p>
+
+<table border="1">
+<tr>
+<th>Extension</th>
+<th>Rendering Engine</th>
+<th>Browser(s)</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>-moz-</td>
+<td>Camino</td>
+<td>Mozilla Firefox</td>
+<td>-moz-border-radius</td>
+</tr>
+<tr>
+<td>-ms-</td>
+<td>Trident</td>
+<td>Internet Explorer</td>
+<td>-ms-layout-grid</td>
+</tr>
+<tr>
+<td>-o-</td>
+<td>Presto</td>
+<td>Opera</td>
+<td>-o-border-radius</td>
+</tr>
+<tr>
+<td>-webkit-</td>
+<td>Webkit</td>
+<td>Chrome, Safari</td>
+<td>-webkit-border-radius</td>
+</tr>
+</table>
+
+
+<p>And here is a few valuable resources for finding these properties:</p>
+
+<ul>
+<li><a href="http://css-infos.net/properties/webkit">Webkit-unofficial at css-infos.net</a></li>
+<li><a href="http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-SW1">Safari</a></li>
+<li><a href="https://developer.mozilla.org/en/CSS_Reference/Mozilla_Extensions">Mozilla</a></li>
+<li><a href="http://www.opera.com/docs/specs/presto28/css/o-vendor/">Opera</a></li>
+<li><a href="http://blogs.msdn.com/b/ie/archive/2008/09/08/microsoft-css-vendor-extensions.aspx">Internet Explorer</a></li>
+</ul>
+
+
+<p>Without a metalanguage that provides logic to CSS, these declarations can become cumbersome and repetitive.
+Here is an example of a div element that needs to have corners take on different size radiuses:</p>
+
+<p>First, the markup in Jade.</p>
+
+<figure class='code'><figcaption><span>example.html </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>header
+</span><span class='line'>  h1= title
+</span><span class='line'>  p Welcome to #{title}
+</span><span class='line'>
+</span><span class='line'>div.panel panel test
+</span><span class='line'>div.mixin-panel mixin-panel test
+</span><span class='line'>div.t-mixin-panel transparent-mixin-panel test
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, the styles in basic CSS.</p>
+
+<figure class='code'><figcaption><span>example.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">div</span><span class="nc">.panel</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This produces the following effect:</p>
+
+<p><img src="/images/blogposts/stylus-example265x185.png"/></p>
+
+<p>With that context in mind, let’s leverage Stylus to help us manage our code. First, we are able to remove all parenthesis, semi-colons, and colons.</p>
+
+<figure class='code'><figcaption><span>example2.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">div</span><span class="nc">.panel</span>
+</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
+</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
+</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Much like Jade, this simplified syntax goes along way in our ability to quickly write CSS. Now, let’s apply some logic, by creating a border-radius mixin, and pass our values as arguments to our mixin:</p>
+
+<figure class='code'><figcaption><span>example3.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">my-border-radius-mixin</span> <span class="o">(..</span><span class="nc">.args</span><span class="o">)</span>
+</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
+</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
+</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">div</span><span class="nc">.panel</span>
+</span><span class='line'>  <span class="nt">my-border-radius-mixin</span> <span class="o">(</span><span class="nt">10px</span> <span class="nt">5px</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And we can reuse this mixin in other contexts, which continues to help reduce code bloat and keep your code DRY.</p>
+
+<figure class='code'><figcaption><span>example4.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">my-border-radius-mixin</span> <span class="o">(..</span><span class="nc">.args</span><span class="o">)</span>
+</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
+</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
+</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">div</span><span class="nc">.panel</span>
+</span><span class='line'>  <span class="nt">border-radius-mixin</span> <span class="o">(</span><span class="nt">10px</span> <span class="nt">5px</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">div</span><span class="nc">.other-panel</span>
+</span><span class='line'>  <span class="nt">border-radius-mixin</span> <span class="o">(</span><span class="nt">3px</span> <span class="nt">32px</span> <span class="nt">100px</span> <span class="nt">55px</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">div</span><span class="nc">.another-panel</span>
+</span><span class='line'>  <span class="nt">my-border-radius-mixin</span> <span class="o">(</span><span class="nt">5px</span> <span class="nt">10px</span> <span class="nt">33px</span> <span class="nt">43px</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>While Stylus allows us to name our mixin as we choose, we are also given the ability to apply mixins ‘transparently.’ In the case of a simple implementation of border-radius, a transparent mixin would make a lot of sense. In effect, this normalizes browser implementations and provides an abstraction layer for CSS developers.</p>
+
+<figure class='code'><figcaption><span>example5.css </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">border-radius</span> <span class="o">(..</span><span class="nc">.args</span><span class="o">)</span>
+</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
+</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
+</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">div</span><span class="nc">.panel</span>
+</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As long as a border-radius mixin is present, Stylus will find it, and apply the vendor-specific properties transparently.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1415,43 +1637,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/15/edupunk/">EduPunk</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-15T12:22:26-05:00" pubdate data-updated="true">Mar 15<span>th</span>, 2009</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -1474,6 +1659,12 @@
   </h1>
 </section>
 
+
+<section>
+<a href="http://www.linkedin.com/in/jessecravens">
+  <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" border="0" alt="View Jesse Cravens's profile on LinkedIn">
+  </a>
+</section>
 
 <section>
 
@@ -1518,6 +1709,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014/">BBQ, Bourbon and Ember.js at Code PaLOUsa 2014</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo/">HTML5 and Ember.js at Øredev 2013:The Arts in Malmö, Sweden</a>
       </li>
     
@@ -1531,10 +1726,6 @@
     
       <li class="post">
         <a href="/blog/2013/08/26/web-worker-patterns/">Web Worker Patterns</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/07/25/building-next-generation-widgets-with-web-components/">Building Next Generation Widgets with Web Components</a>
       </li>
     
   </ul>
@@ -1569,23 +1760,10 @@
   <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
-
 <section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("jdcravens", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/jdcravens" class="twitter-follow-button" data-show-count="false">Follow @jdcravens</a>
-  
+<a class="twitter-timeline" href="https://twitter.com/jdcravens" data-widget-id="481435175604068353">Tweets by @jdcravens</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </section>
-
 
 <section>
   <h1>On Delicious</h1>

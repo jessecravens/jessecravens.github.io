@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JavaScript | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2014-03-17T07:23:47-05:00</updated>
+  <updated>2014-06-24T10:29:53-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[BBQ, Bourbon and Ember.js at Code PaLOUsa 2014]]></title>
+    <link href="http://jessecravens.com/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014/"/>
+    <updated>2014-05-01T08:23:00-05:00</updated>
+    <id>http://jessecravens.com/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014</id>
+    <content type="html"><![CDATA[<p>In late April, I took my Ember.js talk to Louisville, Kentucky for the <a href="http://http://www.codepalousa.com/">CodePaLOUsa</a> conference.</p>
+
+<p><a href="http://www.infoq.com/presentations/demo-emberjs"><img class="imgR400" alt="O'Reilly's Building Web Apps with Ember.js" src="http://jessecravens.com/images/codepalousa14.png"></a></p>
+
+<p>In the process I discovered <a href="http://doccrows.com/">Doc Crow&rsquo;s Southern Smokehouse and Raw Bar&rsquo;s</a> BBQ and Bourbon menu. I highly recommend it for anyone in the area trying to find authentic, local fare.</p>
+
+<p>During the day, I also listened to some great talks from <a href="https://twitter.com/sireb">@sireb</a> and <a href="https://twitter.com/robtarr">@robtarr</a>.</p>
+
+<p>My presentation focused on demoing the latest versions of <a href="https://github.com/emberjsbook">RockNRollCall demo application</a>, the source code for my upcoming book, <a href="http://shop.oreilly.com/product/0636920030782.do">OReilly&rsquo;s Building Web Apps with Ember.js</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[HTML5 and Ember.js at Øredev 2013:The Arts in Malmö, Sweden]]></title>
@@ -299,25 +316,6 @@
 <p>So, as you might expect, a single-threaded architecture can be problematic to the user experience if a particular script takes a long time to complete.</p>
 
 <p>Read more at: <a href="http://tech.pro/tutorial/1487/web-worker-patterns">http://tech.pro/tutorial/1487/web-worker-patterns</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Building Next Generation Widgets with Web Components]]></title>
-    <link href="http://jessecravens.com/blog/2013/07/25/building-next-generation-widgets-with-web-components/"/>
-    <updated>2013-07-25T03:41:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2013/07/25/building-next-generation-widgets-with-web-components</id>
-    <content type="html"><![CDATA[<p><img class="imgL400" alt="Nerdclustr" src="http://tpstatic.com/img/usermedia/9ylQdMSRLUiffrQPG4hHJw/original.png"></p>
-
-<p>For SXSWi and FluentConf this year, <a href="http://twitter.com/boyofgreen">@boyofgreen</a> and I created a demo application to showcase some of the hacks that we included in our book OReilly&rsquo;s HTML5 Hacks.</p>
-
-<p>The demo application, Nerdclustr, is an HTML5 mobile application that brings &lsquo;nerds&rsquo; of all types together conferences and provides a visual map that updates in real time. The application was written with Node.js and the Express web framework. It demonstrates the following specifications: HTML5 Web Forms, Geo Location API, WebSocket, Canvas, CSS3 transforms.</p>
-
-<p>Given, the attention that Web Components and <a href="http://www.polymer-project.org/polymer.html">Polymer.js</a> have been getting lately, I felt this was a good opportunity to demonstrate some of the exciting new specifications that are making their way to modern browsers. For the sake of this tutorial, I&rsquo;ll be using and providing screenshots of Google Chrome, but it should be worth your time to explore the status of each of the specifications in other modern browsers as well.</p>
-
-<p>In this tutorial, we will take a look at the HTML5 specs mentioned above in detail. Then, we will explore Polymer.js and build out an example application.</p>
-
-<p>Read more at: <a href="http://tech.pro/tutorial/1421/building-next-generation-widgets-with-web-components">http://tech.pro/tutorial/1421/building-next-generation-widgets-with-web-components</a></p>
 ]]></content>
   </entry>
   

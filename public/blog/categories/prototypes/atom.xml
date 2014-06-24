@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Prototypes | Jesse Cravens]]></title>
   <link href="http://jessecravens.com/blog/categories/prototypes/atom.xml" rel="self"/>
   <link href="http://jessecravens.com/"/>
-  <updated>2014-03-17T07:23:47-05:00</updated>
+  <updated>2014-06-24T10:29:53-05:00</updated>
   <id>http://jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
@@ -154,10 +154,10 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
 ################################################
 
 
-  require 'rubygems'
-  require 'sequel'
-  require 'fileutils'
-  require 'yaml'
+  require &#39;rubygems&#39;
+  require &#39;sequel&#39;
+  require &#39;fileutils&#39;
+  require &#39;yaml&#39;
 
 
   		puts &quot;Building refresh layout&quot;
@@ -173,15 +173,15 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
 EOF
 		end
 
-		DB = Sequel.connect(:adapter =&gt; 'mysql', :user =&gt; 'root', :host =&gt; 'localhost', :database =&gt; 'jessecra',:password=&gt;'frog')
+		DB = Sequel.connect(:adapter =&gt; &#39;mysql&#39;, :user =&gt; &#39;root&#39;, :host =&gt; &#39;localhost&#39;, :database =&gt; &#39;jessecra&#39;,:password=&gt;&#39;frog&#39;)
 		puts DB.tables
 
 		QUERY = &quot;select  node.nid, node.title, node_revisions.body, node.created, node.status, f.name as format, u.dst \
 		     from node \
 		          join node_revisions on node.vid = node_revisions.vid \
 		          join filter_formats f on node_revisions.format = f.format \
-		          left join url_alias u on concat('node/', node.nid) = u.src \
-		     where (node.type = 'blog' OR node.type = 'story' OR node.type = 'article')&quot;
+		          left join url_alias u on concat(&#39;node/&#39;, node.nid) = u.src \
+		     where (node.type = &#39;blog&#39; OR node.type = &#39;story&#39; OR node.type = &#39;article&#39;)&quot;
 
 	     DB[QUERY].each do |post|
 
@@ -193,15 +193,15 @@ EOF
 	        content = post[:body]
 	        # puts content
 	        created = post[:created]
-	        format = post[:format].strip.downcase == 'textile' ? 'textile' : 'markdown'
+	        format = post[:format].strip.downcase == &#39;textile&#39; ? &#39;textile&#39; : &#39;markdown&#39;
 	        dst  = post[:dst] || nil
 	        time = Time.at(created)
 	        is_published = post[:status] == 1
 	        published = is_published ? nil : false
 	        dir = &quot;source&quot;
 	        posts_dir = &quot;#{dir}/_posts&quot;
-	        slug = title.strip.downcase.gsub(/(&amp;|&amp;amp;)/, ' and ').gsub(/[\s\.\/\\]/, '-').gsub(/[^\w-]/, '').gsub(/[-_]{2,}/, '-').gsub(/^[-_]/, '').gsub(/[-_]$/, '')
-	        name = time.strftime(&quot;%Y-%m-%d-&quot;) + slug + '.' + format
+	        slug = title.strip.downcase.gsub(/(&amp;|&amp;amp;)/, &#39; and &#39;).gsub(/[\s\.\/\\]/, &#39;-&#39;).gsub(/[^\w-]/, &#39;&#39;).gsub(/[-_]{2,}/, &#39;-&#39;).gsub(/^[-_]/, &#39;&#39;).gsub(/[-_]$/, &#39;&#39;)
+	        name = time.strftime(&quot;%Y-%m-%d-&quot;) + slug + &#39;.&#39; + format
 	        # puts name
 
 	        tag_query = &quot;select distinct node.nid, type, td.name \
@@ -211,7 +211,7 @@ EOF
 	                     where node.nid = #{node_id} order by node.nid&quot;
 	        tags = []
 	        DB[tag_query].each do |tag|
-	          stripped_tag = tag[:name].gsub /&quot;/, '|'
+	          stripped_tag = tag[:name].gsub /&quot;/, &#39;|&#39;
 	          tags.push stripped_tag
 	        end
 	        tag_list = tags.length == 0 ? nil : tags
