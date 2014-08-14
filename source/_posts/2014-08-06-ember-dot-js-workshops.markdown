@@ -10,12 +10,11 @@ In the month of June, I had an opportunity to travel to Las Vegas to give a [wor
 
 <img class="imgR400" alt="Jesse Cravens Future Insights 2014" src="/images/future_insights/workshop2.jpg">
 
-My workshop was an 8 hour, beginner to intermediate level, course on Ember.js. I've added it to our [HTML Hacks](http://html5hacks.com/training) training content.
+My workshop was an 8 hour, beginner to intermediate level, course on Ember.js. I've added it to our [HTML5 Hacks](http://html5hacks.com/training) training content.
 If you or your company need training, give us a shout.
 
 Here is a brief outline of the workshop:
 
-# Introducing Ember.js
 ## Getting Started with the Starter Kit
 ## Ember Inspector Overview
 
