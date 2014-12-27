@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: CORS | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/cors/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/cors/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font]]></title>
-    <link href="http://jessecravens.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/"/>
+    <link href="http://jessecravens.github.io/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/"/>
     <updated>2012-11-18T19:42:00-06:00</updated>
-    <id>http://jessecravens.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font</id>
+    <id>http://jessecravens.github.io/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font</id>
     <content type="html"><![CDATA[<p>Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
 make requests to other domains from within the browser. With CORS you have a secure
 and easy-to-implement approach for circumventing the browser’s same origin
@@ -47,13 +47,13 @@ Console; see Figure 9-21.</p>
 
 <p>Figure 9-21. S3 Management Console</p>
 
-<p><img class="figure" alt="Figure 9-21" src="http://jessecravens.com/images/chapter9-images/9-21.png"></p>
+<p><img class="figure" alt="Figure 9-21" src="http://jessecravens.github.io/images/chapter9-images/9-21.png"></p>
 
 <p>If we click on Create a Bucket we should see the prompt shown in Figure 9-22.</p>
 
 <p>Figure 9-22. Creating an S3 bucket in the S3 Management Console</p>
 
-<p><img class="figure" alt="Figure 9-22" src="http://jessecravens.com/images/chapter9-images/9-22.png"></p>
+<p><img class="figure" alt="Figure 9-22" src="http://jessecravens.github.io/images/chapter9-images/9-22.png"></p>
 
 <p>Let’s name the bucket and choose a region (see Figure 9-23). As I stated earlier, you
 can choose a region to optimize for latency, minimize costs, or address regulatory
@@ -61,14 +61,14 @@ requirements.</p>
 
 <p>Figure 9-23. Naming an S3 bucket in the S3 Management Console</p>
 
-<p><img class="figure" alt="Figure 9-23" src="http://jessecravens.com/images/chapter9-images/9-23.png"></p>
+<p><img class="figure" alt="Figure 9-23" src="http://jessecravens.github.io/images/chapter9-images/9-23.png"></p>
 
 <p>We will go ahead and name our bucket none other than “html5hacks.” You should now
 see an admin screen that shows an empty filesystem (see Figure 9-24).</p>
 
 <p>Figure 9-24. The html5hacks S3 bucket</p>
 
-<p><img class="figure" alt="Figure 9-24" src="http://jessecravens.com/images/chapter9-images/9-24.png"></p>
+<p><img class="figure" alt="Figure 9-24" src="http://jessecravens.github.io/images/chapter9-images/9-24.png"></p>
 
 <p>Well, that was simple. So why are we doing this? Let’s start with some simple browser
 security—something called the same origin policy.</p>
@@ -131,7 +131,7 @@ Figure 9-25).</p>
 
 <p>Figure 9-25. An uploaded BebasNeue font</p>
 
-<p><img class="figure" alt="Figure 9-25" src="http://jessecravens.com/images/chapter9-images/9-25.png"></p>
+<p><img class="figure" alt="Figure 9-25" src="http://jessecravens.github.io/images/chapter9-images/9-25.png"></p>
 
 <h3>Adding the Web Font to Your Web Page</h3>
 
@@ -219,20 +219,20 @@ Figure 9-26), Safari, and Chrome our header tag is being styled correctly.</p>
 
 <p>Figure 9-26. Opera browser showing the BebasNeue font</p>
 
-<p><img class="figure" alt="Figure 9-26" src="http://jessecravens.com/images/chapter9-images/9-26.png"></p>
+<p><img class="figure" alt="Figure 9-26" src="http://jessecravens.github.io/images/chapter9-images/9-26.png"></p>
 
 <p>But if we view it in Firefox, we are having issues (see Figure 9-27).</p>
 
 <p>Figure 9-27. Firefox browser failing to show the BebasNeue font</p>
 
-<p><img class="figure" alt="Figure 9-27" src="http://jessecravens.com/images/chapter9-images/9-27.png"></p>
+<p><img class="figure" alt="Figure 9-27" src="http://jessecravens.github.io/images/chapter9-images/9-27.png"></p>
 
 <p>If we examine the request for our font in the Chrome Dev Tools Network tab, we will
 see that the response from the server is empty (see Figure 9-28).</p>
 
 <p>Figure 9-28. Firefox browser showing an empty response</p>
 
-<p><img class="figure" alt="Figure 9-28" src="http://jessecravens.com/images/chapter9-images/9-28.png"></p>
+<p><img class="figure" alt="Figure 9-28" src="http://jessecravens.github.io/images/chapter9-images/9-28.png"></p>
 
 <p>What gives? Well, by default, Firefox will only accept links from the same domain as
 the host page. If we want to include fonts from different domains, we need to add an
@@ -307,14 +307,14 @@ character refers to all origins.</p>
 
 <p>Figure 9-29. Configuring CORS in the S3 Management Console</p>
 
-<p><img class="figure" alt="Figure 9-29" src="http://jessecravens.com/images/chapter9-images/9-29.png"></p>
+<p><img class="figure" alt="Figure 9-29" src="http://jessecravens.github.io/images/chapter9-images/9-29.png"></p>
 
 <p>Now, let’s return to Firefox and reload the page. We should now see the header font
 styled with our BebasNeue web font, as shown in Figure 9-30.</p>
 
 <p>Figure 9-30. Firefox browser successfully showing the BebasNeue font</p>
 
-<p><img class="figure" alt="Figure 9-30" src="http://jessecravens.com/images/chapter9-images/9-30.png"></p>
+<p><img class="figure" alt="Figure 9-30" src="http://jessecravens.github.io/images/chapter9-images/9-30.png"></p>
 
 <p>There is much more to learn about CORS, most notably, HTTP POST usage with certain
 MIME types, and sending cookies and HTTP authentication data with requests if so

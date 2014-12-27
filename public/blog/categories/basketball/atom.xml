@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Basketball | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/basketball/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/basketball/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[El Nino, French Fries, Chippendale with Swayze, but do you remember this one? Chris Farley as Christian Laettner]]></title>
-    <link href="http://jessecravens.com/blog/2010/10/18/el-nino-french-fries-chippendale-with-swayze-but-do-you-remember-this-one-chris-farley-as-christian-laettner/"/>
+    <link href="http://jessecravens.github.io/blog/2010/10/18/el-nino-french-fries-chippendale-with-swayze-but-do-you-remember-this-one-chris-farley-as-christian-laettner/"/>
     <updated>2010-10-18T18:48:09-05:00</updated>
-    <id>http://jessecravens.com/blog/2010/10/18/el-nino-french-fries-chippendale-with-swayze-but-do-you-remember-this-one-chris-farley-as-christian-laettner</id>
+    <id>http://jessecravens.github.io/blog/2010/10/18/el-nino-french-fries-chippendale-with-swayze-but-do-you-remember-this-one-chris-farley-as-christian-laettner</id>
     <content type="html"><![CDATA[<p>El Nino, French Fries, Chippendale with Swayze, but do you remember this one?</p>
 
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: WebSockets | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/websockets/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/websockets/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Robodeck]]></title>
-    <link href="http://jessecravens.com/blog/2012/05/22/robodeck/"/>
+    <link href="http://jessecravens.github.io/blog/2012/05/22/robodeck/"/>
     <updated>2012-05-22T10:01:42-05:00</updated>
-    <id>http://jessecravens.com/blog/2012/05/22/robodeck</id>
+    <id>http://jessecravens.github.io/blog/2012/05/22/robodeck</id>
     <content type="html"><![CDATA[<p>Awhile back, I built a websocket powered interactive presentation framework called <a href="https://github.com/jessecravens/robodeck">Robodeck</a>.</p>
 
 

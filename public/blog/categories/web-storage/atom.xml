@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Web Storage | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/web-storage/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/web-storage/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[HTML5.tx 2013]]></title>
-    <link href="http://jessecravens.com/blog/2013/02/03/html5-dot-tx-2013/"/>
+    <link href="http://jessecravens.github.io/blog/2013/02/03/html5-dot-tx-2013/"/>
     <updated>2013-02-03T23:09:00-06:00</updated>
-    <id>http://jessecravens.com/blog/2013/02/03/html5-dot-tx-2013</id>
+    <id>http://jessecravens.github.io/blog/2013/02/03/html5-dot-tx-2013</id>
     <content type="html"><![CDATA[<h3>Embedded JavaScript, HTML5 and the Internet of Things</h3>
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/H00_BGRkBRM" frameborder="0" allowfullscreen></iframe>
@@ -25,7 +25,7 @@
 
 
 
-<script async class="speakerdeck-embed" data-slide="46" data-id="92b31ab050b501308fcd1231381d555c" data-ratio="1.2994923857868" src="http://jessecravens.com//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-slide="46" data-id="92b31ab050b501308fcd1231381d555c" data-ratio="1.2994923857868" src="http://jessecravens.github.io//speakerdeck.com/assets/embed.js"></script>
 
 
 <p>I had a great time presenting at HTML5.tx 2013; here is an embed above of the slide deck. I should have the trailr node module in a presentable format soon and I&rsquo;ll tweet its inclusion in NPM. I have a placeholder here: <a href="https://npmjs.org/package/trailr">trailr at npm</a></p>
@@ -36,19 +36,19 @@
 
 <p>Very soon, initial documentation will be available at: <a href="http://trailr.io">trailr.io</a></p>
 
-<p><img class="" alt=""  src="http://jessecravens.com/images/html5tx2013/embedded.JPG"></p>
+<p><img class="" alt=""  src="http://jessecravens.github.io/images/html5tx2013/embedded.JPG"></p>
 
 <p>Photo credit: Mitch Fincher: <a href="http://mitchfincher.blogspot.com/2013/02/pictures-from-html5tx-2013-in-austin-tx.html">mitchfincher.blogspot.com</a></p>
 
 <h3>HTML5 Canvas View</h3>
 
-<p><img class="" alt=""  src="http://jessecravens.com/images/html5tx2013/dash.png"></p>
+<p><img class="" alt=""  src="http://jessecravens.github.io/images/html5tx2013/dash.png"></p>
 
 <h3>Node.js trailr module &ndash; Web Based Edit (Ace Editor) and WebSocket Deploy to Arduino</h3>
 
-<p><img class="" alt=""  src="http://jessecravens.com/images/html5tx2013/edit.png"></p>
+<p><img class="" alt=""  src="http://jessecravens.github.io/images/html5tx2013/edit.png"></p>
 
-<p><img class="" alt=""  src="http://jessecravens.com/images/html5tx2013/embedded2.JPG"></p>
+<p><img class="" alt=""  src="http://jessecravens.github.io/images/html5tx2013/embedded2.JPG"></p>
 
 <p>Photo credit: Mitch Fincher: <a href="http://mitchfincher.blogspot.com/2013/02/pictures-from-html5tx-2013-in-austin-tx.html">mitchfincher.blogspot.com</a></p>
 ]]></content>
@@ -56,16 +56,16 @@
   
   <entry>
     <title type="html"><![CDATA[Build a Milestone Calendar with IndexedDB and FullCalendar.js]]></title>
-    <link href="http://jessecravens.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/"/>
+    <link href="http://jessecravens.github.io/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/"/>
     <updated>2013-01-17T08:47:00-06:00</updated>
-    <id>http://jessecravens.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js</id>
+    <id>http://jessecravens.github.io/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js</id>
     <content type="html"><![CDATA[<h4>IndexedDB is a persistent object data store in the browser. Although it is not a full SQL implementation and it is more complex than the unstructured key–value pairs in localStorage, you can use it to define an API that provides the ability to read and write key–value objects as structured JavaScript objects, and an indexing system that facilitates filtering and lookup.</h4>
 
 <p>For this hack we will use IndexedDB to store milestone objects for a calendar application. The UI will provide a simple means to create a new milestone and provide a title, start date, and end date. The calendar will then update to show the contents of the local data store. Figure 6-8 shows the result.</p>
 
 <p>Figure 6-8. FullCalendar.js and IndexedDB</p>
 
-<p><img class="figure" alt="Figure 6-8" src="http://jessecravens.com/images/chapter6-images/6-8.png"></p>
+<p><img class="figure" alt="Figure 6-8" src="http://jessecravens.github.io/images/chapter6-images/6-8.png"></p>
 
 <p>We need to start by including the markup for the two pieces of the UI: the calendar and the form.
 We’ll begin with the form. You may notice that the input fields for the dates include data-date-format attributes. We will use these later for the JavaScript date pickers.</p>
@@ -172,7 +172,7 @@ We’ll begin with the form. You may notice that the input fields for the dates 
 
 <p>Figure 6-9. Date pickers</p>
 
-<p><img class="figure" alt="Figure 6-9" src="http://jessecravens.com/images/chapter6-images/6-9.png"></p>
+<p><img class="figure" alt="Figure 6-9" src="http://jessecravens.github.io/images/chapter6-images/6-9.png"></p>
 
 <p>To instantiate the date pickers we will include the following toward the beginning of our script:</p>
 
@@ -483,7 +483,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
 
 <p>Figure 6-10. Viewing milestone objects in the Chrome Inspector</p>
 
-<p><img class="figure" alt="Figure 6-10" src="http://jessecravens.com/images/chapter6-images/6-10.png"></p>
+<p><img class="figure" alt="Figure 6-10" src="http://jessecravens.github.io/images/chapter6-images/6-10.png"></p>
 
 <p>Let’s take a closer look at our addMilestone method:</p>
 

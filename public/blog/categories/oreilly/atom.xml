@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: OReilly | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/oreilly/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/oreilly/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Just moved HTML5 Hacks into Copy/Edit]]></title>
-    <link href="http://jessecravens.com/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit/"/>
+    <link href="http://jessecravens.github.io/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit/"/>
     <updated>2012-09-24T21:57:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit</id>
+    <id>http://jessecravens.github.io/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit</id>
     <content type="html"><![CDATA[<p>After a marathon of hackery starting in April, <a href="http://www.oreillynet.com/pub/au/5370">Jeff Burtoft</a> and I pushed out 90 hacks and 435 pages of <a href="http://shop.oreilly.com/product/0636920026273.do">HTML5 Hacks</a> this week. We also had a few guest hackers that created some really great content as well.</p>
 
 <ul>

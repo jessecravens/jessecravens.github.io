@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: YUI | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/yui/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/yui/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[YUI3 Rails Application Template]]></title>
-    <link href="http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template/"/>
+    <link href="http://jessecravens.github.io/blog/2011/01/30/yui3-rails-application-template/"/>
     <updated>2011-01-30T01:02:15-06:00</updated>
-    <id>http://jessecravens.com/blog/2011/01/30/yui3-rails-application-template</id>
+    <id>http://jessecravens.github.io/blog/2011/01/30/yui3-rails-application-template</id>
     <content type="html"><![CDATA[<p>I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.</p>
 
 <p>The template takes care of removing the Prototype library, including yui-debug.js and the CSS framework including reset, and the new <a href="http://developer.yahoo.com/yui/3/cssgrids/">Grids</a> &ndash; currently in beta. I also wanted to deliver my basic markup quickly so I&rsquo;ve added <a href="http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#html_elements">Haml</a></p>

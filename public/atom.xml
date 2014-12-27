@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,12 +15,12 @@
   
   <entry>
     <title type="html"><![CDATA[Ember.js Workshops]]></title>
-    <link href="http://jessecravens.com/blog/2014/08/06/ember-dot-js-workshops/"/>
+    <link href="http://jessecravens.github.io/blog/2014/08/06/ember-dot-js-workshops/"/>
     <updated>2014-08-06T22:23:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2014/08/06/ember-dot-js-workshops</id>
+    <id>http://jessecravens.github.io/blog/2014/08/06/ember-dot-js-workshops</id>
     <content type="html"><![CDATA[<p>In the month of June, I had an opportunity to travel to Las Vegas to give a <a href="http://futureinsightslive.com/las-vegas-2014/schedule/workshop-info">workshop</a> and related <a href="http://futureinsightslive.com/las-vegas-2014/schedule/day-1">talk</a> at <a href="http://futureinsightslive.com/las-vegas-2014/">Future Insights Live 2014</a>.</p>
 
-<p><img class="imgR400" alt="Jesse Cravens Future Insights 2014" src="http://jessecravens.com/images/future_insights/workshop2.jpg"></p>
+<p><img class="imgR400" alt="Jesse Cravens Future Insights 2014" src="http://jessecravens.github.io/images/future_insights/workshop2.jpg"></p>
 
 <p>My workshop was an 8 hour, beginner to intermediate level, course on Ember.js. I&rsquo;ve added it to our <a href="http://html5hacks.com/training">HTML5 Hacks</a> training content.
 If you or your company need training, give us a shout.</p>
@@ -46,7 +46,7 @@ If you or your company need training, give us a shout.</p>
 </ul>
 
 
-<p><img class="imgR400" alt="Jesse Cravens Future Insights 2014" src="http://jessecravens.com/images/future_insights/workshop.jpg"></p>
+<p><img class="imgR400" alt="Jesse Cravens Future Insights 2014" src="http://jessecravens.github.io/images/future_insights/workshop.jpg"></p>
 
 <h2>Handlebars</h2>
 
@@ -153,12 +153,12 @@ If you or your company need training, give us a shout.</p>
   
   <entry>
     <title type="html"><![CDATA[BBQ, Bourbon and Ember.js at Code PaLOUsa 2014]]></title>
-    <link href="http://jessecravens.com/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014/"/>
+    <link href="http://jessecravens.github.io/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014/"/>
     <updated>2014-05-01T08:23:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014</id>
+    <id>http://jessecravens.github.io/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014</id>
     <content type="html"><![CDATA[<p>In late April, I took my Ember.js talk to Louisville, Kentucky for the <a href="http://http://www.codepalousa.com/">CodePaLOUsa</a> conference.</p>
 
-<p><a href="http://www.infoq.com/presentations/demo-emberjs"><img class="imgR400" alt="O'Reilly's Building Web Apps with Ember.js" src="http://jessecravens.com/images/codepalousa14.png"></a></p>
+<p><a href="http://www.infoq.com/presentations/demo-emberjs"><img class="imgR400" alt="O'Reilly's Building Web Apps with Ember.js" src="http://jessecravens.github.io/images/codepalousa14.png"></a></p>
 
 <p>In the process I discovered <a href="http://doccrows.com/">Doc Crow&rsquo;s Southern Smokehouse and Raw Bar&rsquo;s</a> BBQ and Bourbon menu. I highly recommend it for anyone in the area trying to find authentic, local fare.</p>
 
@@ -170,16 +170,16 @@ If you or your company need training, give us a shout.</p>
   
   <entry>
     <title type="html"><![CDATA[HTML5 and Ember.js at Øredev 2013:The Arts in Malmö, Sweden]]></title>
-    <link href="http://jessecravens.com/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo/"/>
+    <link href="http://jessecravens.github.io/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo/"/>
     <updated>2013-12-07T23:25:00-06:00</updated>
-    <id>http://jessecravens.com/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo</id>
+    <id>http://jessecravens.github.io/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo</id>
     <content type="html"><![CDATA[<p>At the beginning of November, I was given an opportunity to give two talks in Malmö, Sweden at the Øredev conference. First of all, I have to say I was extremely impressed with the conference. Although the theme was the Arts, I found it to be a developer&rsquo;s conference with an artsy edge. The speakers I had a chance to see were developer&rsquo;s developers, one of my favorites being a talk on Meteor by Chris Mather (@eventedmind) of <a href="http://eventedmind.com">eventedmind.com</a>. I&rsquo;ve maintained a peripheral view of Meteor, so it was good to get a beginner to intermediate overview of its capabilities. Given that I have been doing <a href="http://www.mongodb.com/">MongoDB</a> / <a href="https://github.com/emberjs/data">Ember-data</a> client work as of lately, I am particularly interested in exploring <a href="https://github.com/slacy/minimongo">minimongo</a>.</p>
 
-<p><img class="imgR400" alt="Jesse Cravens at Øredev 2013 HTML5 Hacks" src="http://jessecravens.com/images/oredev/html5hacks-oredev.jpg"></p>
+<p><img class="imgR400" alt="Jesse Cravens at Øredev 2013 HTML5 Hacks" src="http://jessecravens.github.io/images/oredev/html5hacks-oredev.jpg"></p>
 
 <p>The city of <a href="http://en.wikipedia.org/wiki/Malm%C3%B6">Malmö</a> was also a pleasure to experience, and as you might imagine, the people of Sweden were very welcoming. One of the highlights for me was the speaker dinner at the <a href="http://en.wikipedia.org/wiki/File:Jorchr-Malm%C3%B6_r%C3%A5dhus.jpg">Malmö City Hall</a>, originally constructed in the Middle Ages. On a side note, I finally had a chance to meet and have dinner with <a href="http://www.crockford.com/">Douglass Crockford</a>, a long time inspiration and virtual mentor, who was in town to give the keynote on <a href="http://oredev.org/2013/wed-fri-conference/managing-asynchronicity-with-rq">Managing Async with RQ</a>.</p>
 
-<iframe src="http://jessecravens.com//player.vimeo.com/video/78847391" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="http://jessecravens.github.io//player.vimeo.com/video/78847391" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
 <p>
@@ -194,13 +194,13 @@ If you or your company need training, give us a shout.</p>
 
 <p>My first talk was a preview of my new book <a href="https://github.com/emberjsbook">O&#8217;Reilly&rsquo;s Building Web Apps with Ember.js</a>. I shared the stage with co-author and fellow frog, <a href="http://bashmodernquantity.com/about/">Thomas Q. Brady</a>. We took the audience through the creation of <a href="https://github.com/emberjsbook/rocknrollcall">RocknRollCall</a>, an intermediate level <a href="http://emberjs.com/">Ember.js</a> application that fills in many of the blanks that most of the &lsquo;Getting Started&rsquo; applications don&rsquo;t.</p>
 
-<p><img class="imgL400" alt="O'Reilly's Building Web Apps with Ember.js by Jesse Cravens" src="http://jessecravens.com/images/oredev/ember_cover_600.png"></p>
+<p><img class="imgL400" alt="O'Reilly's Building Web Apps with Ember.js by Jesse Cravens" src="http://jessecravens.github.io/images/oredev/ember_cover_600.png"></p>
 
 <p>Some of the highlights of the book, and the talk, cover topics such as: a survey of Ember tooling, debugging with the <a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi?hl=en">Ember Inspector</a>, Ember boilerplates, app initializers, promises in Ember, the needs API, Ember components, 3rd Party JavaScript Integration (<a href="http://jquery.com/">jQuery</a>, <a href="http://d3js.org/">D3</a>), Ember testing, SPA authentication, <a href="https://github.com/emberjs/data">Ember-data</a> and other client-side persistence solutions, and remote data persistence with Ruby On Rails and Node.js.</p>
 
 <p>My second talk was <a href="http://html5hacks.com/">HTML5 Hacks</a> Evolved, where I continue to share more hacks from by first book <a href="http://html5hacks.com">HTML5 Hacks</a>, and <a href="http://html5hacks.com/">html5hacks.com</a>. This talk is culmination of HTML5 specifications that will have you rethinking browser-based applications. Some of the highlights of this talk included: Web Workers, WebSocket w/ GeoLocation, Device Orientation, and LeapJS, Web Components / Polymer / Ember Components (Custom Elements, Shadow DOM, HTML Imports, Model Driven Views, and Local Storage.</p>
 
-<iframe src="http://jessecravens.com//player.vimeo.com/video/78912115" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="http://jessecravens.github.io//player.vimeo.com/video/78912115" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
 <p>
@@ -219,12 +219,12 @@ If you or your company need training, give us a shout.</p>
   
   <entry>
     <title type="html"><![CDATA[JavaScript Makers: How JS is Helping Drive the Maker Movement]]></title>
-    <link href="http://jessecravens.com/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/"/>
+    <link href="http://jessecravens.github.io/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/"/>
     <updated>2013-10-04T19:02:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement</id>
+    <id>http://jessecravens.github.io/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement</id>
     <content type="html"><![CDATA[<p>This post is mirrored from: <a href="http://html5hacks.com/blog/2013/10/04/javascript-makers-how-js-is-helping-drive-the-maker-movement/">html5hacks.com</a></p>
 
-<p><img class="imgR300" alt="ok200 Conference" src="http://jessecravens.com/images/200ok/200ok1.jpg"></p>
+<p><img class="imgR300" alt="ok200 Conference" src="http://jessecravens.github.io/images/200ok/200ok1.jpg"></p>
 
 <p>I spend my days writing a lot of JavaScript, and helping companies deliver ambitious UX focused applications to the web. I <a href="http://shop.oreilly.com/product/0636920026273.do?cmp=af-code-book-product_cj_9781449334994_7080585">author books</a> on the subject, blog, and <a href="http://lanyrd.com/profile/jdcravens/">speak at conferences</a> as often as I can.</p>
 
@@ -234,7 +234,7 @@ If you or your company need training, give us a shout.</p>
 
 <h2>Sharing My Craft with my Children</h2>
 
-<p><img class="imgL300" alt="ok200 Conference - setting up" src="http://jessecravens.com/images/200ok/200ok2.jpg"></p>
+<p><img class="imgL300" alt="ok200 Conference - setting up" src="http://jessecravens.github.io/images/200ok/200ok2.jpg"></p>
 
 <p>All of that being said, I&rsquo;m a parent of two young children. My little ones constantly challenge me to find ways to share quality time with them. The parents reading this know the juggling act.</p>
 
@@ -242,7 +242,7 @@ If you or your company need training, give us a shout.</p>
 
 <p>If I&rsquo;m doing it right, when I spend time with my children, they should share in my excitement and passion. If I&rsquo;m doing it wrong, I&rsquo;m overwhelmed and exhausted from work. In my vision, my children should be witnessing a model of how to wake up everyday with the goal of embracing opportunity to create a combination of function and beauty within the world around them.</p>
 
-<p><img class="imgR200" alt="Maker Faire" src="http://jessecravens.com/images/200ok/Maker_Faire.gif"></p>
+<p><img class="imgR200" alt="Maker Faire" src="http://jessecravens.github.io/images/200ok/Maker_Faire.gif"></p>
 
 <p>So it is in this context, that I met up with Mozilla&rsquo;s Luke Crouch, and <a href="http://makerfairetulsa.com/">Tulsa Mini Maker Faire</a>&rsquo;s Scott Phillips to put together <a href="http://200ok.us/schedule/javascript-makers/">the closing keynote at the 200ok conference</a> .</p>
 
@@ -254,7 +254,7 @@ If you or your company need training, give us a shout.</p>
 
 <p>My thinking was that a presentation on this topic should be authentic, and reflect the reality of my proposition, not be an ivory tower, academic/authoritative talk about how to share your craft with your children. I also made sure to not prep Carter. With a loose structure in place, we took the stage and worked our way through a story that consisted of 12 open software and hardware demos that showcased JavaScript as a primary scripting language, and a table full of hardware that ranged from a drone, a dissected wifli helicopter and erector set, a leap motion, and numerous prototyping boards.</p>
 
-<script async class="speakerdeck-embed" data-slide="10" data-id="78b4c9300a8801313e8202078d31cabc" data-ratio="1.2994923857868" src="http://jessecravens.com//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-slide="10" data-id="78b4c9300a8801313e8202078d31cabc" data-ratio="1.2994923857868" src="http://jessecravens.github.io//speakerdeck.com/assets/embed.js"></script>
 
 
 <p>Here are some of the highlights:</p>
@@ -353,14 +353,14 @@ If you or your company need training, give us a shout.</p>
 
 <p>Later, a crowd favorite was mapping the gestures from the <a href="https://www.leapmotion.com/">Leap Motion</a> to the <a href="http://ardrone2.parrot.com/">Parrot AR drone</a>, so that a one finger clockwise gesture triggered a nodecopter takeoff. A counter clockwise gesture then landed it. I was able to put this together using the leapJS and node-ardrone node modules, based on some initial hacking by <a href="https://twitter.com/markuskobler">Markus Kobler</a>, where he pulled this off at a <a href="https://github.com/markuskobler/nodecopter-london">Nodecopter London event</a>.</p>
 
-<iframe src="http://jessecravens.com//player.vimeo.com/video/75616363" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="http://jessecravens.github.io//player.vimeo.com/video/75616363" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
 <p> <p><a href="http://vimeo.com/75616363">Jesse Cravens blowing minds with a JS-driven copter.</a> from <a href="http://vimeo.com/user21333523">Michael Gorsuch</a> on <a href="https://vimeo.com">Vimeo</a>.</p></p>
 
 <h2>ScriptCraft: Running JavaScript from within Minecraft</h2>
 
-<p><img class="imgL300" alt="ok200 Conference" src="http://jessecravens.com/images/200ok/200ok3.jpg"></p>
+<p><img class="imgL300" alt="ok200 Conference" src="http://jessecravens.github.io/images/200ok/200ok3.jpg"></p>
 
 <p>Later, I showed how to script inside of the Minecraft virtual world, using <a href="https://twitter.com/walter">Walter Higgins&#8217;</a> great <a href="https://github.com/walterhiggins/ScriptCraft">ScriptCraft library</a>. I wasn&rsquo;t expecting the conference wifi, and single access point, to suffice in allowing Carter and I to interact within virtual world. I was also concerned about the dynamic IP, and having to change it on the fly, start/restart the server, etc. So I made the decision 10 minutes before to not have Carter log in, and I would just speak to the possibility instead. In true 6 year old fashion, he rebelled and logged onto my server, popping up in front of me wearing a Creeper mask, as I was mid stream explaining how to script wooden signs with his 1st grade sight words as a homework exercise.</p>
 
@@ -390,7 +390,7 @@ If you or your company need training, give us a shout.</p>
 
 <p>Needless to say, his innapropriate behavior was a crowd favorite. I have to admit, it was mine as well.</p>
 
-<p><img class="imgR300" alt="ok200 Conference" src="http://jessecravens.com/images/200ok/200ok4.png"></p>
+<p><img class="imgR300" alt="ok200 Conference" src="http://jessecravens.github.io/images/200ok/200ok4.png"></p>
 
 <p>Going into the talk, I knew I&rsquo;d either be trying this again in the future or abandoning it as &lsquo;one of those ideas&rsquo; that sounded good in theory, but was just not going to work. Where did I land? Well, let&rsquo;s just say that Carter and I are looking for our next opportunity to share our experiences with other parents/web professionals.</p>
 ]]></content>
@@ -398,9 +398,9 @@ If you or your company need training, give us a shout.</p>
   
   <entry>
     <title type="html"><![CDATA[Debugging Modern Web Applications Part 1]]></title>
-    <link href="http://jessecravens.com/blog/2013/09/06/debugging-modern-web-applications-part-1/"/>
+    <link href="http://jessecravens.github.io/blog/2013/09/06/debugging-modern-web-applications-part-1/"/>
     <updated>2013-09-06T19:43:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2013/09/06/debugging-modern-web-applications-part-1</id>
+    <id>http://jessecravens.github.io/blog/2013/09/06/debugging-modern-web-applications-part-1</id>
     <content type="html"><![CDATA[<p>As JavaScript-centric web applications continue to become the standard, and the browser continues to evolve into a full-featured web application platform, developers need powerful debugging tools to help quickly troubleshoot issues and fix them efficiently. Issues can range from HTML/CSS browser inconsistencies, JavaScript exceptions, and a myriad of performance issues that range from DOM access to network latency.</p>
 
 <p>There a number of tools that web developers can use to help make debugging front end applications less painful.</p>
@@ -417,9 +417,9 @@ If you or your company need training, give us a shout.</p>
   
   <entry>
     <title type="html"><![CDATA[Web Worker Patterns]]></title>
-    <link href="http://jessecravens.com/blog/2013/08/26/web-worker-patterns/"/>
+    <link href="http://jessecravens.github.io/blog/2013/08/26/web-worker-patterns/"/>
     <updated>2013-08-26T14:03:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2013/08/26/web-worker-patterns</id>
+    <id>http://jessecravens.github.io/blog/2013/08/26/web-worker-patterns</id>
     <content type="html"><![CDATA[<p>JavaScript is executed in a single thread. If you&rsquo;re not familiar with threads, what this means is that JavaScript can only execute one block of code at a time. If code is already executing, any interaction by the user will instantiate an asynchronous event that is queued up for later execution. Other events like those from XMLHttpRequests and timers, are also added to the queue.</p>
 
 <p>So, as you might expect, a single-threaded architecture can be problematic to the user experience if a particular script takes a long time to complete.</p>
@@ -430,9 +430,9 @@ If you or your company need training, give us a shout.</p>
   
   <entry>
     <title type="html"><![CDATA[Building Next Generation Widgets with Web Components]]></title>
-    <link href="http://jessecravens.com/blog/2013/07/25/building-next-generation-widgets-with-web-components/"/>
+    <link href="http://jessecravens.github.io/blog/2013/07/25/building-next-generation-widgets-with-web-components/"/>
     <updated>2013-07-25T03:41:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2013/07/25/building-next-generation-widgets-with-web-components</id>
+    <id>http://jessecravens.github.io/blog/2013/07/25/building-next-generation-widgets-with-web-components</id>
     <content type="html"><![CDATA[<p><img class="imgL400" alt="Nerdclustr" src="http://tpstatic.com/img/usermedia/9ylQdMSRLUiffrQPG4hHJw/original.png"></p>
 
 <p>For SXSWi and FluentConf this year, <a href="http://twitter.com/boyofgreen">@boyofgreen</a> and I created a demo application to showcase some of the hacks that we included in our book OReilly&rsquo;s HTML5 Hacks.</p>
@@ -449,24 +449,24 @@ If you or your company need training, give us a shout.</p>
   
   <entry>
     <title type="html"><![CDATA[Fluent Conf 2013: Battle of the HTML5 Hackers]]></title>
-    <link href="http://jessecravens.com/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers/"/>
+    <link href="http://jessecravens.github.io/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers/"/>
     <updated>2013-06-05T10:12:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers</id>
+    <id>http://jessecravens.github.io/blog/2013/06/05/fluent-conf-2013-battle-of-the-html5-hackers</id>
     <content type="html"><![CDATA[<p>Our presentation at Fluent Conference 2013 was a success, as <a href="https://twitter.com/boyofgreen">Jeff</a> and I delivered our final version of the &lsquo;Battle of the Hackers&rsquo; series.</p>
 
-<p><img class="imgR300" alt="Jesse Cravens - Fluent Conf 2013" src="http://jessecravens.com/images/fluent_video.png"></p>
+<p><img class="imgR300" alt="Jesse Cravens - Fluent Conf 2013" src="http://jessecravens.github.io/images/fluent_video.png"></p>
 
 <p>If you missed the conference, you can still catch every workshop, session, and keynote with the complete video compilation of the event.Catch up with this year’s lineup of speakers—seasoned pros as well as notable newcomers—as they share their expertise with JavaScript, HTML5, CSS, and related technologies that power the Web.</p>
 
 <p>You can order the series <a href="http://shop.oreilly.com/product/0636920030843.do">here</a>.</p>
 
-<p><img class="imgL200" alt="Jesse Cravens - Fluent Conf 2013" src="http://jessecravens.com/images/jesse_fluent.png"></p>
+<p><img class="imgL200" alt="Jesse Cravens - Fluent Conf 2013" src="http://jessecravens.github.io/images/jesse_fluent.png"></p>
 
 <p>It was a great pleasure to share the stage with Brendan Eich (Mozilla), Paul Irish (Google), Lea Verou (W3C), Bill Scott (PayPal), Jesse Freeman (Microsoft), Dion Almaer (Walmart.com), and dozens more in the field.</p>
 
 <p>We also had a great turn out for the book signing, thanks for all the support. And congrats to Doug Hall for winning a free ebook copy of our book <a href="http://shop.oreilly.com/product/0636920026273.do">HTML5 Hacks</a></p>
 
-<p><img class="imgR300" alt="Jesse Cravens - Fluent Conf 2013" src="http://jessecravens.com/images/fluent_books.jpg"></p>
+<p><img class="imgR300" alt="Jesse Cravens - Fluent Conf 2013" src="http://jessecravens.github.io/images/fluent_books.jpg"></p>
 
 <p>As always we&rsquo;ve made all the code available and more at <a href="http://html5hacks.com">html5hacks.com</a>, and on github: <a href="http://github.com/html5hacks">github.com/html5hacks</a>.</p>
 
@@ -478,9 +478,9 @@ If you or your company need training, give us a shout.</p>
   
   <entry>
     <title type="html"><![CDATA[Ember.js Views and Live Templates with Handlebars.js Part 1]]></title>
-    <link href="http://jessecravens.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/"/>
+    <link href="http://jessecravens.github.io/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/"/>
     <updated>2013-06-04T10:05:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1</id>
+    <id>http://jessecravens.github.io/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1</id>
     <content type="html"><![CDATA[<p><img class="imgL200" alt="Tech-pro Ember.js Views" src="http://tpstatic.com/img/usermedia/cHI1WdevsEyBJ7dLfmVUdA/cropped-w220-h220.png"></p>
 
 <p>This is an exploration of Handlebars.js template library when used with Ember.js views. Many of the Handlebars.js tutorials on the web discuss the Handlebars API, but not in the specific context of using Handlebars with Ember.js. In addition to filling that void, I&rsquo;ll also give a brief background of JavaScript templating in general to provide perspective as to the problems it is solving.</p>
@@ -493,9 +493,9 @@ If you or your company need training, give us a shout.</p>
   
   <entry>
     <title type="html"><![CDATA[Modern Ember.js Application Workflow with Yeoman and Mocha]]></title>
-    <link href="http://jessecravens.com/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/"/>
+    <link href="http://jessecravens.github.io/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/"/>
     <updated>2013-04-23T10:05:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha</id>
+    <id>http://jessecravens.github.io/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha</id>
     <content type="html"><![CDATA[<p><img class="imgL200" alt="Tech-pro Modern Ember.js Application Workflow" src="http://tpstatic.com/img/usermedia/LgFpf2qDCkGfHlDBR4oGDA/cropped-w220-h220.png"></p>
 
 <p>The following tutorial will provide an overview for building Ember.js applications with Yeoman. Keep in mind, Yeoman is a framework agnostic collection of tools, used to manage the workflow of any JavaScript application or plugin. For the sake of this tutorial, we have chosen to focus on Ember.js, as a case study.</p>
@@ -508,9 +508,9 @@ If you or your company need training, give us a shout.</p>
   
   <entry>
     <title type="html"><![CDATA[Push Notifications to the Browser with Server Sent Events]]></title>
-    <link href="http://jessecravens.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/"/>
+    <link href="http://jessecravens.github.io/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/"/>
     <updated>2013-04-21T15:44:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events</id>
+    <id>http://jessecravens.github.io/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events</id>
     <content type="html"><![CDATA[<p>Mirrored from: <a href="http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/">http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/</a></p>
 
 <p>Created by Opera, Server Sent Events standardizes Comet technologies. The standard intends to enable native real time updates through a simple JavaScript API called EventSource, which connects to servers that asynchronously push data updates to clients via HTTP Streaming. Server Sent Events use a single, unidirectional, persistent connection between the browser and the server.</p>
@@ -678,7 +678,7 @@ Simple requiring of Sinatra and the JSON library:</p>
 
 <p>Figure 9.15 Starting the Sinatra Server</p>
 
-<p><img class="figure" alt="Figure 7-2" src="http://jessecravens.com/images/chapter9-images/9-15.png"></p>
+<p><img class="figure" alt="Figure 7-2" src="http://jessecravens.github.io/images/chapter9-images/9-15.png"></p>
 
 <p>Alright, so now that we have out Sinatra app up and running with custom routes to handle incoming requests from our browser.</p>
 
@@ -756,13 +756,13 @@ Simple requiring of Sinatra and the JSON library:</p>
 
 <p>Figure 9.16 The initial admin page</p>
 
-<p><img class="figure" alt="Figure 9-16" src="http://jessecravens.com/images/chapter9-images/9-16.png"></p>
+<p><img class="figure" alt="Figure 9-16" src="http://jessecravens.github.io/images/chapter9-images/9-16.png"></p>
 
 <p>And, navigate to <a href="http://localhost:4567">http://localhost:4567</a> in your browser and you should see.</p>
 
 <p>Figure 9.17 The initial index page</p>
 
-<p><img class="figure" alt="Figure 9-17" src="http://jessecravens.com/images/chapter9-images/9-17.png"></p>
+<p><img class="figure" alt="Figure 9-17" src="http://jessecravens.github.io/images/chapter9-images/9-17.png"></p>
 
 <h2>Adding a bit of jQuery</h2>
 
@@ -791,7 +791,7 @@ Notice the url /push maps to the route we defined in our Sinatra app.</p>
 
 <p>Figure 9.18 Opening 5 browser windows</p>
 
-<p><img class="figure" alt="Figure 9-18" src="http://jessecravens.com/images/chapter9-images/9-18.png"></p>
+<p><img class="figure" alt="Figure 9-18" src="http://jessecravens.github.io/images/chapter9-images/9-18.png"></p>
 
 <p>Looking good.</p>
 
@@ -893,7 +893,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 
 <p>Figure 9.19 Inspecting the DOM in Chrome Dev Tools</p>
 
-<p><img class="figure" alt="Figure 9-19" src="http://jessecravens.com/images/chapter9-images/9-19.png"></p>
+<p><img class="figure" alt="Figure 9-19" src="http://jessecravens.github.io/images/chapter9-images/9-19.png"></p>
 
 <p>In order for jQuery.notify to initialize, you must first call the following:</p>
 
@@ -953,28 +953,28 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 
 <p>Figure 9.20 Pushing Notifications to the Connected Browsers</p>
 
-<p><img class="figure" alt="Figure 9-20" src="http://jessecravens.com/images/chapter9-images/9-20.png"></p>
+<p><img class="figure" alt="Figure 9-20" src="http://jessecravens.github.io/images/chapter9-images/9-20.png"></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[SXSWi 2013: 'Battle of the HTML5 Hackers' and 'HTML5 Hacks' Book Signing]]></title>
-    <link href="http://jessecravens.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/"/>
+    <link href="http://jessecravens.github.io/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers/"/>
     <updated>2013-03-12T23:55:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
+    <id>http://jessecravens.github.io/blog/2013/03/12/sxswi-2013-battle-of-the-html5-hackers</id>
     <content type="html"><![CDATA[<p>We had a great turnout for the &lsquo;Battle of the HTML5 Hackers&rsquo; presentation at SXSWi on Tuesday.</p>
 
-<p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers - Jesse Cravens and Jeff Burtoft" src="http://jessecravens.com/images/sxsw13/sxsw13-crowd.jpg"></p>
+<p><img class="imgL300" alt="SXSWi 2013: Battle of the HTML5 Hackers - Jesse Cravens and Jeff Burtoft" src="http://jessecravens.github.io/images/sxsw13/sxsw13-crowd.jpg"></p>
 
 <p>Using our best CDD (Conference Driven Devlopment) techniques, we walked the audience through the creation of <a href="http://nerdclustr.jit.su">Nerdclustr</a>: an HTML5 mobile Application that helps nerds find other like-minded nerds at conferences events.</p>
 
 <p>Using realtime and mapping technolgies, the app visualizes nerd behavior in map pin clusters.</p>
 
-<p><img class="imgR200" alt="Nerdclustr: SXSWi 2013 Ballroom G Austin Convention Center"  src="http://jessecravens.com/images/sxsw13/sxsw13-app.png"></p>
+<p><img class="imgR200" alt="Nerdclustr: SXSWi 2013 Ballroom G Austin Convention Center"  src="http://jessecravens.github.io/images/sxsw13/sxsw13-app.png"></p>
 
 <p>Here is a shot of the app in action (Ballroom G in the Austin Convention Center); it performed well during the presentation. Thanks to <a href="https://www.nodejitsu.com/">Nodjitsu</a> for the quality node.js WebSocket service. After a 2-day hackathon to get the app launched, I ran through a number of deployment options, many of which I have used before for Rails applications. <a href="https://www.nodejitsu.com/">Nodjitsu</a> won out in that it actually supported the WebSokcet protocol and made deployment super simple using the jitsu CLI.</p>
 
-<p><img class="imgL200" alt="Jesse Cravens and Jeff Burtoft: SXSWi 2013 - HTML5 Hacks Book Signing"  src="http://jessecravens.com/images/sxsw13/sxsw13-booksigning.png"></p>
+<p><img class="imgL200" alt="Jesse Cravens and Jeff Burtoft: SXSWi 2013 - HTML5 Hacks Book Signing"  src="http://jessecravens.github.io/images/sxsw13/sxsw13-booksigning.png"></p>
 
 <p>Nerdclustr source code is available <a href="https://github.com/html5hacks/nerd-clustr">here</a>.</p>
 
@@ -982,7 +982,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 
 <p>The slide deck is available here:</p>
 
-<script async class="speakerdeck-embed" data-id="c69c92f06d880130bfaa22000a1f8363" data-ratio="1.77777777777778" src="http://jessecravens.com//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-id="c69c92f06d880130bfaa22000a1f8363" data-ratio="1.77777777777778" src="http://jessecravens.github.io//speakerdeck.com/assets/embed.js"></script>
 
 
 
@@ -996,9 +996,9 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
   
   <entry>
     <title type="html"><![CDATA[HTML5.tx 2013]]></title>
-    <link href="http://jessecravens.com/blog/2013/02/03/html5-dot-tx-2013/"/>
+    <link href="http://jessecravens.github.io/blog/2013/02/03/html5-dot-tx-2013/"/>
     <updated>2013-02-03T23:09:00-06:00</updated>
-    <id>http://jessecravens.com/blog/2013/02/03/html5-dot-tx-2013</id>
+    <id>http://jessecravens.github.io/blog/2013/02/03/html5-dot-tx-2013</id>
     <content type="html"><![CDATA[<h3>Embedded JavaScript, HTML5 and the Internet of Things</h3>
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/H00_BGRkBRM" frameborder="0" allowfullscreen></iframe>
@@ -1006,7 +1006,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 
 
 
-<script async class="speakerdeck-embed" data-slide="46" data-id="92b31ab050b501308fcd1231381d555c" data-ratio="1.2994923857868" src="http://jessecravens.com//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-slide="46" data-id="92b31ab050b501308fcd1231381d555c" data-ratio="1.2994923857868" src="http://jessecravens.github.io//speakerdeck.com/assets/embed.js"></script>
 
 
 <p>I had a great time presenting at HTML5.tx 2013; here is an embed above of the slide deck. I should have the trailr node module in a presentable format soon and I&rsquo;ll tweet its inclusion in NPM. I have a placeholder here: <a href="https://npmjs.org/package/trailr">trailr at npm</a></p>
@@ -1017,19 +1017,19 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 
 <p>Very soon, initial documentation will be available at: <a href="http://trailr.io">trailr.io</a></p>
 
-<p><img class="" alt=""  src="http://jessecravens.com/images/html5tx2013/embedded.JPG"></p>
+<p><img class="" alt=""  src="http://jessecravens.github.io/images/html5tx2013/embedded.JPG"></p>
 
 <p>Photo credit: Mitch Fincher: <a href="http://mitchfincher.blogspot.com/2013/02/pictures-from-html5tx-2013-in-austin-tx.html">mitchfincher.blogspot.com</a></p>
 
 <h3>HTML5 Canvas View</h3>
 
-<p><img class="" alt=""  src="http://jessecravens.com/images/html5tx2013/dash.png"></p>
+<p><img class="" alt=""  src="http://jessecravens.github.io/images/html5tx2013/dash.png"></p>
 
 <h3>Node.js trailr module &ndash; Web Based Edit (Ace Editor) and WebSocket Deploy to Arduino</h3>
 
-<p><img class="" alt=""  src="http://jessecravens.com/images/html5tx2013/edit.png"></p>
+<p><img class="" alt=""  src="http://jessecravens.github.io/images/html5tx2013/edit.png"></p>
 
-<p><img class="" alt=""  src="http://jessecravens.com/images/html5tx2013/embedded2.JPG"></p>
+<p><img class="" alt=""  src="http://jessecravens.github.io/images/html5tx2013/embedded2.JPG"></p>
 
 <p>Photo credit: Mitch Fincher: <a href="http://mitchfincher.blogspot.com/2013/02/pictures-from-html5tx-2013-in-austin-tx.html">mitchfincher.blogspot.com</a></p>
 ]]></content>
@@ -1037,16 +1037,16 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
   
   <entry>
     <title type="html"><![CDATA[Build a Milestone Calendar with IndexedDB and FullCalendar.js]]></title>
-    <link href="http://jessecravens.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/"/>
+    <link href="http://jessecravens.github.io/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js/"/>
     <updated>2013-01-17T08:47:00-06:00</updated>
-    <id>http://jessecravens.com/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js</id>
+    <id>http://jessecravens.github.io/blog/2013/01/17/build-a-milestone-calendar-with-indexeddb-and-fullcalendar-dot-js</id>
     <content type="html"><![CDATA[<h4>IndexedDB is a persistent object data store in the browser. Although it is not a full SQL implementation and it is more complex than the unstructured key–value pairs in localStorage, you can use it to define an API that provides the ability to read and write key–value objects as structured JavaScript objects, and an indexing system that facilitates filtering and lookup.</h4>
 
 <p>For this hack we will use IndexedDB to store milestone objects for a calendar application. The UI will provide a simple means to create a new milestone and provide a title, start date, and end date. The calendar will then update to show the contents of the local data store. Figure 6-8 shows the result.</p>
 
 <p>Figure 6-8. FullCalendar.js and IndexedDB</p>
 
-<p><img class="figure" alt="Figure 6-8" src="http://jessecravens.com/images/chapter6-images/6-8.png"></p>
+<p><img class="figure" alt="Figure 6-8" src="http://jessecravens.github.io/images/chapter6-images/6-8.png"></p>
 
 <p>We need to start by including the markup for the two pieces of the UI: the calendar and the form.
 We’ll begin with the form. You may notice that the input fields for the dates include data-date-format attributes. We will use these later for the JavaScript date pickers.</p>
@@ -1126,7 +1126,7 @@ We’ll begin with the form. You may notice that the input fields for the dates 
 
 <p>Figure 6-9. Date pickers</p>
 
-<p><img class="figure" alt="Figure 6-9" src="http://jessecravens.com/images/chapter6-images/6-9.png"></p>
+<p><img class="figure" alt="Figure 6-9" src="http://jessecravens.github.io/images/chapter6-images/6-9.png"></p>
 
 <p>To instantiate the date pickers we will include the following toward the beginning of our script:</p>
 
@@ -1405,7 +1405,7 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
 
 <p>Figure 6-10. Viewing milestone objects in the Chrome Inspector</p>
 
-<p><img class="figure" alt="Figure 6-10" src="http://jessecravens.com/images/chapter6-images/6-10.png"></p>
+<p><img class="figure" alt="Figure 6-10" src="http://jessecravens.github.io/images/chapter6-images/6-10.png"></p>
 
 <p>Let’s take a closer look at our addMilestone method:</p>
 
@@ -1464,9 +1464,9 @@ First, we declare the type of transaction to be a READ_WRITE, set a reference to
   
   <entry>
     <title type="html"><![CDATA[Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship]]></title>
-    <link href="http://jessecravens.com/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship/"/>
+    <link href="http://jessecravens.github.io/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship/"/>
     <updated>2012-11-28T10:02:00-06:00</updated>
-    <id>http://jessecravens.com/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship</id>
+    <id>http://jessecravens.github.io/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship</id>
     <content type="html"><![CDATA[<p>Im giving a talk at Devcon 5 &ndash; San Francisco this afternoon: Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship. Here is the other talks on the agenda: <a href="http://www.html5report.com/conference/california/agenda.aspx">Devcon 5 &ndash; San Francisco</a>.</p>
 
 <p>Here is a brief summary:</p>
@@ -1514,7 +1514,7 @@ We will explore Web Workers processing heavy computations without blocking the U
 <p>Here is the node.js server used on the Beaglebone in the demo: <a href="https://github.com/jessecravens/beagleserver">beagleserver</a>.
 The Johnny Five code is located here: <a href="https://github.com/nodejshacks/nodejshacks-embedded">node-embedded</a></p>
 
-<script async class="speakerdeck-embed" data-slide="4" data-id="086813701bf601302fbe22000a1f8a4e" data-ratio="1.2994923857868" src="http://jessecravens.com//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-slide="4" data-id="086813701bf601302fbe22000a1f8a4e" data-ratio="1.2994923857868" src="http://jessecravens.github.io//speakerdeck.com/assets/embed.js"></script>
 
 
 
@@ -1526,9 +1526,9 @@ The Johnny Five code is located here: <a href="https://github.com/nodejshacks/no
   
   <entry>
     <title type="html"><![CDATA[Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font]]></title>
-    <link href="http://jessecravens.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/"/>
+    <link href="http://jessecravens.github.io/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/"/>
     <updated>2012-11-18T19:42:00-06:00</updated>
-    <id>http://jessecravens.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font</id>
+    <id>http://jessecravens.github.io/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font</id>
     <content type="html"><![CDATA[<p>Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
 make requests to other domains from within the browser. With CORS you have a secure
 and easy-to-implement approach for circumventing the browser’s same origin
@@ -1558,13 +1558,13 @@ Console; see Figure 9-21.</p>
 
 <p>Figure 9-21. S3 Management Console</p>
 
-<p><img class="figure" alt="Figure 9-21" src="http://jessecravens.com/images/chapter9-images/9-21.png"></p>
+<p><img class="figure" alt="Figure 9-21" src="http://jessecravens.github.io/images/chapter9-images/9-21.png"></p>
 
 <p>If we click on Create a Bucket we should see the prompt shown in Figure 9-22.</p>
 
 <p>Figure 9-22. Creating an S3 bucket in the S3 Management Console</p>
 
-<p><img class="figure" alt="Figure 9-22" src="http://jessecravens.com/images/chapter9-images/9-22.png"></p>
+<p><img class="figure" alt="Figure 9-22" src="http://jessecravens.github.io/images/chapter9-images/9-22.png"></p>
 
 <p>Let’s name the bucket and choose a region (see Figure 9-23). As I stated earlier, you
 can choose a region to optimize for latency, minimize costs, or address regulatory
@@ -1572,14 +1572,14 @@ requirements.</p>
 
 <p>Figure 9-23. Naming an S3 bucket in the S3 Management Console</p>
 
-<p><img class="figure" alt="Figure 9-23" src="http://jessecravens.com/images/chapter9-images/9-23.png"></p>
+<p><img class="figure" alt="Figure 9-23" src="http://jessecravens.github.io/images/chapter9-images/9-23.png"></p>
 
 <p>We will go ahead and name our bucket none other than “html5hacks.” You should now
 see an admin screen that shows an empty filesystem (see Figure 9-24).</p>
 
 <p>Figure 9-24. The html5hacks S3 bucket</p>
 
-<p><img class="figure" alt="Figure 9-24" src="http://jessecravens.com/images/chapter9-images/9-24.png"></p>
+<p><img class="figure" alt="Figure 9-24" src="http://jessecravens.github.io/images/chapter9-images/9-24.png"></p>
 
 <p>Well, that was simple. So why are we doing this? Let’s start with some simple browser
 security—something called the same origin policy.</p>
@@ -1642,7 +1642,7 @@ Figure 9-25).</p>
 
 <p>Figure 9-25. An uploaded BebasNeue font</p>
 
-<p><img class="figure" alt="Figure 9-25" src="http://jessecravens.com/images/chapter9-images/9-25.png"></p>
+<p><img class="figure" alt="Figure 9-25" src="http://jessecravens.github.io/images/chapter9-images/9-25.png"></p>
 
 <h3>Adding the Web Font to Your Web Page</h3>
 
@@ -1704,20 +1704,20 @@ Figure 9-26), Safari, and Chrome our header tag is being styled correctly.</p>
 
 <p>Figure 9-26. Opera browser showing the BebasNeue font</p>
 
-<p><img class="figure" alt="Figure 9-26" src="http://jessecravens.com/images/chapter9-images/9-26.png"></p>
+<p><img class="figure" alt="Figure 9-26" src="http://jessecravens.github.io/images/chapter9-images/9-26.png"></p>
 
 <p>But if we view it in Firefox, we are having issues (see Figure 9-27).</p>
 
 <p>Figure 9-27. Firefox browser failing to show the BebasNeue font</p>
 
-<p><img class="figure" alt="Figure 9-27" src="http://jessecravens.com/images/chapter9-images/9-27.png"></p>
+<p><img class="figure" alt="Figure 9-27" src="http://jessecravens.github.io/images/chapter9-images/9-27.png"></p>
 
 <p>If we examine the request for our font in the Chrome Dev Tools Network tab, we will
 see that the response from the server is empty (see Figure 9-28).</p>
 
 <p>Figure 9-28. Firefox browser showing an empty response</p>
 
-<p><img class="figure" alt="Figure 9-28" src="http://jessecravens.com/images/chapter9-images/9-28.png"></p>
+<p><img class="figure" alt="Figure 9-28" src="http://jessecravens.github.io/images/chapter9-images/9-28.png"></p>
 
 <p>What gives? Well, by default, Firefox will only accept links from the same domain as
 the host page. If we want to include fonts from different domains, we need to add an
@@ -1785,14 +1785,14 @@ character refers to all origins.</p>
 
 <p>Figure 9-29. Configuring CORS in the S3 Management Console</p>
 
-<p><img class="figure" alt="Figure 9-29" src="http://jessecravens.com/images/chapter9-images/9-29.png"></p>
+<p><img class="figure" alt="Figure 9-29" src="http://jessecravens.github.io/images/chapter9-images/9-29.png"></p>
 
 <p>Now, let’s return to Firefox and reload the page. We should now see the header font
 styled with our BebasNeue web font, as shown in Figure 9-30.</p>
 
 <p>Figure 9-30. Firefox browser successfully showing the BebasNeue font</p>
 
-<p><img class="figure" alt="Figure 9-30" src="http://jessecravens.com/images/chapter9-images/9-30.png"></p>
+<p><img class="figure" alt="Figure 9-30" src="http://jessecravens.github.io/images/chapter9-images/9-30.png"></p>
 
 <p>There is much more to learn about CORS, most notably, HTTP POST usage with certain
 MIME types, and sending cookies and HTTP authentication data with requests if so
@@ -1803,9 +1803,9 @@ own CORS hacks.</p>
   
   <entry>
     <title type="html"><![CDATA[Upcoming Talk at Devcon5-Austin: Rapid Prototyping HTML5 Applications with NodeJS]]></title>
-    <link href="http://jessecravens.com/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs/"/>
+    <link href="http://jessecravens.github.io/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs/"/>
     <updated>2012-09-25T21:50:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs</id>
+    <id>http://jessecravens.github.io/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs</id>
     <content type="html"><![CDATA[<p>I&rsquo;m getting ready for an upcoming talk titled: Rapid Prototyping HTML5 Applications with NodeJS, which I will presenting at <a href="http://www.html5report.com/conference/austin2012/Agenda/Agenda-at-a-glance.aspx">Devcon 5 &ndash; Austin</a>.</p>
 
 <p>Here is a brief summary:</p>
@@ -1819,16 +1819,16 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
 
 <p>Look for an update with a web based version of the slides.</p>
 
-<script async class="speakerdeck-embed" data-id="507da9caa2a4030002063d67" data-ratio="1.299492385786802" src="http://jessecravens.com//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-id="507da9caa2a4030002063d67" data-ratio="1.299492385786802" src="http://jessecravens.github.io//speakerdeck.com/assets/embed.js"></script>
 
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Just moved HTML5 Hacks into Copy/Edit]]></title>
-    <link href="http://jessecravens.com/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit/"/>
+    <link href="http://jessecravens.github.io/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit/"/>
     <updated>2012-09-24T21:57:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit</id>
+    <id>http://jessecravens.github.io/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit</id>
     <content type="html"><![CDATA[<p>After a marathon of hackery starting in April, <a href="http://www.oreillynet.com/pub/au/5370">Jeff Burtoft</a> and I pushed out 90 hacks and 435 pages of <a href="http://shop.oreilly.com/product/0636920026273.do">HTML5 Hacks</a> this week. We also had a few guest hackers that created some really great content as well.</p>
 
 <ul>
@@ -1850,9 +1850,9 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
   
   <entry>
     <title type="html"><![CDATA[Migration from Drupal to Octopress]]></title>
-    <link href="http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress/"/>
+    <link href="http://jessecravens.github.io/blog/2012/09/23/migration-from-drupal-to-octopress/"/>
     <updated>2012-09-23T13:39:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress</id>
+    <id>http://jessecravens.github.io/blog/2012/09/23/migration-from-drupal-to-octopress</id>
     <content type="html"><![CDATA[<h2>Why?</h2>
 
 <p>For the last 6 years, I have hosted my personal blog using Drupal at bluehost.com, and I finally have made the decision to migrate.</p>
@@ -1983,9 +1983,9 @@ EOF
   
   <entry>
     <title type="html"><![CDATA[JavaScript Modules]]></title>
-    <link href="http://jessecravens.com/blog/2012/06/17/javascript-modules/"/>
+    <link href="http://jessecravens.github.io/blog/2012/06/17/javascript-modules/"/>
     <updated>2012-06-17T16:23:21-05:00</updated>
-    <id>http://jessecravens.com/blog/2012/06/17/javascript-modules</id>
+    <id>http://jessecravens.github.io/blog/2012/06/17/javascript-modules</id>
     <content type="html"><![CDATA[<p>For a talk last March at USAA&#8217;s internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
 
 

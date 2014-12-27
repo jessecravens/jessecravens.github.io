@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: JQuery | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/jquery/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/jquery/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[JavaScript Modules]]></title>
-    <link href="http://jessecravens.com/blog/2012/06/17/javascript-modules/"/>
+    <link href="http://jessecravens.github.io/blog/2012/06/17/javascript-modules/"/>
     <updated>2012-06-17T16:23:21-05:00</updated>
-    <id>http://jessecravens.com/blog/2012/06/17/javascript-modules</id>
+    <id>http://jessecravens.github.io/blog/2012/06/17/javascript-modules</id>
     <content type="html"><![CDATA[<p>For a talk last March at USAA's internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
 
 

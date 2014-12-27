@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Graphic Design | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/graphic-design/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/graphic-design/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,12 +15,12 @@
   
   <entry>
     <title type="html"><![CDATA[inspiration is bliss album cover]]></title>
-    <link href="http://jessecravens.com/blog/2006/04/27/inspiration-is-bliss-album-cover/"/>
+    <link href="http://jessecravens.github.io/blog/2006/04/27/inspiration-is-bliss-album-cover/"/>
     <updated>2006-04-27T19:52:43-05:00</updated>
-    <id>http://jessecravens.com/blog/2006/04/27/inspiration-is-bliss-album-cover</id>
+    <id>http://jessecravens.github.io/blog/2006/04/27/inspiration-is-bliss-album-cover</id>
     <content type="html"><![CDATA[<p>I have been working on the the album cover for Inspiration is Bliss. After three years of working on this collection of songs, I&rsquo;m feeling that I am one song shy of its completion. There will be 9 songs total. Here is the first comp of the album cover. Look familiar? I used this texture in the header above.</p>
 
-<p><img src="http://jessecravens.com/images/2006/01/inspiration3.jpg" alt="inspiration3.jpg" align="baseline" width="350" height="350" hspace="10" vspace="10" border="1" /></p>
+<p><img src="http://jessecravens.github.io/images/2006/01/inspiration3.jpg" alt="inspiration3.jpg" align="baseline" width="350" height="350" hspace="10" vspace="10" border="1" /></p>
 ]]></content>
   </entry>
   

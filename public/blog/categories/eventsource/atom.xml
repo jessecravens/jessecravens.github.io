@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: EventSource | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/eventsource/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/eventsource/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Push Notifications to the Browser with Server Sent Events]]></title>
-    <link href="http://jessecravens.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/"/>
+    <link href="http://jessecravens.github.io/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/"/>
     <updated>2013-04-21T15:44:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events</id>
+    <id>http://jessecravens.github.io/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events</id>
     <content type="html"><![CDATA[<p>Mirrored from: <a href="http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/">http://html5hacks.com/blog/2013/04/21/push-notifications-to-the-browser-with-server-sent-events/</a></p>
 
 <p>Created by Opera, Server Sent Events standardizes Comet technologies. The standard intends to enable native real time updates through a simple JavaScript API called EventSource, which connects to servers that asynchronously push data updates to clients via HTTP Streaming. Server Sent Events use a single, unidirectional, persistent connection between the browser and the server.</p>
@@ -271,7 +271,7 @@ Simple requiring of Sinatra and the JSON library:</p>
 
 <p>Figure 9.15 Starting the Sinatra Server</p>
 
-<p><img class="figure" alt="Figure 7-2" src="http://jessecravens.com/images/chapter9-images/9-15.png"></p>
+<p><img class="figure" alt="Figure 7-2" src="http://jessecravens.github.io/images/chapter9-images/9-15.png"></p>
 
 <p>Alright, so now that we have out Sinatra app up and running with custom routes to handle incoming requests from our browser.</p>
 
@@ -390,13 +390,13 @@ Simple requiring of Sinatra and the JSON library:</p>
 
 <p>Figure 9.16 The initial admin page</p>
 
-<p><img class="figure" alt="Figure 9-16" src="http://jessecravens.com/images/chapter9-images/9-16.png"></p>
+<p><img class="figure" alt="Figure 9-16" src="http://jessecravens.github.io/images/chapter9-images/9-16.png"></p>
 
 <p>And, navigate to <a href="http://localhost:4567">http://localhost:4567</a> in your browser and you should see.</p>
 
 <p>Figure 9.17 The initial index page</p>
 
-<p><img class="figure" alt="Figure 9-17" src="http://jessecravens.com/images/chapter9-images/9-17.png"></p>
+<p><img class="figure" alt="Figure 9-17" src="http://jessecravens.github.io/images/chapter9-images/9-17.png"></p>
 
 <h2>Adding a bit of jQuery</h2>
 
@@ -440,7 +440,7 @@ Notice the url /push maps to the route we defined in our Sinatra app.</p>
 
 <p>Figure 9.18 Opening 5 browser windows</p>
 
-<p><img class="figure" alt="Figure 9-18" src="http://jessecravens.com/images/chapter9-images/9-18.png"></p>
+<p><img class="figure" alt="Figure 9-18" src="http://jessecravens.github.io/images/chapter9-images/9-18.png"></p>
 
 <p>Looking good.</p>
 
@@ -588,7 +588,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 
 <p>Figure 9.19 Inspecting the DOM in Chrome Dev Tools</p>
 
-<p><img class="figure" alt="Figure 9-19" src="http://jessecravens.com/images/chapter9-images/9-19.png"></p>
+<p><img class="figure" alt="Figure 9-19" src="http://jessecravens.github.io/images/chapter9-images/9-19.png"></p>
 
 <p>In order for jQuery.notify to initialize, you must first call the following:</p>
 
@@ -674,7 +674,7 @@ Earlier, when we discussed the Sinatra app, we showed exposing a route for the b
 
 <p>Figure 9.20 Pushing Notifications to the Connected Browsers</p>
 
-<p><img class="figure" alt="Figure 9-20" src="http://jessecravens.com/images/chapter9-images/9-20.png"></p>
+<p><img class="figure" alt="Figure 9-20" src="http://jessecravens.github.io/images/chapter9-images/9-20.png"></p>
 ]]></content>
   </entry>
   

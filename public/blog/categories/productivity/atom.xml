@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Productivity | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/productivity/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/productivity/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[RVM (Ruby Version Manager) and Ruby On Rails]]></title>
-    <link href="http://jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails/"/>
+    <link href="http://jessecravens.github.io/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails/"/>
     <updated>2011-09-26T23:35:58-05:00</updated>
-    <id>http://jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails</id>
+    <id>http://jessecravens.github.io/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails</id>
     <content type="html"><![CDATA[<p>Here is a brief overview of <a href="http://beginrescueend.com">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn&rsquo;t live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
 
 <p>This allows me to essentially sandbox each of these applications' dependencies.</p>
@@ -199,9 +199,9 @@
   
   <entry>
     <title type="html"><![CDATA[Git Cheatsheet]]></title>
-    <link href="http://jessecravens.com/blog/2011/09/26/git-cheatsheet/"/>
+    <link href="http://jessecravens.github.io/blog/2011/09/26/git-cheatsheet/"/>
     <updated>2011-09-26T23:10:56-05:00</updated>
-    <id>http://jessecravens.com/blog/2011/09/26/git-cheatsheet</id>
+    <id>http://jessecravens.github.io/blog/2011/09/26/git-cheatsheet</id>
     <content type="html"><![CDATA[<p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I&rsquo;d share.</p>
 
 <h3>Git First-Time System Setup</h3>

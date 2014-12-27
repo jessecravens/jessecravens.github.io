@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: OctoPress | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Migration from Drupal to Octopress]]></title>
-    <link href="http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress/"/>
+    <link href="http://jessecravens.github.io/blog/2012/09/23/migration-from-drupal-to-octopress/"/>
     <updated>2012-09-23T13:39:00-05:00</updated>
-    <id>http://jessecravens.com/blog/2012/09/23/migration-from-drupal-to-octopress</id>
+    <id>http://jessecravens.github.io/blog/2012/09/23/migration-from-drupal-to-octopress</id>
     <content type="html"><![CDATA[<h2>Why?</h2>
 
 <p>For the last 6 years, I have hosted my personal blog using Drupal at bluehost.com, and I finally have made the decision to migrate.</p>

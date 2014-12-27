@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Hardware | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/hardware/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/hardware/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[Researching the Latest in HTPC (Home Theater PC)]]></title>
-    <link href="http://jessecravens.com/blog/2010/01/30/researching-the-latest-in-htpc-home-theater-pc/"/>
+    <link href="http://jessecravens.github.io/blog/2010/01/30/researching-the-latest-in-htpc-home-theater-pc/"/>
     <updated>2010-01-30T19:30:56-06:00</updated>
-    <id>http://jessecravens.com/blog/2010/01/30/researching-the-latest-in-htpc-home-theater-pc</id>
+    <id>http://jessecravens.github.io/blog/2010/01/30/researching-the-latest-in-htpc-home-theater-pc</id>
     <content type="html"><![CDATA[<p>Fed up with paying for lame content, we recently turned off our cable and turned in our DVR.<br />Since then, I have been doing my research and preparing to build or purchase a system that leverages our broadband connection and Local HD Channels for content.<br /><br />Here is my growing list of resources: <br /><b><br />General Information</b><br /><ul><li><a href="http://en.wikipedia.org/wiki/Home_theater_PC">Home theater PC &ndash; Wikipedia, the free encyclopedia</a></li></ul><br /><b>Articles</b><br /><ul><li><a href="http://gizmodo.com/5366161/life-without-cable-or-satellite-tv-is-easier-than-you-think">Life Without Cable or Satellite TV Is Easier Than You Think &ndash; Htpc &ndash; Gizmodo</a></li><li><a href="http://gizmodo.com/5420853/why-its-finally-time-to-get-a-home-theater-pc">Why It&rsquo;s Finally Time To Get a Home Theater PC &ndash; Htpc &ndash; Gizmodo</a></li><li><a href="http://www.extremetech.com/article2/0,2845,2349560,00.asp">Mini-Roundup: The Best New HTPC Cases &ndash; Chieftec HM-02 &ndash; CPUs, Boards &amp; Components by ExtremeTech</a></li><li><a href="http://www.engadget.com/2009/11/12/dells-inspiron-zino-hd-on-sale-now-in-america-starts-at-229/">Dell&rsquo;s Inspiron Zino HD on sale now in America: starts at $229, doubles as an HTPC &mdash; Engadget</a></li><li><a href="http://www.engadget.com/2009/07/21/how-to-build-a-blu-ray-tv-tuner-equipped-htpc-for-under-1-00/">How-to: Build a Blu-ray / TV tuner-equipped HTPC for under $1,000 &mdash; Engadget</a></li><li><a href="http://sewelldirect.com/articles/vga-to-hdmi.aspx">Convert VGA to HDMI with Audio (HDMI to VGA)</a></li></ul>      <br /><b>Videos</b><br /><ul><li><a href="http://www.howcast.com/videos/185705-How-To-Connect-Your-Laptop-To-Your-Television">How To Connect Your Laptop To Your Television Video | Laptop Computers Videos | Howcast.com</a></li><li><a href="http://www.youtube.com/watch?v=5c9-LLY33Gw">YouTube &ndash; CES 2010 &ndash; Core i5 is the new HTPC powerhouse</a></li></ul><br /><b>Channels</b><br /><ul><li><a href="http://www.hulu.com/">Hulu &ndash; Watch your favorites. Anytime. For free.</a></li><li><a href="http://www.fancast.com/">Fancast | Watch Full TV Shows and Movies | Free Online Streaming</a></li><li><a href="http://www.joost.com/epg/us/shows/">Shows &ndash; Featured &ndash; United States &ndash; Joost</a></li><li><a href="http://www.clicker.com/">Clicker &ndash; What&rsquo;s On Online</a></li></ul>   <br /><b>On Demand Content</b><br /><ul><li><a href="http://www.amazon.com/Video-On-Demand/b/ref=topnav_storetab_atv?ie=UTF8&amp;node=16261631">Amazon.com Video On Demand: TV shows, movies, international videos and more, ready to download</a></li></ul> <br /><b>Players </b><br /><ul><li><a href="http://www.roku.com/">Roku Digital Video Player | Watch Netflix, Amazon Video On Demand and MLB.TV on Roku Player</a></li><li><a href="http://www.vudu.com/noscript.html">VUDU &ndash; Turn Javscript On Please</a></li></ul> <b><br />Hardware &ndash; All In One</b><br /><ul><li><a href="http://usa.asus.com/product.aspx?P_ID=wH1q2VTqyLXaCw1f">ASUSTeK Computer Inc. EeeBox PC EB1012</a></li><li><a href="http://www.dell.com/us/en/corp/desktops/inspiron-zino-hd/pd.aspx?refid=inspiron-zino-hd&amp;s=corp">Inspiron Zino HD Desktop | Dell</a></li><li><a href="http://mvixusa.com/product/ultiopro">Mvix UltioPro (MX-880HD) HD Media Center with PVR</a></li><li><a href="http://www.bodhiboxes.com/index.php?option=com_content&amp;view=article&amp;id=10&amp;Itemid=17">BodhiBoxes &ndash; Home Theater Personal Computer &ndash; Configure</a></li></ul>    <br /><b>Hardware &ndash; Parts</b><br /><ul><li><a href="http://www.google.com/products?q=nmediapc+htpc+2000b&amp;hl=en&amp;output=nojs">nmediapc htpc 2000b &ndash; Google Product Search</a></li><li><a href="http://www.google.com/products?q=intel+core+2+quad+q8400&amp;hl=en&amp;output=nojs">intel core 2 quad q8400 &ndash; Google Product Search</a></li><li><a href="http://www.google.com/products?q=lg+CH08LS10&amp;hl=en&amp;output=nojs">lg CH08LS10 &ndash; Google Product Search</a></li></ul>  <br /><b>Software and OS</b><br /><ul><li><a href="http://www.boxee.tv/">Boxee</a></li><li><a href="http://www.elementmypc.com/main/">Element OS: Linux on your HTPC</a></li><li><a href="http://www.mythbuntu.org/about">About Mythbuntu | Mythbuntu</a></li><li><a href="http://www.linuxmce.org/">Welcome to LinuxMCE</a></li><li><a href="http://knoppmyth.net/knoppmyth.html">KnoppMyth</a></li><li><a href="http://geexbox.org/en/index.html">GeeXboX HomePage</a></li></ul>     <br /><b>Network Storage</b><br /><ul><li><a href="http://www.shopping.hp.com/product/computer/categories/home_servers/1/accessories/FL702AA%2523ABA;HHOJSID=dVn4LdMJq4ls00VSvQvFH4bRJR9T82wLy4nVJLn25KB81KF1Pvpz%21181851530">HP® Official Store — Buy the HP MediaSmart Server LX195 direct from HP</a></li></ul> <br /><b>Recorders</b><br /><ul><li><a href="http://www.hauppauge.com/index.htm">Hauppauge Computer Works</a></li><li><a href="http://mvixusa.com/product/ultiopro">Mvix UltioPro (MX-880HD) HD Media Center with PVR</a></li></ul>  <br /><b>Antennas</b><br /><ul><li><a target="HDTV Indoor / Outdoor Antenna" title="HDTV Indoor / Outdoor Antenna" href="http://www.monoprice.com/products/product.asp?c_id=109&amp;cp_id=10901&amp;cs_id=1090102&amp;p_id=4730&amp;seq=1&amp;format=4#feedback">HDMI Cable, Home Theater Accessories, HDMI Products, Cables, Adapters, Video/Audio Switch, Networking, USB, Firewire, Printer Toner, and more!</a></li></ul> <br /><b>Remotes</b><br /><ul><li><a href="http://gizmodo.com/5435219/lenovos-multimedia-remote-with-keyboard">Lenovo&rsquo;s Multimedia Remote with Keyboard &ndash; trackpad &ndash; Gizmodo</a></li><li><a href="http://www.gmote.org/">Gmote &gt; Android Remote</a></li><li><a href="http://www.logitech.com/index.cfm/keyboards/keyboard/devices/3848&amp;cl=us,en">diNovo Mini™</a></li><li><a href="http://www.google.com/products?q=HTPCKB&amp;hl=en">HTPCKB &ndash; Google Product Search</a></li></ul>   <br /><b>Cables/Converters</b><br /><ul><li><a href="http://www.monoprice.com/products/search.asp?keyword=vga+to+hdmi&amp;x=24&amp;y=15">HDMI Cable, Home Theater Accessories, HDMI Products, Cables, Adapters, Video/Audio Switch, Networking, USB, Firewire, Printer Toner, and more!</a></li><li><a href="http://sewelldirect.com/ATLONA-VGA-TO-HDMI-CONVERTERSCALER.asp">ATLONA VGA TO HDMI CONVERTER/SCALER &ndash; AT-HD500, $197.10</a></li></ul>  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />  <br /><br /><div class="zemanta-pixie"><img class="zemanta-pixie-img" alt="" src="http://img.zemanta.com/pixy.gif?x-id=37492be8-1a37-87f8-8f30-353c32d3f0b9" /></div></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Linux's Education Push]]></title>
-    <link href="http://jessecravens.com/blog/2006/12/15/linuxs-education-push/"/>
+    <link href="http://jessecravens.github.io/blog/2006/12/15/linuxs-education-push/"/>
     <updated>2006-12-15T10:02:48-06:00</updated>
-    <id>http://jessecravens.com/blog/2006/12/15/linuxs-education-push</id>
+    <id>http://jessecravens.github.io/blog/2006/12/15/linuxs-education-push</id>
     <content type="html"><![CDATA[<p>Linux&rsquo;s Education Push
 When it comes to desktop PCs, schools could be the first, real place where Linux grabs hold.<br /><br /><p>&ldquo;So Dad,&rdquo; he asked. &ldquo;What is the difference between Linux and Windows?&rdquo; I tried to explain but it was a waste of breath. &ldquo;What difference do you see?&rdquo; I asked back.</p>
 
@@ -36,18 +36,18 @@ When it comes to desktop PCs, schools could be the first, real place where Linux
   
   <entry>
     <title type="html"><![CDATA[Teaching and Learning TechForum: Austin, Tx - October 27th, 2006]]></title>
-    <link href="http://jessecravens.com/blog/2006/11/09/teaching-and-learning-techforum-austin-tx-october-27th-2006/"/>
+    <link href="http://jessecravens.github.io/blog/2006/11/09/teaching-and-learning-techforum-austin-tx-october-27th-2006/"/>
     <updated>2006-11-09T12:56:58-06:00</updated>
-    <id>http://jessecravens.com/blog/2006/11/09/teaching-and-learning-techforum-austin-tx-october-27th-2006</id>
+    <id>http://jessecravens.github.io/blog/2006/11/09/teaching-and-learning-techforum-austin-tx-october-27th-2006</id>
     <content type="html"><![CDATA[<p>Some of the highlights from my recent visit with educators at the Texas Tech Forum included:<br /><br /><a href="http://davidwarlick.com/wordpress/?page_id=2">David Warlick</a>:&nbsp; An Educator&rsquo;s Guide to Web 2.0<br /><br /><a href="http://www.paxwarrior.com/home/index.php">:: Pax home page :: || :: Pax Warrior ::</a> <br /><br />Pax Warrior is a Hybrid New Media product for the educational and training markets that extends the nascent &ldquo;Interactive Documentary&rdquo; form to incorporate decision based simulation and collaborative learning tools. It is at the lead of the new genre of &ldquo;Serious Games&rdquo;.<br /><br />There was also quite a bit of a buzz over Linux, primariliy <a href="http://www.edubuntu.org/">edubuntu</a>. I recently installed edubuntu in my classroom and used it to begin a lesson on operating systems. I would be very excited about an opportunity to use older pcs to build a linux learning lab.<br /><br />I&rsquo;m using moodle to manage the <a href="http://boernevirtualschool.com">Boerne Virtual School</a>, so I took a little time to share my experience with other educators and to invite progrmaming teachers to join our class online.&nbsp; &nbsp;  <br /><br /><br /><p class="poweredbyperformancing">powered by <a href="http://performancing.com/firefox">performancing firefox</a></p></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[campustechnology.org]]></title>
-    <link href="http://jessecravens.com/blog/2006/09/13/campustechnology-org/"/>
+    <link href="http://jessecravens.github.io/blog/2006/09/13/campustechnology-org/"/>
     <updated>2006-09-13T09:57:27-05:00</updated>
-    <id>http://jessecravens.com/blog/2006/09/13/campustechnology-org</id>
+    <id>http://jessecravens.github.io/blog/2006/09/13/campustechnology-org</id>
     <content type="html"><![CDATA[<p>I am beginning to make educators aware of my launch of <a href="http://Campustechnology.org" target="_blank" title="Campustechnology.org">campustechnology.org</a> . </p>
 
 
@@ -67,9 +67,9 @@ When it comes to desktop PCs, schools could be the first, real place where Linux
   
   <entry>
     <title type="html"><![CDATA[Wooden Computing]]></title>
-    <link href="http://jessecravens.com/blog/2006/05/04/wooden-computing/"/>
+    <link href="http://jessecravens.github.io/blog/2006/05/04/wooden-computing/"/>
     <updated>2006-05-04T19:28:11-05:00</updated>
-    <id>http://jessecravens.com/blog/2006/05/04/wooden-computing</id>
+    <id>http://jessecravens.github.io/blog/2006/05/04/wooden-computing</id>
     <content type="html"><![CDATA[<p>As I was saying&hellip;we need more natural representations in our modern designs. Ok, as usual, I may have taken it too far. Nevertheless, I thought this post at ecoGeek was pretty cool: <a href="http://www.ecogeek.org/content/view/62/1/"><a href="http://www.ecogeek.org/content/view/62/1/">http://www.ecogeek.org/content/view/62/1/</a></a><br/>
 <img src="http://www.ecogeek.org/images/stories/woodcomp1.jpg" alt="wooden computing" style="float: right; margin: 10px"/></p>
 ]]></content>

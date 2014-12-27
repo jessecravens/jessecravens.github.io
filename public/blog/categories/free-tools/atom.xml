@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: free tools | Jesse Cravens]]></title>
-  <link href="http://jessecravens.com/blog/categories/free-tools/atom.xml" rel="self"/>
-  <link href="http://jessecravens.com/"/>
-  <updated>2014-12-26T19:08:40-06:00</updated>
-  <id>http://jessecravens.com/</id>
+  <link href="http://jessecravens.github.io/blog/categories/free-tools/atom.xml" rel="self"/>
+  <link href="http://jessecravens.github.io/"/>
+  <updated>2014-12-26T19:52:40-06:00</updated>
+  <id>http://jessecravens.github.io/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Youtube.com in schools]]></title>
-    <link href="http://jessecravens.com/blog/2006/11/12/youtube-com-in-schools/"/>
+    <link href="http://jessecravens.github.io/blog/2006/11/12/youtube-com-in-schools/"/>
     <updated>2006-11-12T10:30:06-06:00</updated>
-    <id>http://jessecravens.com/blog/2006/11/12/youtube-com-in-schools</id>
+    <id>http://jessecravens.github.io/blog/2006/11/12/youtube-com-in-schools</id>
     <content type="html"><![CDATA[<p><a href="http://www.smh.com.au/news/web/youtube-course-a-class-act/2006/11/06/1162661610036.html">YouTube course is a class act &ndash; web &ndash; Technology &ndash; smh.com.au</a> <br /> <blockquote>&ldquo;After all, one of the jobs of a teacher is to help kids make sense of the world they live in,&rdquo; he says.</blockquote></p>
 ]]></content>
   </entry>
