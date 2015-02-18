@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Web Application Launch | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/web-application-launch/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/web-application-launch/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Robodeck]]></title>
-    <link href="http://jessecravens.github.io/blog/2012/05/22/robodeck/"/>
+    <link href="http://www.jessecravens.com/blog/2012/05/22/robodeck/"/>
     <updated>2012-05-22T10:01:42-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2012/05/22/robodeck</id>
+    <id>http://www.jessecravens.com/blog/2012/05/22/robodeck</id>
     <content type="html"><![CDATA[<p>Awhile back, I built a websocket powered interactive presentation framework called <a href="https://github.com/jessecravens/robodeck">Robodeck</a>.</p>
 
 
@@ -49,10 +49,10 @@
   
   <entry>
     <title type="html"><![CDATA[American Modern Vintage: Peacefield.info gets Redesigned]]></title>
-    <link href="http://jessecravens.github.io/blog/2008/01/20/american-modern-vintage-peacefield-info-gets-redesigned/"/>
+    <link href="http://www.jessecravens.com/blog/2008/01/20/american-modern-vintage-peacefield-info-gets-redesigned/"/>
     <updated>2008-01-20T00:33:18-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2008/01/20/american-modern-vintage-peacefield-info-gets-redesigned</id>
-    <content type="html"><![CDATA[<p><img style="float: right; display: inline; margin: 10px" src="http://jessecravens.github.io/images/pf2008.jpg" /></p>
+    <id>http://www.jessecravens.com/blog/2008/01/20/american-modern-vintage-peacefield-info-gets-redesigned</id>
+    <content type="html"><![CDATA[<p><img style="float: right; display: inline; margin: 10px" src="http://www.jessecravens.com/images/pf2008.jpg" /></p>
 
 <p>So I am calling it Generic American with a splash of Modern Vintage...I guess. I'm having one of those moments as a designer when the 'correct' images are present in my mind's eye, but for various reasons they haven't formulated on the canvas. Yet...but what the heck - I'm in no real hurry. I want to savor the taste of this one.</p>
 
@@ -83,9 +83,9 @@
   
   <entry>
     <title type="html"><![CDATA[campustechnology.org]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/09/13/campustechnology-org/"/>
+    <link href="http://www.jessecravens.com/blog/2006/09/13/campustechnology-org/"/>
     <updated>2006-09-13T09:57:27-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/09/13/campustechnology-org</id>
+    <id>http://www.jessecravens.com/blog/2006/09/13/campustechnology-org</id>
     <content type="html"><![CDATA[<p>I am beginning to make educators aware of my launch of <a href="http://Campustechnology.org" target="_blank" title="Campustechnology.org">campustechnology.org</a> . </p>
 
 
@@ -105,18 +105,18 @@
   
   <entry>
     <title type="html"><![CDATA[sessionswest.com's 'Morning Surf']]></title>
-    <link href="http://jessecravens.github.io/blog/2006/07/30/sessionswest-coms-morning-surf/"/>
+    <link href="http://www.jessecravens.com/blog/2006/07/30/sessionswest-coms-morning-surf/"/>
     <updated>2006-07-30T08:01:21-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/07/30/sessionswest-coms-morning-surf</id>
+    <id>http://www.jessecravens.com/blog/2006/07/30/sessionswest-coms-morning-surf</id>
     <content type="html"><![CDATA[<p>Another new design for <a href="http://sessionswest.com">SessionsWest.com</a>. I was digging for inspiration for this site, when Jeff called me from San Deigo last week right before he was about to go surfing. </a>The color scheme is known as &lsquo;Morning surf,&rsquo; and I built a custom flash player inspired by the album cover from the Fever Sessions. This new buildout has been my most complex drupal site to date. I embedded a photo gallery, and the mp3 player I mentioned earlier. I used drupal&rsquo;s front page module to give the home page a real clean, simple entry to the site. All in all it doesn&rsquo;t get much more simple, but I think thats what I like about it , and it reflects Jeff&rsquo;s style to the tee.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[sessionswest.com]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/02/23/sessionswest-com/"/>
+    <link href="http://www.jessecravens.com/blog/2006/02/23/sessionswest-com/"/>
     <updated>2006-02-23T17:19:55-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/02/23/sessionswest-com</id>
+    <id>http://www.jessecravens.com/blog/2006/02/23/sessionswest-com</id>
     <content type="html"><![CDATA[<p><a href="http://sessionswest.com/2.0/"><img src="http://jessecravens.com/images/sessions/front.jpg" alt="sessionswest.com" style="float:left;margin:10px;border:0px solid black"/></a></p>
 
 <p>I officially launched the rebuild of <a href="http://sessionswest.com/2.0/">sessionswest.com</a> today. The official website of a great local guitarist/singer-songwriter Jeff Anderson, a.k.a. el Jefe, and his recording studio in Boerne, TX.  El Jefe&rsquo;s music is an eclectic fusion of southern blues, country, and gospel. Some refer to Jeff&rsquo;s tunes as simply &lsquo;good ol&rsquo; down home feel good music.'</p>

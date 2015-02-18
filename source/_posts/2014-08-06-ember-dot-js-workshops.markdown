@@ -3,7 +3,8 @@ layout: post
 title: "Ember.js Workshops"
 date: 2014-08-06 22:23
 comments: true
-categories:
+categories: ["HTML5", "JavaScript", "Ember.js"]
+author: "Jesse Cravens (@jdcravens)"
 ---
 
 In the month of June, I had an opportunity to travel to Las Vegas to give a [workshop](http://futureinsightslive.com/las-vegas-2014/schedule/workshop-info) and related [talk](http://futureinsightslive.com/las-vegas-2014/schedule/day-1) at [Future Insights Live 2014](http://futureinsightslive.com/las-vegas-2014/).

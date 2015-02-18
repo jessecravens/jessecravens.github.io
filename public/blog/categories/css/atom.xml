@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: CSS | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/css/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Using Stylus’ Transparent Mixins to Hack Vendor-Specific Properties]]></title>
-    <link href="http://jessecravens.github.io/blog/2012/04/22/hack-99-using-stylus-transparent-mixins-to-hack-vendor-specific-properties/"/>
+    <link href="http://www.jessecravens.com/blog/2012/04/22/hack-99-using-stylus-transparent-mixins-to-hack-vendor-specific-properties/"/>
     <updated>2012-04-22T19:11:35-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2012/04/22/hack-99-using-stylus-transparent-mixins-to-hack-vendor-specific-properties</id>
+    <id>http://www.jessecravens.com/blog/2012/04/22/hack-99-using-stylus-transparent-mixins-to-hack-vendor-specific-properties</id>
     <content type="html"><![CDATA[<p>One of the most interesting features of <a href="https://github.com/LearnBoost/stylus">Stylus</a> is transparent Mixins. One reason they are interesting is that at the time of this writing, this feature is exclusive to Stylus, other CSS metalanguages like Less and Sass do not offer Transparent Mixin support.</p>
 
 <p>We already defined a mixin earlier, when we explored mixins with Jade. Here they are used similarly.</p>
@@ -80,135 +80,83 @@ Here is an example of a div element that needs to have corners take on different
 
 <p>First, the markup in Jade.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'>header
-</span><span class='line'>  h1= title
-</span><span class='line'>  p Welcome to #{title}<span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>div.panel panel test
-</span><span class='line'>div.mixin-panel mixin-panel test
-</span><span class='line'>div.t-mixin-panel transparent-mixin-panel test
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock example.html %}
+header
+  h1= title
+  p Welcome to #{title}</p>
+
+<p>div.panel panel test
+div.mixin-panel mixin-panel test
+div.t-mixin-panel transparent-mixin-panel test
+{% endcodeblock %}</p>
 
 <p>Then, the styles in basic CSS.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">div</span><span class="nc">.panel</span> <span class="p">{</span>
-</span><span class='line'>  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
-</span><span class='line'>  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock example.css %}
+div.panel {
+  -moz-border-radius: 10px 5px;
+  -webkit-border-radius: 10px 5px;
+  border-radius: 10px 5px;
+}
+{% endcodeblock %}</p>
 
 <p>This produces the following effect:</p>
 
-<p><img src="http://jessecravens.github.io/images/blogposts/stylus-example265x185.png"/></p>
+<p><img src="http://www.jessecravens.com/images/blogposts/stylus-example265x185.png"/></p>
 
 <p>With that context in mind, let’s leverage Stylus to help us manage our code. First, we are able to remove all parenthesis, semi-colons, and colons.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example2.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">div</span><span class="nc">.panel</span>
-</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
-</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
-</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock example2.css %}
+div.panel
+  -moz-border-radius 10px 5px
+  -webkit-border-radius 10px 5px
+  border-radius 10px 5px
+{% endcodeblock %}</p>
 
 <p>Much like Jade, this simplified syntax goes along way in our ability to quickly write CSS. Now, let’s apply some logic, by creating a border-radius mixin, and pass our values as arguments to our mixin:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example3.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">my-border-radius-mixin</span> <span class="o">(&amp;</span><span class="nt">hellip</span><span class="o">;</span><span class="nt">args</span><span class="o">)</span>
-</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
-</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
-</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">div</span><span class="nc">.panel</span>
-</span><span class='line'>  <span class="nt">my-border-radius-mixin</span> <span class="o">(</span><span class="nt">10px</span> <span class="nt">5px</span><span class="o">)&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock example3.css %}
+my-border-radius-mixin (&hellip;args)
+  -moz-border-radius args
+  -webkit-border-radius args
+  border-radius args</p>
+
+<p>div.panel
+  my-border-radius-mixin (10px 5px)</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>And we can reuse this mixin in other contexts, which continues to help reduce code bloat and keep your code DRY.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example4.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">my-border-radius-mixin</span> <span class="o">(&amp;</span><span class="nt">hellip</span><span class="o">;</span><span class="nt">args</span><span class="o">)</span>
-</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
-</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
-</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">div</span><span class="nc">.panel</span>
-</span><span class='line'>  <span class="nt">border-radius-mixin</span> <span class="o">(</span><span class="nt">10px</span> <span class="nt">5px</span><span class="o">)&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">div</span><span class="nc">.other-panel</span>
-</span><span class='line'>  <span class="nt">border-radius-mixin</span> <span class="o">(</span><span class="nt">3px</span> <span class="nt">32px</span> <span class="nt">100px</span> <span class="nt">55px</span><span class="o">)&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">div</span><span class="nc">.another-panel</span>
-</span><span class='line'>  <span class="nt">my-border-radius-mixin</span> <span class="o">(</span><span class="nt">5px</span> <span class="nt">10px</span> <span class="nt">33px</span> <span class="nt">43px</span><span class="o">)&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock example4.css %}
+my-border-radius-mixin (&hellip;args)
+  -moz-border-radius args
+  -webkit-border-radius args
+  border-radius args</p>
+
+<p>div.panel
+  border-radius-mixin (10px 5px)</p>
+
+<p>div.other-panel
+  border-radius-mixin (3px 32px 100px 55px)</p>
+
+<p>div.another-panel
+  my-border-radius-mixin (5px 10px 33px 43px)</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>While Stylus allows us to name our mixin as we choose, we are also given the ability to apply mixins ‘transparently.’ In the case of a simple implementation of border-radius, a transparent mixin would make a lot of sense. In effect, this normalizes browser implementations and provides an abstraction layer for CSS developers.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>example5.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">border-radius</span> <span class="o">(&amp;</span><span class="nt">hellip</span><span class="o">;</span><span class="nt">args</span><span class="o">)</span>
-</span><span class='line'>  <span class="nt">-moz-border-radius</span> <span class="nt">args</span>
-</span><span class='line'>  <span class="nt">-webkit-border-radius</span> <span class="nt">args</span>
-</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">args</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">div</span><span class="nc">.panel</span>
-</span><span class='line'>  <span class="nt">border-radius</span> <span class="nt">10px</span> <span class="nt">5px</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock example5.css %}
+border-radius (&hellip;args)
+  -moz-border-radius args
+  -webkit-border-radius args
+  border-radius args</p>
+
+<p>div.panel
+  border-radius 10px 5px</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>As long as a border-radius mixin is present, Stylus will find it, and apply the vendor-specific properties transparently.</p>
 ]]></content>
@@ -216,18 +164,18 @@ Here is an example of a div element that needs to have corners take on different
   
   <entry>
     <title type="html"><![CDATA[One great CSS resource]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/09/26/one-great-css-resource/"/>
+    <link href="http://www.jessecravens.com/blog/2006/09/26/one-great-css-resource/"/>
     <updated>2006-09-26T16:34:31-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/09/26/one-great-css-resource</id>
+    <id>http://www.jessecravens.com/blog/2006/09/26/one-great-css-resource</id>
     <content type="html"><![CDATA[<p><a href="http://www.alistapart.com/articles/12lessonsCSSandstandards">A List Apart: Articles: 12 Lessons for Those Afraid of CSS and Standards</a><br /><br />A great resource for anyone interested in CSS. I tell you what, it makes me feel alot better about all of my struggles with what Ben refers to as whack-a-mole rendering bugs and stylesheet hacks.<br /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[CSS3.info and some Firefox extensions]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/06/13/css3-info-and-some-firefox-extensions/"/>
+    <link href="http://www.jessecravens.com/blog/2006/06/13/css3-info-and-some-firefox-extensions/"/>
     <updated>2006-06-13T02:44:49-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/06/13/css3-info-and-some-firefox-extensions</id>
+    <id>http://www.jessecravens.com/blog/2006/06/13/css3-info-and-some-firefox-extensions</id>
     <content type="html"><![CDATA[<p>If you haven&rsquo;t been keeping up with the latest in CSS. <a href="http://www.css3.info">Here is a site dedicated to doing it for you.</a></p>
 
 <p>Also today I tried out a few new Firefox extensions. All of which I think I will keep activated:
@@ -241,9 +189,9 @@ Here is an example of a div element that needs to have corners take on different
   
   <entry>
     <title type="html"><![CDATA[Web Development Cheat Sheets]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/05/23/web-development-cheat-sheets/"/>
+    <link href="http://www.jessecravens.com/blog/2006/05/23/web-development-cheat-sheets/"/>
     <updated>2006-05-23T15:00:22-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/05/23/web-development-cheat-sheets</id>
+    <id>http://www.jessecravens.com/blog/2006/05/23/web-development-cheat-sheets</id>
     <content type="html"><![CDATA[<p>Dave Child has posted a number of Web development related <a href="http://www.ilovejackdaniels.com/cheat-sheets/">cheat sheets</a> in .pdf and .png format on his blog. These include CSS, xHTML, JavaScript, Ruby on Rails, PHP, and MySQL.</p>
 
 <p>Thanks Dave!</p>
@@ -252,9 +200,9 @@ Here is an example of a div element that needs to have corners take on different
   
   <entry>
     <title type="html"><![CDATA[In search of a better photo gallery]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/03/31/in-search-of-a-better-photo-gallery/"/>
+    <link href="http://www.jessecravens.com/blog/2006/03/31/in-search-of-a-better-photo-gallery/"/>
     <updated>2006-03-31T18:30:06-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/03/31/in-search-of-a-better-photo-gallery</id>
+    <id>http://www.jessecravens.com/blog/2006/03/31/in-search-of-a-better-photo-gallery</id>
     <content type="html"><![CDATA[<p>So digg and reddit have both posted on the work of Stu Nichols and his pure CSS photo gallery. Check it out: <a href="http://www.cssplay.co.uk/menu/lightbox.html#Trees">here</a>. I&rsquo;m anxious to try it out. I&rsquo;d like to find a way to blend this image gallery with a liquid three column layout, but the gallery is fixed &ndash; so it may have to be implemented on an internal page. Although, it would be interesting to have this image gallery present on a home page &ndash; since before the hover it only takes up the room of a horizontal menu. I&rsquo;ll be exploring this idea further &ndash; stay tuned.</p>
 ]]></content>
   </entry>

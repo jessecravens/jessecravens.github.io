@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Wordpress | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/wordpress/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/wordpress/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[migrating from Wordpress to Drupal with the wordpress2drupal module]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/08/04/migrating-from-wordpress-to-drupal-with-the-wordpress2drupal-module/"/>
+    <link href="http://www.jessecravens.com/blog/2006/08/04/migrating-from-wordpress-to-drupal-with-the-wordpress2drupal-module/"/>
     <updated>2006-08-04T14:46:31-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/08/04/migrating-from-wordpress-to-drupal-with-the-wordpress2drupal-module</id>
+    <id>http://www.jessecravens.com/blog/2006/08/04/migrating-from-wordpress-to-drupal-with-the-wordpress2drupal-module</id>
     <content type="html"><![CDATA[<p>I just completed a migration from wordpress to Drupal using the wordpress2drupal module. It was fairly simple. I plan on discussing this further. &ndash; more later</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Effective Blogging: An 11-step guide for writing quick, powerful blogposts]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/04/17/effective-blogging-an-11-step-guide-for-writing-quick-powerful-blogposts/"/>
+    <link href="http://www.jessecravens.com/blog/2006/04/17/effective-blogging-an-11-step-guide-for-writing-quick-powerful-blogposts/"/>
     <updated>2006-04-17T19:03:17-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/04/17/effective-blogging-an-11-step-guide-for-writing-quick-powerful-blogposts</id>
+    <id>http://www.jessecravens.com/blog/2006/04/17/effective-blogging-an-11-step-guide-for-writing-quick-powerful-blogposts</id>
     <content type="html"><![CDATA[<p>I have struggled with blogging long enough. Creating consistent, meaningful content can be a great challenge. For me it isn&rsquo;t the actual content. I have plenty of ideas, plenty of inspiration. For me, it is the absence of a quick, organized delivery. In an effort to streamline my delivery process, I have created an 11-step guide to aid in getting my ideas from my head and onto my blog.</p>
 
 <p>For those that do create content often on their website, consider this an opportunity for improvement, or to participate in a conversation.  For me, I hope this guide will result in the continued evolution of the effectiveness and efficiency of my own writing. Iâ€™d like to share:</p>
@@ -99,9 +99,9 @@
   
   <entry>
     <title type="html"><![CDATA[Gallery2 plug-in for Wordpress]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/01/31/gallery2-plug-in-for-wordpress/"/>
+    <link href="http://www.jessecravens.com/blog/2006/01/31/gallery2-plug-in-for-wordpress/"/>
     <updated>2006-01-31T20:50:02-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/01/31/gallery2-plug-in-for-wordpress</id>
+    <id>http://www.jessecravens.com/blog/2006/01/31/gallery2-plug-in-for-wordpress</id>
     <content type="html"><![CDATA[<p><img src="http://gallery.menalto.com/themes/gmc/logo.png" alt="Gallery2" /></p>
 
 <p>I installed and configured the <a href="http://wpg2.ozgreg.com/index.php/Main_Page">gallery2 plug-in</a> today for Wordpress 2.0. I used the classic gallery 2 theme with the zen minimalist wordpress theme. There were a few tricks to get things working.</p>

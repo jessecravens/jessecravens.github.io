@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ember.js | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/ember-dot-js/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/ember-dot-js/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -14,13 +14,232 @@
 
   
   <entry>
+    <title type="html"><![CDATA[What’s Next? SPA 2.0: The Latest in JavaScript Application Frameworks]]></title>
+    <link href="http://www.jessecravens.com/blog/2015/02/17/whats-next-spa-2-dot-0-the-latest-in-javascript-application-frameworks/"/>
+    <updated>2015-02-17T19:03:00-06:00</updated>
+    <id>http://www.jessecravens.com/blog/2015/02/17/whats-next-spa-2-dot-0-the-latest-in-javascript-application-frameworks</id>
+    <content type="html"><![CDATA[<h2>Early Adoption of Ember</h2>
+
+<p>Outside of architecting and developing complex web apps during my day job at <a href="http://frogdesign.com">frog design</a>, I spent a good part of 2014 finishing up <a href="http://www.amazon.com/gp/product/1449370926/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1449370926&linkCode=as2&tag=wwwjessecrave-20&linkId=6CCXPQ2HHNLSTI5N">Building Web Apps with Ember.js</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=wwwjessecrave-20&l=as2&o=1&a=1449370926" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />, teaching <a href="http://www.jessecravens.com/blog/2014/08/06/ember-dot-js-workshops/">Ember.js workshops</a>, and giving <a href="https://teamtreehouse.com/library/the-art-and-science-of-shipping-single-page-apps-with-emberjs">a talk entitled: “The Art and Science of Shipping of SPAs with Ember.js.”</a></p>
+
+<p>Each of these focus areas were obviously complimentary: the workshops serving as deep dives, the talks as the high level summaries, and the book and companion source code serving as a reference application and detailed documentation.</p>
+
+<p><a href="https://teamtreehouse.com/library/the-art-and-science-of-shipping-single-page-apps-with-emberjs"><img class="imgL400" alt="The Art and Science of Shipping Single Page Apps with Ember.js" src="http://www.jessecravens.com/images/blogposts/artandscience4.png"></a></p>
+
+<p>At work, throughout 2013, 2014, and now into 2015, I have leveraged this momentum to educate cross-discipline teams of developers and designers and execute some very ambitious JavaScript applications for numerous clients. In a rapidly changing environment, it has been a pleasure to grow a team that now possesses framework-level expertise, allowing us to rapidly iterate on application feature sets without having to reinvent the wheel.</p>
+
+<p>For me, all of this has been a culmination of experiences that started in the mid 2000s with PHP and Flash work while doing small business web design and CMS development, to large scale production of JavaScript and mobile hybrid apps in the late 2000s, and to now UI/UX focused, enterprise, rapid application development.</p>
+
+<p>Perhaps, this excerpt from the prelude of  <a href="http://www.amazon.com/gp/product/1449370926/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1449370926&linkCode=as2&tag=wwwjessecrave-20&linkId=6CCXPQ2HHNLSTI5N">Building Web Apps with Ember.js</a> explains my stance for the last couple of years:</p>
+
+<blockquote><p>Since 2009, I have worked on numerous applications using Backbone, Angular, and
+Ember. But today, I often recommend Ember.js to the clients I work with. This is primarily
+due to the fact that the conventions support well-known web application development
+patterns that I have custom written or pieced together from multiple open
+source libraries. Here, are the high level concepts that, in my opinion, make Ember so
+valuable:</p>
+
+<ul>
+<li>Ember’s object model supports a classic and well understood, object-oriented
+pattern of class inheritance through extend, object initialization, getters and setters,
+and class monkey patching.</li>
+<li>Ember models, controllers, and components extend the Object class, which ensures
+that these objects inherit Ember’s powerful default data binding.</li>
+<li>The router supports complex nesting for URL-driven applications that manage
+application state in a conventional way that can be understood by those with
+web-server-routing backgrounds.</li>
+<li>Recently, build, workflow, and testing tools in Ember have matured and become
+intuitive.</li>
+<li>Ember’s only dependencies are on jQuery and Handlebars.js, two very wellknown
+and documented libraries.</li>
+<li>Finally, the community is vibrant, passionate, and extremely active.</li>
+</ul>
+</blockquote>
+
+<h2>What’s Next?</h2>
+
+<p>Most recently, I find myself moving into a new phase that mirrors the needs and concerns of the clients I interact with on a daily basis: navigating the SPA landscape and making future friendly decisions based on the complex solutions matrix that is now Ember 2.0, Angular 2.0, and current React/Flux.</p>
+
+<p>My latest talk:  SPA 2.0: The latest in JavaScript frameworks will address these questions:</p>
+
+<ul>
+<li><p>What does the future hold for the building of complex applications on the Web Platform in 2015?
+How do we manage the complex SPA landscape, and help our clients make future friendly architectural decisions?</p></li>
+<li><p>Will an Angular 2.0 breaking rewrite send devs running for something better? Can React/Flux community offer a complete application framework solution for complex applications? Will Ember continue to evolve into a lighter framework that can shed it&rsquo;s &lsquo;monolithic framework&rsquo; reputation?</p></li>
+<li><p>As the Angular and React communities adopt the Ember Router and the Ember community is inspired by React’s Virtual Dom to take advantage of it’s existing under utilized view graph, the communities are adopting the best of each other. In what other ways are the individual framework communities learning from each other?</p></li>
+<li><p>Will native, cross browser web components become a reality? What is the IE roadmap in regards to custom elements, HTML templates, HTML imports, and shadow DOM? Will we begin writing web components in Ember without the use of handlebars syntax?</p></li>
+<li><p>Will functional reactive ‘stream’ patterns become common place with better integration into frameworks, as promises did in 2014?</p></li>
+<li><p>With ES6 modules ( and transpiler build steps ), as practitioners can we finally lay the JS module debacle to rest? Do Isomorphic JS architectures still make this a challenge?</p></li>
+</ul>
+
+
+<h2>SPA 2.0 Topic Areas</h2>
+
+<p>Here, are the areas my talks will focus on in 2015:</p>
+
+<ul>
+<li>Framework Maturity and Stability</li>
+<li>Developer Ergonomics, Tooling, and Front End Ops</li>
+<li>View Performance and Mobile</li>
+<li>Async Router</li>
+<li>Data Binding (1-way , 2-way use cases)</li>
+<li>ES6 modules</li>
+<li>Web Components</li>
+<li>Community and Documentation</li>
+<li>Release Cycle</li>
+<li>Client Side Data Stores</li>
+<li>Services and JSON Specifications</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ember.js Workshops]]></title>
+    <link href="http://www.jessecravens.com/blog/2014/08/06/ember-dot-js-workshops/"/>
+    <updated>2014-08-06T22:23:00-05:00</updated>
+    <id>http://www.jessecravens.com/blog/2014/08/06/ember-dot-js-workshops</id>
+    <content type="html"><![CDATA[<p>In the month of June, I had an opportunity to travel to Las Vegas to give a <a href="http://futureinsightslive.com/las-vegas-2014/schedule/workshop-info">workshop</a> and related <a href="http://futureinsightslive.com/las-vegas-2014/schedule/day-1">talk</a> at <a href="http://futureinsightslive.com/las-vegas-2014/">Future Insights Live 2014</a>.</p>
+
+<p><img class="imgR400" alt="Jesse Cravens Future Insights 2014" src="http://www.jessecravens.com/images/future_insights/workshop2.jpg"></p>
+
+<p>My workshop was an 8 hour, beginner to intermediate level, course on Ember.js. I&rsquo;ve added it to our <a href="http://html5hacks.com/training">HTML5 Hacks</a> training content.
+If you or your company need training, give us a shout.</p>
+
+<p>Here is a brief outline of the workshop:</p>
+
+<h2>Getting Started with the Starter Kit</h2>
+
+<h2>Ember Inspector Overview</h2>
+
+<h2>Ember Object Model</h2>
+
+<ul>
+<li>Application</li>
+<li>Object Model, Inheritance, Getter and Setters, init, and .super</li>
+<li>Object Model &ndash; Computed Properties</li>
+<li>Object Model &ndash; Computed Properties w/ @each</li>
+<li>Object Model &ndash; Observers</li>
+<li>Object Model &ndash; Bindings</li>
+<li>Object Model &ndash; Re-Opening Classes</li>
+<li>Object Model &ndash; Mixins</li>
+<li>Object Model &ndash; Enumerables</li>
+</ul>
+
+
+<p><img class="imgR400" alt="Jesse Cravens Future Insights 2014" src="http://www.jessecravens.com/images/future_insights/workshop.jpg"></p>
+
+<h2>Handlebars</h2>
+
+<ul>
+<li>Handlebars Templating Engine</li>
+<li>With Data in an Array</li>
+<li>Handlebars Helpers</li>
+<li>Simple</li>
+<li>Dependencies</li>
+<li>Handlebars Helper to Get Bound Data</li>
+</ul>
+
+
+<h2>The Run Loop / Backburner</h2>
+
+<ul>
+<li>Backbone Example</li>
+<li>Simple example</li>
+<li>Flushing Router Transitions Queue</li>
+<li>Backburner and computed properties</li>
+</ul>
+
+
+<h2>HTMLBars</h2>
+
+<ul>
+<li>Understanding Handlebars Metamorph</li>
+<li>Ember, Backbone Benchmarks</li>
+<li>HTMLBars/Backburner, Backbone, React Benchmarks</li>
+<li>HTMLBars Basics: no bind-attr</li>
+<li>HTMLBars Basics: no metamorphs</li>
+<li>HTMLBars Basics: logic</li>
+</ul>
+
+
+<h2>RSVP</h2>
+
+<ul>
+<li>Simple</li>
+<li>RSVP Chai-as-promised</li>
+<li>RSVP and the Router &ndash; (more later)</li>
+<li>RSVP.hash, RSVP.all &ndash; (more later in Views)</li>
+</ul>
+
+
+<h2>Router</h2>
+
+<ul>
+<li>Simple .map</li>
+<li>Router and Handlebars Helpers</li>
+<li>outlet</li>
+<li>render</li>
+<li>partial</li>
+<li>Routes vs Resources</li>
+<li>Async Router</li>
+<li>Understand Promises</li>
+<li>Understand hooks / active generation</li>
+<li>Simple RSVP hash from IndexRoute</li>
+<li>Nested Routes, Async Router, before/after model hooks, named outlets</li>
+</ul>
+
+
+<h2>Controllers</h2>
+
+<ul>
+<li>ObjectController and ArrayController</li>
+<li>Controllers and Object Model</li>
+<li>Hierarchy</li>
+<li>Needs</li>
+<li>Sorting</li>
+</ul>
+
+
+<h2>Views</h2>
+
+<ul>
+<li>Simple Views</li>
+<li>Custom View Helpers</li>
+<li>Layouts (simple handlebars compile)</li>
+<li>Built In Views</li>
+<li>Select</li>
+</ul>
+
+
+<h2>Components</h2>
+
+<ul>
+<li>Custom Elements</li>
+</ul>
+
+
+<h2>Actions</h2>
+
+<h2>Ember-Data and the FixtureAdapter</h2>
+
+<h2>Wrapping It All Together</h2>
+
+<ul>
+<li>RSVP.hash, Components, FixtureAdapter</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[BBQ, Bourbon and Ember.js at Code PaLOUsa 2014]]></title>
-    <link href="http://jessecravens.github.io/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014/"/>
+    <link href="http://www.jessecravens.com/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014/"/>
     <updated>2014-05-01T08:23:00-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014</id>
+    <id>http://www.jessecravens.com/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014</id>
     <content type="html"><![CDATA[<p>In late April, I took my Ember.js talk to Louisville, Kentucky for the <a href="http://http://www.codepalousa.com/">CodePaLOUsa</a> conference.</p>
 
-<p><a href="http://www.infoq.com/presentations/demo-emberjs"><img class="imgR400" alt="O'Reilly's Building Web Apps with Ember.js" src="http://jessecravens.github.io/images/codepalousa14.png"></a></p>
+<p><a href="http://www.infoq.com/presentations/demo-emberjs"><img class="imgR400" alt="O'Reilly's Building Web Apps with Ember.js" src="http://www.jessecravens.com/images/codepalousa14.png"></a></p>
 
 <p>In the process I discovered <a href="http://doccrows.com/">Doc Crow&rsquo;s Southern Smokehouse and Raw Bar&rsquo;s</a> BBQ and Bourbon menu. I highly recommend it for anyone in the area trying to find authentic, local fare.</p>
 
@@ -32,16 +251,16 @@
   
   <entry>
     <title type="html"><![CDATA[HTML5 and Ember.js at Øredev 2013:The Arts in Malmö, Sweden]]></title>
-    <link href="http://jessecravens.github.io/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo/"/>
+    <link href="http://www.jessecravens.com/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo/"/>
     <updated>2013-12-07T23:25:00-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo</id>
+    <id>http://www.jessecravens.com/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo</id>
     <content type="html"><![CDATA[<p>At the beginning of November, I was given an opportunity to give two talks in Malmö, Sweden at the Øredev conference. First of all, I have to say I was extremely impressed with the conference. Although the theme was the Arts, I found it to be a developer&rsquo;s conference with an artsy edge. The speakers I had a chance to see were developer&rsquo;s developers, one of my favorites being a talk on Meteor by Chris Mather (@eventedmind) of <a href="http://eventedmind.com">eventedmind.com</a>. I&rsquo;ve maintained a peripheral view of Meteor, so it was good to get a beginner to intermediate overview of its capabilities. Given that I have been doing <a href="http://www.mongodb.com/">MongoDB</a> / <a href="https://github.com/emberjs/data">Ember-data</a> client work as of lately, I am particularly interested in exploring <a href="https://github.com/slacy/minimongo">minimongo</a>.</p>
 
-<p><img class="imgR400" alt="Jesse Cravens at Øredev 2013 HTML5 Hacks" src="http://jessecravens.github.io/images/oredev/html5hacks-oredev.jpg"></p>
+<p><img class="imgR400" alt="Jesse Cravens at Øredev 2013 HTML5 Hacks" src="http://www.jessecravens.com/images/oredev/html5hacks-oredev.jpg"></p>
 
 <p>The city of <a href="http://en.wikipedia.org/wiki/Malm%C3%B6">Malmö</a> was also a pleasure to experience, and as you might imagine, the people of Sweden were very welcoming. One of the highlights for me was the speaker dinner at the <a href="http://en.wikipedia.org/wiki/File:Jorchr-Malm%C3%B6_r%C3%A5dhus.jpg">Malmö City Hall</a>, originally constructed in the Middle Ages. On a side note, I finally had a chance to meet and have dinner with <a href="http://www.crockford.com/">Douglass Crockford</a>, a long time inspiration and virtual mentor, who was in town to give the keynote on <a href="http://oredev.org/2013/wed-fri-conference/managing-asynchronicity-with-rq">Managing Async with RQ</a>.</p>
 
-<iframe src="http://jessecravens.github.io//player.vimeo.com/video/78847391" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="http://www.jessecravens.com//player.vimeo.com/video/78847391" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
 <p>
@@ -56,13 +275,13 @@
 
 <p>My first talk was a preview of my new book <a href="https://github.com/emberjsbook">O'Reilly&rsquo;s Building Web Apps with Ember.js</a>. I shared the stage with co-author and fellow frog, <a href="http://bashmodernquantity.com/about/">Thomas Q. Brady</a>. We took the audience through the creation of <a href="https://github.com/emberjsbook/rocknrollcall">RocknRollCall</a>, an intermediate level <a href="http://emberjs.com/">Ember.js</a> application that fills in many of the blanks that most of the &lsquo;Getting Started&rsquo; applications don&rsquo;t.</p>
 
-<p><img class="imgL400" alt="O'Reilly's Building Web Apps with Ember.js by Jesse Cravens" src="http://jessecravens.github.io/images/oredev/ember_cover_600.png"></p>
+<p><img class="imgL400" alt="O'Reilly's Building Web Apps with Ember.js by Jesse Cravens" src="http://www.jessecravens.com/images/oredev/ember_cover_600.png"></p>
 
 <p>Some of the highlights of the book, and the talk, cover topics such as: a survey of Ember tooling, debugging with the <a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi?hl=en">Ember Inspector</a>, Ember boilerplates, app initializers, promises in Ember, the needs API, Ember components, 3rd Party JavaScript Integration (<a href="http://jquery.com/">jQuery</a>, <a href="http://d3js.org/">D3</a>), Ember testing, SPA authentication, <a href="https://github.com/emberjs/data">Ember-data</a> and other client-side persistence solutions, and remote data persistence with Ruby On Rails and Node.js.</p>
 
 <p>My second talk was <a href="http://html5hacks.com/">HTML5 Hacks</a> Evolved, where I continue to share more hacks from by first book <a href="http://html5hacks.com">HTML5 Hacks</a>, and <a href="http://html5hacks.com/">html5hacks.com</a>. This talk is culmination of HTML5 specifications that will have you rethinking browser-based applications. Some of the highlights of this talk included: Web Workers, WebSocket w/ GeoLocation, Device Orientation, and LeapJS, Web Components / Polymer / Ember Components (Custom Elements, Shadow DOM, HTML Imports, Model Driven Views, and Local Storage.</p>
 
-<iframe src="http://jessecravens.github.io//player.vimeo.com/video/78912115" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="http://www.jessecravens.com//player.vimeo.com/video/78912115" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
 <p>
@@ -81,9 +300,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ember.js Views and Live Templates with Handlebars.js Part 1]]></title>
-    <link href="http://jessecravens.github.io/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/"/>
+    <link href="http://www.jessecravens.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1/"/>
     <updated>2013-06-04T10:05:00-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1</id>
+    <id>http://www.jessecravens.com/blog/2013/06/04/ember-dot-js-views-and-live-templates-with-handlebars-dot-js-part-1</id>
     <content type="html"><![CDATA[<p><img class="imgL200" alt="Tech-pro Ember.js Views" src="http://tpstatic.com/img/usermedia/cHI1WdevsEyBJ7dLfmVUdA/cropped-w220-h220.png"></p>
 
 <p>This is an exploration of Handlebars.js template library when used with Ember.js views. Many of the Handlebars.js tutorials on the web discuss the Handlebars API, but not in the specific context of using Handlebars with Ember.js. In addition to filling that void, I&rsquo;ll also give a brief background of JavaScript templating in general to provide perspective as to the problems it is solving.</p>
@@ -91,21 +310,6 @@
 <p>This tutorial will be divided into two parts. In Part 1, you should gain a clear understanding of JavaScript templates, the capabilities of Handlebars expressions and helpers, and how to write your own Handlebars helpers.</p>
 
 <p>Read more at: <a href="http://tech.pro/tutorial/1308/emberjs-views-and-live-templates-with-handlebarsjs-part-1">http://tech.pro/tutorial/1308/emberjs-views-and-live-templates-with-handlebarsjs-part-1</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Modern Ember.js Application Workflow with Yeoman and Mocha]]></title>
-    <link href="http://jessecravens.github.io/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/"/>
-    <updated>2013-04-23T10:05:00-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha</id>
-    <content type="html"><![CDATA[<p><img class="imgL200" alt="Tech-pro Modern Ember.js Application Workflow" src="http://tpstatic.com/img/usermedia/LgFpf2qDCkGfHlDBR4oGDA/cropped-w220-h220.png"></p>
-
-<p>The following tutorial will provide an overview for building Ember.js applications with Yeoman. Keep in mind, Yeoman is a framework agnostic collection of tools, used to manage the workflow of any JavaScript application or plugin. For the sake of this tutorial, we have chosen to focus on Ember.js, as a case study.</p>
-
-<p>Our workflow would not be complete without also setting up our testing strategy, so we will also include a standard BDD (Behavior Driven Development) setup with the Mocha testing framework.</p>
-
-<p>Read more at: <a href="http://tech.pro/tutorial/1249/modern-emberjs-application-workflow-with-yeoman-and-mocha">http://tech.pro/tutorial/1249/modern-emberjs-application-workflow-with-yeoman-and-mocha</a></p>
 ]]></content>
   </entry>
   

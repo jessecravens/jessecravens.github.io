@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: CORS | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/cors/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/cors/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Configure Amazon S3 for Cross Origin Resourse Sharing to Host a Web Font]]></title>
-    <link href="http://jessecravens.github.io/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/"/>
+    <link href="http://www.jessecravens.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font/"/>
     <updated>2012-11-18T19:42:00-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font</id>
+    <id>http://www.jessecravens.com/blog/2012/11/18/configure-amazon-s3-for-cross-origin-resourse-sharing-to-host-a-web-font</id>
     <content type="html"><![CDATA[<p>Cross-Origin Resource Sharing (CORS) is a specification that allows applications to
 make requests to other domains from within the browser. With CORS you have a secure
 and easy-to-implement approach for circumventing the browser’s same origin
@@ -47,13 +47,13 @@ Console; see Figure 9-21.</p>
 
 <p>Figure 9-21. S3 Management Console</p>
 
-<p><img class="figure" alt="Figure 9-21" src="http://jessecravens.github.io/images/chapter9-images/9-21.png"></p>
+<p><img class="figure" alt="Figure 9-21" src="http://www.jessecravens.com/images/chapter9-images/9-21.png"></p>
 
 <p>If we click on Create a Bucket we should see the prompt shown in Figure 9-22.</p>
 
 <p>Figure 9-22. Creating an S3 bucket in the S3 Management Console</p>
 
-<p><img class="figure" alt="Figure 9-22" src="http://jessecravens.github.io/images/chapter9-images/9-22.png"></p>
+<p><img class="figure" alt="Figure 9-22" src="http://www.jessecravens.com/images/chapter9-images/9-22.png"></p>
 
 <p>Let’s name the bucket and choose a region (see Figure 9-23). As I stated earlier, you
 can choose a region to optimize for latency, minimize costs, or address regulatory
@@ -61,14 +61,14 @@ requirements.</p>
 
 <p>Figure 9-23. Naming an S3 bucket in the S3 Management Console</p>
 
-<p><img class="figure" alt="Figure 9-23" src="http://jessecravens.github.io/images/chapter9-images/9-23.png"></p>
+<p><img class="figure" alt="Figure 9-23" src="http://www.jessecravens.com/images/chapter9-images/9-23.png"></p>
 
 <p>We will go ahead and name our bucket none other than “html5hacks.” You should now
 see an admin screen that shows an empty filesystem (see Figure 9-24).</p>
 
 <p>Figure 9-24. The html5hacks S3 bucket</p>
 
-<p><img class="figure" alt="Figure 9-24" src="http://jessecravens.github.io/images/chapter9-images/9-24.png"></p>
+<p><img class="figure" alt="Figure 9-24" src="http://www.jessecravens.com/images/chapter9-images/9-24.png"></p>
 
 <p>Well, that was simple. So why are we doing this? Let’s start with some simple browser
 security—something called the same origin policy.</p>
@@ -131,7 +131,7 @@ Figure 9-25).</p>
 
 <p>Figure 9-25. An uploaded BebasNeue font</p>
 
-<p><img class="figure" alt="Figure 9-25" src="http://jessecravens.github.io/images/chapter9-images/9-25.png"></p>
+<p><img class="figure" alt="Figure 9-25" src="http://www.jessecravens.com/images/chapter9-images/9-25.png"></p>
 
 <h3>Adding the Web Font to Your Web Page</h3>
 
@@ -141,98 +141,62 @@ page.</p>
 <p>Here is our page. Let’s call it index.html, and add a <link> tag pointing to our base
 stylesheet, styles.css.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>geo.html </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;html&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;head&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>title<span class="ni">&amp;gt;</span>S3 - font<span class="ni">&amp;lt;</span>/title<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>meta charset=&quot;utf-8&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;styles.css&quot;<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/head&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;body&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>h1 class=&quot;test&quot;<span class="ni">&amp;gt;</span>HTML5 Hacks<span class="ni">&amp;lt;</span>/<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/html&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock geo.html %}</p>
+
+<p><html>
+  <head></p>
+
+<pre><code>&lt;title&gt;S3 - font&lt;/title&gt;
+&lt;meta charset="utf-8" /&gt;
+&lt;link rel="stylesheet" type="text/css" href="styles.css"&gt;
+</code></pre>
+
+<p>  </head>
+  <body></p>
+
+<pre><code>&lt;h1 class="test"&gt;HTML5 Hacks&lt;/&gt;
+</code></pre>
+
+<p>  </body>
+</html></p>
+
+<p>{% endcodeblock %}</p>
 
 <p>In our styles.css let’s add the following and point to our uploaded file. Also, let’s assign
 the font to our H1 header via the test class name.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>style.css </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="k">@font-face</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nt">font-family</span><span class="o">:</span> <span class="nt">BebasNeue</span><span class="o">;</span>
-</span><span class='line'>  <span class="nt">src</span><span class="o">:</span> <span class="nt">url</span><span class="o">(&amp;</span><span class="nt">lsquo</span><span class="o">;&lt;</span><span class="nt">a</span> <span class="nt">href</span><span class="o">=</span><span class="s2">&quot;https://s3.amazonaws.com/html5hacks/BebasNeue.otf&quot;</span><span class="o">&gt;</span><span class="nt">https</span><span class="o">://</span><span class="nt">s3</span><span class="nc">.amazonaws.com</span><span class="o">/</span><span class="nt">html5hacks</span><span class="o">/</span><span class="nt">BebasNeue</span><span class="nc">.otf</span><span class="o">&lt;/</span><span class="nt">a</span><span class="o">&gt;&amp;</span><span class="nt">rsquo</span><span class="o">;);</span>
-</span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.test</span> <span class="p">{</span>
-</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">BebasNeue</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;;</span>
-</span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock style.css %}</p>
+
+<p>@font-face {
+  font-family: BebasNeue;
+  src: url(&lsquo;<a href="https://s3.amazonaws.com/html5hacks/BebasNeue.otf">https://s3.amazonaws.com/html5hacks/BebasNeue.otf</a>&rsquo;);
+}</p>
+
+<p>.test {
+  font-family: &lsquo;BebasNeue&rsquo;;
+}</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>Now we’ll open a browser and point to our newly created HTML page. In Opera (see
 Figure 9-26), Safari, and Chrome our header tag is being styled correctly.</p>
 
 <p>Figure 9-26. Opera browser showing the BebasNeue font</p>
 
-<p><img class="figure" alt="Figure 9-26" src="http://jessecravens.github.io/images/chapter9-images/9-26.png"></p>
+<p><img class="figure" alt="Figure 9-26" src="http://www.jessecravens.com/images/chapter9-images/9-26.png"></p>
 
 <p>But if we view it in Firefox, we are having issues (see Figure 9-27).</p>
 
 <p>Figure 9-27. Firefox browser failing to show the BebasNeue font</p>
 
-<p><img class="figure" alt="Figure 9-27" src="http://jessecravens.github.io/images/chapter9-images/9-27.png"></p>
+<p><img class="figure" alt="Figure 9-27" src="http://www.jessecravens.com/images/chapter9-images/9-27.png"></p>
 
 <p>If we examine the request for our font in the Chrome Dev Tools Network tab, we will
 see that the response from the server is empty (see Figure 9-28).</p>
 
 <p>Figure 9-28. Firefox browser showing an empty response</p>
 
-<p><img class="figure" alt="Figure 9-28" src="http://jessecravens.github.io/images/chapter9-images/9-28.png"></p>
+<p><img class="figure" alt="Figure 9-28" src="http://www.jessecravens.com/images/chapter9-images/9-28.png"></p>
 
 <p>What gives? Well, by default, Firefox will only accept links from the same domain as
 the host page. If we want to include fonts from different domains, we need to add an
@@ -280,41 +244,29 @@ request, Amazon S3 will return any requested headers.</p>
 <p>The second rule allows cross-origin GET requests from all origins. The * wildcard
 character refers to all origins.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>config.xml </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;CORSConfiguration&gt;</span>
-</span><span class='line'><span class="nt">&lt;CORSRule&gt;</span>
-</span><span class='line'><span class="nt">&lt;AllowedOrigin&gt;</span>*/AllowedOrigin&gt;
-</span><span class='line'><span class="nt">&lt;AllowedMethod&gt;</span>GET<span class="nt">&lt;/AllowedMethod&gt;</span>
-</span><span class='line'><span class="nt">&lt;/CORSRule&gt;</span>
-</span><span class='line'><span class="nt">&lt;/CORSConfiguration&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock config.xml %}</p>
+
+<p><CORSConfiguration>
+<CORSRule>
+<AllowedOrigin>*/AllowedOrigin>
+<AllowedMethod>GET</AllowedMethod>
+</CORSRule>
+</CORSConfiguration></p>
+
+<p>{% endcodeblock %}</p>
 
 <p>So, let’s add our new configuration to our Editor and save (see Figure 9-29).</p>
 
 <p>Figure 9-29. Configuring CORS in the S3 Management Console</p>
 
-<p><img class="figure" alt="Figure 9-29" src="http://jessecravens.github.io/images/chapter9-images/9-29.png"></p>
+<p><img class="figure" alt="Figure 9-29" src="http://www.jessecravens.com/images/chapter9-images/9-29.png"></p>
 
 <p>Now, let’s return to Firefox and reload the page. We should now see the header font
 styled with our BebasNeue web font, as shown in Figure 9-30.</p>
 
 <p>Figure 9-30. Firefox browser successfully showing the BebasNeue font</p>
 
-<p><img class="figure" alt="Figure 9-30" src="http://jessecravens.github.io/images/chapter9-images/9-30.png"></p>
+<p><img class="figure" alt="Figure 9-30" src="http://www.jessecravens.com/images/chapter9-images/9-30.png"></p>
 
 <p>There is much more to learn about CORS, most notably, HTTP POST usage with certain
 MIME types, and sending cookies and HTTP authentication data with requests if so

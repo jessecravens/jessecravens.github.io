@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Hacks | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/hacks/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/hacks/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[JavaScript Modules]]></title>
-    <link href="http://jessecravens.github.io/blog/2012/06/17/javascript-modules/"/>
+    <link href="http://www.jessecravens.com/blog/2012/06/17/javascript-modules/"/>
     <updated>2012-06-17T16:23:21-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2012/06/17/javascript-modules</id>
+    <id>http://www.jessecravens.com/blog/2012/06/17/javascript-modules</id>
     <content type="html"><![CDATA[<p>For a talk last March at USAA's internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
 
 
@@ -64,772 +64,401 @@
   
   <entry>
     <title type="html"><![CDATA[YUI3 Rails Application Template]]></title>
-    <link href="http://jessecravens.github.io/blog/2011/01/30/yui3-rails-application-template/"/>
+    <link href="http://www.jessecravens.com/blog/2011/01/30/yui3-rails-application-template/"/>
     <updated>2011-01-30T01:02:15-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2011/01/30/yui3-rails-application-template</id>
+    <id>http://www.jessecravens.com/blog/2011/01/30/yui3-rails-application-template</id>
     <content type="html"><![CDATA[<p>I decided to put together a Rails template to generate a quick sqlite3 db driven web app to test out <a href="http://developer.yahoo.com/yui/3/">YUI3</a> functionality quickly. Rails 3 makes it super simple to quickly generate real JSON data for testing out various YUI 3 components such as DataSource.</p>
 
 <p>The template takes care of removing the Prototype library, including yui-debug.js and the CSS framework including reset, and the new <a href="http://developer.yahoo.com/yui/3/cssgrids/">Grids</a> &ndash; currently in beta. I also wanted to deliver my basic markup quickly so I&rsquo;ve added <a href="http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#html_elements">Haml</a></p>
 
 <p>Since I have been disciplining myself to follow Test Driven Development on the server, I included all of my Rails testing dependencies in the app template as well (RSpec, Cucumber, WebRat, Factory Girl) and I plan to continue to leverage <a href="http://developer.yahoo.com/yui/3/test/">YUI Test</a> on the client as I run through browser validations of the <a href="http://developer.yahoo.com/yui/3/examples/datasource/datasource_polling.html">datasource-polling sub-module</a>. Clone the rails app template <a href="https://github.com/jessecravens/yui3-rails-template">here</a>.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>yui-rails.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-<span class='line-number'>119</span>
-<span class='line-number'>120</span>
-<span class='line-number'>121</span>
-<span class='line-number'>122</span>
-<span class='line-number'>123</span>
-<span class='line-number'>124</span>
-<span class='line-number'>125</span>
-<span class='line-number'>126</span>
-<span class='line-number'>127</span>
-<span class='line-number'>128</span>
-<span class='line-number'>129</span>
-<span class='line-number'>130</span>
-<span class='line-number'>131</span>
-<span class='line-number'>132</span>
-<span class='line-number'>133</span>
-<span class='line-number'>134</span>
-<span class='line-number'>135</span>
-<span class='line-number'>136</span>
-<span class='line-number'>137</span>
-<span class='line-number'>138</span>
-<span class='line-number'>139</span>
-<span class='line-number'>140</span>
-<span class='line-number'>141</span>
-<span class='line-number'>142</span>
-<span class='line-number'>143</span>
-<span class='line-number'>144</span>
-<span class='line-number'>145</span>
-<span class='line-number'>146</span>
-<span class='line-number'>147</span>
-<span class='line-number'>148</span>
-<span class='line-number'>149</span>
-<span class='line-number'>150</span>
-<span class='line-number'>151</span>
-<span class='line-number'>152</span>
-<span class='line-number'>153</span>
-<span class='line-number'>154</span>
-<span class='line-number'>155</span>
-<span class='line-number'>156</span>
-<span class='line-number'>157</span>
-<span class='line-number'>158</span>
-<span class='line-number'>159</span>
-<span class='line-number'>160</span>
-<span class='line-number'>161</span>
-<span class='line-number'>162</span>
-<span class='line-number'>163</span>
-<span class='line-number'>164</span>
-<span class='line-number'>165</span>
-<span class='line-number'>166</span>
-<span class='line-number'>167</span>
-<span class='line-number'>168</span>
-<span class='line-number'>169</span>
-<span class='line-number'>170</span>
-<span class='line-number'>171</span>
-<span class='line-number'>172</span>
-<span class='line-number'>173</span>
-<span class='line-number'>174</span>
-<span class='line-number'>175</span>
-<span class='line-number'>176</span>
-<span class='line-number'>177</span>
-<span class='line-number'>178</span>
-<span class='line-number'>179</span>
-<span class='line-number'>180</span>
-<span class='line-number'>181</span>
-<span class='line-number'>182</span>
-<span class='line-number'>183</span>
-<span class='line-number'>184</span>
-<span class='line-number'>185</span>
-<span class='line-number'>186</span>
-<span class='line-number'>187</span>
-<span class='line-number'>188</span>
-<span class='line-number'>189</span>
-<span class='line-number'>190</span>
-<span class='line-number'>191</span>
-<span class='line-number'>192</span>
-<span class='line-number'>193</span>
-<span class='line-number'>194</span>
-<span class='line-number'>195</span>
-<span class='line-number'>196</span>
-<span class='line-number'>197</span>
-<span class='line-number'>198</span>
-<span class='line-number'>199</span>
-<span class='line-number'>200</span>
-<span class='line-number'>201</span>
-<span class='line-number'>202</span>
-<span class='line-number'>203</span>
-<span class='line-number'>204</span>
-<span class='line-number'>205</span>
-<span class='line-number'>206</span>
-<span class='line-number'>207</span>
-<span class='line-number'>208</span>
-<span class='line-number'>209</span>
-<span class='line-number'>210</span>
-<span class='line-number'>211</span>
-<span class='line-number'>212</span>
-<span class='line-number'>213</span>
-<span class='line-number'>214</span>
-<span class='line-number'>215</span>
-<span class='line-number'>216</span>
-<span class='line-number'>217</span>
-<span class='line-number'>218</span>
-<span class='line-number'>219</span>
-<span class='line-number'>220</span>
-<span class='line-number'>221</span>
-<span class='line-number'>222</span>
-<span class='line-number'>223</span>
-<span class='line-number'>224</span>
-<span class='line-number'>225</span>
-<span class='line-number'>226</span>
-<span class='line-number'>227</span>
-<span class='line-number'>228</span>
-<span class='line-number'>229</span>
-<span class='line-number'>230</span>
-<span class='line-number'>231</span>
-<span class='line-number'>232</span>
-<span class='line-number'>233</span>
-<span class='line-number'>234</span>
-<span class='line-number'>235</span>
-<span class='line-number'>236</span>
-<span class='line-number'>237</span>
-<span class='line-number'>238</span>
-<span class='line-number'>239</span>
-<span class='line-number'>240</span>
-<span class='line-number'>241</span>
-<span class='line-number'>242</span>
-<span class='line-number'>243</span>
-<span class='line-number'>244</span>
-<span class='line-number'>245</span>
-<span class='line-number'>246</span>
-<span class='line-number'>247</span>
-<span class='line-number'>248</span>
-<span class='line-number'>249</span>
-<span class='line-number'>250</span>
-<span class='line-number'>251</span>
-<span class='line-number'>252</span>
-<span class='line-number'>253</span>
-<span class='line-number'>254</span>
-<span class='line-number'>255</span>
-<span class='line-number'>256</span>
-<span class='line-number'>257</span>
-<span class='line-number'>258</span>
-<span class='line-number'>259</span>
-<span class='line-number'>260</span>
-<span class='line-number'>261</span>
-<span class='line-number'>262</span>
-<span class='line-number'>263</span>
-<span class='line-number'>264</span>
-<span class='line-number'>265</span>
-<span class='line-number'>266</span>
-<span class='line-number'>267</span>
-<span class='line-number'>268</span>
-<span class='line-number'>269</span>
-<span class='line-number'>270</span>
-<span class='line-number'>271</span>
-<span class='line-number'>272</span>
-<span class='line-number'>273</span>
-<span class='line-number'>274</span>
-<span class='line-number'>275</span>
-<span class='line-number'>276</span>
-<span class='line-number'>277</span>
-<span class='line-number'>278</span>
-<span class='line-number'>279</span>
-<span class='line-number'>280</span>
-<span class='line-number'>281</span>
-<span class='line-number'>282</span>
-<span class='line-number'>283</span>
-<span class='line-number'>284</span>
-<span class='line-number'>285</span>
-<span class='line-number'>286</span>
-<span class='line-number'>287</span>
-<span class='line-number'>288</span>
-<span class='line-number'>289</span>
-<span class='line-number'>290</span>
-<span class='line-number'>291</span>
-<span class='line-number'>292</span>
-<span class='line-number'>293</span>
-<span class='line-number'>294</span>
-<span class='line-number'>295</span>
-<span class='line-number'>296</span>
-<span class='line-number'>297</span>
-<span class='line-number'>298</span>
-<span class='line-number'>299</span>
-<span class='line-number'>300</span>
-<span class='line-number'>301</span>
-<span class='line-number'>302</span>
-<span class='line-number'>303</span>
-<span class='line-number'>304</span>
-<span class='line-number'>305</span>
-<span class='line-number'>306</span>
-<span class='line-number'>307</span>
-<span class='line-number'>308</span>
-<span class='line-number'>309</span>
-<span class='line-number'>310</span>
-<span class='line-number'>311</span>
-<span class='line-number'>312</span>
-<span class='line-number'>313</span>
-<span class='line-number'>314</span>
-<span class='line-number'>315</span>
-<span class='line-number'>316</span>
-<span class='line-number'>317</span>
-<span class='line-number'>318</span>
-<span class='line-number'>319</span>
-<span class='line-number'>320</span>
-<span class='line-number'>321</span>
-<span class='line-number'>322</span>
-<span class='line-number'>323</span>
-<span class='line-number'>324</span>
-<span class='line-number'>325</span>
-<span class='line-number'>326</span>
-<span class='line-number'>327</span>
-<span class='line-number'>328</span>
-<span class='line-number'>329</span>
-<span class='line-number'>330</span>
-<span class='line-number'>331</span>
-<span class='line-number'>332</span>
-<span class='line-number'>333</span>
-<span class='line-number'>334</span>
-<span class='line-number'>335</span>
-<span class='line-number'>336</span>
-<span class='line-number'>337</span>
-<span class='line-number'>338</span>
-<span class='line-number'>339</span>
-<span class='line-number'>340</span>
-<span class='line-number'>341</span>
-<span class='line-number'>342</span>
-<span class='line-number'>343</span>
-<span class='line-number'>344</span>
-<span class='line-number'>345</span>
-<span class='line-number'>346</span>
-<span class='line-number'>347</span>
-<span class='line-number'>348</span>
-<span class='line-number'>349</span>
-<span class='line-number'>350</span>
-<span class='line-number'>351</span>
-<span class='line-number'>352</span>
-<span class='line-number'>353</span>
-<span class='line-number'>354</span>
-<span class='line-number'>355</span>
-<span class='line-number'>356</span>
-<span class='line-number'>357</span>
-<span class='line-number'>358</span>
-<span class='line-number'>359</span>
-<span class='line-number'>360</span>
-<span class='line-number'>361</span>
-<span class='line-number'>362</span>
-<span class='line-number'>363</span>
-<span class='line-number'>364</span>
-<span class='line-number'>365</span>
-<span class='line-number'>366</span>
-<span class='line-number'>367</span>
-<span class='line-number'>368</span>
-<span class='line-number'>369</span>
-</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;YUI3 Application Generator Template&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Generates</span> <span class="n">a</span> <span class="no">Rails</span> <span class="n">app</span><span class="p">;</span> <span class="n">includes</span> <span class="no">YUI3</span><span class="p">,</span> <span class="no">Haml</span><span class="p">,</span> <span class="no">RSpec</span><span class="p">,</span> <span class="no">Cucumber</span><span class="p">,</span> <span class="no">WebRat</span><span class="p">,</span> <span class="no">Factory</span> <span class="no">Girl</span> <span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;puts &amp;ldquo;Generating a new YUI3 Rails app&amp;rdquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;Create the database&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;puts &amp;ldquo;creating the database&amp;hellip;&amp;rdquo;</span>
-</span><span class='line'><span class="sr">run &amp;lsquo;rake db:create:all&amp;rsquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;GIT&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;puts &amp;ldquo;setting up &amp;lsquo;git&amp;rsquo;&amp;rdquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">append_file</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">.</span><span class="n">gitignore</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="k">do</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">-</span><span class="no">FILE</span>
-</span><span class='line'><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">.</span><span class="n">DS_Store</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">.</span><span class="n">rvmrc</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'><span class="no">FILE</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="n">git</span> <span class="ss">:init</span>
-</span><span class='line'><span class="n">git</span> <span class="ss">:add</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">.</span><span class="n">&amp;rsquo</span><span class="p">;</span>
-</span><span class='line'><span class="n">git</span> <span class="ss">:commit</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="o">-</span><span class="n">m</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="no">Initial</span> <span class="no">Commit</span> <span class="n">of</span> <span class="no">YUI3</span> <span class="no">Rails</span> <span class="no">App</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Remove</span> <span class="n">files</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="nb">puts</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">removing</span> <span class="n">files</span><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
-</span><span class='line'><span class="n">run</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'><span class="n">run</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">favicon</span><span class="o">.</span><span class="n">ico</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'><span class="n">run</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">rails</span><span class="o">.</span><span class="n">png</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'><span class="n">run</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">rm</span> <span class="no">README</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'><span class="n">run</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">touch</span> <span class="no">README</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;puts &amp;ldquo;banning spiders from your site by changing robots.txt&amp;hellip;&amp;rdquo;</span>
-</span><span class='line'><span class="sr">gsub_file &amp;lsquo;public/</span><span class="n">robots</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="sr">/# User-Agent/</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="no">User</span><span class="o">-</span><span class="no">Agent</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'><span class="n">gsub_file</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="kp">public</span><span class="o">/</span><span class="n">robots</span><span class="o">.</span><span class="n">txt</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="sr">/# Disallow/</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="no">Disallow</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Haml</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="nb">puts</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">setting</span> <span class="n">up</span> <span class="no">Gemfile</span> <span class="k">for</span> <span class="no">Haml</span><span class="o">&amp;</span><span class="n">hellip</span><span class="p">;</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">append_file</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="no">Gemfile</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;\</span><span class="n">n</span><span class="c1"># Bundle gems needed for Haml\n&amp;rdquo;</span>
-</span><span class='line'>  <span class="n">gem</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">haml</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="mi">3</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">18</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">gem</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">haml</span><span class="o">-</span><span class="n">rails</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="mi">0</span><span class="o">.</span><span class="mi">2</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Set</span> <span class="n">up</span> <span class="no">YUI3</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="nb">puts</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">replacing</span> <span class="no">Prototype</span> <span class="n">with</span> <span class="no">YUI3</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span>
-</span><span class='line'><span class="n">run</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">controls</span><span class="o">.</span><span class="n">js</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'><span class="n">run</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">dragdrop</span><span class="o">.</span><span class="n">js</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'><span class="n">run</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">effects</span><span class="o">.</span><span class="n">js</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'><span class="n">run</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">prototype</span><span class="o">.</span><span class="n">js</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'><span class="n">run</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">rm</span> <span class="kp">public</span><span class="o">/</span><span class="n">javascripts</span><span class="o">/</span><span class="n">rails</span><span class="o">.</span><span class="n">js</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;get &amp;ldquo;&lt;a href=&quot;http:/</span><span class="o">/</span><span class="n">yui</span><span class="o">.</span><span class="n">yahooapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">combo?</span><span class="mi">3</span><span class="o">.</span><span class="mi">3</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">yui</span><span class="o">/</span><span class="n">yui</span><span class="o">-</span><span class="n">debug</span><span class="o">.</span><span class="n">js</span><span class="s2">&quot;&gt;http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-debug.js&lt;/a&gt;&amp;rdquo;,  &amp;ldquo;public/javascripts/yui-debug.js&amp;rdquo;</span>
-</span><span class='line'><span class="s2">get &amp;ldquo;&lt;a href=&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//</span><span class="n">yui</span><span class="o">.</span><span class="n">yahooapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="mi">3</span><span class="o">.</span><span class="mi">3</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">cssreset</span><span class="o">/</span><span class="n">reset</span><span class="o">.</span><span class="n">css</span><span class="s2">&quot;&gt;http://yui.yahooapis.com/3.3.0/build/cssreset/reset.css&lt;/a&gt;&amp;rdquo;,  &amp;ldquo;public/stylesheets/reset.css&amp;rdquo;</span>
-</span><span class='line'><span class="s2">get &amp;ldquo;&lt;a href=&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//</span><span class="n">yui</span><span class="o">.</span><span class="n">yahooapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="mi">3</span><span class="o">.</span><span class="mi">3</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">cssbase</span><span class="o">/</span><span class="n">base</span><span class="o">.</span><span class="n">css</span><span class="s2">&quot;&gt;http://yui.yahooapis.com/3.3.0/build/cssbase/base.css&lt;/a&gt;&amp;rdquo;,  &amp;ldquo;public/stylesheets/base.css&amp;rdquo;</span>
-</span><span class='line'><span class="s2">get &amp;ldquo;&lt;a href=&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//</span><span class="n">yui</span><span class="o">.</span><span class="n">yahooapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="mi">3</span><span class="o">.</span><span class="mi">3</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">cssfonts</span><span class="o">/</span><span class="n">fonts</span><span class="o">.</span><span class="n">css</span><span class="s2">&quot;&gt;http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts.css&lt;/a&gt;&amp;rdquo;,  &amp;ldquo;public/stylesheets/fonts.css&amp;rdquo;</span>
-</span><span class='line'><span class="s2">get &amp;ldquo;&lt;a href=&quot;</span><span class="ss">http</span><span class="p">:</span><span class="sr">//</span><span class="n">yui</span><span class="o">.</span><span class="n">yahooapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="mi">3</span><span class="o">.</span><span class="mi">3</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">build</span><span class="o">/</span><span class="n">cssgrids</span><span class="o">/</span><span class="n">grids</span><span class="o">.</span><span class="n">css</span><span class="s2">&quot;&gt;http://yui.yahooapis.com/3.3.0/build/cssgrids/grids.css&lt;/a&gt;&amp;rdquo;,  &amp;ldquo;public/stylesheets/grids.css&amp;rdquo;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;Create an index page&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;puts &amp;ldquo;create a home controller and view&amp;rdquo;</span>
-</span><span class='line'><span class="s2">generate(:controller, &amp;ldquo;home index&amp;rdquo;)</span>
-</span><span class='line'><span class="s2">gsub_file &amp;lsquo;config/routes.rb&amp;rsquo;, /get \&amp;ldquo;home\/index\&amp;rdquo;/, &amp;lsquo;root :to =&gt; &amp;ldquo;home#index&amp;rdquo;&amp;rsquo;</span>
-</span><span class='line'><span class="s2">append_file &amp;lsquo;app/views/home/index.html.haml&#39;do &amp;lt;&amp;lt;-FILE</span>
-</span><span class='line'><span class="s2">!!!</span>
-</span><span class='line'><span class="s2">%h2{:class =&gt; &amp;ldquo;subtitle&amp;rdquo;} Get Started</span>
-</span><span class='line'><span class="s2">%p{:class =&gt; &amp;ldquo;content&amp;rdquo;} Update application.js with your logic</span>
-</span><span class='line'><span class="s2">%div{:class =&gt; &amp;ldquo;container&amp;rdquo;, :id =&gt; &amp;ldquo;container&amp;rdquo;}</span>
-</span><span class='line'><span class="s2">%div{:id =&gt; &amp;ldquo;testLogger&amp;rdquo;}</span>
-</span><span class='line'><span class="s2">FILE</span>
-</span><span class='line'><span class="s2">end&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;Generate Application Layout&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;run &amp;lsquo;rm app/views/layouts/application.html.erb&amp;rsquo;</span>
-</span><span class='line'><span class="s2">  create_file &amp;lsquo;app/views/layouts/application.html.haml&amp;rsquo; do &amp;lt;&amp;lt;-FILE</span>
-</span><span class='line'><span class="s2">!!!</span>
-</span><span class='line'><span class="s2">%html</span>
-</span><span class='line'><span class="s2">  %head&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;pre&gt;&lt;code&gt;%title YUI3 App</span>
-</span><span class='line'><span class="s2">= stylesheet_link_tag &quot;</span><span class="n">reset</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="s2">= stylesheet_link_tag &quot;</span><span class="n">base</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="s2">= stylesheet_link_tag &quot;</span><span class="n">fonts</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="s2">= stylesheet_link_tag &quot;</span><span class="n">grids</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="s2">= stylesheet_link_tag &quot;</span><span class="n">application</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="s2">= javascript_include_tag :all</span>
-</span><span class='line'><span class="s2">= csrf_meta_tag</span>
-</span><span class='line'><span class="s2">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;  %body{:class =&gt;&amp;ldquo;yui3-skin-sam  yui-skin-sam&amp;rdquo;}&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;pre&gt;&lt;code&gt;= yield</span>
-</span><span class='line'><span class="s2">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;FILE</span>
-</span><span class='line'><span class="s2">end&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;Add Stylesheets&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;create_file &amp;lsquo;public/stylesheets/application.css&amp;rsquo; do &amp;lt;&amp;lt;-FILE</span>
-</span><span class='line'><span class="s2">div.container {</span>
-</span><span class='line'><span class="s2">  width: 100%;</span>
-</span><span class='line'><span class="s2">  height: 100px;</span>
-</span><span class='line'><span class="s2">  padding: 10px;</span>
-</span><span class='line'><span class="s2">  margin: 10px;</span>
-</span><span class='line'><span class="s2">  border: 1px solid red;</span>
-</span><span class='line'><span class="s2">}&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;testLogger {&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;pre&gt;&lt;code&gt;margin-bottom: 1em;</span>
-</span><span class='line'><span class="s2">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;}&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;testLogger .yui3-console .yui3-console-title {&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;pre&gt;&lt;code&gt;border: 0 none;</span>
-</span><span class='line'><span class="s2">color: #000;</span>
-</span><span class='line'><span class="s2">font-size: 13px;</span>
-</span><span class='line'><span class="s2">font-weight: bold;</span>
-</span><span class='line'><span class="s2">margin: 0;</span>
-</span><span class='line'><span class="s2">text-transform: none;</span>
-</span><span class='line'><span class="s2">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;}&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;testLogger .yui3-console .yui3-console-entry-meta {&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;pre&gt;&lt;code&gt;margin: 0;</span>
-</span><span class='line'><span class="s2">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;}&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;.yui3-skin-sam .yui3-console-entry-pass .yui3-console-entry-cat {&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;pre&gt;&lt;code&gt;background: #070;</span>
-</span><span class='line'><span class="s2">color: #fff;</span>
-</span><span class='line'><span class="s2">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;}&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;FILE</span>
-</span><span class='line'><span class="s2">end&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;Initialize YUI and add YUI Test&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;append_file &amp;lsquo;public/javascripts/application.js&amp;rsquo; do &amp;lt;&amp;lt;-FILE&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;  YUI({ filter: &amp;lsquo;raw&amp;rsquo; }).use(&amp;ldquo;node&amp;rdquo;, &amp;ldquo;console&amp;rdquo;, &amp;ldquo;test&amp;rdquo;,function (Y) {&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;pre&gt;&lt;code&gt;  Y.namespace(&quot;</span><span class="n">example</span><span class="o">.</span><span class="n">test</span><span class="s2">&quot;);</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">  Y.example.test.DataTestCase = new Y.Test.Case({</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      //name of the test case - if not provided, one is auto-generated</span>
-</span><span class='line'><span class="s2">      name : &quot;</span><span class="no">Data</span> <span class="no">Tests</span><span class="s2">&quot;,</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      //---------------------------------------------------------------------</span>
-</span><span class='line'><span class="s2">      // setUp and tearDown methods - optional</span>
-</span><span class='line'><span class="s2">      //---------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      /*</span>
-</span><span class='line'><span class="s2">       * Sets up data that is needed by each test.</span>
-</span><span class='line'><span class="s2">       */</span>
-</span><span class='line'><span class="s2">      setUp : function () {</span>
-</span><span class='line'><span class="s2">          this.data = {</span>
-</span><span class='line'><span class="s2">              name: &quot;</span><span class="nb">test</span><span class="s2">&quot;,</span>
-</span><span class='line'><span class="s2">              year: 2007,</span>
-</span><span class='line'><span class="s2">              beta: true</span>
-</span><span class='line'><span class="s2">          };</span>
-</span><span class='line'><span class="s2">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      /*</span>
-</span><span class='line'><span class="s2">       * Cleans up everything that was created by setUp().</span>
-</span><span class='line'><span class="s2">       */</span>
-</span><span class='line'><span class="s2">      tearDown : function () {</span>
-</span><span class='line'><span class="s2">          delete this.data;</span>
-</span><span class='line'><span class="s2">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      //---------------------------------------------------------------------</span>
-</span><span class='line'><span class="s2">      // Test methods - names must begin with &quot;</span><span class="nb">test</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="s2">      //---------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      testName : function () {</span>
-</span><span class='line'><span class="s2">          var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">          Assert.isObject(this.data);</span>
-</span><span class='line'><span class="s2">          Assert.isString(this.data.name);</span>
-</span><span class='line'><span class="s2">          Assert.areEqual(&quot;</span><span class="nb">test</span><span class="s2">&quot;, this.data.name);            </span>
-</span><span class='line'><span class="s2">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      testYear : function () {</span>
-</span><span class='line'><span class="s2">          var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">          Assert.isObject(this.data);</span>
-</span><span class='line'><span class="s2">          Assert.isNumber(this.data.year);</span>
-</span><span class='line'><span class="s2">          Assert.areEqual(2007, this.data.year);            </span>
-</span><span class='line'><span class="s2">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      testBeta : function () {</span>
-</span><span class='line'><span class="s2">          var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">          Assert.isObject(this.data);</span>
-</span><span class='line'><span class="s2">          Assert.isBoolean(this.data.beta);</span>
-</span><span class='line'><span class="s2">          Assert.isTrue(this.data.beta);</span>
-</span><span class='line'><span class="s2">      }</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">  });</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">  Y.example.test.ArrayTestCase = new Y.Test.Case({</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      //name of the test case - if not provided, one is auto-generated</span>
-</span><span class='line'><span class="s2">      name : &quot;</span><span class="nb">Array</span> <span class="no">Tests</span><span class="s2">&quot;,</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      //---------------------------------------------------------------------</span>
-</span><span class='line'><span class="s2">      // setUp and tearDown methods - optional</span>
-</span><span class='line'><span class="s2">      //---------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      /*</span>
-</span><span class='line'><span class="s2">       * Sets up data that is needed by each test.</span>
-</span><span class='line'><span class="s2">       */</span>
-</span><span class='line'><span class="s2">      setUp : function () {</span>
-</span><span class='line'><span class="s2">          this.data = [0,1,2,3,4]</span>
-</span><span class='line'><span class="s2">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      /*</span>
-</span><span class='line'><span class="s2">       * Cleans up everything that was created by setUp().</span>
-</span><span class='line'><span class="s2">       */</span>
-</span><span class='line'><span class="s2">      tearDown : function () {</span>
-</span><span class='line'><span class="s2">          delete this.data;</span>
-</span><span class='line'><span class="s2">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      //---------------------------------------------------------------------</span>
-</span><span class='line'><span class="s2">      // Test methods - names must begin with &quot;</span><span class="nb">test</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="s2">      //---------------------------------------------------------------------</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      testPop : function () {</span>
-</span><span class='line'><span class="s2">          var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">          var value = this.data.pop();</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">          Assert.areEqual(4, this.data.length);</span>
-</span><span class='line'><span class="s2">          Assert.areEqual(4, value);            </span>
-</span><span class='line'><span class="s2">      },        </span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      testPush : function () {</span>
-</span><span class='line'><span class="s2">          var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">          this.data.push(5);</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">          Assert.areEqual(6, this.data.length);</span>
-</span><span class='line'><span class="s2">          Assert.areEqual(5, this.data[5]);            </span>
-</span><span class='line'><span class="s2">      },</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">      testSplice : function () {</span>
-</span><span class='line'><span class="s2">          var Assert = Y.Assert;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">          this.data.splice(2, 1, 6, 7);</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">          Assert.areEqual(6, this.data.length);</span>
-</span><span class='line'><span class="s2">          Assert.areEqual(6, this.data[2]);           </span>
-</span><span class='line'><span class="s2">          Assert.areEqual(7, this.data[3]);           </span>
-</span><span class='line'><span class="s2">      }</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">  });    </span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">  Y.example.test.ExampleSuite = new Y.Test.Suite(&quot;</span><span class="no">Example</span> <span class="no">Suite</span><span class="s2">&quot;);</span>
-</span><span class='line'><span class="s2">  Y.example.test.ExampleSuite.add(Y.example.test.DataTestCase);</span>
-</span><span class='line'><span class="s2">  Y.example.test.ExampleSuite.add(Y.example.test.ArrayTestCase);</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">  //create the console</span>
-</span><span class='line'><span class="s2">  var r = new Y.Console({</span>
-</span><span class='line'><span class="s2">      newestOnTop : false,</span>
-</span><span class='line'><span class="s2">      style: &#39;block&#39; // to anchor in the example content</span>
-</span><span class='line'><span class="s2">  });</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">  r.render(&#39;#testLogger&#39;);</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">  Y.Test.Runner.add(Y.example.test.ExampleSuite);</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">  //run the tests</span>
-</span><span class='line'><span class="s2">  Y.Test.Runner.run();</span>
-</span><span class='line'><span class="s2">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;  });&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;FILE</span>
-</span><span class='line'><span class="s2">end&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;Setup RSpec &amp;amp; Cucumber&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;puts &amp;lsquo;Setting up RSpec, Cucumber, webrat, factory_girl, faker&amp;rsquo;</span>
-</span><span class='line'><span class="s2">append_file &amp;lsquo;Gemfile&amp;rsquo; do &amp;lt;&amp;lt;-FILE</span>
-</span><span class='line'><span class="s2">group :development, :test do</span>
-</span><span class='line'><span class="s2">  gem &amp;ldquo;rspec-rails&amp;rdquo;, &amp;ldquo;&gt;= 2.0.1&amp;rdquo;</span>
-</span><span class='line'><span class="s2">  gem &amp;ldquo;cucumber-rails&amp;rdquo;, &amp;ldquo;&gt;= 0.3.2&amp;rdquo;</span>
-</span><span class='line'><span class="s2">  gem &amp;ldquo;webrat&amp;rdquo;, &amp;ldquo;&gt;= 0.7.2.beta.2&amp;rdquo;</span>
-</span><span class='line'><span class="s2">  gem &amp;ldquo;factory_girl_rails&amp;rdquo;</span>
-</span><span class='line'><span class="s2">  gem &amp;ldquo;faker&amp;rdquo;</span>
-</span><span class='line'><span class="s2">end</span>
-</span><span class='line'><span class="s2">FILE</span>
-</span><span class='line'><span class="s2">end&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;run &amp;lsquo;bundle install&amp;rsquo;</span>
-</span><span class='line'><span class="s2">run &amp;lsquo;script/rails generate rspec:install&amp;rsquo;</span>
-</span><span class='line'><span class="s2">run &amp;lsquo;script/rails generate cucumber:install&amp;rsquo;</span>
-</span><span class='line'><span class="s2">run &amp;lsquo;rake db:migrate&amp;rsquo;</span>
-</span><span class='line'><span class="s2">run &amp;lsquo;rake db:test:prepare&amp;rsquo;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;run &amp;lsquo;touch spec/factories.rb&amp;rsquo;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;Finish up&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;puts &amp;ldquo;Commiting to Git repository&amp;hellip;&amp;rdquo;</span>
-</span><span class='line'><span class="s2">git :add =&gt; &amp;lsquo;.&amp;rsquo;</span>
-</span><span class='line'><span class="s2">git :commit =&gt; &amp;ldquo;-am &amp;lsquo;Setup Complete&amp;rsquo;&amp;rdquo;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;puts &amp;ldquo;DONE &amp;ndash; setting up your YUI3 Rails App.&amp;rdquo;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="s2">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock yui-rails.rb %}</p>
+
+<h1>YUI3 Application Generator Template</h1>
+
+<h1>Generates a Rails app; includes YUI3, Haml, RSpec, Cucumber, WebRat, Factory Girl &hellip;</h1>
+
+<p>puts &ldquo;Generating a new YUI3 Rails app&rdquo;</p>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<h1>Create the database</h1>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<p>puts &ldquo;creating the database&hellip;&rdquo;
+run &lsquo;rake db:create:all&rsquo;</p>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<h1>GIT</h1>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<p>puts &ldquo;setting up &lsquo;git&rsquo;&rdquo;</p>
+
+<p>append_file &lsquo;.gitignore&rsquo; do &lt;&lt;-FILE
+&lsquo;.DS_Store&rsquo;
+&lsquo;.rvmrc&rsquo;
+FILE
+end
+git :init
+git :add => &lsquo;.&rsquo;
+git :commit => &ldquo;-m &lsquo;Initial Commit of YUI3 Rails App&rsquo;&rdquo;</p>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<h1>Remove files</h1>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<p>puts &ldquo;removing files&hellip;&rdquo;
+run &lsquo;rm public/index.html&rsquo;
+run &lsquo;rm public/favicon.ico&rsquo;
+run &lsquo;rm public/images/rails.png&rsquo;
+run &lsquo;rm README&rsquo;
+run &lsquo;touch README&rsquo;</p>
+
+<p>puts &ldquo;banning spiders from your site by changing robots.txt&hellip;&rdquo;
+gsub_file &lsquo;public/robots.txt&rsquo;, /# User-Agent/, &lsquo;User-Agent&rsquo;
+gsub_file &lsquo;public/robots.txt&rsquo;, /# Disallow/, &lsquo;Disallow&rsquo;</p>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<h1>Haml</h1>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<p>  puts &ldquo;setting up Gemfile for Haml&hellip;&rdquo;
+  append_file &lsquo;Gemfile&rsquo;, &ldquo;\n# Bundle gems needed for Haml\n&rdquo;
+  gem &lsquo;haml&rsquo;, &lsquo;3.0.18&rsquo;
+  gem &lsquo;haml-rails&rsquo;, &lsquo;0.2&rsquo;, :group => :development</p>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<h1>Set up YUI3</h1>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<p>puts &ldquo;replacing Prototype with YUI3&rdquo;
+run &lsquo;rm public/javascripts/controls.js&rsquo;
+run &lsquo;rm public/javascripts/dragdrop.js&rsquo;
+run &lsquo;rm public/javascripts/effects.js&rsquo;
+run &lsquo;rm public/javascripts/prototype.js&rsquo;
+run &lsquo;rm public/javascripts/rails.js&rsquo;</p>
+
+<p>get &ldquo;<a href="http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-debug.js">http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-debug.js</a>&rdquo;,  &ldquo;public/javascripts/yui-debug.js&rdquo;
+get &ldquo;<a href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset.css">http://yui.yahooapis.com/3.3.0/build/cssreset/reset.css</a>&rdquo;,  &ldquo;public/stylesheets/reset.css&rdquo;
+get &ldquo;<a href="http://yui.yahooapis.com/3.3.0/build/cssbase/base.css">http://yui.yahooapis.com/3.3.0/build/cssbase/base.css</a>&rdquo;,  &ldquo;public/stylesheets/base.css&rdquo;
+get &ldquo;<a href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts.css">http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts.css</a>&rdquo;,  &ldquo;public/stylesheets/fonts.css&rdquo;
+get &ldquo;<a href="http://yui.yahooapis.com/3.3.0/build/cssgrids/grids.css">http://yui.yahooapis.com/3.3.0/build/cssgrids/grids.css</a>&rdquo;,  &ldquo;public/stylesheets/grids.css&rdquo;</p>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<h1>Create an index page</h1>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<p>puts &ldquo;create a home controller and view&rdquo;
+generate(:controller, &ldquo;home index&rdquo;)
+gsub_file &lsquo;config/routes.rb&rsquo;, /get \&ldquo;home\/index\&rdquo;/, &lsquo;root :to => &ldquo;home#index&rdquo;&rsquo;
+append_file &lsquo;app/views/home/index.html.haml'do &lt;&lt;-FILE
+!!!
+%h2{:class => &ldquo;subtitle&rdquo;} Get Started
+%p{:class => &ldquo;content&rdquo;} Update application.js with your logic
+%div{:class => &ldquo;container&rdquo;, :id => &ldquo;container&rdquo;}
+%div{:id => &ldquo;testLogger&rdquo;}
+FILE
+end</p>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<h1>Generate Application Layout</h1>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<p>run &lsquo;rm app/views/layouts/application.html.erb&rsquo;
+  create_file &lsquo;app/views/layouts/application.html.haml&rsquo; do &lt;&lt;-FILE
+!!!
+%html
+  %head</p>
+
+<pre><code>%title YUI3 App
+= stylesheet_link_tag "reset"
+= stylesheet_link_tag "base"
+= stylesheet_link_tag "fonts"
+= stylesheet_link_tag "grids"
+= stylesheet_link_tag "application"
+= javascript_include_tag :all
+= csrf_meta_tag
+</code></pre>
+
+<p>  %body{:class =>&ldquo;yui3-skin-sam  yui-skin-sam&rdquo;}</p>
+
+<pre><code>= yield
+</code></pre>
+
+<p>FILE
+end</p>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<h1>Add Stylesheets</h1>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<p>create_file &lsquo;public/stylesheets/application.css&rsquo; do &lt;&lt;-FILE
+div.container {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid red;
+}</p>
+
+<h1>testLogger {</h1>
+
+<pre><code>margin-bottom: 1em;
+</code></pre>
+
+<p>}</p>
+
+<h1>testLogger .yui3-console .yui3-console-title {</h1>
+
+<pre><code>border: 0 none;
+color: #000;
+font-size: 13px;
+font-weight: bold;
+margin: 0;
+text-transform: none;
+</code></pre>
+
+<p>}</p>
+
+<h1>testLogger .yui3-console .yui3-console-entry-meta {</h1>
+
+<pre><code>margin: 0;
+</code></pre>
+
+<p>}</p>
+
+<p>.yui3-skin-sam .yui3-console-entry-pass .yui3-console-entry-cat {</p>
+
+<pre><code>background: #070;
+color: #fff;
+</code></pre>
+
+<p>}</p>
+
+<p>FILE
+end</p>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<h1>Initialize YUI and add YUI Test</h1>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<p>append_file &lsquo;public/javascripts/application.js&rsquo; do &lt;&lt;-FILE</p>
+
+<p>  YUI({ filter: &lsquo;raw&rsquo; }).use(&ldquo;node&rdquo;, &ldquo;console&rdquo;, &ldquo;test&rdquo;,function (Y) {</p>
+
+<pre><code>  Y.namespace("example.test");
+
+  Y.example.test.DataTestCase = new Y.Test.Case({
+
+      //name of the test case - if not provided, one is auto-generated
+      name : "Data Tests",
+
+      //---------------------------------------------------------------------
+      // setUp and tearDown methods - optional
+      //---------------------------------------------------------------------
+
+      /*
+       * Sets up data that is needed by each test.
+       */
+      setUp : function () {
+          this.data = {
+              name: "test",
+              year: 2007,
+              beta: true
+          };
+      },
+
+      /*
+       * Cleans up everything that was created by setUp().
+       */
+      tearDown : function () {
+          delete this.data;
+      },
+
+      //---------------------------------------------------------------------
+      // Test methods - names must begin with "test"
+      //---------------------------------------------------------------------
+
+      testName : function () {
+          var Assert = Y.Assert;
+
+          Assert.isObject(this.data);
+          Assert.isString(this.data.name);
+          Assert.areEqual("test", this.data.name);            
+      },
+
+      testYear : function () {
+          var Assert = Y.Assert;
+
+          Assert.isObject(this.data);
+          Assert.isNumber(this.data.year);
+          Assert.areEqual(2007, this.data.year);            
+      },
+
+      testBeta : function () {
+          var Assert = Y.Assert;
+
+          Assert.isObject(this.data);
+          Assert.isBoolean(this.data.beta);
+          Assert.isTrue(this.data.beta);
+      }
+
+  });
+
+  Y.example.test.ArrayTestCase = new Y.Test.Case({
+
+      //name of the test case - if not provided, one is auto-generated
+      name : "Array Tests",
+
+      //---------------------------------------------------------------------
+      // setUp and tearDown methods - optional
+      //---------------------------------------------------------------------
+
+      /*
+       * Sets up data that is needed by each test.
+       */
+      setUp : function () {
+          this.data = [0,1,2,3,4]
+      },
+
+      /*
+       * Cleans up everything that was created by setUp().
+       */
+      tearDown : function () {
+          delete this.data;
+      },
+
+      //---------------------------------------------------------------------
+      // Test methods - names must begin with "test"
+      //---------------------------------------------------------------------
+
+      testPop : function () {
+          var Assert = Y.Assert;
+
+          var value = this.data.pop();
+
+          Assert.areEqual(4, this.data.length);
+          Assert.areEqual(4, value);            
+      },        
+
+      testPush : function () {
+          var Assert = Y.Assert;
+
+          this.data.push(5);
+
+          Assert.areEqual(6, this.data.length);
+          Assert.areEqual(5, this.data[5]);            
+      },
+
+      testSplice : function () {
+          var Assert = Y.Assert;
+
+          this.data.splice(2, 1, 6, 7);
+
+          Assert.areEqual(6, this.data.length);
+          Assert.areEqual(6, this.data[2]);           
+          Assert.areEqual(7, this.data[3]);           
+      }
+
+  });    
+
+  Y.example.test.ExampleSuite = new Y.Test.Suite("Example Suite");
+  Y.example.test.ExampleSuite.add(Y.example.test.DataTestCase);
+  Y.example.test.ExampleSuite.add(Y.example.test.ArrayTestCase);
+
+  //create the console
+  var r = new Y.Console({
+      newestOnTop : false,
+      style: 'block' // to anchor in the example content
+  });
+
+  r.render('#testLogger');
+
+  Y.Test.Runner.add(Y.example.test.ExampleSuite);
+
+  //run the tests
+  Y.Test.Runner.run();
+</code></pre>
+
+<p>  });</p>
+
+<p>FILE
+end</p>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<h1>Setup RSpec &amp; Cucumber</h1>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<p>puts &lsquo;Setting up RSpec, Cucumber, webrat, factory_girl, faker&rsquo;
+append_file &lsquo;Gemfile&rsquo; do &lt;&lt;-FILE
+group :development, :test do
+  gem &ldquo;rspec-rails&rdquo;, &ldquo;>= 2.0.1&rdquo;
+  gem &ldquo;cucumber-rails&rdquo;, &ldquo;>= 0.3.2&rdquo;
+  gem &ldquo;webrat&rdquo;, &ldquo;>= 0.7.2.beta.2&rdquo;
+  gem &ldquo;factory_girl_rails&rdquo;
+  gem &ldquo;faker&rdquo;
+end
+FILE
+end</p>
+
+<p>run &lsquo;bundle install&rsquo;
+run &lsquo;script/rails generate rspec:install&rsquo;
+run &lsquo;script/rails generate cucumber:install&rsquo;
+run &lsquo;rake db:migrate&rsquo;
+run &lsquo;rake db:test:prepare&rsquo;</p>
+
+<p>run &lsquo;touch spec/factories.rb&rsquo;</p>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<h1>Finish up</h1>
+
+<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</h1>
+
+<p>puts &ldquo;Commiting to Git repository&hellip;&rdquo;
+git :add => &lsquo;.&rsquo;
+git :commit => &ldquo;-am &lsquo;Setup Complete&rsquo;&rdquo;</p>
+
+<p>puts &ldquo;DONE &ndash; setting up your YUI3 Rails App.&rdquo;</p>
+
+<p>{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Researching the Latest in HTPC (Home Theater PC)]]></title>
-    <link href="http://jessecravens.github.io/blog/2010/01/30/researching-the-latest-in-htpc-home-theater-pc/"/>
+    <link href="http://www.jessecravens.com/blog/2010/01/30/researching-the-latest-in-htpc-home-theater-pc/"/>
     <updated>2010-01-30T19:30:56-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2010/01/30/researching-the-latest-in-htpc-home-theater-pc</id>
+    <id>http://www.jessecravens.com/blog/2010/01/30/researching-the-latest-in-htpc-home-theater-pc</id>
     <content type="html"><![CDATA[<p>Fed up with paying for lame content, we recently turned off our cable and turned in our DVR.<br />Since then, I have been doing my research and preparing to build or purchase a system that leverages our broadband connection and Local HD Channels for content.<br /><br />Here is my growing list of resources: <br /><b><br />General Information</b><br /><ul><li><a href="http://en.wikipedia.org/wiki/Home_theater_PC">Home theater PC &ndash; Wikipedia, the free encyclopedia</a></li></ul><br /><b>Articles</b><br /><ul><li><a href="http://gizmodo.com/5366161/life-without-cable-or-satellite-tv-is-easier-than-you-think">Life Without Cable or Satellite TV Is Easier Than You Think &ndash; Htpc &ndash; Gizmodo</a></li><li><a href="http://gizmodo.com/5420853/why-its-finally-time-to-get-a-home-theater-pc">Why It&rsquo;s Finally Time To Get a Home Theater PC &ndash; Htpc &ndash; Gizmodo</a></li><li><a href="http://www.extremetech.com/article2/0,2845,2349560,00.asp">Mini-Roundup: The Best New HTPC Cases &ndash; Chieftec HM-02 &ndash; CPUs, Boards &amp; Components by ExtremeTech</a></li><li><a href="http://www.engadget.com/2009/11/12/dells-inspiron-zino-hd-on-sale-now-in-america-starts-at-229/">Dell&rsquo;s Inspiron Zino HD on sale now in America: starts at $229, doubles as an HTPC &mdash; Engadget</a></li><li><a href="http://www.engadget.com/2009/07/21/how-to-build-a-blu-ray-tv-tuner-equipped-htpc-for-under-1-00/">How-to: Build a Blu-ray / TV tuner-equipped HTPC for under $1,000 &mdash; Engadget</a></li><li><a href="http://sewelldirect.com/articles/vga-to-hdmi.aspx">Convert VGA to HDMI with Audio (HDMI to VGA)</a></li></ul>      <br /><b>Videos</b><br /><ul><li><a href="http://www.howcast.com/videos/185705-How-To-Connect-Your-Laptop-To-Your-Television">How To Connect Your Laptop To Your Television Video | Laptop Computers Videos | Howcast.com</a></li><li><a href="http://www.youtube.com/watch?v=5c9-LLY33Gw">YouTube &ndash; CES 2010 &ndash; Core i5 is the new HTPC powerhouse</a></li></ul><br /><b>Channels</b><br /><ul><li><a href="http://www.hulu.com/">Hulu &ndash; Watch your favorites. Anytime. For free.</a></li><li><a href="http://www.fancast.com/">Fancast | Watch Full TV Shows and Movies | Free Online Streaming</a></li><li><a href="http://www.joost.com/epg/us/shows/">Shows &ndash; Featured &ndash; United States &ndash; Joost</a></li><li><a href="http://www.clicker.com/">Clicker &ndash; What&rsquo;s On Online</a></li></ul>   <br /><b>On Demand Content</b><br /><ul><li><a href="http://www.amazon.com/Video-On-Demand/b/ref=topnav_storetab_atv?ie=UTF8&amp;node=16261631">Amazon.com Video On Demand: TV shows, movies, international videos and more, ready to download</a></li></ul> <br /><b>Players </b><br /><ul><li><a href="http://www.roku.com/">Roku Digital Video Player | Watch Netflix, Amazon Video On Demand and MLB.TV on Roku Player</a></li><li><a href="http://www.vudu.com/noscript.html">VUDU &ndash; Turn Javscript On Please</a></li></ul> <b><br />Hardware &ndash; All In One</b><br /><ul><li><a href="http://usa.asus.com/product.aspx?P_ID=wH1q2VTqyLXaCw1f">ASUSTeK Computer Inc. EeeBox PC EB1012</a></li><li><a href="http://www.dell.com/us/en/corp/desktops/inspiron-zino-hd/pd.aspx?refid=inspiron-zino-hd&amp;s=corp">Inspiron Zino HD Desktop | Dell</a></li><li><a href="http://mvixusa.com/product/ultiopro">Mvix UltioPro (MX-880HD) HD Media Center with PVR</a></li><li><a href="http://www.bodhiboxes.com/index.php?option=com_content&amp;view=article&amp;id=10&amp;Itemid=17">BodhiBoxes &ndash; Home Theater Personal Computer &ndash; Configure</a></li></ul>    <br /><b>Hardware &ndash; Parts</b><br /><ul><li><a href="http://www.google.com/products?q=nmediapc+htpc+2000b&amp;hl=en&amp;output=nojs">nmediapc htpc 2000b &ndash; Google Product Search</a></li><li><a href="http://www.google.com/products?q=intel+core+2+quad+q8400&amp;hl=en&amp;output=nojs">intel core 2 quad q8400 &ndash; Google Product Search</a></li><li><a href="http://www.google.com/products?q=lg+CH08LS10&amp;hl=en&amp;output=nojs">lg CH08LS10 &ndash; Google Product Search</a></li></ul>  <br /><b>Software and OS</b><br /><ul><li><a href="http://www.boxee.tv/">Boxee</a></li><li><a href="http://www.elementmypc.com/main/">Element OS: Linux on your HTPC</a></li><li><a href="http://www.mythbuntu.org/about">About Mythbuntu | Mythbuntu</a></li><li><a href="http://www.linuxmce.org/">Welcome to LinuxMCE</a></li><li><a href="http://knoppmyth.net/knoppmyth.html">KnoppMyth</a></li><li><a href="http://geexbox.org/en/index.html">GeeXboX HomePage</a></li></ul>     <br /><b>Network Storage</b><br /><ul><li><a href="http://www.shopping.hp.com/product/computer/categories/home_servers/1/accessories/FL702AA%2523ABA;HHOJSID=dVn4LdMJq4ls00VSvQvFH4bRJR9T82wLy4nVJLn25KB81KF1Pvpz%21181851530">HP® Official Store — Buy the HP MediaSmart Server LX195 direct from HP</a></li></ul> <br /><b>Recorders</b><br /><ul><li><a href="http://www.hauppauge.com/index.htm">Hauppauge Computer Works</a></li><li><a href="http://mvixusa.com/product/ultiopro">Mvix UltioPro (MX-880HD) HD Media Center with PVR</a></li></ul>  <br /><b>Antennas</b><br /><ul><li><a target="HDTV Indoor / Outdoor Antenna" title="HDTV Indoor / Outdoor Antenna" href="http://www.monoprice.com/products/product.asp?c_id=109&amp;cp_id=10901&amp;cs_id=1090102&amp;p_id=4730&amp;seq=1&amp;format=4#feedback">HDMI Cable, Home Theater Accessories, HDMI Products, Cables, Adapters, Video/Audio Switch, Networking, USB, Firewire, Printer Toner, and more!</a></li></ul> <br /><b>Remotes</b><br /><ul><li><a href="http://gizmodo.com/5435219/lenovos-multimedia-remote-with-keyboard">Lenovo&rsquo;s Multimedia Remote with Keyboard &ndash; trackpad &ndash; Gizmodo</a></li><li><a href="http://www.gmote.org/">Gmote &gt; Android Remote</a></li><li><a href="http://www.logitech.com/index.cfm/keyboards/keyboard/devices/3848&amp;cl=us,en">diNovo Mini™</a></li><li><a href="http://www.google.com/products?q=HTPCKB&amp;hl=en">HTPCKB &ndash; Google Product Search</a></li></ul>   <br /><b>Cables/Converters</b><br /><ul><li><a href="http://www.monoprice.com/products/search.asp?keyword=vga+to+hdmi&amp;x=24&amp;y=15">HDMI Cable, Home Theater Accessories, HDMI Products, Cables, Adapters, Video/Audio Switch, Networking, USB, Firewire, Printer Toner, and more!</a></li><li><a href="http://sewelldirect.com/ATLONA-VGA-TO-HDMI-CONVERTERSCALER.asp">ATLONA VGA TO HDMI CONVERTER/SCALER &ndash; AT-HD500, $197.10</a></li></ul>  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />  <br /><br /><div class="zemanta-pixie"><img class="zemanta-pixie-img" alt="" src="http://img.zemanta.com/pixy.gif?x-id=37492be8-1a37-87f8-8f30-353c32d3f0b9" /></div></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Wooden Computing]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/05/04/wooden-computing/"/>
+    <link href="http://www.jessecravens.com/blog/2006/05/04/wooden-computing/"/>
     <updated>2006-05-04T19:28:11-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/05/04/wooden-computing</id>
+    <id>http://www.jessecravens.com/blog/2006/05/04/wooden-computing</id>
     <content type="html"><![CDATA[<p>As I was saying&hellip;we need more natural representations in our modern designs. Ok, as usual, I may have taken it too far. Nevertheless, I thought this post at ecoGeek was pretty cool: <a href="http://www.ecogeek.org/content/view/62/1/"><a href="http://www.ecogeek.org/content/view/62/1/">http://www.ecogeek.org/content/view/62/1/</a></a><br/>
 <img src="http://www.ecogeek.org/images/stories/woodcomp1.jpg" alt="wooden computing" style="float: right; margin: 10px"/></p>
 ]]></content>

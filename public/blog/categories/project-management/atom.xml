@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Project Management | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/project-management/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/project-management/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[iBoerne.com: an Interactive Online Game for Programming Students]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/10/10/iboerne-com-an-interactive-online-game-for-programming-students/"/>
+    <link href="http://www.jessecravens.com/blog/2006/10/10/iboerne-com-an-interactive-online-game-for-programming-students/"/>
     <updated>2006-10-10T07:13:22-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/10/10/iboerne-com-an-interactive-online-game-for-programming-students</id>
+    <id>http://www.jessecravens.com/blog/2006/10/10/iboerne-com-an-interactive-online-game-for-programming-students</id>
     <content type="html"><![CDATA[<p><a href="http://iboerne.com"><img style="float:left; margin: 10px" src="http://jessecravens.com/images/jessecravens/iboerne_150.jpg"></a><a href="http://iboerne.com">iBoerne.com</a> is a mashup of Google maps and Drupal using the drupal gmap module to create virtual competition between teams of students. The teams are: Yellow, Red, Green, Blue. The rules of the game were created to encourage the six member teams to discuss concepts such as project management, virtual teams, workflow, efficiency, and collaboration tools.</p>
 ]]></content>
   </entry>

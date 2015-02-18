@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Open Source | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/open-source/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/open-source/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[JavaScript Modules]]></title>
-    <link href="http://jessecravens.github.io/blog/2012/06/17/javascript-modules/"/>
+    <link href="http://www.jessecravens.com/blog/2012/06/17/javascript-modules/"/>
     <updated>2012-06-17T16:23:21-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2012/06/17/javascript-modules</id>
+    <id>http://www.jessecravens.com/blog/2012/06/17/javascript-modules</id>
     <content type="html"><![CDATA[<p>For a talk last March at USAA's internal Tech X conference, I put together a demo of JavaScript script loaders, module definitions, dependency management, and polyfill support: <a href="http://jessecravens.github.com/js-modules-demo">JavaScript Modules</a>.</p>
 
 
@@ -64,9 +64,9 @@
   
   <entry>
     <title type="html"><![CDATA[RVM (Ruby Version Manager) and Ruby On Rails]]></title>
-    <link href="http://jessecravens.github.io/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails/"/>
+    <link href="http://www.jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails/"/>
     <updated>2011-09-26T23:35:58-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails</id>
+    <id>http://www.jessecravens.com/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails</id>
     <content type="html"><![CDATA[<p>Here is a brief overview of <a href="http://beginrescueend.com">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn&rsquo;t live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
 
 <p>This allows me to essentially sandbox each of these applications' dependencies.</p>
@@ -83,294 +83,175 @@
 
 <h2>RUBY</h2>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm list
-</span><span class='line'>$ rvm install 1.9.2-head&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<p>$ rvm list
+$ rvm install 1.9.2-head</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>And, you can set a version as default</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm use 1.9.2-head &mdash;default&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<p>$ rvm use 1.9.2-head &mdash;default</p>
+
+<p>{% endcodeblock %}</p>
 
 <h3>GEMSETS</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Start by creating our gemset(s):&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$  rvm gemset create rails309&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Or create multiple at a time:&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$  rvm gemset create rails307 rails31&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>The result can be verified by listing the available gemsets:&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$  rvm gemset list&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>See everything with list_all, this has been very useful:&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm gemset list_all&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>If a gem’s name still leaves room for confusion, simply delete it and create a more meaningful one (e.g., rails31rc):&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$  rvm gemset delete rails31&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<h1>Start by creating our gemset(s):</h1>
+
+<p>$  rvm gemset create rails309</p>
+
+<h1>Or create multiple at a time:</h1>
+
+<p>$  rvm gemset create rails307 rails31</p>
+
+<h1>The result can be verified by listing the available gemsets:</h1>
+
+<p>$  rvm gemset list</p>
+
+<h1>See everything with list_all, this has been very useful:</h1>
+
+<p>$ rvm gemset list_all</p>
+
+<h1>If a gem’s name still leaves room for confusion, simply delete it and create a more meaningful one (e.g., rails31rc):</h1>
+
+<p>$  rvm gemset delete rails31</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>Now that we have multiple gemsets installed, we must first select the one we want to use, and we can also set it as the default gemset by passing it the —default flag:
   
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm use 1.9.2-head@rails309 &mdash;default&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}</p>
+
+<p>$ rvm use 1.9.2-head@rails309 &mdash;default</p>
+
+<p>{% endcodeblock %}</p>
 
 <h3>Installing Rails</h3>
 
 <p>Installing rails is as easy as installing any other gem: we only need to specify it’s name, but we can always choose a specific version, or to speed up the installation process by skipping the documentation:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ gem install rails &mdash;no-rdoc &mdash;no-ri&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Or&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ gem install rails [-v 3.0.7] [&mdash;no-rdoc &mdash;no-ri]&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Or&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ gem install rails -v &ldquo;>=3.1.0rc&rdquo;&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<p>$ gem install rails &mdash;no-rdoc &mdash;no-ri</p>
+
+<h1>Or</h1>
+
+<p>$ gem install rails [-v 3.0.7] [&mdash;no-rdoc &mdash;no-ri]</p>
+
+<h1>Or</h1>
+
+<p>$ gem install rails -v &ldquo;>=3.1.0rc&rdquo;</p>
+
+<p>{% endcodeblock %}</p>
 
 <h3>In Summary and Why Am I doing this?</h3>
 
 <p>Rails is distributed as a gem, and there are conflicts between Rails 2 and Rails 3, so if you want to run multiple versions of Rails on the same system you need to create a separate gemset for each:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm &mdash;create 1.8.7-p302@rails2app
-</span><span class='line'>$ rvm &mdash;create use 1.9.2@rails3app&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<p>$ rvm &mdash;create 1.8.7-p302@rails2app
+$ rvm &mdash;create use 1.9.2@rails3app</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>In other words, for application specific gemsets it is convenient to select the version of Ruby and the collection of gems by doing the following:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm &mdash;create use 1.9.2@mongoid-app&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Also, which gemset am I using?&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm gemset name&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ rvm gemdir&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}</p>
+
+<p>$ rvm &mdash;create use 1.9.2@mongoid-app</p>
+
+<h1>Also, which gemset am I using?</h1>
+
+<p>$ rvm gemset name</p>
+
+<p>$ rvm gemdir</p>
+
+<p>{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Git Cheatsheet]]></title>
-    <link href="http://jessecravens.github.io/blog/2011/09/26/git-cheatsheet/"/>
+    <link href="http://www.jessecravens.com/blog/2011/09/26/git-cheatsheet/"/>
     <updated>2011-09-26T23:10:56-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2011/09/26/git-cheatsheet</id>
+    <id>http://www.jessecravens.com/blog/2011/09/26/git-cheatsheet</id>
     <content type="html"><![CDATA[<p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I&rsquo;d share.</p>
 
 <h3>Git First-Time System Setup</h3>
 
 <p>After installing Git, you should perform a set of one-time setup steps. These are system setups, meaning you only have to do them once per computer:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install git-core
-</span><span class='line'>$ git config &mdash;global user.email youremail[at symbol]example.com
-</span><span class='line'>$ git config &mdash;global user.name &ldquo;Your Name&rdquo;
-</span><span class='line'>$ git config &mdash;global alias.co checkout</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}
+$ sudo apt-get install git-core
+$ git config &mdash;global user.email youremail[at symbol]example.com
+$ git config &mdash;global user.name &ldquo;Your Name&rdquo;
+$ git config &mdash;global alias.co checkout
+{% endcodeblock %}</p>
 
 <p>As a final setup step, you can optionally set the editor Git will use for commit messages.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config &mdash;global core.editor &ldquo;mate -w&rdquo;&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Replace “mate -w” with “gvim -f” for gVim or “mvim -f” for MacVim.&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}
+$ git config &mdash;global core.editor &ldquo;mate -w&rdquo;</p>
+
+<h1>Replace “mate -w” with “gvim -f” for gVim or “mvim -f” for MacVim.</h1>
+
+<p>{% endcodeblock %}</p>
 
 <h3>Quick Reference – Most Often Used Commands</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd /path/to/repository
-</span><span class='line'>$ git init
-</span><span class='line'>$ git add .
-</span><span class='line'>$ git add -u
-</span><span class='line'>$ git log
-</span><span class='line'>$ git status
-</span><span class='line'>$ git commit -m &ldquo;initial commit&rdquo;&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>made a mistake on the git commit&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ git commit -amend -m &ldquo;initial commit&rdquo;&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Add the remote repository&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>ex 1&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ git remote add unfuddle git@subdomain.unfuddle.com:subdomain/abbreviation.git&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>ex 2&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ git remote add origin git@subdomain.unfuddle.com:subdomain/abbreviation.git&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Configure the repository&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ git config remote.unfuddle.push refs/heads/master:refs/heads/master&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Push master branch to remote repository named unfuddle&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ git push unfuddle master&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Other commands:&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Clone an existing remote repo&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ git clone git@subdomain.unfuddle.com:subdomain/abbreviation.git&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>List all branches within your repo&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ git branch -a&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Create and switch to a new branch &ldquo;whatever&rdquo;&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$ git checkout -b whatever&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock %}
+$ cd /path/to/repository
+$ git init
+$ git add .
+$ git add -u
+$ git log
+$ git status
+$ git commit -m &ldquo;initial commit&rdquo;</p>
+
+<h1>made a mistake on the git commit</h1>
+
+<p>$ git commit -amend -m &ldquo;initial commit&rdquo;</p>
+
+<h1>Add the remote repository</h1>
+
+<h1>ex 1</h1>
+
+<p>$ git remote add unfuddle git@subdomain.unfuddle.com:subdomain/abbreviation.git</p>
+
+<h1>ex 2</h1>
+
+<p>$ git remote add origin git@subdomain.unfuddle.com:subdomain/abbreviation.git</p>
+
+<h1>Configure the repository</h1>
+
+<p>$ git config remote.unfuddle.push refs/heads/master:refs/heads/master</p>
+
+<h1>Push master branch to remote repository named unfuddle</h1>
+
+<p>$ git push unfuddle master</p>
+
+<h1>Other commands:</h1>
+
+<h1>Clone an existing remote repo</h1>
+
+<p>$ git clone git@subdomain.unfuddle.com:subdomain/abbreviation.git</p>
+
+<h1>List all branches within your repo</h1>
+
+<p>$ git branch -a</p>
+
+<h1>Create and switch to a new branch &ldquo;whatever&rdquo;</h1>
+
+<p>$ git checkout -b whatever</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>Those are the basics, should be enough to make you dangerous.</p>
 ]]></content>
@@ -378,9 +259,9 @@
   
   <entry>
     <title type="html"><![CDATA[EduPunk]]></title>
-    <link href="http://jessecravens.github.io/blog/2009/03/15/edupunk/"/>
+    <link href="http://www.jessecravens.com/blog/2009/03/15/edupunk/"/>
     <updated>2009-03-15T12:22:26-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2009/03/15/edupunk</id>
+    <id>http://www.jessecravens.com/blog/2009/03/15/edupunk</id>
     <content type="html"><![CDATA[<object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
 
 ]]></content>
@@ -388,9 +269,9 @@
   
   <entry>
     <title type="html"><![CDATA[Rails 2.0 on Windows: Making Sense of Old Tutorials]]></title>
-    <link href="http://jessecravens.github.io/blog/2008/02/11/rails-2-0-on-windows-making-sense-of-old-tutorials/"/>
+    <link href="http://www.jessecravens.com/blog/2008/02/11/rails-2-0-on-windows-making-sense-of-old-tutorials/"/>
     <updated>2008-02-11T09:08:36-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2008/02/11/rails-2-0-on-windows-making-sense-of-old-tutorials</id>
+    <id>http://www.jessecravens.com/blog/2008/02/11/rails-2-0-on-windows-making-sense-of-old-tutorials</id>
     <content type="html"><![CDATA[<p><img src="http://jessecravens.com/sites/jessecravens.com/files/images/rails.png" style="float: right; margin: 10px"/></p>
 
 <p>I know it is fairly well documented around the web that some of the old 'ROR up and running' tutorials are a bit difficult to digest with the new features in in Rails 2.0. So, I wanted to document my findings. And provide links to the resources that have helped me.</p>

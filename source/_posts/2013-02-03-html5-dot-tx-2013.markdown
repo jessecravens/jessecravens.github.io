@@ -21,7 +21,7 @@ Most of the demos are included in the nodejshacks-emedded repo here: [https://gi
 
 Very soon, initial documentation will be available at: [trailr.io](http://trailr.io)
 
-<img class="" alt=""  src="/images/html5tx2013/embedded.JPG">
+<img class="" alt=""  src="/images/html5tx2013/embedded.jpg">
 
 Photo credit: Mitch Fincher: [mitchfincher.blogspot.com](http://mitchfincher.blogspot.com/2013/02/pictures-from-html5tx-2013-in-austin-tx.html)
 
@@ -36,8 +36,3 @@ Photo credit: Mitch Fincher: [mitchfincher.blogspot.com](http://mitchfincher.blo
 <img class="" alt=""  src="/images/html5tx2013/embedded2.JPG">
 
 Photo credit: Mitch Fincher: [mitchfincher.blogspot.com](http://mitchfincher.blogspot.com/2013/02/pictures-from-html5tx-2013-in-austin-tx.html)
-
-
-
-
-

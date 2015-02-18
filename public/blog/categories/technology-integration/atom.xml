@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Technology Integration | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/technology-integration/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/technology-integration/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[EduPunk]]></title>
-    <link href="http://jessecravens.github.io/blog/2009/03/15/edupunk/"/>
+    <link href="http://www.jessecravens.com/blog/2009/03/15/edupunk/"/>
     <updated>2009-03-15T12:22:26-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2009/03/15/edupunk</id>
+    <id>http://www.jessecravens.com/blog/2009/03/15/edupunk</id>
     <content type="html"><![CDATA[<object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
 
 ]]></content>
@@ -25,9 +25,9 @@
   
   <entry>
     <title type="html"><![CDATA[Top 5 Free Computer and Technology Books Lists for High School and College Computer Classes]]></title>
-    <link href="http://jessecravens.github.io/blog/2007/06/15/top-5-free-computer-and-technology-books-lists-for-high-school-and-college-computer-classes/"/>
+    <link href="http://www.jessecravens.com/blog/2007/06/15/top-5-free-computer-and-technology-books-lists-for-high-school-and-college-computer-classes/"/>
     <updated>2007-06-15T13:49:14-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2007/06/15/top-5-free-computer-and-technology-books-lists-for-high-school-and-college-computer-classes</id>
+    <id>http://www.jessecravens.com/blog/2007/06/15/top-5-free-computer-and-technology-books-lists-for-high-school-and-college-computer-classes</id>
     <content type="html"><![CDATA[<p>Is it really necessary to purchase text books for those computer classes anymore? Take a look at your content area on each of these sites. You be the judge. </p>
 
 
@@ -51,9 +51,9 @@
   
   <entry>
     <title type="html"><![CDATA[Tech Ed Projects for the Middle School Mind: Wrestling mask from an old shoe]]></title>
-    <link href="http://jessecravens.github.io/blog/2007/05/02/tech-ed-projects-for-the-middle-school-mind-wrestling-mask-from-an-old-shoe/"/>
+    <link href="http://www.jessecravens.com/blog/2007/05/02/tech-ed-projects-for-the-middle-school-mind-wrestling-mask-from-an-old-shoe/"/>
     <updated>2007-05-02T14:02:38-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2007/05/02/tech-ed-projects-for-the-middle-school-mind-wrestling-mask-from-an-old-shoe</id>
+    <id>http://www.jessecravens.com/blog/2007/05/02/tech-ed-projects-for-the-middle-school-mind-wrestling-mask-from-an-old-shoe</id>
     <content type="html"><![CDATA[<p><a href="http://www.makezine.com/blog/archive/2007/05/wrestling_mask_from_an_ol.html">MAKE: Blog: Wrestling mask from an old shoe</a><br /><br />I&rsquo;m beginning to collect projects that appeal to Middle School age children. While discussing concepts of manufacturing&hellip;nothing better than the tennis shoe. And afterwords why not take it apart and create a wrestling mask.</p>
 
 <p>Texas Essential Knowledge and Skills for Technology
@@ -69,9 +69,9 @@ Education/Industrial Technology Education</p>
   
   <entry>
     <title type="html"><![CDATA[Linux's Education Push]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/12/15/linuxs-education-push/"/>
+    <link href="http://www.jessecravens.com/blog/2006/12/15/linuxs-education-push/"/>
     <updated>2006-12-15T10:02:48-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/12/15/linuxs-education-push</id>
+    <id>http://www.jessecravens.com/blog/2006/12/15/linuxs-education-push</id>
     <content type="html"><![CDATA[<p>Linux&rsquo;s Education Push
 When it comes to desktop PCs, schools could be the first, real place where Linux grabs hold.<br /><br /><p>&ldquo;So Dad,&rdquo; he asked. &ldquo;What is the difference between Linux and Windows?&rdquo; I tried to explain but it was a waste of breath. &ldquo;What difference do you see?&rdquo; I asked back.</p>
 
@@ -81,9 +81,9 @@ When it comes to desktop PCs, schools could be the first, real place where Linux
   
   <entry>
     <title type="html"><![CDATA[In Search of A Balance: Integrating the Sudbury and other democratic models with Moodle]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/11/17/in-search-of-a-balance-integrating-the-sudbury-and-other-democratic-models-with-moodle/"/>
+    <link href="http://www.jessecravens.com/blog/2006/11/17/in-search-of-a-balance-integrating-the-sudbury-and-other-democratic-models-with-moodle/"/>
     <updated>2006-11-17T06:57:33-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/11/17/in-search-of-a-balance-integrating-the-sudbury-and-other-democratic-models-with-moodle</id>
+    <id>http://www.jessecravens.com/blog/2006/11/17/in-search-of-a-balance-integrating-the-sudbury-and-other-democratic-models-with-moodle</id>
     <content type="html"><![CDATA[<p>I&rsquo;m definitely into the hybrid thing lately. Hybrid instruction not only in the sense of implementation: online and face to face learning through moodle (<a href="http://moodle.org">http://moodle.org</a>) and short class lectures/discussions, but also philosophically in a sense of allowing students to have some type of control over the curriculum, and direction of their own study. Every moodle assignment I offer, is open to interpretation and creativity. This is why I believe that rubrics can potentially take the fun out of learning. They limit learners to the parameters made by the teacher. Especially when we are teaching technoloies that are more native to the learner than the educator. <br /><br />This article takes a neutral approach to &ndash; what I will call the Sudbury model, but really applies to many other free, democratic school models. I agree with both sides of the argument, and I have settled on balance and moderation of both freedom and standardization. This combined with a balance between face to face and elearning and I think we might make some real progress in my classroom. <br /><a href="http://www.edutopia.org/magazine/ed1article.php?id=Art_1615&amp;issue=oct_06">Free Radicals</a> <br /> <blockquote>In the country&rsquo;s most alternative classrooms, there&rsquo;s no such thing as a report card.</p>
 
 <br /><br />Sudbury schools are only one variety of so-called free, or democratic, schools, which eschew most conventions of traditional education in favor of a much more radical program. At most free schools, literally every decision, from those about staff hiring and firing to determinations concerning rules, facilities, and budget issues, is made by the entire school community in a one-person, one-vote process. There are no tests, no report cards, no requirements, and no classes -- and no curriculum, other than what students set for themselves.

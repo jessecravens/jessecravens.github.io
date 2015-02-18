@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: JS Templates | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/js-templates/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/js-templates/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Building Next Generation Widgets with Web Components]]></title>
-    <link href="http://jessecravens.github.io/blog/2013/07/25/building-next-generation-widgets-with-web-components/"/>
+    <link href="http://www.jessecravens.com/blog/2013/07/25/building-next-generation-widgets-with-web-components/"/>
     <updated>2013-07-25T03:41:00-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2013/07/25/building-next-generation-widgets-with-web-components</id>
+    <id>http://www.jessecravens.com/blog/2013/07/25/building-next-generation-widgets-with-web-components</id>
     <content type="html"><![CDATA[<p><img class="imgL400" alt="Nerdclustr" src="http://tpstatic.com/img/usermedia/9ylQdMSRLUiffrQPG4hHJw/original.png"></p>
 
 <p>For SXSWi and FluentConf this year, <a href="http://twitter.com/boyofgreen">@boyofgreen</a> and I created a demo application to showcase some of the hacks that we included in our book OReilly&rsquo;s HTML5 Hacks.</p>

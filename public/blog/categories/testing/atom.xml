@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Testing | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/testing/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/testing/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Modern Ember.js Application Workflow with Yeoman and Mocha]]></title>
-    <link href="http://jessecravens.github.io/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/"/>
+    <link href="http://www.jessecravens.com/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/"/>
     <updated>2013-04-23T10:05:00-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha</id>
+    <id>http://www.jessecravens.com/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha</id>
     <content type="html"><![CDATA[<p><img class="imgL200" alt="Tech-pro Modern Ember.js Application Workflow" src="http://tpstatic.com/img/usermedia/LgFpf2qDCkGfHlDBR4oGDA/cropped-w220-h220.png"></p>
 
 <p>The following tutorial will provide an overview for building Ember.js applications with Yeoman. Keep in mind, Yeoman is a framework agnostic collection of tools, used to manage the workflow of any JavaScript application or plugin. For the sake of this tutorial, we have chosen to focus on Ember.js, as a case study.</p>

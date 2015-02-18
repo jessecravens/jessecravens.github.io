@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Art History | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/art-history/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/art-history/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[20 Ideas for Integrating Technology into the Classroom]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/11/10/20-ideas-for-integrating-technology-into-the-classroom/"/>
+    <link href="http://www.jessecravens.com/blog/2006/11/10/20-ideas-for-integrating-technology-into-the-classroom/"/>
     <updated>2006-11-10T10:22:08-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/11/10/20-ideas-for-integrating-technology-into-the-classroom</id>
+    <id>http://www.jessecravens.com/blog/2006/11/10/20-ideas-for-integrating-technology-into-the-classroom</id>
     <content type="html"><![CDATA[<p><a href="http://teaching.mrbelshaw.co.uk/index.php/2006/09/11/20-ideas-intro/">20 Ideas: Introduction at teaching.mrbelshaw.co.uk</a><br /><br />Doug Belshaw is creating a great resource for eductors.Take a minute to explore this archive. <br /><br /><br /><p class="poweredbyperformancing">powered by <a href="http://performancing.com/firefox">performancing firefox</a></p></p>
 ]]></content>
   </entry>

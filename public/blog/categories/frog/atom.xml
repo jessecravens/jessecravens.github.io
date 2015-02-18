@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Frog | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/frog/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/frog/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship]]></title>
-    <link href="http://jessecravens.github.io/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship/"/>
+    <link href="http://www.jessecravens.com/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship/"/>
     <updated>2012-11-28T10:02:00-06:00</updated>
-    <id>http://jessecravens.github.io/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship</id>
+    <id>http://www.jessecravens.com/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship</id>
     <content type="html"><![CDATA[<p>Im giving a talk at Devcon 5 &ndash; San Francisco this afternoon: Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship. Here is the other talks on the agenda: <a href="http://www.html5report.com/conference/california/agenda.aspx">Devcon 5 &ndash; San Francisco</a>.</p>
 
 <p>Here is a brief summary:</p>
@@ -65,7 +65,7 @@ We will explore Web Workers processing heavy computations without blocking the U
 <p>Here is the node.js server used on the Beaglebone in the demo: <a href="https://github.com/jessecravens/beagleserver">beagleserver</a>.
 The Johnny Five code is located here: <a href="https://github.com/nodejshacks/nodejshacks-embedded">node-embedded</a></p>
 
-<script async class="speakerdeck-embed" data-slide="4" data-id="086813701bf601302fbe22000a1f8a4e" data-ratio="1.2994923857868" src="http://jessecravens.github.io//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-slide="4" data-id="086813701bf601302fbe22000a1f8a4e" data-ratio="1.2994923857868" src="http://www.jessecravens.com//speakerdeck.com/assets/embed.js"></script>
 
 
 
@@ -77,9 +77,9 @@ The Johnny Five code is located here: <a href="https://github.com/nodejshacks/no
   
   <entry>
     <title type="html"><![CDATA[Upcoming Talk at Devcon5-Austin: Rapid Prototyping HTML5 Applications with NodeJS]]></title>
-    <link href="http://jessecravens.github.io/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs/"/>
+    <link href="http://www.jessecravens.com/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs/"/>
     <updated>2012-09-25T21:50:00-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs</id>
+    <id>http://www.jessecravens.com/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs</id>
     <content type="html"><![CDATA[<p>I&rsquo;m getting ready for an upcoming talk titled: Rapid Prototyping HTML5 Applications with NodeJS, which I will presenting at <a href="http://www.html5report.com/conference/austin2012/Agenda/Agenda-at-a-glance.aspx">Devcon 5 &ndash; Austin</a>.</p>
 
 <p>Here is a brief summary:</p>
@@ -93,7 +93,7 @@ See innovative example solutions and learn why NodeJS is an ideal development pl
 
 <p>Look for an update with a web based version of the slides.</p>
 
-<script async class="speakerdeck-embed" data-id="507da9caa2a4030002063d67" data-ratio="1.299492385786802" src="http://jessecravens.github.io//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-id="507da9caa2a4030002063d67" data-ratio="1.299492385786802" src="http://www.jessecravens.com//speakerdeck.com/assets/embed.js"></script>
 
 ]]></content>
   </entry>

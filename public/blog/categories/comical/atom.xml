@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Comical | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/comical/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/comical/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,14 +15,14 @@
   
   <entry>
     <title type="html"><![CDATA[Gettin' Crazy with Digett]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/05/02/gettin-crazy-with-digett/"/>
+    <link href="http://www.jessecravens.com/blog/2006/05/02/gettin-crazy-with-digett/"/>
     <updated>2006-05-02T19:17:48-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/05/02/gettin-crazy-with-digett</id>
+    <id>http://www.jessecravens.com/blog/2006/05/02/gettin-crazy-with-digett</id>
     <content type="html"><![CDATA[<p>We have been having a little fun at <a href="http://digett.com">Digett.com</a>. <a href="http://trevordodd.com">Trevor</a> conjoured up the klller flash/video/audio, and <a href="http://markfigart.com">Mark</a> volunteered for the Naked Cowboy role. This also marks are first <a href="http://drupal.org">Drupal</a> launch: <a href="http://enchantedbreakfast.com">EnchantedBreakfast.com</a>. We will be sponsoring an upcoming <a href="http://boerne.org">Boerne Chamber of Commerce</a> Networking Breakfast on Tuesday, May 23rd at <a href="http://enchantedspringsranch.com">Enchanted Springs Ranch</a>.  Enjoy.</p>
 
 <p>Follow the linked image to view the video.</p>
 
-<p><a href="http://enchantedbreakfast.com/video/episode1"><img src="http://jessecravens.github.io/images/2006/02/enchanted.gif" alt="Jesse Cravens, Mark Figart, and Trevor Dodd of Digett.com" align="baseline" width="400" height="537" /></a></p>
+<p><a href="http://enchantedbreakfast.com/video/episode1"><img src="http://www.jessecravens.com/images/2006/02/enchanted.gif" alt="Jesse Cravens, Mark Figart, and Trevor Dodd of Digett.com" align="baseline" width="400" height="537" /></a></p>
 ]]></content>
   </entry>
   

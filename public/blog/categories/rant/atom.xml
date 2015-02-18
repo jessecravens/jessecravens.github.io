@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: rant | Jesse Cravens]]></title>
-  <link href="http://jessecravens.github.io/blog/categories/rant/atom.xml" rel="self"/>
-  <link href="http://jessecravens.github.io/"/>
-  <updated>2014-12-26T19:52:40-06:00</updated>
-  <id>http://jessecravens.github.io/</id>
+  <link href="http://www.jessecravens.com/blog/categories/rant/atom.xml" rel="self"/>
+  <link href="http://www.jessecravens.com/"/>
+  <updated>2015-02-17T21:49:18-06:00</updated>
+  <id>http://www.jessecravens.com/</id>
   <author>
     <name><![CDATA[Jesse Cravens]]></name>
     <email><![CDATA[jesse.cravens@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[EduPunk]]></title>
-    <link href="http://jessecravens.github.io/blog/2009/03/15/edupunk/"/>
+    <link href="http://www.jessecravens.com/blog/2009/03/15/edupunk/"/>
     <updated>2009-03-15T12:22:26-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2009/03/15/edupunk</id>
+    <id>http://www.jessecravens.com/blog/2009/03/15/edupunk</id>
     <content type="html"><![CDATA[<object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
 
 ]]></content>
@@ -25,9 +25,9 @@
   
   <entry>
     <title type="html"><![CDATA[Siddhartha: reflection, blogging, and thinking before we speak]]></title>
-    <link href="http://jessecravens.github.io/blog/2006/04/25/siddhartha-reflection-blogging-and-thinking-before-we-speak/"/>
+    <link href="http://www.jessecravens.com/blog/2006/04/25/siddhartha-reflection-blogging-and-thinking-before-we-speak/"/>
     <updated>2006-04-25T19:11:24-05:00</updated>
-    <id>http://jessecravens.github.io/blog/2006/04/25/siddhartha-reflection-blogging-and-thinking-before-we-speak</id>
+    <id>http://www.jessecravens.com/blog/2006/04/25/siddhartha-reflection-blogging-and-thinking-before-we-speak</id>
     <content type="html"><![CDATA[<blockquote>He reflected deeply, until this feeling completely overwhelmed him and he reached a point where he recognized causes; for to recognize causes, it seemed to him, is to think, and through thought alone feelings become knowledge and are not lost, but become real and begin to mature. 
 
 - Hermann Hesse, Siddhartha
