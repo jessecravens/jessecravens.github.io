@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Basketball | Jesse Cravens]]></title>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/categories/basketball/atom.xml" rel="self"/>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/"/>
+  <updated>2016-07-09T20:00:37-05:00</updated>
+  <id>http://echo 'jessecravens.com' >> source/CNAME/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[El Nino, French Fries, Chippendale with Swayze, but do you remember this one? Chris Farley as Christian Laettner]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2010/10/18/el-nino-french-fries-chippendale-with-swayze-but-do-you-remember-this-one-chris-farley-as-christian-laettner/"/>
+    <updated>2010-10-18T18:48:09-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2010/10/18/el-nino-french-fries-chippendale-with-swayze-but-do-you-remember-this-one-chris-farley-as-christian-laettner</id>
+    <content type="html"><![CDATA[<p>El Nino, French Fries, Chippendale with Swayze, but do you remember this one?</p>
+
+
+<object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/bPMo14XTTvE?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/bPMo14XTTvE?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>
+
+]]></content>
+  </entry>
+  
+</feed>

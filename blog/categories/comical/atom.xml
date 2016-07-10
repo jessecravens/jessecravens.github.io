@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Comical | Jesse Cravens]]></title>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/categories/comical/atom.xml" rel="self"/>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/"/>
+  <updated>2016-07-09T20:00:37-05:00</updated>
+  <id>http://echo 'jessecravens.com' >> source/CNAME/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Gettin' Crazy with Digett]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2006/05/02/gettin-crazy-with-digett/"/>
+    <updated>2006-05-02T19:17:48-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2006/05/02/gettin-crazy-with-digett</id>
+    <content type="html"><![CDATA[<p>We have been having a little fun at <a href="http://digett.com">Digett.com</a>. <a href="http://trevordodd.com">Trevor</a> conjoured up the klller flash/video/audio, and <a href="http://markfigart.com">Mark</a> volunteered for the Naked Cowboy role. This also marks are first <a href="http://drupal.org">Drupal</a> launch: <a href="http://enchantedbreakfast.com">EnchantedBreakfast.com</a>. We will be sponsoring an upcoming <a href="http://boerne.org">Boerne Chamber of Commerce</a> Networking Breakfast on Tuesday, May 23rd at <a href="http://enchantedspringsranch.com">Enchanted Springs Ranch</a>.  Enjoy.</p>
+
+<p>Follow the linked image to view the video.</p>
+
+<p><a href="http://enchantedbreakfast.com/video/episode1"><img src="http://echo 'jessecravens.com' >> source/CNAME/images/2006/02/enchanted.gif" alt=&ldquo;Jesse Cravens, Mark Figart, and Trevor Dodd of Digett.com&rdquo; align=&ldquo;baseline&rdquo; width=&ldquo;400&rdquo; height=&ldquo;537&rdquo; /></a></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Web Design | Jesse Cravens]]></title>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/categories/web-design/atom.xml" rel="self"/>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/"/>
+  <updated>2016-07-09T20:00:37-05:00</updated>
+  <id>http://echo 'jessecravens.com' >> source/CNAME/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Robodeck]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2012/05/22/robodeck/"/>
+    <updated>2012-05-22T10:01:42-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2012/05/22/robodeck</id>
+    <content type="html"><![CDATA[<p>Awhile back, I built a websocket powered interactive presentation framework called <a href="https://github.com/jessecravens/robodeck">Robodeck</a>.</p>
+
+
+<p>The solution uses the following technologies:</p>
+
+
+
+
+<ul>
+<li>Node.js</li>
+<li>Socket.io</li>
+<li>WebSockets</li>
+<li>GeoLocation APIs</li>
+<li>Deck.js</li>
+</ul>
+
+
+
+
+<p>To name a few.</p>
+
+
+<p>To learn more, check it out here: <a href="http://jessecravens.github.com/robodeck">http://jessecravens.github.com/robodeck</a></p>
+
+
+<p><a href="http://jessecravens.github.com/robodeck"><img class="imgL" width="500px" src="http://jessecravens.com/images/blogposts/robodeck.png"></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rails 2.0 on Windows: Making Sense of Old Tutorials]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2008/02/11/rails-2-0-on-windows-making-sense-of-old-tutorials/"/>
+    <updated>2008-02-11T09:08:36-06:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2008/02/11/rails-2-0-on-windows-making-sense-of-old-tutorials</id>
+    <content type="html"><![CDATA[<p><img src="http://jessecravens.com/sites/jessecravens.com/files/images/rails.png" style="float: right; margin: 10px"/></p>
+
+<p>I know it is fairly well documented around the web that some of the old 'ROR up and running' tutorials are a bit difficult to digest with the new features in in Rails 2.0. So, I wanted to document my findings. And provide links to the resources that have helped me.</p>
+
+
+
+
+<p>Here's a couple of resources to get started:</p>
+
+
+<p></p>
+
+<p><a href="http://www.akitaonrails.com/2007/12/12/rolling-with-rails-2-0-the-first-full-tutorial">akitaonrails.com</a>
+<a href="http://weblog.infoworld.com/stratdev/archives/2007/12/installing_rail.html">weblog.infoworld.com</a></p>
+
+<p>Stay posted for more of my findings.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Learning JQuery]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2007/10/19/learning-jquery/"/>
+    <updated>2007-10-19T07:38:06-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2007/10/19/learning-jquery</id>
+    <content type="html"><![CDATA[<p>I&#39;d like to promote a <a href="http://www.packtpub.com/jQuery/book/mid/100407j4kh3d">great resource</a> for getting up to speed on JQuery syntax.</p>
+
+
+<p> <a href="http://www.learningjquery.com"><img class="imgR" src="http://www.learningjquery.com/images/book-cover.jpg" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Interesting Snippets - a photoset on Flickr]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2007/08/12/interesting-snippets-a-photoset-on-flickr/"/>
+    <updated>2007-08-12T13:46:34-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2007/08/12/interesting-snippets-a-photoset-on-flickr</id>
+    <content type="html"><![CDATA[<p><a href="http://www.flickr.com/photos/lynetter/sets/72057594139269787/detail/">Interesting Snippets &ndash; a photoset on Flickr</a>  This is a fantastic set of images related to the state of the web, communications, and new media. Each image is accompanied by a thought provoking quote.  I thought this would be perfect for an anticipatory set for a new media presentation, or an introductory visual for a shared discussion on topics related to new media or web 2.0. Enjoy!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[One great CSS resource]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2006/09/26/one-great-css-resource/"/>
+    <updated>2006-09-26T16:34:31-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2006/09/26/one-great-css-resource</id>
+    <content type="html"><![CDATA[<p><a href="http://www.alistapart.com/articles/12lessonsCSSandstandards">A List Apart: Articles: 12 Lessons for Those Afraid of CSS and Standards</a><br /><br />A great resource for anyone interested in CSS. I tell you what, it makes me feel alot better about all of my struggles with what Ben refers to as whack-a-mole rendering bugs and stylesheet hacks.<br /></p>
+]]></content>
+  </entry>
+  
+</feed>

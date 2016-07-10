@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Business Computer Programming | Jesse Cravens]]></title>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/categories/business-computer-programming/atom.xml" rel="self"/>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/"/>
+  <updated>2016-07-09T20:00:37-05:00</updated>
+  <id>http://echo 'jessecravens.com' >> source/CNAME/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[RVM (Ruby Version Manager) and Ruby On Rails]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails/"/>
+    <updated>2011-09-26T23:35:58-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2011/09/26/rvm-ruby-version-manager-and-ruby-on-rails</id>
+    <content type="html"><![CDATA[<p>Here is a brief overview of <a href="http://beginrescueend.com">Ruby Version Manager</a> and some explanation as to why you would want to use it. I began to use RVM when I started my first Rails 3 project. It was a bit confusing at first, but now I couldn&rsquo;t live without it. I have created numerous gemsets for various configurations to include different versions of Ruby (1.87 and 1.91), versions of Rails (2.3, 3.09, 3.1) and different projects that have vastly different gems such as different testing frameworks, different JavaScript libraries, and different ORMs.</p>
+
+<p>This allows me to essentially sandbox each of these applications' dependencies.</p>
+
+<p>One helpful hint I might offer is to get in the habit of declaring your gemset when you launch a new terminal. I tend to have multiple terminals open at once and it took me awhile to remember that each time I launched a terminal, RVM would fall back to my default gemset. So if I clone a Rails 3.1 project, I need to remember to switch to my rails3.1 gemset prior to runninig bundle install.</p>
+
+<p>Simply put, RVM helps:</p>
+
+<ul>
+<li>manage versions of Ruby</li>
+<li>manage packages of Gemsets</li>
+</ul>
+
+
+<h2>RUBY</h2>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ rvm list
+</span><span class='line'>$ rvm install 1.9.2-head&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>And, you can set a version as default</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ rvm use 1.9.2-head &mdash;default&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>GEMSETS</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Start by creating our gemset(s):&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$  rvm gemset create rails309&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Or create multiple at a time:&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$  rvm gemset create rails307 rails31&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>The result can be verified by listing the available gemsets:&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$  rvm gemset list&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>See everything with list_all, this has been very useful:&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ rvm gemset list_all&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>If a gem’s name still leaves room for confusion, simply delete it and create a more meaningful one (e.g., rails31rc):&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$  rvm gemset delete rails31&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Now that we have multiple gemsets installed, we must first select the one we want to use, and we can also set it as the default gemset by passing it the —default flag:
+  
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ rvm use 1.9.2-head@rails309 &mdash;default&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Installing Rails</h3>
+
+<p>Installing rails is as easy as installing any other gem: we only need to specify it’s name, but we can always choose a specific version, or to speed up the installation process by skipping the documentation:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ gem install rails &mdash;no-rdoc &mdash;no-ri&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Or&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ gem install rails [-v 3.0.7] [&mdash;no-rdoc &mdash;no-ri]&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Or&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ gem install rails -v &ldquo;>=3.1.0rc&rdquo;&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>In Summary and Why Am I doing this?</h3>
+
+<p>Rails is distributed as a gem, and there are conflicts between Rails 2 and Rails 3, so if you want to run multiple versions of Rails on the same system you need to create a separate gemset for each:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ rvm &mdash;create 1.8.7-p302@rails2app
+</span><span class='line'>$ rvm &mdash;create use 1.9.2@rails3app&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>In other words, for application specific gemsets it is convenient to select the version of Ruby and the collection of gems by doing the following:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ rvm &mdash;create use 1.9.2@mongoid-app&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Also, which gemset am I using?&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ rvm gemset name&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ rvm gemdir&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Cheatsheet]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2011/09/26/git-cheatsheet/"/>
+    <updated>2011-09-26T23:10:56-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2011/09/26/git-cheatsheet</id>
+    <content type="html"><![CDATA[<p>I made the switch from Subversion to Git awhile back, and early on I created a cheatsheet pulled from various sources on the web. I thought I&rsquo;d share.</p>
+
+<h3>Git First-Time System Setup</h3>
+
+<p>After installing Git, you should perform a set of one-time setup steps. These are system setups, meaning you only have to do them once per computer:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install git-core
+</span><span class='line'>$ git config &mdash;global user.email youremail[at symbol]example.com
+</span><span class='line'>$ git config &mdash;global user.name &ldquo;Your Name&rdquo;
+</span><span class='line'>$ git config &mdash;global alias.co checkout</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>As a final setup step, you can optionally set the editor Git will use for commit messages.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git config &mdash;global core.editor &ldquo;mate -w&rdquo;&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Replace “mate -w” with “gvim -f” for gVim or “mvim -f” for MacVim.&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Quick Reference – Most Often Used Commands</h3>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd /path/to/repository
+</span><span class='line'>$ git init
+</span><span class='line'>$ git add .
+</span><span class='line'>$ git add -u
+</span><span class='line'>$ git log
+</span><span class='line'>$ git status
+</span><span class='line'>$ git commit -m &ldquo;initial commit&rdquo;&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>made a mistake on the git commit&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ git commit -amend -m &ldquo;initial commit&rdquo;&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Add the remote repository&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>ex 1&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ git remote add unfuddle git@subdomain.unfuddle.com:subdomain/abbreviation.git&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>ex 2&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ git remote add origin git@subdomain.unfuddle.com:subdomain/abbreviation.git&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Configure the repository&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ git config remote.unfuddle.push refs/heads/master:refs/heads/master&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Push master branch to remote repository named unfuddle&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ git push unfuddle master&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Other commands:&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Clone an existing remote repo&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ git clone git@subdomain.unfuddle.com:subdomain/abbreviation.git&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>List all branches within your repo&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ git branch -a&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Create and switch to a new branch &ldquo;whatever&rdquo;&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>$ git checkout -b whatever&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Those are the basics, should be enough to make you dangerous.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[EduPunk]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2009/03/15/edupunk/"/>
+    <updated>2009-03-15T12:22:26-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2009/03/15/edupunk</id>
+    <content type="html"><![CDATA[<object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Top 5 Free Computer and Technology Books Lists for High School and College Computer Classes]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2007/06/15/top-5-free-computer-and-technology-books-lists-for-high-school-and-college-computer-classes/"/>
+    <updated>2007-06-15T13:49:14-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2007/06/15/top-5-free-computer-and-technology-books-lists-for-high-school-and-college-computer-classes</id>
+    <content type="html"><![CDATA[<p>Is it really necessary to purchase text books for those computer classes anymore? Take a look at your content area on each of these sites. You be the judge. </p>
+
+
+<p></p>
+
+<p><ul>
+<li>1. <a href="http://freecomputerbooks.com/">freecomputerbooks.com</a></li></p>
+
+<p><li>2. <a href="http://www.freetechbooks.com/">freetechbooks.com</a> </li></p>
+
+<p><li>3. <a href="http://www.techtoolblog.com/archives/195-free-online-programming-books">techtoolblog.com</a></li></p>
+
+<p><li>4. <a href="http://www.computer-books.us/">computer-books.us</a> </li></p>
+
+<p><li>5. <a href="http://www.onlinecomputerbooks.com/">onlinecomputerbooks.com</a> </li>
+<ul></p>
+
+<p><p>&hellip;as this list expands keep track here: <a href="http://del.icio.us/cravens/freebook">del.icio.us/cravens/freebook</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[In Search of A Balance: Integrating the Sudbury and other democratic models with Moodle]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2006/11/17/in-search-of-a-balance-integrating-the-sudbury-and-other-democratic-models-with-moodle/"/>
+    <updated>2006-11-17T06:57:33-06:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2006/11/17/in-search-of-a-balance-integrating-the-sudbury-and-other-democratic-models-with-moodle</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m definitely into the hybrid thing lately. Hybrid instruction not only in the sense of implementation: online and face to face learning through moodle (<a href="http://moodle.org">http://moodle.org</a>) and short class lectures/discussions, but also philosophically in a sense of allowing students to have some type of control over the curriculum, and direction of their own study. Every moodle assignment I offer, is open to interpretation and creativity. This is why I believe that rubrics can potentially take the fun out of learning. They limit learners to the parameters made by the teacher. Especially when we are teaching technoloies that are more native to the learner than the educator. <br /><br />This article takes a neutral approach to &ndash; what I will call the Sudbury model, but really applies to many other free, democratic school models. I agree with both sides of the argument, and I have settled on balance and moderation of both freedom and standardization. This combined with a balance between face to face and elearning and I think we might make some real progress in my classroom. <br /><a href="http://www.edutopia.org/magazine/ed1article.php?id=Art_1615&amp;issue=oct_06">Free Radicals</a> <br /> <blockquote>In the country&rsquo;s most alternative classrooms, there&rsquo;s no such thing as a report card.</p>
+
+<br /><br />Sudbury schools are only one variety of so-called free, or democratic, schools, which eschew most conventions of traditional education in favor of a much more radical program. At most free schools, literally every decision, from those about staff hiring and firing to determinations concerning rules, facilities, and budget issues, is made by the entire school community in a one-person, one-vote process. There are no tests, no report cards, no requirements, and no classes -- and no curriculum, other than what students set for themselves.
+
+
+
+
+<br /><br />It is a philosophy that may strike the uninitiated as far-fetched, if not irresponsible, but it seems to be working.......
+
+]]></content>
+  </entry>
+  
+</feed>

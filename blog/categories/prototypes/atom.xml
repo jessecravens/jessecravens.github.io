@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Prototypes | Jesse Cravens]]></title>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/categories/prototypes/atom.xml" rel="self"/>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/"/>
+  <updated>2016-07-09T20:00:37-05:00</updated>
+  <id>http://echo 'jessecravens.com' >> source/CNAME/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship/"/>
+    <updated>2012-11-28T10:02:00-06:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2012/11/28/client-server-3-dot-0-6-ways-javascript-is-revolutionizing-the-client-server-relationship</id>
+    <content type="html"><![CDATA[<p>Im giving a talk at Devcon 5 &ndash; San Francisco this afternoon: Client/Server 3.0: 6 Ways JavaScript is Revolutionizing the Client/Server Relationship. Here is the other talks on the agenda: <a href="http://www.html5report.com/conference/california/agenda.aspx">Devcon 5 &ndash; San Francisco</a>.</p>
+
+<p>Here is a brief summary:</p>
+
+<h3>1 Device Access Within the Browser</h3>
+
+<p>The client gets smarter.</p>
+
+<p>JavaScript Device APIs continue to evolve, allowing more access to device hardware, services and applications such as the camera, microphone, system sensors, native address books, calendars and native messaging applications.
+We will explore examples utilizing GeoLocation API, and Device Orientation.</p>
+
+<h3>2 Client Side Processing w/ Background Threads</h3>
+
+<p>The modern web browser&rsquo;s runtime is a single threaded, event loop. Asynchronous programming models, reactionary systems design actually benefit from this architecture. Maturing interpreters improve performance. Web Workers API enables background threads in the browser, making heavy computations realistic.</p>
+
+<p>So, the client gets more powerful, and becomes an application development evnvironment.
+We will explore Web Workers processing heavy computations without blocking the UI for further user interaction.</p>
+
+<h3>3 Device Detection and Descriptors / Adaptive Frameworks</h3>
+
+<p>Responsive Web Design is great, but it often isn&rsquo;t enough for larger applications, and applications that need to reach a highly fragmented device market. Adaptive frameworks use DDRs (Device Description Repositories)</p>
+
+<p>We will explore a framework that mixes the best of Responsive with the best of Adaptive: <a href="https://github.com/jessecravens/responderjs">responderJS</a>.</p>
+
+<h3>4 HTML5 Connectivity Revolution and HTTP 2.0</h3>
+
+<p>Peter Lubbers coined the term, HTML5 Connectivity Revolution, to describe the next level, web network technologies such as: Web Sockets API, XHR2, Event Source and Server Sent Events, SPDY, CORS.</p>
+
+<p>Engage in a demo of <a href="https://github.com/jessecravens/robodeck">robodeck</a>, a Web Socket driven Collaborative presenations framework.</p>
+
+<h3>5 Single Runtime, Shared Syntax &hellip; the right way</h3>
+
+<p>Node.js has enabled the same language, single runtime. But, the paradigms are still quite different. Node streams, inspired by Linux pipes, make IO easy and intuitive. Explore pipe(), pump(), and events in Node streams.</p>
+
+<p>Solutions like Browserify, help bring Node.js libraries and NPM dependency management to the browser. Next up, Domnode, wrapping common, client-side, I/O bound APIs (XHR, SSE, WebRTC, etc.) in Node streams syntax.</p>
+
+<h3>6 Embedded JavaScript</h3>
+
+<p>With Node.js, Angstrom Linux, and cloud document stores like MongoDB, the server is now embedded in the microcontroller client.</p>
+
+<p>We will explore Arduino wrappers, and Node.js running on the Beaglebone from Texas Instruments.</p>
+
+<p>The combination of Linux and JavaScript open worlds of opportunity.</p>
+
+<p>Here is the node.js server used on the Beaglebone in the demo: <a href="https://github.com/jessecravens/beagleserver">beagleserver</a>.
+The Johnny Five code is located here: <a href="https://github.com/nodejshacks/nodejshacks-embedded">node-embedded</a></p>
+
+<script async class="speakerdeck-embed" data-slide="4" data-id="086813701bf601302fbe22000a1f8a4e" data-ratio="1.2994923857868" src="http://echo 'jessecravens.com' >> source/CNAME//speakerdeck.com/assets/embed.js"></script>
+
+
+
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/eahWOUYqr90" frameborder="0" allowfullscreen></iframe>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Upcoming Talk at Devcon5-Austin: Rapid Prototyping HTML5 Applications with NodeJS]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs/"/>
+    <updated>2012-09-25T21:50:00-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2012/09/25/upcoming-talk-at-devcon5-austin-rapid-prototyping-html5-applications-with-nodejs</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m getting ready for an upcoming talk titled: Rapid Prototyping HTML5 Applications with NodeJS, which I will presenting at <a href="http://www.html5report.com/conference/austin2012/Agenda/Agenda-at-a-glance.aspx">Devcon 5 &ndash; Austin</a>.</p>
+
+<p>Here is a brief summary:</p>
+
+<p>With HTML5, the modern web browser continues to mature as a capable application platform.
+The new specifications are broad, impacting nearly every technology associated with modern web development including graphics, connectivity, client-side storage, offline access, graphics, multimedia, and performance.
+JavaScript continues to be front and center as the core language. NodeJS extends JavaScript&rsquo;s event loop paradigm to the server, and provides JavaScript engineers with the ability to produce functionality deeper in the software stack. This phenomenon has had an impact on types of software development ranging from full-scale, enterprise, mobile applications to robot hobbyists platforms.
+See innovative example solutions and learn why NodeJS is an ideal development platform for the production acceleration of next-generation HTML5 applications.</p>
+
+<p>This is the beginning of a transition for me. With the release of HTML5 Hacks, I&rsquo;m beginning to focus more on my ubiquitous JavaScript content. I&rsquo;m excited, I have a lot to share.</p>
+
+<p>Look for an update with a web based version of the slides.</p>
+
+<script async class="speakerdeck-embed" data-id="507da9caa2a4030002063d67" data-ratio="1.299492385786802" src="http://echo 'jessecravens.com' >> source/CNAME//speakerdeck.com/assets/embed.js"></script>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Just moved HTML5 Hacks into Copy/Edit]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit/"/>
+    <updated>2012-09-24T21:57:00-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2012/09/24/just-moved-html5-hacks-into-copy-slash-edit</id>
+    <content type="html"><![CDATA[<p>After a marathon of hackery starting in April, <a href="http://www.oreillynet.com/pub/au/5370">Jeff Burtoft</a> and I pushed out 90 hacks and 435 pages of <a href="http://shop.oreilly.com/product/0636920026273.do">HTML5 Hacks</a> this week. We also had a few guest hackers that created some really great content as well.</p>
+
+<ul>
+<li>Raymond Camden of Adobe</li>
+<li>Phil Legetter of Pusher.com</li>
+<li>Alexander Schulze of jWebsocket</li>
+<li><a href="http://j.hn/">John Dyer</a> of Dallas Theological Seminary</li>
+<li>Alex Sirota of FoxyTunes</li>
+</ul>
+
+
+<p>Overall, it was a great experience. What I enjoyed the most was getting into a workflow groove, much like when you are building an API or contributing to a project. With each hack, it was necessary to ideate, plan, create the code, test it, and then put it into a understandable format. By the end, I was feeling pretty efficient at kicking out interesting hacks pretty quickly.</p>
+
+<p>I felt as though I improved over time, looking back is always interesting. I like to keep fine tuning and revising, but at some point you have to ship the product. I&rsquo;m really proud of the work, it has been hard, but I learned a ton in the process.</p>
+
+<p>Most of my hacks I tried to make relevant to real world software development challenges, and mix in a number of HTML5 specifications. Hopefully, that turns out to benefit the reader &hellip; I&rsquo;m all ears on the feedback. So don&rsquo;t hesitate to drop us a line.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Migration from Drupal to Octopress]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2012/09/23/migration-from-drupal-to-octopress/"/>
+    <updated>2012-09-23T13:39:00-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2012/09/23/migration-from-drupal-to-octopress</id>
+    <content type="html"><![CDATA[<h2>Why?</h2>
+
+<p>For the last 6 years, I have hosted my personal blog using Drupal at bluehost.com, and I finally have made the decision to migrate.</p>
+
+<p>I have been using Ruby on Rails, Sinatra, and Node.js for prototypes, demos, web-based presentations, and production apps, and deploying to Heroku for the past couple of years. The productivity gains and integration with github and social media, have brought me to the point that I&rsquo;d prefer for my workflow for blogging, updating to my microformats resume and portfolios to be similar to how I create and manage my other content.</p>
+
+<p>So here, it is. Once I have written a proper migration script, and taken care of all the custom urls, I&rsquo;ll post my solution here.</p>
+]]></content>
+  </entry>
+  
+</feed>

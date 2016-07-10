@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Microservices | Jesse Cravens]]></title>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/categories/microservices/atom.xml" rel="self"/>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/"/>
+  <updated>2016-07-09T20:00:37-05:00</updated>
+  <id>http://echo 'jessecravens.com' >> source/CNAME/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[In Software, High Velocity === Winning]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2016/07/09/in-software/"/>
+    <updated>2016-07-09T18:41:00-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2016/07/09/in-software</id>
+    <content type="html"><![CDATA[<p>This article is mirrored on <a href="https://medium.com/@EngineeringDen/in-software-high-velocity-winning-4253b6d9113f#.6c93ecytb">Medium</a>.</p>
+
+<p>It’s late and I’m walking back from the athletic complex to my car with my son, I say, &lsquo;Nice job, buddy, you went hard,’ but my voice cracks …. I’m hoarse from yelling 'Man up, get back, find your man, Now push it! Get your head up, see your teammates!’ as I attempt to teach a group of fourth graders how to both apply a full court press and break it … managed chaos at its best. I sit down in the front seat, and take a deep breath. Man, there is nothing like an evening of high velocity basketball after a long day of high velocity software. Only problem is tonight we lost, and I hate losing.</p>
+
+<p><a href="https://www.linkedin.com/company/10853709"><img class="imgR200" alt="Den Home App" src="http://echo 'jessecravens.com' >> source/CNAME/images/den/den_logo.png"></a></p>
+
+<p>At <a href="https://www.linkedin.com/company/10853709">Den</a>, like any other early stage startup, velocity is king. In that regard, we are much like most startups, we build business requirements fast and at the highest quality possible.</p>
+
+<p>In this highly competitive field, we are here to win. If building quality software, fast, is winning, concepts like technical debt, communication bottlenecks, monolithic architectures, and analysis paralysis are losing. As I drive home, I reflect on the last four whirlwind months. So far, at Den, we have been winning, we’ve built an amazing team and tech stack and our business partners are super pleased and excited. And most importantly, we have done it really fast.</p>
+
+<p>So, how have we come this far this fast in building a high quality, cross platform mobile application and scalable microservice architecture in under six months? You may be surprised, but I feel it has more to do with the softer side of the industry than it does with the technical (that’s a future article).</p>
+
+<h2>1. We’ve Maintained a Strong Relationship between Business and Engineering</h2>
+
+<p>It starts with a relationship between our business partners built on a foundation of trust and engagement. We don’t look at our relationship with business as master-servant, we see it as an equal partnership, and I see myself as a Product Owner with an engineering background. Each of our engineers are future users of our application and are therefore emotionally invested in its success.</p>
+
+<p>Also, my ability as CTO to communicate clearly our technical hurdles, skill set challenges, gaps in requirements, etc. is paramount to our success. For me, it is important to communicate challenges without making excuses. Every engineering decision that is made sets off a series of consequences, both good and bad. These trades will always come with negative consequences, depending on one’s perspective. A great <a href="https://www.linkedin.com/in/sam-price-2a99643">Tech Fellow, Sam Price from USAA</a> once told me, “Every decision you make will be wrong.” The key is making quick yet sound decisions, living with the outcomes, and communicating the trades as best you can to maintain trust between you and business partners.</p>
+
+<p>It is also important to help engineers with understanding that a quick, smart decision must be made. Agree to disagree, but commit to the task, and help all understand that the decision is not necessarily short-sighted, and there will always be some negative consequences, some unseen and some foreseen. At the end of the day, analysis paralysis is not an option.</p>
+
+<h2>2. We’ve Understood and Balanced ‘Short term’ and ‘Long term’ Velocity</h2>
+
+<p>In our discussions, we are constantly differentiating between ‘short term’ and ‘long term’ velocity. Often, in past experiences, naive business partners press for decisions entirely based on short term velocity. At Den, as we rapidly develop, and respond to dynamic business needs, we leverage our collective experience to make sound technical decisions that positively impact our long term velocity. In other words, we want to make sure that later phases are not a nightmare of correcting all of the technical debt accumulated getting to MVP. Later development then becomes slow and painful, engineers get frustrated with the mess, business gets frustrated with the speed. So, we constantly balance sound architectural decisions that will impact our long term velocity with short term velocity wins.</p>
+
+<p>When discussing with our business partners, the language we use to describe those decisions matters. If we trade a 2 hour task for an 8 hour, but it saves us 40 hours down the road when we need to pivot, we have made both a sound business and technical decision.</p>
+
+<p>One key challenge is having the experience to anticipate those pivot points and understand all the technical implications behind the pivots, and very few can go at this alone. Which brings me to building a team of leads that possess, or have the potential to possess, all of the mixture of hard and soft skills I am alluding to.</p>
+
+<h2>3. We’ve Invested in Skillz</h2>
+
+<p>Nothing impacts velocity more than the individual inability of the engineer to achieve tasks. This manifests itself in a blend of intelligence, experience, creativity, communication skills, passion for the product, work ethic, attention to detail, empathy for others, and the ability to suppress one’s ego for the good of the team (but, more on that later).</p>
+
+<p>Stephen Curry is perhaps one of the greatest modern examples of a technician that has elevated his status in his field through precision practice, time commitment, and attention to detail. We refer to him often in metaphor. When I played college basketball, decades ago, I had some great mentors. I used to shoot thousands of jumpers on Saturday mornings with <a href="https://en.wikipedia.org/wiki/Ricky_Pierce">Ricky Pierce</a> and <a href="https://en.wikipedia.org/wiki/Avery_Johnson">Avery Johnson</a>. That was my first introduction to the insane amount of time it takes to become a professional. Being great is no accident, and it doesn’t stop until you retire. As CTO, the first 6 hires on our team had to be better than myself, and they had to be equally obsessed with building great software. All in all, the collective work ethic of the Den team is more than I have ever seen in any environment I have worked in.</p>
+
+<p>As a management team, we also allow time, and invest in, our engineers. We encourage the exploration of new technologies and budget for attending conferences of their choice. In our first four months alone, we have attended WWDC, Dockercon, and Gophercon.</p>
+
+<h2>4. We are a Team</h2>
+
+<p>At Den, we have built a world class ‘team,’ not a group of great individuals. We are small, yet high performing, and we like it that way. High velocity and winning have no room for egos and drama. Each time we add a new personality, there is a chance we could rock our chemistry, so, we stay highly selective.</p>
+
+<p>It also doesn’t hurt that the three founding members of Den are all former Division I collegiate athletes, having had the tenants of successful teams drilled into our heads early in life. So with that as a foundation, we were very calculated in going after the right mix of talent. All of our hires were from former organizations we had worked with in the past, or came highly recommended by a trusted colleague. The outcome of choosing the right mix is what enables the blending of our collective experience and skill sets, resulting in our ability to make sound decisions as a team.</p>
+
+<p>Each member of our team is truly great at and passionate about what they do, and the working environment we have created is giving them the opportunity to get even better at a rapid rate.</p>
+
+<p>Stay tuned for the technical side of our velocity strategy, as I map out our decisions from building our mobile application with Ember Cordova rather than React Native, why we chose CircleCI over Codeship, Quay as a container registry, and our combination of Node.js and Go services, thoughts about our Domain driven Microservice architecture, to details about using Terraform and Kubernetes on AWS.</p>
+]]></content>
+  </entry>
+  
+</feed>

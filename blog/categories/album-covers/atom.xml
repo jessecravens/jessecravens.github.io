@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Album Covers | Jesse Cravens]]></title>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/categories/album-covers/atom.xml" rel="self"/>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/"/>
+  <updated>2016-07-09T20:00:37-05:00</updated>
+  <id>http://echo 'jessecravens.com' >> source/CNAME/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[inspiration is bliss album cover]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2006/04/27/inspiration-is-bliss-album-cover/"/>
+    <updated>2006-04-27T19:52:43-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2006/04/27/inspiration-is-bliss-album-cover</id>
+    <content type="html"><![CDATA[<p>I have been working on the the album cover for Inspiration is Bliss. After three years of working on this collection of songs, I&rsquo;m feeling that I am one song shy of its completion. There will be 9 songs total. Here is the first comp of the album cover. Look familiar? I used this texture in the header above.</p>
+
+<p><img src="http://echo 'jessecravens.com' >> source/CNAME/images/2006/01/inspiration3.jpg" alt=&ldquo;inspiration3.jpg&rdquo; align=&ldquo;baseline&rdquo; width=&ldquo;350&rdquo; height=&ldquo;350&rdquo; hspace=&ldquo;10&rdquo; vspace=&ldquo;10&rdquo; border=&ldquo;1&rdquo; /></p>
+]]></content>
+  </entry>
+  
+</feed>

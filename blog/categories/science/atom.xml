@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Science | Jesse Cravens]]></title>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/categories/science/atom.xml" rel="self"/>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/"/>
+  <updated>2016-07-09T20:00:37-05:00</updated>
+  <id>http://echo 'jessecravens.com' >> source/CNAME/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[20 Ideas for Integrating Technology into the Classroom]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2006/11/10/20-ideas-for-integrating-technology-into-the-classroom/"/>
+    <updated>2006-11-10T10:22:08-06:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2006/11/10/20-ideas-for-integrating-technology-into-the-classroom</id>
+    <content type="html"><![CDATA[<p><a href="http://teaching.mrbelshaw.co.uk/index.php/2006/09/11/20-ideas-intro/">20 Ideas: Introduction at teaching.mrbelshaw.co.uk</a><br /><br />Doug Belshaw is creating a great resource for eductors.Take a minute to explore this archive. <br /><br /><br /><p class="poweredbyperformancing">powered by <a href="http://performancing.com/firefox">performancing firefox</a></p></p>
+]]></content>
+  </entry>
+  
+</feed>

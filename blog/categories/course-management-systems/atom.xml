@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: course management systems | Jesse Cravens]]></title>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/categories/course-management-systems/atom.xml" rel="self"/>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/"/>
+  <updated>2016-07-09T20:00:37-05:00</updated>
+  <id>http://echo 'jessecravens.com' >> source/CNAME/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[EduPunk]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2009/03/15/edupunk/"/>
+    <updated>2009-03-15T12:22:26-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2009/03/15/edupunk</id>
+    <content type="html"><![CDATA[<object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/f7MxVqe_uRI&hl=en&fs=1&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Universities Adopting Drupal]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2007/08/12/universities-adopting-drupal/"/>
+    <updated>2007-08-12T13:44:21-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2007/08/12/universities-adopting-drupal</id>
+    <content type="html"><![CDATA[<p>I've been watching the growing number of universities adopting drupal for their content management, podcasting, blogging and wiki integration needs. Here's my current list.</p>
+
+
+<ul>
+<li>UT at Austin  - Department of Rhetoric and Writing - http://www.cwrl.utexas.edu/</li>
+<li>Rice University  - http://sa.rice.edu/</li>
+<li>Arizona State University -  http://www.asu.edu/</li>
+<li>UNC Charlotte  University Center Information Technology - http://ucit01.uncc.edu</li>
+<li>Brigham Young University (BYU) – Computer Science Department http://cs.byu.edu/</li>
+<li>Bradley University -  http://slane.bradley.edu/</li>
+<li>Washington University in St. Louis -  http://artsci.wustl.edu/</li>
+<li>University of Calgary - http://www.ucalgary.ca/</li>
+<li>Massachusetts Institute of Technology (MIT) http://fab.cba.mit.edu/central/</li>
+<li>Purdue University - http://www.digitalparlor.org/pwenglish/</li>
+<li>Michigan State University - Nondestructive Evaluation Laboratory - http://www.egr.msu.edu/ndel/home</li>
+</ul>
+
+
+<p>Other Drupal Sites related to Innovation in Education include:</p>
+
+
+<ul>
+<li>connect.educause.edu - http://connect.educause.edu/</li>
+<li>The International Center for Integrative Studies (ICIS) - http://www.icisonline.org/</li>
+<li>IDEAL (Integrated Data Enhancing Arizona's Learning) - https://www.ideal.azed.gov</li>
+<li>Texas Digital Library -  http://www.tdl.org/</li>
+</ul>
+
+
+
+
+<p>If you know of any others - give us a shout.</p>
+
+
+<p></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[In Search of A Balance: Integrating the Sudbury and other democratic models with Moodle]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2006/11/17/in-search-of-a-balance-integrating-the-sudbury-and-other-democratic-models-with-moodle/"/>
+    <updated>2006-11-17T06:57:33-06:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2006/11/17/in-search-of-a-balance-integrating-the-sudbury-and-other-democratic-models-with-moodle</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m definitely into the hybrid thing lately. Hybrid instruction not only in the sense of implementation: online and face to face learning through moodle (<a href="http://moodle.org">http://moodle.org</a>) and short class lectures/discussions, but also philosophically in a sense of allowing students to have some type of control over the curriculum, and direction of their own study. Every moodle assignment I offer, is open to interpretation and creativity. This is why I believe that rubrics can potentially take the fun out of learning. They limit learners to the parameters made by the teacher. Especially when we are teaching technoloies that are more native to the learner than the educator. <br /><br />This article takes a neutral approach to &ndash; what I will call the Sudbury model, but really applies to many other free, democratic school models. I agree with both sides of the argument, and I have settled on balance and moderation of both freedom and standardization. This combined with a balance between face to face and elearning and I think we might make some real progress in my classroom. <br /><a href="http://www.edutopia.org/magazine/ed1article.php?id=Art_1615&amp;issue=oct_06">Free Radicals</a> <br /> <blockquote>In the country&rsquo;s most alternative classrooms, there&rsquo;s no such thing as a report card.</p>
+
+<br /><br />Sudbury schools are only one variety of so-called free, or democratic, schools, which eschew most conventions of traditional education in favor of a much more radical program. At most free schools, literally every decision, from those about staff hiring and firing to determinations concerning rules, facilities, and budget issues, is made by the entire school community in a one-person, one-vote process. There are no tests, no report cards, no requirements, and no classes -- and no curriculum, other than what students set for themselves.
+
+
+
+
+<br /><br />It is a philosophy that may strike the uninitiated as far-fetched, if not irresponsible, but it seems to be working.......
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Digett pays my BCP class a visit]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2006/11/09/digett-pays-my-bcp-class-a-visit/"/>
+    <updated>2006-11-09T11:20:26-06:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2006/11/09/digett-pays-my-bcp-class-a-visit</id>
+    <content type="html"><![CDATA[<p><a href="http://digett.com/news/boerne-schools-test-the-waters-with-new-web-based-learning-environment">Boerne Schools Test the Waters with New Web-based Learning Environment | Digett</a><br /><br />My business computer programming class was fortunate to have Mark Figart of Digett as a guest speaker, yesterday. The students are preparing a podcast from the audio recording of the question and answer sessions. The students asked great questions and documented their responses as assignement entries in our <a href="http://boernevirtualschool.com">Boerne Virtual School</a> Moodle course. We are looking forward to having other speakers from the local Boerne business community. <br /><br /><br /><p class="poweredbyperformancing">powered by <a href="http://performancing.com/firefox">performancing firefox</a></p></p>
+]]></content>
+  </entry>
+  
+</feed>

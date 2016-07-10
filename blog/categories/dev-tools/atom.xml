@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Dev Tools | Jesse Cravens]]></title>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/categories/dev-tools/atom.xml" rel="self"/>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/"/>
+  <updated>2016-07-09T20:00:37-05:00</updated>
+  <id>http://echo 'jessecravens.com' >> source/CNAME/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Modern Ember.js Application Workflow with Yeoman and Mocha]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha/"/>
+    <updated>2013-04-23T10:05:00-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2013/04/23/modern-ember-dot-js-application-workflow-with-yeoman-and-mocha</id>
+    <content type="html"><![CDATA[<p><img class="imgL200" alt="Tech-pro Modern Ember.js Application Workflow" src="http://tpstatic.com/img/usermedia/LgFpf2qDCkGfHlDBR4oGDA/cropped-w220-h220.png"></p>
+
+<p>The following tutorial will provide an overview for building Ember.js applications with Yeoman. Keep in mind, Yeoman is a framework agnostic collection of tools, used to manage the workflow of any JavaScript application or plugin. For the sake of this tutorial, we have chosen to focus on Ember.js, as a case study.</p>
+
+<p>Our workflow would not be complete without also setting up our testing strategy, so we will also include a standard BDD (Behavior Driven Development) setup with the Mocha testing framework.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1249/modern-emberjs-application-workflow-with-yeoman-and-mocha">http://tech.pro/tutorial/1249/modern-emberjs-application-workflow-with-yeoman-and-mocha</a></p>
+]]></content>
+  </entry>
+  
+</feed>

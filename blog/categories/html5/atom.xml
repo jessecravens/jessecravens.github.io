@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: HTML5 | Jesse Cravens]]></title>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/categories/html5/atom.xml" rel="self"/>
+  <link href="http://echo 'jessecravens.com' >> source/CNAME/"/>
+  <updated>2016-07-09T20:00:37-05:00</updated>
+  <id>http://echo 'jessecravens.com' >> source/CNAME/</id>
+  <author>
+    <name><![CDATA[Jesse Cravens]]></name>
+    <email><![CDATA[jesse.cravens@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[FITC Toronto 2015 and joining InVision]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2015/08/20/fitc-toronto-2015-and-joining-invision/"/>
+    <updated>2015-08-20T20:28:00-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2015/08/20/fitc-toronto-2015-and-joining-invision</id>
+    <content type="html"><![CDATA[<p><a href="https://www.youtube.com/watch?v=RoPA3xAMVvI"><img class="imgR400" alt="Jesse Cravens FITC 2014" src="http://echo 'jessecravens.com' >> source/CNAME/images/fitc2015.png"></a></p>
+
+<p>In April, I had a chance to attend and <a href="https://www.youtube.com/watch?v=RoPA3xAMVvI">speak at FITC 2015 in Toronto</a>. This was an important talk for me as I was just three days into a new job, leaving the pond at <a href="http://frogdesign.com">frog design</a>, to join my first startup, <a href="http://invisionapp.com">InVision</a>. That was not an easy decision for me, in that I loved working for <a href="http://frogdesign.com">frog</a>. My work at <a href="http://frogdesign.com">frog</a> was the first time I had been giving the freedom to ‘focus' in the workplace.</p>
+
+<p>The culture at frog is certainly not for everyone, but for me, someone who has always been comfortable with creating my own path, it was in many ways &lsquo;carte blanche’. The catch at <a href="http://frogdesign.com">frog</a> is that, by design, you won’t be given much direction; you are expected to create and drive the direction. When I joined <a href="http://frogdesign.com">frog</a>, my goals were to speak and write as much as I could while I focused on producing as high a volume of quality technical deliverables as I could for our clients. And in almost every case,  while leading ‘greenfield&rsquo; projects for fortune 200 companies, I was able to stop and start over on each project building upon the momentum and experience of the previous endeavor. All of that real world learning fueled my writing and speaking. It was exhausting, in the good kind of way.</p>
+
+<p><a href="http://invisionapp.com"><img class="imgL200" alt="Jesse Cravens FITC 2014" src="http://echo 'jessecravens.com' >> source/CNAME/images/invisionapp-logo.png"></a></p>
+
+<p>This was a very different model than building software within an enterprise, maintaining and/or augmenting legacy systems, or having frameworks and tools prescribed to you by the weight of enterprise processes and architectural directives. This was exciting because, as I said before, the freedom fueled growth, the healthy, self-directed type of growth.</p>
+
+<p>So why did I leave? Another opportunity was presented to me that sparked a deep curiosity because in some ways the problem set was the antithesis of my work at <a href="http://frogdesign.com">frog</a>, a product suite and engineering team that was being challenged to scale to millions of users. I knew that their challenge would help me grow too, and fill in even more gaps.</p>
+
+<p>Now, production applications weren’t new to me when I joined <a href="http://invisionapp.com">InVision</a>, but in some ways startup culture and the smaller engineering team was. While in some of my previous roles, I would be responsible for a small sliver of a very large pie, here my slice would be much larger, and the red tape would be few and far between. I could recommend an approach, build it, and deploy it within three days as compared to three months or sometimes even three years.</p>
+
+<p>Another interesting pivot for me was to completely walk away from the Ember community, and dive into Angular and React/Flux, as if I was disgruntled with Ember or something. On the contrary, my first 3-4 months at <a href="http://invisionapp.com">InVision</a>, I spent my time retro fitting the existing application with tooling that ember-cli provides out of the box. And, as Ember 2.0 is released, my appreciation for the work that community is doing is even greater than it was before. For now, I watch from afar, as I’m not actively developing an Ember app. On the contrary, I am much closer to the Angular and React communities than I was before, which makes for a nice trade off.</p>
+
+<p>I have to say that working at <a href="http://invisionapp.com">InVision</a> has been an amazing experience. We are a 100% remote team using the latest and greatest of tooling to keep up with each other and our software. Our software continues to evolve as does our DevOps automation, deployment models, code quality and our architecture. Not only that, we have been working night and day to build our teams with the best and brightest talent we can find. The company has tripled in the 6 months since I have been here. It has been an amazing whirlwind of growth.</p>
+
+<p>I am currently focusing on leading the Application Core team. This was the challenge I was looking for in that I needed to learn the breadth of the product suite’s codebase before I could formalize a plan for evolving the architecture for scaling, addressing performance issues and technical debt, and improving developer workflow and code hygiene. Our application core team is now around 10 engineers and testers, and we begin to see the fruits of our labor. <a href="http://www.invisionapp.com/company">We are still growing and searching for great talent</a>, feel free to reach out if you are interested.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What’s Next? SPA 2.0: The Latest in JavaScript Application Frameworks]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2015/02/17/whats-next-spa-2-dot-0-the-latest-in-javascript-application-frameworks/"/>
+    <updated>2015-02-17T19:03:00-06:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2015/02/17/whats-next-spa-2-dot-0-the-latest-in-javascript-application-frameworks</id>
+    <content type="html"><![CDATA[<h2>An Early Adopter of Ember</h2>
+
+<p>Outside of architecting and developing complex web apps during my day job at <a href="http://frogdesign.com">frog design</a>, I spent a good part of 2014 finishing up <a href="http://www.amazon.com/gp/product/1449370926/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1449370926&linkCode=as2&tag=wwwjessecrave-20&linkId=6CCXPQ2HHNLSTI5N">Building Web Apps with Ember.js</a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=wwwjessecrave-20&l=as2&o=1&a=1449370926" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />, teaching <a href="http://www.jessecravens.com/blog/2014/08/06/ember-dot-js-workshops/">Ember.js workshops</a>, and giving <a href="https://teamtreehouse.com/library/the-art-and-science-of-shipping-single-page-apps-with-emberjs">a talk entitled: “The Art and Science of Shipping of SPAs with Ember.js.”</a></p>
+
+<p><a href="https://teamtreehouse.com/library/the-art-and-science-of-shipping-single-page-apps-with-emberjs"><img class="imgL400" alt="Jesse Cravens and The Art and Science of Shipping Single Page Apps with Ember.js" src="http://echo 'jessecravens.com' >> source/CNAME/images/blogposts/artandscience5.png"></a></p>
+
+<p>Each of these focus areas were obviously complimentary: the workshops serving as deep dives, the talks as the high level summaries, and the book and companion source code serving as a reference application and detailed documentation.</p>
+
+<p>At work, throughout 2013, 2014, and now into 2015, I have leveraged this momentum to educate cross-discipline teams of developers and designers and execute some very ambitious JavaScript applications for numerous clients. In a rapidly changing environment, it has been a pleasure to grow a team that now possesses framework-level expertise, allowing us to rapidly iterate on application feature sets without having to reinvent the wheel.</p>
+
+<p><img class="imgR200" alt="O'Reilly's Building Web Apps with Ember.js by Jesse Cravens" src="http://echo 'jessecravens.com' >> source/CNAME/images/oredev/ember_cover_600.png"></p>
+
+<p>For me, all of this has been a culmination of experiences that started in the mid 2000s with PHP and Flash work while doing small business web design and CMS development, to large scale production of JavaScript and mobile hybrid apps in the late 2000s, and to now UI/UX focused, enterprise, rapid application development.</p>
+
+<p>Perhaps, this excerpt from the prelude of  <a href="http://www.amazon.com/gp/product/1449370926/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1449370926&linkCode=as2&tag=wwwjessecrave-20&linkId=6CCXPQ2HHNLSTI5N">Building Web Apps with Ember.js</a> explains my stance for the last couple of years:</p>
+
+<blockquote><p>Since 2009, I have worked on numerous applications using Backbone, Angular, and
+Ember. But today, I often recommend Ember.js to the clients I work with. This is primarily
+due to the fact that the conventions support well-known web application development
+patterns that I have custom written or pieced together from multiple open
+source libraries. Here, are the high level concepts that, in my opinion, make Ember so
+valuable:</p>
+
+<ul>
+<li>Ember’s object model supports a classic and well understood, object-oriented
+pattern of class inheritance through extend, object initialization, getters and setters,
+and class monkey patching.</li>
+<li>Ember models, controllers, and components extend the Object class, which ensures
+that these objects inherit Ember’s powerful default data binding.</li>
+<li>The router supports complex nesting for URL-driven applications that manage
+application state in a conventional way that can be understood by those with
+web-server-routing backgrounds.</li>
+<li>Recently, build, workflow, and testing tools in Ember have matured and become
+intuitive.</li>
+<li>Ember’s only dependencies are on jQuery and Handlebars.js, two very wellknown
+and documented libraries.</li>
+<li>Finally, the community is vibrant, passionate, and extremely active.</li>
+</ul>
+</blockquote>
+
+<h2>What’s Next?</h2>
+
+<p>Most recently, I find myself moving into a new phase that mirrors the needs and concerns of the clients I interact with on a daily basis: navigating the SPA landscape and making future friendly decisions based on the complex solutions matrix that is now Ember 2.0, Angular 2.0, and current React/Flux.</p>
+
+<p>My latest talk:  SPA 2.0: The latest in JavaScript frameworks will address these questions:</p>
+
+<ul>
+<li><p>What does the future hold for the building of complex applications on the Web Platform in 2015?
+How do we manage the complex SPA landscape, and help our clients make future friendly architectural decisions?</p></li>
+<li><p>Will an Angular 2.0 breaking rewrite send devs running for something better? Can React/Flux community offer a complete application framework solution for complex applications? Will Ember continue to evolve into a lighter framework that can shed it&rsquo;s &lsquo;monolithic framework&rsquo; reputation?</p></li>
+<li><p>As the Angular and React communities adopt the Ember Router and the Ember community is inspired by React’s Virtual Dom to take advantage of it’s existing under utilized view graph, the communities are adopting the best of each other. In what other ways are the individual framework communities learning from each other?</p></li>
+<li><p>Will native, cross browser web components become a reality? What is the IE roadmap in regards to custom elements, HTML templates, HTML imports, and shadow DOM? Will we begin writing web components in Ember without the use of handlebars syntax?</p></li>
+<li><p>Will functional reactive ‘stream’ patterns become common place with better integration into frameworks, as promises did in 2014?</p></li>
+<li><p>With ES6 modules ( and transpiler build steps ), as practitioners can we finally lay the JS module debacle to rest? Do Isomorphic JS architectures still make this a challenge?</p></li>
+</ul>
+
+
+<h2>SPA 2.0 Topic Areas</h2>
+
+<p>Here, are the areas my talks will focus on in 2015:</p>
+
+<ul>
+<li>Framework Maturity and Stability</li>
+<li>Developer Ergonomics, Tooling, and Front End Ops</li>
+<li>View Performance and Mobile</li>
+<li>Async Router</li>
+<li>Data Binding (1-way , 2-way use cases)</li>
+<li>ES6 modules</li>
+<li>Web Components</li>
+<li>Community and Documentation</li>
+<li>Release Cycle</li>
+<li>Client Side Data Stores</li>
+<li>Services and JSON Specifications</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[BBQ, Bourbon and Ember.js at Code PaLOUsa 2014]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014/"/>
+    <updated>2014-05-01T08:23:00-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2014/05/01/bourbon-and-ember-dot-js-and-code-palousa-2014</id>
+    <content type="html"><![CDATA[<p>In late April, I took my Ember.js talk to Louisville, Kentucky for the <a href="http://http://www.codepalousa.com/">CodePaLOUsa</a> conference.</p>
+
+<p><a href="http://www.infoq.com/presentations/demo-emberjs"><img class="imgR400" alt="O'Reilly's Building Web Apps with Ember.js" src="http://echo 'jessecravens.com' >> source/CNAME/images/codepalousa14.png"></a></p>
+
+<p>In the process I discovered <a href="http://doccrows.com/">Doc Crow&rsquo;s Southern Smokehouse and Raw Bar&rsquo;s</a> BBQ and Bourbon menu. I highly recommend it for anyone in the area trying to find authentic, local fare.</p>
+
+<p>During the day, I also listened to some great talks from <a href="https://twitter.com/sireb">@sireb</a> and <a href="https://twitter.com/robtarr">@robtarr</a>.</p>
+
+<p>My presentation focused on demoing the latest versions of <a href="https://github.com/emberjsbook">RockNRollCall demo application</a>, the source code for my upcoming book, <a href="http://shop.oreilly.com/product/0636920030782.do">OReilly&rsquo;s Building Web Apps with Ember.js</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HTML5 and Ember.js at Øredev 2013:The Arts in Malmö, Sweden]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo/"/>
+    <updated>2013-12-07T23:25:00-06:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2013/12/07/html5-and-ember-dot-js-at-oredev-2013-the-arts-malmo</id>
+    <content type="html"><![CDATA[<p>At the beginning of November, I was given an opportunity to give two talks in Malmö, Sweden at the Øredev conference. First of all, I have to say I was extremely impressed with the conference. Although the theme was the Arts, I found it to be a developer&rsquo;s conference with an artsy edge. The speakers I had a chance to see were developer&rsquo;s developers, one of my favorites being a talk on Meteor by Chris Mather (@eventedmind) of <a href="http://eventedmind.com">eventedmind.com</a>. I&rsquo;ve maintained a peripheral view of Meteor, so it was good to get a beginner to intermediate overview of its capabilities. Given that I have been doing <a href="http://www.mongodb.com/">MongoDB</a> / <a href="https://github.com/emberjs/data">Ember-data</a> client work as of lately, I am particularly interested in exploring <a href="https://github.com/slacy/minimongo">minimongo</a>.</p>
+
+<p><img class="imgR400" alt="Jesse Cravens at Øredev 2013 HTML5 Hacks" src="http://echo 'jessecravens.com' >> source/CNAME/images/oredev/html5hacks-oredev.jpg"></p>
+
+<p>The city of <a href="http://en.wikipedia.org/wiki/Malm%C3%B6">Malmö</a> was also a pleasure to experience, and as you might imagine, the people of Sweden were very welcoming. One of the highlights for me was the speaker dinner at the <a href="http://en.wikipedia.org/wiki/File:Jorchr-Malm%C3%B6_r%C3%A5dhus.jpg">Malmö City Hall</a>, originally constructed in the Middle Ages. On a side note, I finally had a chance to meet and have dinner with <a href="http://www.crockford.com/">Douglass Crockford</a>, a long time inspiration and virtual mentor, who was in town to give the keynote on <a href="http://oredev.org/2013/wed-fri-conference/managing-asynchronicity-with-rq">Managing Async with RQ</a>.</p>
+
+<iframe src="http://echo 'jessecravens.com' >> source/CNAME//player.vimeo.com/video/78847391" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p>
+  <a href="http://vimeo.com/78847391">Building Web Applications with Ember.js and Ruby On Rails</a>
+  from
+  <a href="http://vimeo.com/user4280938">&Oslash;redev Conference</a>
+  on
+  <a href="https://vimeo.com">Vimeo</a>
+  .
+</p>
+
+
+<p>My first talk was a preview of my new book <a href="https://github.com/emberjsbook">O'Reilly&rsquo;s Building Web Apps with Ember.js</a>. I shared the stage with co-author and fellow frog, <a href="http://bashmodernquantity.com/about/">Thomas Q. Brady</a>. We took the audience through the creation of <a href="https://github.com/emberjsbook/rocknrollcall">RocknRollCall</a>, an intermediate level <a href="http://emberjs.com/">Ember.js</a> application that fills in many of the blanks that most of the &lsquo;Getting Started&rsquo; applications don&rsquo;t.</p>
+
+<p><img class="imgL400" alt="O'Reilly's Building Web Apps with Ember.js by Jesse Cravens" src="http://echo 'jessecravens.com' >> source/CNAME/images/oredev/ember_cover_600.png"></p>
+
+<p>Some of the highlights of the book, and the talk, cover topics such as: a survey of Ember tooling, debugging with the <a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi?hl=en">Ember Inspector</a>, Ember boilerplates, app initializers, promises in Ember, the needs API, Ember components, 3rd Party JavaScript Integration (<a href="http://jquery.com/">jQuery</a>, <a href="http://d3js.org/">D3</a>), Ember testing, SPA authentication, <a href="https://github.com/emberjs/data">Ember-data</a> and other client-side persistence solutions, and remote data persistence with Ruby On Rails and Node.js.</p>
+
+<p>My second talk was <a href="http://html5hacks.com/">HTML5 Hacks</a> Evolved, where I continue to share more hacks from by first book <a href="http://html5hacks.com">HTML5 Hacks</a>, and <a href="http://html5hacks.com/">html5hacks.com</a>. This talk is culmination of HTML5 specifications that will have you rethinking browser-based applications. Some of the highlights of this talk included: Web Workers, WebSocket w/ GeoLocation, Device Orientation, and LeapJS, Web Components / Polymer / Ember Components (Custom Elements, Shadow DOM, HTML Imports, Model Driven Views, and Local Storage.</p>
+
+<iframe src="http://echo 'jessecravens.com' >> source/CNAME//player.vimeo.com/video/78912115" width="500" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+<p>
+  <a href="http://vimeo.com/78912115">HTML5 Hacks</a>
+  from
+  <a href="http://vimeo.com/user4280938">&Oslash;redev Conference</a>
+  on
+  <a href="https://vimeo.com">Vimeo</a>
+  .
+</p>
+
+
+<p>In 2014, I&rsquo;m retiring the HTML5 Hacks talks, to begin focusing solely on Single Page Application development in 2014. My hope is to kick out an early release of <a href="https://github.com/emberjsbook">Building Web Apps with Ember.js</a> very soon, and finish the book in early 2014. After that I&rsquo;ll be in Louisville, KY at <a href="http://www.codepalousa.com/">Code PaLOUsa</a> to continue the Ember.js roadtrip.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Building Next Generation Widgets with Web Components]]></title>
+    <link href="http://echo 'jessecravens.com' >> source/CNAME/blog/2013/07/25/building-next-generation-widgets-with-web-components/"/>
+    <updated>2013-07-25T03:41:00-05:00</updated>
+    <id>http://echo 'jessecravens.com' >> source/CNAME/blog/2013/07/25/building-next-generation-widgets-with-web-components</id>
+    <content type="html"><![CDATA[<p><img class="imgL400" alt="Nerdclustr" src="http://tpstatic.com/img/usermedia/9ylQdMSRLUiffrQPG4hHJw/original.png"></p>
+
+<p>For SXSWi and FluentConf this year, <a href="http://twitter.com/boyofgreen">@boyofgreen</a> and I created a demo application to showcase some of the hacks that we included in our book OReilly&rsquo;s HTML5 Hacks.</p>
+
+<p>The demo application, Nerdclustr, is an HTML5 mobile application that brings &lsquo;nerds&rsquo; of all types together conferences and provides a visual map that updates in real time. The application was written with Node.js and the Express web framework. It demonstrates the following specifications: HTML5 Web Forms, Geo Location API, WebSocket, Canvas, CSS3 transforms.</p>
+
+<p>Given, the attention that Web Components and <a href="http://www.polymer-project.org/polymer.html">Polymer.js</a> have been getting lately, I felt this was a good opportunity to demonstrate some of the exciting new specifications that are making their way to modern browsers. For the sake of this tutorial, I&rsquo;ll be using and providing screenshots of Google Chrome, but it should be worth your time to explore the status of each of the specifications in other modern browsers as well.</p>
+
+<p>In this tutorial, we will take a look at the HTML5 specs mentioned above in detail. Then, we will explore Polymer.js and build out an example application.</p>
+
+<p>Read more at: <a href="http://tech.pro/tutorial/1421/building-next-generation-widgets-with-web-components">http://tech.pro/tutorial/1421/building-next-generation-widgets-with-web-components</a></p>
+]]></content>
+  </entry>
+  
+</feed>
